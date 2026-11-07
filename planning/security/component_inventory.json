@@ -2,7 +2,7 @@
   "schema_version": 1,
   "as_of": "2026-11-08",
   "classification": "PRELIMINARY_COMPONENT_INVENTORY_NOT_A_COMPLETE_SBOM",
-  "cve_scan_performed": false,
+  "cve_scan_performed": true,
   "licenses_transitive_reviewed": false,
   "external_update_policy": "immutable_reviewed_sources_no_auto_refresh",
   "ci_python_3_11_packages": [
@@ -104,6 +104,9 @@
     "ML/agents optional Python dependency graphs and frozen wheels",
     "Linux OS/Wine/MetaTrader5 binaries and NVIDIA driver/CUDA",
     "licensed historical broker market data and storage artifacts",
-    "source scanners findings, CVEs, remediation and final legal review"
-  ]
+    "Independent advisory triage/remediation, unindexed runtime components and final license/legal review"
+  ],
+  "cve_scan_scope": "Dated Python 3.11 CI bootstrap environment and identifiable locked vendor source dependency metadata only",
+  "cve_scan_final_review_completed": false,
+  "cve_scan_reference": "planning/security/scans/one_time/triage_classification.json"
 }

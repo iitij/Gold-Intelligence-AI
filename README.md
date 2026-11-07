@@ -103,3 +103,7 @@ CI uses [SHA256-pinned test requirements](requirements-ci.lock) and [immutable c
 ### Broker contract snapshot (no account access)
 
 Run the read-only [XAUUSD symbol specification script](mt5/ExportXAUUSD_SymbolSpec.mq5) inside MetaEditor; it exports tick size, point, lot rules, profit currency, current contract size and observed (unverified) clock offset. Validate it with `python -m goldintel.data.broker_specs ...`. **It never determines historic DST or authorizes training/trading**. [Full instructions](docs/26-BROKER-CONTRACT-INTAKE.md).
+
+### Security scan evidence (review required)
+
+The [dated SBOM/Grype triage](docs/31-SBOM-TRIAGE-2026-11-08.md) separates installed CI bootstrap tooling advisories from archived Midas `uv.lock` metadata. It is a *scoped snapshot*, **not** a completed security review or G0 acceptance. The one-time privileged scanner workflow was removed; no vendor dependencies were installed or activated.

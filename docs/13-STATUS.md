@@ -77,3 +77,7 @@
 - `requirements-ci.lock` يجمد الحزم الأساسية المستخدمة في CI مع hashes، وGitHub Actions مثبتة SHA، و`planning/preflight_gates.json` تمنع قبول جاهزية غير موثقة.
 - برنامج الجرد المحلي وScript مواصفات عقد MT5 موجودان، لكن **لم يتم تشغيلهما على جهاز المالك**.
 - `planning/security/component_inventory.json` جرد أولي للملفات والمكونات المثبتة وليس SBOM/CVE scan مكتملًا. المرجع [التقرير الجديد](28-PRE-RESEARCH-READINESS-STATUS.md).
+
+## تحديث أمني — فحص SBOM المؤرخ 2026-11-08
+
+تم توليد CycloneDX SBOM وفحص Grype لمرة واحدة على GitHub Actions [#42422206182](https://github.com/iitij/Gold-Intelligence-AI/actions/runs/42422206182). ظهر 10 تحذيرات في venv الخاص بأدوات اختبار Python (2 عالية تخص مكتبات مضمنة ضمن setuptools) و146 تحذيرًا في بيانات `uv.lock` المؤرشفة لـMidas (5 حرجة، 56 عالية) **وليست دليلًا على تثبيت Midas في النواة**. التقرير الموثق وتصنيف كل مطابقة حسب موضعها في [تحليل الأمان](31-SBOM-TRIAGE-2026-11-08.md). أُزيلت Workflow الفحص المؤقت، مع استمرار منع قبول G0 والتداول وإضافة اختبارات fail-closed ضد استدعاءات أوامر الوسيط في PR #75.
