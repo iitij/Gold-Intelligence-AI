@@ -9,7 +9,6 @@ import pytest
 
 from goldintel.data.mt5_csv import COLUMNS, MarketDataError, validate_mt5_csv
 
-
 GOOD = [
     ["XAUUSDm", "M15", "2026.01.05 09:00:00", "2000.00", "2001.40", "1999.20", "2000.40", "120", "15", "0"],
     ["XAUUSDm", "M15", "2026.01.05 09:15:00", "2000.40", "2002.00", "2000.10", "2001.70", "135", "17", "0"],
