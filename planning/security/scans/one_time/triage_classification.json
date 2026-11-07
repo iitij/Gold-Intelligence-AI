@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "scan_date_utc": "2026-11-07T22:48:27.836981+00:00",
+  "scan_source_commit": "380595dfa379b3187c3b1cade7b425101bd01a2d",
+  "github_actions_run": "https://github.com/iitij/Gold-Intelligence-AI/actions/runs/42422206182",
+  "classification_policy": "Evidence-located baseline findings; archive metadata is not installed code; no suppressions",
+  "scopes": {
+    "ci_environment": {
+      "components": 118,
+      "matched_advisories": 10,
+      "severities": {
+        "Critical": 0,
+        "High": 2,
+        "Medium": 6,
+        "Low": 2,
+        "Negligible": 0,
+        "Unknown": 0
+      },
+      "origins": {
+        "ci_bootstrap_setuptools_bundled": 2,
+        "ci_bootstrap_pip": 6,
+        "ci_bootstrap_setuptools": 2
+      }
+    },
+    "repository_sources": {
+      "components": 217,
+      "matched_advisories": 146,
+      "severities": {
+        "Critical": 5,
+        "High": 56,
+        "Medium": 59,
+        "Low": 26,
+        "Negligible": 0,
+        "Unknown": 0
+      },
+      "origins": {
+        "uninstalled_archived_midas_uv_lock": 146
+      }
+    }
+  },
+  "critical_archived_midas_advisories": [
+    "GHSA-6q48-6c7w-9gw2",
+    "GHSA-82r6-8w77-94w6",
+    "GHSA-c39v-8hrw-h448",
+    "GHSA-ffc3-869f-jxw9",
+    "GHSA-w3fx-mc44-mf6j"
+  ],
+  "high_ci_bootstrap_advisories": [
+    "GHSA-58pv-8j8x-9vj2",
+    "GHSA-8rrh-rw8j-w5fx"
+  ],
+  "installed_dev_tooling_needs_remediation_review": true,
+  "archived_midas_runtime_approved": false,
+  "all_runtime_dependencies_inventoried": false,
+  "all_findings_mitigated": false,
+  "independent_audit_complete": false,
+  "g0_approved": false,
+  "training_permitted": false,
+  "live_trading_permitted": false
+}
