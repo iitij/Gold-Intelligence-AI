@@ -8,8 +8,8 @@ Run locally on the owner's Ubuntu workstation, not in GitHub Actions.
 from __future__ import annotations
 
 import argparse
-import os
 import json
+import os
 import platform
 import shutil
 import subprocess
