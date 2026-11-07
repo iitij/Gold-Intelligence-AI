@@ -6,6 +6,8 @@ permissions:
   contents: read
 jobs:
   test:
+    env:
+      PYTHONPATH: src
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
@@ -13,8 +15,12 @@ jobs:
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # pinned v6 / Node24
         with:
           python-version: '3.11'
-      - name: Install package
-        run: python -m pip install -e '.[dev]'
+      - name: Install exact reviewed CI wheels by SHA256
+        env:
+          PIP_DISABLE_PIP_VERSION_CHECK: '1'
+        run: python -m pip install --require-hashes -r requirements-ci.lock
+      - name: Verify pinned CI dependency graph
+        run: python scripts/verify_ci_lock.py
       - name: Static checks
         run: python -m ruff check src tests scripts
       - name: Tests
