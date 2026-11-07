@@ -1,0 +1,87 @@
+name: One-time pinned SBOM and advisory baseline (review branch only)
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/one-time-sbom-audit.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: gold-one-time-sbom
+  cancel-in-progress: false
+
+jobs:
+  inspect:
+    if: github.repository == 'iitij/Gold-Intelligence-AI' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 35
+    env:
+      PIP_DISABLE_PIP_VERSION_CHECK: '1'
+      PYTHONPATH: src
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5, commit-pinned
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.11'
+      - name: Install CI wheels from approved exact hashes in isolated venv
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m venv "$RUNNER_TEMP/gold-ci-venv"
+          "$RUNNER_TEMP/gold-ci-venv/bin/python" -m pip install --require-hashes -r requirements-ci.lock
+      - name: Download exact scanner versions after SHA256 verification
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p "$RUNNER_TEMP/security_tools"
+          cd "$RUNNER_TEMP/security_tools"
+          curl --fail --location --retry 3 --proto '=https' --proto-redir '=https' \
+            -o syft.tar.gz https://github.com/anchore/syft/releases/download/v1.57.0/syft_1.57.0_linux_amd64.tar.gz
+          echo '9c077a7d43029b3b13e98a8db720661e700c4d58db6352153a06395ae4a2a704  syft.tar.gz' | sha256sum --check
+          tar -xzf syft.tar.gz syft
+          curl --fail --location --retry 3 --proto '=https' --proto-redir '=https' \
+            -o grype.tar.gz https://github.com/anchore/grype/releases/download/v0.121.2/grype_0.121.2_linux_amd64.tar.gz
+          echo '9c8965ced9df657e5e851c14021bae838802f711edd7a48f9bc3c923a8d28f12  grype.tar.gz' | sha256sum --check
+          tar -xzf grype.tar.gz grype
+          ./syft version
+          ./grype version
+      - name: Catalog CI runtime and pinned external repository files without executing vendor code
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p planning/security/scans/one_time
+          syft="$RUNNER_TEMP/security_tools/syft"
+          "$syft" "dir:$RUNNER_TEMP/gold-ci-venv" \
+            --output cyclonedx-json=planning/security/scans/one_time/ci_environment.cdx.json
+          "$syft" 'dir:.' \
+            --output cyclonedx-json=planning/security/scans/one_time/repository_sources.cdx.json
+          test -s planning/security/scans/one_time/ci_environment.cdx.json
+          test -s planning/security/scans/one_time/repository_sources.cdx.json
+      - name: Query advisory database for SBOM components and produce detailed reports
+        shell: bash
+        run: |
+          set -euo pipefail
+          scanner="$RUNNER_TEMP/security_tools/grype"
+          folder=planning/security/scans/one_time
+          "$scanner" "sbom:$folder/ci_environment.cdx.json" --output json > "$folder/ci_environment.grype.json"
+          "$scanner" "sbom:$folder/repository_sources.cdx.json" --output json > "$folder/repository_sources.grype.json"
+          python scripts/summarize_security_scan.py "$folder" --commit "$GITHUB_SHA"
+      - name: Commit evidence to review branch and retire one-time scanner
+        shell: bash
+        run: |
+          set -euo pipefail
+          target="security/one-time-sbom-result-$GITHUB_RUN_ID"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$target"
+          git add planning/security/scans/one_time/
+          git rm .github/workflows/one-time-sbom-audit.yml
+          git commit -m "security: archive pinned SBOM/advisory evidence; retire one-time scanner"
+          git push origin "HEAD:refs/heads/$target"
+          echo "Review security evidence branch: $target" >> "$GITHUB_STEP_SUMMARY"
+          echo "Do not claim G0 accepted: review all advisories and scan coverage." >> "$GITHUB_STEP_SUMMARY"
