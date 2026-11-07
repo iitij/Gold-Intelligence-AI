@@ -33,7 +33,7 @@ python scripts/verify_vendor_integrity.py
 
 ## Task administration
 
-Issues are the collaborative task workflow; backlog.json is the committed plan and depends-on graph. The import utility does not recreate an existing issue with the same ID. To initialize or reconcile labels and 11 phase milestones on a workstation with authenticated GitHub CLI:
+Issues are the collaborative task workflow; backlog.json is the committed plan and depends-on graph. The import utility does not recreate an existing issue with the same ID. To initialize or reconcile labels and 12 phase milestones on a workstation with authenticated GitHub CLI:
 
 ```bash
 python scripts/publish_issues.py --repo iitij/Gold-Intelligence-AI --dry-run
