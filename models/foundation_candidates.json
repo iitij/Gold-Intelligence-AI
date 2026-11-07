@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "scope": "XAUUSD-only research (not trained, not deployed)",
+  "policy": "Pin immutable revision once, archive hashes locally. Never auto-update external models. No model weights in Git.",
+  "provider": "huggingface",
+  "candidates": [
+    {
+      "id": "qwen3-4b",
+      "repo_id": "Qwen/Qwen3-4B",
+      "purpose": "Primary local gold-analysis agents; SFT/QLoRA candidate",
+      "model_type": "causal-language-model",
+      "training_method": "pretrained-then-local-adapter",
+      "license_expected": "apache-2.0",
+      "approximate_upstream_bytes": 8060000000,
+      "status": "candidate-not-downloaded",
+      "artifacts_location": "models/weights/qwen3-4b"
+    },
+    {
+      "id": "qwen35-2b",
+      "repo_id": "Qwen/Qwen3.5-2B",
+      "purpose": "Lower-memory alternative local agent; evaluate LoRA",
+      "model_type": "multimodal-language-model",
+      "training_method": "pretrained-then-local-adapter",
+      "license_expected": "apache-2.0",
+      "approximate_upstream_bytes": 4570000000,
+      "status": "candidate-not-downloaded",
+      "artifacts_location": "models/weights/qwen35-2b"
+    },
+    {
+      "id": "chronos-2",
+      "repo_id": "amazon/chronos-2",
+      "purpose": "Probabilistic XAUUSD returns/volatility forecasting; zero-shot before tuning",
+      "model_type": "time-series-forecasting",
+      "training_method": "pretrained-then-evaluate-and-optional-finetune",
+      "license_expected": "apache-2.0",
+      "approximate_upstream_bytes": 478000000,
+      "status": "candidate-not-downloaded",
+      "artifacts_location": "models/weights/chronos-2"
+    }
+  ],
+  "train_from_scratch": [
+    {
+      "id": "lightgbm-xauusd",
+      "framework": "LightGBM",
+      "role": "Calibrated triple-barrier and NO_TRADE classifiers",
+      "status": "planned"
+    },
+    {
+      "id": "catboost-xauusd",
+      "framework": "CatBoost",
+      "role": "Independent calibrated supervised benchmark",
+      "status": "planned"
+    },
+    {
+      "id": "nhits-xauusd",
+      "framework": "NeuralForecast/NHITS",
+      "role": "Multihorizon time-series benchmark",
+      "status": "planned"
+    },
+    {
+      "id": "nbeatsx-xauusd",
+      "framework": "NeuralForecast/NBEATSx",
+      "role": "Optional multihorizon model comparison",
+      "status": "planned"
+    }
+  ]
+}
