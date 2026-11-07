@@ -1,0 +1,42 @@
+name: One-time GitHub phase milestone synchronization (reviewed)
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/create-phase-milestones-once.yml'
+permissions:
+  contents: write
+  issues: write
+concurrency:
+  group: gold-phase-milestones-once
+  cancel-in-progress: false
+jobs:
+  milestones:
+    if: github.repository == 'iitij/Gold-Intelligence-AI' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5 pinned
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6 pinned
+        with:
+          python-version: '3.11'
+      - name: Offline migration schema dry run
+        run: python scripts/sync_milestones_once.py --dry-run
+      - name: Add only missing 12 phase milestones and link existing 52 Issues
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python scripts/sync_milestones_once.py --confirm
+      - name: Retire one-time action on isolated review branch
+        shell: bash
+        run: |
+          set -euo pipefail
+          name="governance/retire-phase-sync-$GITHUB_RUN_ID"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -c "$name"
+          git rm .github/workflows/create-phase-milestones-once.yml
+          git commit -m "chore: retire one-time phase milestone synchronization action"
+          git push origin "HEAD:refs/heads/$name"
+          echo "Review branch to remove one-time workflow: $name" >> "$GITHUB_STEP_SUMMARY"
