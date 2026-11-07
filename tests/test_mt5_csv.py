@@ -1,4 +1,5 @@
 """Synthetic XAUUSD candles only; no trading APIs or real market claims."""
+
 from __future__ import annotations
 
 import csv
