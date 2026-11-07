@@ -65,3 +65,7 @@
 ## قفل CI الجزئي
 
 جهزنا `requirements-ci.lock` بversions وSHA256 للـ6 اعتماديات dev/test باستخدام GitHub Actions لمرة واحدة، مع حذف Workflow التوليد. CI يتثبت من القائمة المقبولة بـ`pip --require-hashes`، ويستعمل Actions بالـ SHA. هذا **لا يكمل** Security SBOM/Vulnerability triage ولا Lock إضافات ML/Agents ولا Hardware gates. `scripts/verify_ci_lock.py` يوفر التحقق الهيكلي.
+
+## تجهيز بيانات الوسيط — بدون اتصال حقيقي حتى الآن
+
+أُضيف Script ثانٍ للقراءة فقط لاستخراج مواصفات XAUUSD الفعلية عند الوسيط (`point` / `tick_size` / tick values / lots / contract size / profit currency / snapshot clock difference)، وفاحص Python صارم يُرجع `training_ready=false` دائمًا. يحتاج الجمع والتشغيل على جهاز المالك، ولا يعني تشغيل Script من GH. المرجع: [دليل مواصفات الوسيط](26-BROKER-CONTRACT-INTAKE.md).
