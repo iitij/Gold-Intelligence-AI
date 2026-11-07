@@ -6,7 +6,7 @@
 
 مشروع بحث وتطوير محلي لتدريب نماذج متخصصة في الذهب **XAUUSD فقط**، مع تنسيق وكلاء محليين ومراقبة تداول تجريبي عبر MT5. يدمج أفكارًا وأطرًا مفتوحة المصدر مع نظام تدريب وتقييم نملكه ونصونه داخليًا.
 
-[مركز جميع المصادر والنماذج](docs/16-SOURCE-HUB.md) · [حالة النشر الحالية](docs/13-STATUS.md) · [المهام الفعلية على GitHub](https://github.com/iitij/Gold-Intelligence-AI/issues)
+[مركز جميع المصادر والنماذج](docs/16-SOURCE-HUB.md) · [التدقيق الشامل والفجوات](docs/17-INDEPENDENT-TECHNICAL-AUDIT.md) · [حالة النشر الحالية](docs/13-STATUS.md) · [المهام الفعلية على GitHub](https://github.com/iitij/Gold-Intelligence-AI/issues)
 
 ## الوثيقة المرجعية / Single source of truth
 
