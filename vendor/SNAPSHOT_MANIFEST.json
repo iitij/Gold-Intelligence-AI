@@ -1,0 +1,31 @@
+{
+  "format_version": 1,
+  "sealed": true,
+  "upstream_updates_allowed": false,
+  "snapshots": [
+    {
+      "repository": "TauricResearch/TradingAgents",
+      "commit": "9fa1196fffbcfd9de5146d2dd2869df84ab99838",
+      "file_count": 213,
+      "digest_sha256": "f11ccf19b261c645e82843a060a1e818ef9ed9b3c9b2dcf5a6efff6097232118",
+      "license_status": "Apache-2.0",
+      "upstream_updates_allowed": false
+    },
+    {
+      "repository": "zero-was-here/tradingbot",
+      "commit": "39c33b49237e0f290f89bda18e27aa4e75021c03",
+      "file_count": 250,
+      "digest_sha256": "b17e0c25de742bcfffed68b6d05a85ce56a59001481ba6cce2e8c7bb36c11817",
+      "license_status": "MIT",
+      "upstream_updates_allowed": false
+    },
+    {
+      "repository": "andyluu98/midas-agent",
+      "commit": "289ac184bee091ce7e80fbb89aeaaf856b21f2cd",
+      "file_count": 121,
+      "digest_sha256": "7888c1498509ee5edbc413eb87b40f8490eee85bd5a4934cf52db8dc0146e17d",
+      "license_status": "Apache-2.0",
+      "upstream_updates_allowed": false
+    }
+  ]
+}

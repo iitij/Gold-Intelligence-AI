@@ -1,0 +1,98 @@
+import os
+import re
+import json
+import pandas as pd
+from datetime import date, timedelta, datetime
+from typing import Annotated
+
+SavePathType = Annotated[str, "File path to save data. If None, data is not saved."]
+
+# Tickers can contain letters, digits, dot, dash, underscore, caret
+# (for index symbols like ^GSPC), and equals sign (for yfinance futures
+# like GC=F, ZN=F). Anything else is rejected so the value never escapes
+# a containing directory when interpolated into a path.
+_TICKER_PATH_RE = re.compile(r"^[A-Za-z0-9._\-\^=]+$")
+
+
+def safe_ticker_component(value: str, *, max_len: int = 32) -> str:
+    """Validate ``value`` is safe to interpolate into a filesystem path.
+
+    Tickers come from user CLI input or from LLM tool calls, both of which
+    can be influenced by attacker-controlled content (e.g. prompt injection
+    embedded in fetched news). Without validation, a value like
+    ``"../../../etc/foo"`` flows into ``os.path.join`` / ``Path /`` and
+    escapes the configured cache, checkpoint, or results directory.
+
+    Returns ``value`` unchanged when it matches the allowed pattern; raises
+    ``ValueError`` otherwise.
+    """
+    if not isinstance(value, str) or not value:
+        raise ValueError(f"ticker must be a non-empty string, got {value!r}")
+    if len(value) > max_len:
+        raise ValueError(f"ticker exceeds {max_len} chars: {value!r}")
+    if not _TICKER_PATH_RE.fullmatch(value):
+        raise ValueError(
+            f"ticker contains characters not allowed in a filesystem path: {value!r}"
+        )
+    # The regex above allows '.', so values like '.', '..', '...' would pass,
+    # and as a path component they traverse the parent directory. Reject any
+    # value that's only dots.
+    if set(value) == {"."}:
+        raise ValueError(f"ticker cannot consist solely of dots: {value!r}")
+    return value
+
+
+def save_output(data: pd.DataFrame, tag: str, save_path: SavePathType = None) -> None:
+    if save_path:
+        data.to_csv(save_path, encoding="utf-8")
+        print(f"{tag} saved to {save_path}")
+
+
+def get_current_date():
+    return date.today().strftime("%Y-%m-%d")
+
+
+# Prefix/keyword cho commodity + forex symbols mà Yahoo Finance KHÔNG có.
+# Yahoo có XAUUSD=X (forex pair) nhưng không có XAUUSD spot trader VN dùng.
+# yfinance call trên các symbol này luôn ra 404 + log spam → skip hoàn toàn.
+_COMMODITY_FOREX_PATTERNS = (
+    "XAUUSD", "XAGUSD", "XAUUSDc", "XAUUSDm", "XAUUSD.e",  # Gold
+    "XAGUSD", "XAGUSDc", "XAGUSDm",                          # Silver
+    "USOIL", "UKOIL", "WTIUSD", "BRENT",                     # Oil
+    "GOLD", "SILVER", "OIL",                                 # Generic
+)
+
+
+def is_commodity_or_forex(ticker: str) -> bool:
+    """Return True nếu ticker là commodity/forex spot không có trên Yahoo.
+
+    Dùng để skip yfinance call, tránh log 404 spam và dùng search backend
+    thay cho fundamental/news của commodity.
+    """
+    if not isinstance(ticker, str) or not ticker:
+        return False
+    t = ticker.upper().strip()
+    return any(t.startswith(p) or t == p for p in _COMMODITY_FOREX_PATTERNS)
+
+
+def decorate_all_methods(decorator):
+    def class_decorator(cls):
+        for attr_name, attr_value in cls.__dict__.items():
+            if callable(attr_value):
+                setattr(cls, attr_name, decorator(attr_value))
+        return cls
+
+    return class_decorator
+
+
+def get_next_weekday(date):
+
+    if not isinstance(date, datetime):
+        date = datetime.strptime(date, "%Y-%m-%d")
+
+    if date.weekday() >= 5:
+        days_to_add = 7 - date.weekday()
+        next_weekday = date + timedelta(days=days_to_add)
+        return next_weekday
+    else:
+        return date

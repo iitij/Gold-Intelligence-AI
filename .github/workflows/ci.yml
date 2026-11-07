@@ -21,5 +21,7 @@ jobs:
         run: python -m pytest -q
       - name: Verify frozen vendor integrity
         run: python scripts/verify_vendor_integrity.py
+      - name: Verify complete frozen upstream snapshots and model SHAs
+        run: python scripts/verify_full_snapshots.py
       - name: Check secret and live-trade defaults
         run: python scripts/check_repository_policy.py
