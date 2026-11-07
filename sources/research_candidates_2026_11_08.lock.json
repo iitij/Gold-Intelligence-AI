@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-11-08",
+  "purpose": "Immutable candidate reviews - no automated upstream sync or runtime adoption",
+  "old_sources_registry": "sources/sources.lock.json",
+  "default_action": "DO_NOT_IMPORT",
+  "approved_archive_decision": "one-time-offline-review",
+  "note": "Git commit SHA does not pin PyPI wheels or transitive dependencies. No new candidate code is in the executable production path. Archive candidates must be tested and licensed before reuse.",
+  "candidates": [
+    {
+      "id": "SRC12",
+      "name": "MLForecast",
+      "repository": "Nixtla/mlforecast",
+      "commit": "16cabe15f701197491384bd3108d6c6ac1edaff7",
+      "license": "Apache-2.0",
+      "decision": "dependency-candidate",
+      "priority": "P0",
+      "purpose": "Efficient lag/rolling features and ML forecast benchmark; no future-exogenous leakage",
+      "issues": [
+        19,
+        22,
+        23
+      ],
+      "security": "Pin package/environment and validate temporal CV; never train on the locked final holdout",
+      "reviewed_on": "2026-11-08"
+    },
+    {
+      "id": "SRC13",
+      "name": "Pandera",
+      "repository": "unionai-oss/pandera",
+      "commit": "da881ea3a7b44f6ed21ff584e195e8c808803bb5",
+      "license": "MIT",
+      "decision": "dependency-candidate",
+      "priority": "P0",
+      "purpose": "Point-in-time OHLC/tick/bid-ask data schema and quality gates",
+      "issues": [
+        13,
+        14,
+        16
+      ],
+      "security": "Use approved schemas/contract tests; verify timezone and broker metadata separately",
+      "reviewed_on": "2026-11-08"
+    },
+    {
+      "id": "SRC14",
+      "name": "StatsForecast",
+      "repository": "Nixtla/statsforecast",
+      "commit": "9e1f760435a4864d5551fe905021d98e9f0836cd",
+      "license": "Apache-2.0",
+      "decision": "dependency-candidate",
+      "priority": "P1",
+      "purpose": "Naive/seasonal/random-walk/statistical forecast baselines",
+      "issues": [
+        22,
+        27,
+        29
+      ],
+      "security": "Fit each time window only on historical data and compare same transaction-cost contract",
+      "reviewed_on": "2026-11-08"
+    },
+    {
+      "id": "SRC15",
+      "name": "mt5linux",
+      "repository": "lucas-campagna/mt5linux",
+      "commit": "7460cbc42ba707916d63ed16c863302b3abcdbb8",
+      "license": "MIT",
+      "decision": "isolated-read-only-spike",
+      "priority": "P0",
+      "purpose": "Linux Wine Python-MetaTrader communication feasibility vs owned MQL5 EA",
+      "issues": [
+        10,
+        13,
+        39
+      ],
+      "security": "Remote/RPyC bridge and optional external binary require separate provenance, strict loopback, demo/read-only, privilege minimization",
+      "reviewed_on": "2026-11-08"
+    },
+    {
+      "id": "SRC16",
+      "name": "Metatrader-Bridge",
+      "repository": "BorjaGomezSolorzano/Metatrader-Bridge",
+      "commit": "d4887a865538366d463ec77fffd6b056dbf9ddcc",
+      "license": "BSD-3-Clause",
+      "decision": "one-time-offline-review",
+      "priority": "P1",
+      "purpose": "Review MQL5/Python file IPC mechanics for a read-only bridge; no direct use of order methods",
+      "issues": [
+        39,
+        40
+      ],
+      "security": "No automated tests found in snapshot; order placement APIs exist; isolated code archive ONLY, never import in production or expose without redesign",
+      "reviewed_on": "2026-11-08"
+    },
+    {
+      "id": "SRC17",
+      "name": "oos-lab",
+      "repository": "OutOfSampleLab/oos-lab",
+      "commit": "d09ba123d28fcc5145380303d872d36946d534fd",
+      "license": "MIT",
+      "decision": "one-time-offline-review",
+      "priority": "P1",
+      "purpose": "Independent DSR/PBO/Walk-Forward reference computations",
+      "issues": [
+        36,
+        38,
+        56
+      ],
+      "security": "Recent small project; few independent users; archive only, do not trust stats without reference and synthetic Monte Carlo agreement",
+      "reviewed_on": "2026-11-08"
+    },
+    {
+      "id": "SRC18",
+      "name": "NautilusTrader",
+      "repository": "nautechsystems/nautilus_trader",
+      "commit": "fa4c7a8cf16d8b4061516fe3c1f1fc9fef6a6e8f",
+      "license": "LGPL-3.0",
+      "decision": "architecture-reference-only",
+      "priority": "P1",
+      "purpose": "Deterministic event-driven order lifecycle and risk/portfolio reconciliation patterns",
+      "issues": [
+        35,
+        39,
+        40
+      ],
+      "security": "Large Rust runtime, LGPL compliance and MT5 adapter missing; do NOT copy into proprietary core",
+      "reviewed_on": "2026-11-08"
+    },
+    {
+      "id": "SRC19",
+      "name": "mt5-bridge",
+      "repository": "andhikapraa/mt5-bridge",
+      "commit": "a1bdfbfa761819c553ad4fcc2d3e4188650a70de",
+      "license": "MIT",
+      "decision": "reference-only",
+      "priority": "P2",
+      "purpose": "Review Wine/MT5 HTTP shim constraints, not an execution dependency",
+      "issues": [
+        10,
+        39
+      ],
+      "security": "HTTP trade endpoints and container seccomp unconfined weaken isolation; no code copy or live exposure",
+      "reviewed_on": "2026-11-08"
+    },
+    {
+      "id": "SRC20",
+      "name": "metatrader-bridge-MCP",
+      "repository": "ishan-parihar/metatrader-bridge",
+      "commit": "189eb5fe6a88b4d1bf2f573ef1383827eed9c894",
+      "license": "MIT",
+      "decision": "reference-only",
+      "priority": "P2",
+      "purpose": "Compare schema and demo-account tool authorization, not agent-executable trading",
+      "issues": [
+        30,
+        39
+      ],
+      "security": "Young repository and callable order tools; do not expose trade tools to LLM",
+      "reviewed_on": "2026-11-08"
+    },
+    {
+      "id": "SRC21",
+      "name": "Goldbacktest",
+      "repository": "AMItheWise/Goldbacktest",
+      "commit": "4c1b3d88a24a02a13e3b60590efde346b2d672b4",
+      "license": "MIT",
+      "decision": "reference-only",
+      "priority": "P2",
+      "purpose": "Small example for XAUUSD tick bid/ask and DST session tests",
+      "issues": [
+        16,
+        35
+      ],
+      "security": "Unverified small single-author example; strategy performance unsubstantiated; no operational adoption",
+      "reviewed_on": "2026-11-08"
+    }
+  ]
+}
