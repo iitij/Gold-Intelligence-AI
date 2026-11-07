@@ -6,7 +6,7 @@
 
 مشروع بحث وتطوير محلي لتدريب نماذج متخصصة في الذهب **XAUUSD فقط**، مع تنسيق وكلاء محليين ومراقبة تداول تجريبي عبر MT5. يدمج أفكارًا وأطرًا مفتوحة المصدر مع نظام تدريب وتقييم نملكه ونصونه داخليًا.
 
-[مركز جميع المصادر والنماذج](docs/16-SOURCE-HUB.md) · [أساس الخصائص السببية والتوسيم](docs/20-POINT-IN-TIME-FOUNDATION.md) · [التدقيق الشامل والفجوات](docs/17-INDEPENDENT-TECHNICAL-AUDIT.md) · [حالة النشر الحالية](docs/13-STATUS.md) · [المهام الفعلية على GitHub](https://github.com/iitij/Gold-Intelligence-AI/issues)
+[مركز جميع المصادر والنماذج](docs/16-SOURCE-HUB.md) · [أساس الخصائص السببية والتوسيم](docs/20-POINT-IN-TIME-FOUNDATION.md) · [البحث الإضافي ومصادر التسريع](docs/21-OPEN-SOURCE-ACCELERATION-RESEARCH.md) · [التدقيق الشامل والفجوات](docs/17-INDEPENDENT-TECHNICAL-AUDIT.md) · [حالة النشر الحالية](docs/13-STATUS.md) · [المهام الفعلية على GitHub](https://github.com/iitij/Gold-Intelligence-AI/issues)
 
 ## الوثيقة المرجعية / Single source of truth
 
@@ -87,3 +87,7 @@ python scripts/freeze_sources.py --confirm
 - [التدقيق الهندسي والعلمي](docs/17-INDEPENDENT-TECHNICAL-AUDIT.md) وسجل الفجوات.
 - [مراجعة مخاطر Paper-only](docs/18-RISK-GATE-REVIEW.md) توثق إصلاح شبكة أحجام اللوت والقيود المتبقية.
 - [P11 مسارات بحث متقدمة](planning/ROADMAP.md): المنافسة البحثية، بنية سوق الذهب، تقييم Champion/Challenger ومرصد تكاليف الوسيط.
+
+## New third-party candidate research — no runtime dependency
+
+The [2026-11-08 open-source acceleration review](docs/21-OPEN-SOURCE-ACCELERATION-RESEARCH.md) and [exact-commit candidate lock](sources/research_candidates_2026_11_08.lock.json) identify 10 additional projects. Pandera/MLForecast are candidate *future pinned dependencies*, not installed in the operational core. Only two small reference repositories may be snapshotted for **offline code review** in `vendor/research_refs/`, with no import, test execution, broker connectivity or upstream auto-sync. Trading remains paper-only.
