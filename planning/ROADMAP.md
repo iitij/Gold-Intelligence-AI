@@ -112,3 +112,13 @@ Security, observability and production gates · 5 tasks
 - Live trading remains disabled in code; a later separate ADR and safety review would be required even to propose adding a live path.
 - RL stays a research-only optional stream (`P10-05`) with no production authorization.
 - Source packages are frozen at first reviewed import; no future upstream sync.
+
+### P11 — الأبحاث المتقدمة والتحقق المستقل
+Advanced validated alpha research, execution evidence and model promotion · 4 tasks
+
+- **P11-01** مسابقة ألفا البحثية تحت بروتوكول مقفل — `P05-04, P08-02`
+- **P11-02** بحث بنية سوق الذهب والفروق بين CFD والآجلة — `P03-04, P03-05, P04-01`
+- **P11-03** بوابة Champion/Challenger وتجارب Shadow — `P05-05, P09-03, P10-01`
+- **P11-04** مرصد مستقل لتكاليف تنفيذ الذهب — `P03-04, P09-04`
+
+P11 موازٍ ومتدرج: لا يعلّق نجاح بوابات الإنتاج الأساسية على بحث عالي التكلفة، ولا يبرر نشر أي نموذج للتداول الحقيقي. يتم تفعيل كل مهمة عندما تجتاز تبعياتها بوابات البيانات والتجارب والتنفيذ المقررة.

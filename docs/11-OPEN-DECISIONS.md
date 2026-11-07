@@ -10,5 +10,5 @@
 | DEC-006 | Exact Qwen checkpoint/weight license and context size | not yet approved; model catalog tracks candidate |
 | DEC-007 | Selected research horizons / spread acceptance | M15 4/8/16 initial hypothesis, optimize only via research protocol |
 | DEC-008 | Company/repository code license and publication decision | unset; private default |
-| DEC-009 | Vendor scope: complete source or approved modules | 11 selected upstream files with matching Git blob hashes pinned; complete import remains under review |
+| DEC-009 | Vendor scope: complete source or approved modules | **RESOLVED 2026-11-07:** archived 584 full-source files at verified pinned SHAs for Aurum, TradingAgents and Midas; operational integration/security remains pending |
 | DEC-010 | Whether human approval is removed after demo maturity | not pre-authorized; requires separate change request |
