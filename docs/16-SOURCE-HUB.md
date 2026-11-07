@@ -9,9 +9,9 @@
 | الملفات المجمدة الموجودة | [frozen_vendor.lock.json](../sources/frozen_vendor.lock.json) | [vendor/frozen_2026_11_07](../vendor/frozen_2026_11_07) |
 | المستودعات الثلاثة المعتمدة للاستيراد الكامل | [vendor/SNAPSHOT_MANIFEST.json](../vendor/SNAPSHOT_MANIFEST.json) داخل المستودع بعد الدمج | [vendor/snapshots](../vendor/snapshots) |
 | نماذج اللغة والزمن المرشحة | [foundation_candidates.json](../models/foundation_candidates.json) | سجل وحالة وليس أوزانًا |
-| المراجعات المثبتة لأوزان النماذج | [foundation_weights.lock.json](../models/foundation_weights.lock.json) بعد التثبيت | تُنشأ مرة واحدة من Hugging Face |
+| المراجعات المثبتة لأوزان النماذج | [foundation_weights.lock.json](../models/foundation_weights.lock.json) مُثبّتة في main | سجل metadata فقط؛ لا أوزان محفوظة |
 | النماذج التي سندربها | [model_catalog.json](../models/model_catalog.json) | لا يوجد checkpoint مدرب حتى الآن |
-| الخطوات التنفيذية | [ROADMAP](../planning/ROADMAP.md) و[GitHub Issues](https://github.com/iitij/Gold-Intelligence-AI/issues) | 48 مهمة قابلة للتوسع |
+| الخطوات التنفيذية | [ROADMAP](../planning/ROADMAP.md) و[GitHub Issues](https://github.com/iitij/Gold-Intelligence-AI/issues) | 52 مهمة في 12 مرحلة قابلة للتوسع |
 | قواعد التراخيص | [10-LICENSING](10-LICENSING.md) | **لا نسخ من AGPL أو مصدر مجهول الترخيص** |
 
 ## ما الذي يُحفظ داخل مستودعنا؟
