@@ -27,3 +27,7 @@ python -m goldintel.data.mt5_csv data/raw/mt5/gold_xauusd_m15.csv \
 - MQL5 compilation and broker feed validation remain explicit acceptance steps; passing Python validation is not certification of trading readiness.
 
 See issues P03-01, P03-02 and P03-04. No live execution path exists.
+
+## مواصفات الوسيط: Script إضافي للقراءة فقط
+
+شغّل [ExportXAUUSD_SymbolSpec.mq5](../mt5/ExportXAUUSD_SymbolSpec.mq5) لاستخراج عقد الذهب الحالي دون بيانات الحساب أو إرسال أوامر. ثم استخدم [فاحص المواصفات المستقل](26-BROKER-CONTRACT-INTAKE.md). لا تتعامل مع فرق الساعة الحالي باعتباره إثباتًا تاريخيًا لـDST أو UTC.

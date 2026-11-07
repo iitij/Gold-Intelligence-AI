@@ -50,7 +50,7 @@ python -m goldintel sample-risk
 
 ## Read-only XAUUSD data intake
 
-اتبع [دليل MT5](docs/14-MT5-READONLY-EXPORT.md) لاستخراج شموع M15 المغلقة، ثم افحص CSV محليًا باستخدام الأمر التالي، مع استبدال اسم الرمز باسم الوسيط الصحيح:
+اتبع [دليل MT5](docs/14-MT5-READONLY-EXPORT.md) و[استخراج مواصفات عقد الوسيط](docs/26-BROKER-CONTRACT-INTAKE.md) لاستخراج شموع M15 المغلقة، ثم افحص CSV محليًا باستخدام الأمر التالي، مع استبدال اسم الرمز باسم الوسيط الصحيح:
 
 ```bash
 python -m goldintel.data.mt5_csv data/raw/mt5/gold_xauusd_m15.csv \
@@ -99,3 +99,7 @@ Run `python scripts/preflight.py status` and `python scripts/preflight.py check 
 ## Deterministic test bootstrap (Python 3.11 CI only)
 
 CI uses [SHA256-pinned test requirements](requirements-ci.lock) and [immutable checkout/setup-python actions](.github/workflows/ci.yml), rather than floating extras. Run `python scripts/verify_ci_lock.py` to check the policy. This is **not a full ML/GPU runtime lock or a security audit**. [Supply-chain plan](docs/25-CI-REPRODUCIBILITY.md).
+
+### Broker contract snapshot (no account access)
+
+Run the read-only [XAUUSD symbol specification script](mt5/ExportXAUUSD_SymbolSpec.mq5) inside MetaEditor; it exports tick size, point, lot rules, profit currency, current contract size and observed (unverified) clock offset. Validate it with `python -m goldintel.data.broker_specs ...`. **It never determines historic DST or authorizes training/trading**. [Full instructions](docs/26-BROKER-CONTRACT-INTAKE.md).
