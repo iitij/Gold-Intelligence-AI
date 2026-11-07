@@ -9,8 +9,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # pinned v5 / Node24
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # pinned v6 / Node24
         with:
           python-version: '3.11'
       - name: Install package
@@ -25,5 +25,7 @@ jobs:
         run: python scripts/verify_full_snapshots.py
       - name: Verify frozen offline research references (if present)
         run: python scripts/verify_research_refs.py
+      - name: Report fail-closed research readiness
+        run: python scripts/preflight.py status
       - name: Check secret and live-trade defaults
         run: python scripts/check_repository_policy.py

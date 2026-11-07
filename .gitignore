@@ -33,3 +33,6 @@ vendor/.staging/
 *.zip
 *.tar.gz
 .DS_Store
+
+# Local hardware inventory; never publish paths or account context
+.local/
