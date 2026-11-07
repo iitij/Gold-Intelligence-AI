@@ -25,6 +25,8 @@
 - [التراخيص ومصدر المكونات](docs/10-LICENSING.md)
 - [خطة التنفيذ المتوسعة](planning/ROADMAP.md) و [`planning/backlog.json`](planning/backlog.json) و [`planning/backlog.csv`](planning/backlog.csv)
 - [سجل القرارات المفتوحة](docs/11-OPEN-DECISIONS.md)
+- [دليل تصدير XAUUSD من MT5 للقراءة فقط](docs/14-MT5-READONLY-EXPORT.md)
+- [تدقيق سلامة وحدات Aurum وTradingAgents المجمدة](docs/15-VENDOR-INTEGRITY.md)
 
 ## المبدأ الثابت
 
@@ -39,11 +41,23 @@ python3 -m venv .venv
 source .venv/bin/activate
 python -m pip install -e '.[dev]'
 python -m pytest -q
+python scripts/verify_vendor_integrity.py
 python -m goldintel health
 python -m goldintel sample-risk
 ```
 
-لا يوجد في النسخة الحالية أي اتصال ببروكر أو مفاتيح API أو تنفيذ أوامر حقيقية. **بوابة التنفيذ الحي غير مطبّقة ومعطلة تصميميًا.**
+أضفنا سكريبت تصدير CSV للشموع المغلقة من داخل MT5؛ لم يتم بعد تجميعه على جهاز المستخدم أو استلام بيانات الوسيط. فحص CSV محلي وغير متصل بالوسيط. لا يوجد أي تنفيذ لأوامر حقيقية. **بوابة التنفيذ الحي غير مطبّقة ومعطلة تصميميًا.**
+
+## Read-only XAUUSD data intake
+
+اتبع [دليل MT5](docs/14-MT5-READONLY-EXPORT.md) لاستخراج شموع M15 المغلقة، ثم افحص CSV محليًا باستخدام الأمر التالي، مع استبدال اسم الرمز باسم الوسيط الصحيح:
+
+```bash
+python -m goldintel.data.mt5_csv data/raw/mt5/gold_xauusd_m15.csv \
+  --broker-symbol XAUUSDm --report data/validated/mt5_m15_report.json
+```
+
+نجاح الفحص لا يعني أن توقيت الوسيط تحول إلى UTC أو أن البيانات صالحة للتدريب؛ يجب تنفيذ بوابات حوكمة التوقيت والحقوق أولًا.
 
 ## First source freeze (one time, never automatically)
 
