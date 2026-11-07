@@ -1,0 +1,74 @@
+{
+  "format_version": 1,
+  "freeze_policy": "immutable-baseline-no-upstream-sync",
+  "verified_at_utc": "2026-11-07",
+  "verification_method": "GitHub upstream blob SHA at exactly pinned commit matched vendored GitHub blob SHA",
+  "entries": [
+    {
+      "repository": "zero-was-here/tradingbot",
+      "commit": "39c33b49237e0f290f89bda18e27aa4e75021c03",
+      "path": "vendor/frozen_2026_11_07/aurum/LICENSE",
+      "git_blob_sha1": "3956d280b937adb2058da094f23276db30e679e8"
+    },
+    {
+      "repository": "zero-was-here/tradingbot",
+      "commit": "39c33b49237e0f290f89bda18e27aa4e75021c03",
+      "path": "vendor/frozen_2026_11_07/aurum/aurum/data/dukascopy.py",
+      "git_blob_sha1": "edc15f672d30e90b5d3753d1c3d8b338117584e3"
+    },
+    {
+      "repository": "zero-was-here/tradingbot",
+      "commit": "39c33b49237e0f290f89bda18e27aa4e75021c03",
+      "path": "vendor/frozen_2026_11_07/aurum/aurum/execution/simulator.py",
+      "git_blob_sha1": "61bc029a214f96b58bd647cfecc93a99999be834"
+    },
+    {
+      "repository": "zero-was-here/tradingbot",
+      "commit": "39c33b49237e0f290f89bda18e27aa4e75021c03",
+      "path": "vendor/frozen_2026_11_07/aurum/aurum/labels/triple_barrier.py",
+      "git_blob_sha1": "17e539e1f84a401188e9360da9ef24e49a67ba5a"
+    },
+    {
+      "repository": "zero-was-here/tradingbot",
+      "commit": "39c33b49237e0f290f89bda18e27aa4e75021c03",
+      "path": "vendor/frozen_2026_11_07/aurum/aurum/research/splits.py",
+      "git_blob_sha1": "8fd128c6a3b7d1effd286d0e4676921530cab60f"
+    },
+    {
+      "repository": "zero-was-here/tradingbot",
+      "commit": "39c33b49237e0f290f89bda18e27aa4e75021c03",
+      "path": "vendor/frozen_2026_11_07/aurum/aurum/research/walkforward.py",
+      "git_blob_sha1": "e24844befdfac439805eeec9979c243ddf53d51b"
+    },
+    {
+      "repository": "TauricResearch/TradingAgents",
+      "commit": "9fa1196fffbcfd9de5146d2dd2869df84ab99838",
+      "path": "vendor/frozen_2026_11_07/tradingagents/LICENSE",
+      "git_blob_sha1": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64"
+    },
+    {
+      "repository": "TauricResearch/TradingAgents",
+      "commit": "9fa1196fffbcfd9de5146d2dd2869df84ab99838",
+      "path": "vendor/frozen_2026_11_07/tradingagents/tradingagents/agents/tools.py",
+      "git_blob_sha1": "e2a7eb36289dd0ba56be8c5ca142a59fa7a8eae6"
+    },
+    {
+      "repository": "TauricResearch/TradingAgents",
+      "commit": "9fa1196fffbcfd9de5146d2dd2869df84ab99838",
+      "path": "vendor/frozen_2026_11_07/tradingagents/tradingagents/default_config.py",
+      "git_blob_sha1": "2ce4fadc65a1de07bc944803a7fd2d9c71a45a72"
+    },
+    {
+      "repository": "TauricResearch/TradingAgents",
+      "commit": "9fa1196fffbcfd9de5146d2dd2869df84ab99838",
+      "path": "vendor/frozen_2026_11_07/tradingagents/tradingagents/graph/trading_graph.py",
+      "git_blob_sha1": "54c5d3f4fd47b9cc46516cfdd7cc40aecd235194"
+    },
+    {
+      "repository": "TauricResearch/TradingAgents",
+      "commit": "9fa1196fffbcfd9de5146d2dd2869df84ab99838",
+      "path": "vendor/frozen_2026_11_07/tradingagents/tradingagents/llm_clients/factory.py",
+      "git_blob_sha1": "dde1001bd94016a78e61bb85ac888ebbdb61c8de"
+    }
+  ]
+}
