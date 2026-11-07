@@ -87,10 +87,13 @@
         "priority:p0",
         "area:governance"
       ],
-      "status": "todo",
+      "status": "review",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "docs/00-CHARTER.md",
+        "docs/09-PRODUCTION-GATES.md"
+      ]
     },
     {
       "id": "P00-02",
@@ -112,10 +115,15 @@
         "area:repo",
         "area:security"
       ],
-      "status": "todo",
+      "status": "blocked",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "https://github.com/iitij/Gold-Intelligence-AI",
+        "docs/12-PUBLISHING.md",
+        "docs/23-COMPREHENSIVE-MATURITY-AUDIT.md"
+      ],
+      "blocked_reason": "GitHub private-repo plan/permissions do not permit enforced branch rulesets; main.protected=false verified"
     },
     {
       "id": "P00-03",
@@ -135,10 +143,15 @@
         "priority:p0",
         "area:planning"
       ],
-      "status": "todo",
+      "status": "review",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "https://github.com/iitij/Gold-Intelligence-AI/issues",
+        "scripts/publish_issues.py",
+        ".github/ISSUE_TEMPLATE/01-task.yml"
+      ],
+      "blocked_reason": "Labels and Milestones not applied to existing GitHub Issues"
     },
     {
       "id": "P00-04",
@@ -158,10 +171,13 @@
         "priority:p1",
         "area:governance"
       ],
-      "status": "todo",
+      "status": "in_progress",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "docs/adr/0001-frozen-upstream.md",
+        "docs/adr/0003-frozen-model-artifacts.md"
+      ]
     },
     {
       "id": "P01-01",
@@ -182,10 +198,14 @@
         "area:legal",
         "area:supply-chain"
       ],
-      "status": "todo",
+      "status": "in_progress",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "sources/sources.lock.json",
+        "models/foundation_weights.lock.json",
+        "docs/10-LICENSING.md"
+      ]
     },
     {
       "id": "P01-02",
@@ -207,10 +227,14 @@
         "area:vendor",
         "area:quant"
       ],
-      "status": "todo",
+      "status": "in_progress",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "https://github.com/iitij/Gold-Intelligence-AI/pull/52",
+        "vendor/SNAPSHOT_MANIFEST.json"
+      ],
+      "blocked_reason": "Pinned files verified, isolated Aurum tests and adopted interfaces not yet tested"
     },
     {
       "id": "P01-03",
@@ -232,10 +256,14 @@
         "area:vendor",
         "area:agents"
       ],
-      "status": "todo",
+      "status": "in_progress",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "https://github.com/iitij/Gold-Intelligence-AI/pull/52",
+        "vendor/SNAPSHOT_MANIFEST.json"
+      ],
+      "blocked_reason": "TradingAgents frozen, gold tools/adapters not operationally integrated"
     },
     {
       "id": "P01-04",
@@ -256,10 +284,14 @@
         "area:vendor",
         "area:agents"
       ],
-      "status": "todo",
+      "status": "in_progress",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "https://github.com/iitij/Gold-Intelligence-AI/pull/52",
+        "docs/16-SOURCE-HUB.md"
+      ],
+      "blocked_reason": "Midas saved, functions not yet individually accepted/rejected"
     },
     {
       "id": "P01-05",
@@ -282,10 +314,14 @@
         "area:security",
         "area:supply-chain"
       ],
-      "status": "todo",
+      "status": "in_progress",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "docs/17-INDEPENDENT-TECHNICAL-AUDIT.md",
+        "scripts/verify_full_snapshots.py"
+      ],
+      "blocked_reason": "SBOM, CVE triage and complete dependency lock still absent"
     },
     {
       "id": "P02-01",
@@ -330,10 +366,14 @@
         "area:devex",
         "area:ci"
       ],
-      "status": "todo",
+      "status": "in_progress",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        ".github/workflows/ci.yml",
+        "https://github.com/iitij/Gold-Intelligence-AI/actions/runs/42416073810"
+      ],
+      "blocked_reason": "Python dependency lock still pending"
     },
     {
       "id": "P02-03",
@@ -404,10 +444,14 @@
         "area:mt5",
         "area:data"
       ],
-      "status": "todo",
+      "status": "in_progress",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "mt5/ExportXAUUSD_M15.mq5",
+        "tests/test_mt5_csv.py"
+      ],
+      "blocked_reason": "MetaEditor compile and broker data import not yet run on owner machine"
     },
     {
       "id": "P03-03",
@@ -530,10 +574,14 @@
         "area:features",
         "area:testing"
       ],
-      "status": "todo",
+      "status": "in_progress",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "https://github.com/iitij/Gold-Intelligence-AI/pull/61",
+        "src/goldintel/research/point_in_time.py"
+      ],
+      "blocked_reason": "Synthetic test only; no broker tick/quote features"
     },
     {
       "id": "P04-02",
@@ -555,10 +603,14 @@
         "area:labels",
         "area:quant"
       ],
-      "status": "todo",
+      "status": "in_progress",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "https://github.com/iitij/Gold-Intelligence-AI/pull/61",
+        "src/goldintel/research/labeling.py"
+      ],
+      "blocked_reason": "OHLC hypothetical labels only, not executable costs"
     },
     {
       "id": "P04-03",
@@ -580,10 +632,14 @@
         "area:data",
         "area:testing"
       ],
-      "status": "todo",
+      "status": "in_progress",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "https://github.com/iitij/Gold-Intelligence-AI/pull/62",
+        "src/goldintel/research/splits.py"
+      ],
+      "blocked_reason": "Anchored split module only; no dataset/sample store"
     },
     {
       "id": "P05-01",
@@ -1053,10 +1109,14 @@
         "area:risk",
         "area:execution"
       ],
-      "status": "todo",
+      "status": "in_progress",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "https://github.com/iitij/Gold-Intelligence-AI/pull/54",
+        "src/goldintel/risk.py"
+      ],
+      "blocked_reason": "No real broker checks/reservation ledger/reconciliation"
     },
     {
       "id": "P09-03",
