@@ -33,5 +33,7 @@ jobs:
         run: python scripts/verify_research_refs.py
       - name: Report fail-closed research readiness
         run: python scripts/preflight.py status
+      - name: Reject direct broker-trade APIs in first-party core
+        run: python scripts/check_core_safety.py
       - name: Check secret and live-trade defaults
         run: python scripts/check_repository_policy.py
