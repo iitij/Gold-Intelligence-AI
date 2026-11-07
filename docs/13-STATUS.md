@@ -69,3 +69,11 @@
 ## تجهيز بيانات الوسيط — بدون اتصال حقيقي حتى الآن
 
 أُضيف Script ثانٍ للقراءة فقط لاستخراج مواصفات XAUUSD الفعلية عند الوسيط (`point` / `tick_size` / tick values / lots / contract size / profit currency / snapshot clock difference)، وفاحص Python صارم يُرجع `training_ready=false` دائمًا. يحتاج الجمع والتشغيل على جهاز المالك، ولا يعني تشغيل Script من GH. المرجع: [دليل مواصفات الوسيط](26-BROKER-CONTRACT-INTAKE.md).
+
+## استكمال تجهيزات GitHub — 2026-11-08
+
+- تم تصنيف كل GitHub Issues الـ52 بالـLabels وربط كل مهمة بإحدى 12 GitHub Milestone فعلية.
+- ملف backlog صار يوضح 37 todo / 12 in_progress / 2 review / 1 blocked، ولا يدّعي إغلاقًا لم يتحقق.
+- `requirements-ci.lock` يجمد الحزم الأساسية المستخدمة في CI مع hashes، وGitHub Actions مثبتة SHA، و`planning/preflight_gates.json` تمنع قبول جاهزية غير موثقة.
+- برنامج الجرد المحلي وScript مواصفات عقد MT5 موجودان، لكن **لم يتم تشغيلهما على جهاز المالك**.
+- `planning/security/component_inventory.json` جرد أولي للملفات والمكونات المثبتة وليس SBOM/CVE scan مكتملًا. المرجع [التقرير الجديد](28-PRE-RESEARCH-READINESS-STATUS.md).
