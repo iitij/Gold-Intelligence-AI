@@ -43,3 +43,7 @@ python scripts/publish_issues.py --repo iitij/Gold-Intelligence-AI --confirm
 Review repository settings manually: require CI on protected main, disallow force pushes, configure code review and private vulnerability reporting, minimize Actions permissions. GitHub App connector used here does not provide the admin actions necessary to enforce branch protection directly.
 
 Never commit credentials, API tokens, private trading statements, proprietary market-data snapshots or model weights to Git. No automatic upstream sync. No live-account rollout without governance decision and independent review.
+
+## Recorded GitHub limitation (2026-11-08)
+
+An API check returned `main.protected=false`, and the Rulesets request for this private repository returned GitHub's plan limitation. Until a supported GitHub plan/ruleset is configured, the PR+CI policy is a **manual team rule** rather than enforced branch protection; never represent it as technical enforcement. Actions identities are pinned by SHA to prevent unreviewed action-tag movement. Python packages remain unpinned until a reviewed dependency lock is merged.

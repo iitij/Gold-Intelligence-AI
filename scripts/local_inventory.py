@@ -8,6 +8,7 @@ Run locally on the owner's Ubuntu workstation, not in GitHub Actions.
 from __future__ import annotations
 
 import argparse
+import os
 import json
 import platform
 import shutil
@@ -77,5 +78,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    import os
     main()
