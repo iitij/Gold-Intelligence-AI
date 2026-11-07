@@ -1,0 +1,187 @@
+{
+  "schema_version": 1,
+  "reviewed_at": "2026-11-08",
+  "policy": "FAIL_CLOSED_PAPER_ONLY_HUMAN_REVIEW_REQUIRED",
+  "note": "Acceptance must be manual and evidenced; scripts do not place orders, activate models, or grant broker permissions.",
+  "gates": [
+    {
+      "id": "G0",
+      "title": "Source, licenses and reproducible infrastructure",
+      "status": "blocked",
+      "requirements": [
+        {
+          "id": "provenance",
+          "verified": false,
+          "evidence": []
+        },
+        {
+          "id": "dependency_lock",
+          "verified": false,
+          "evidence": []
+        },
+        {
+          "id": "sbom_security_triage",
+          "verified": false,
+          "evidence": []
+        },
+        {
+          "id": "github_maintainer_review_policy",
+          "verified": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "G1",
+      "title": "Licensed XAUUSD broker data and point-in-time correctness",
+      "status": "blocked",
+      "requirements": [
+        {
+          "id": "broker_symbol_contract",
+          "verified": false,
+          "evidence": []
+        },
+        {
+          "id": "broker_timezone_dst",
+          "verified": false,
+          "evidence": []
+        },
+        {
+          "id": "bid_ask_tick_quality",
+          "verified": false,
+          "evidence": []
+        },
+        {
+          "id": "raw_data_rights_and_hashes",
+          "verified": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "G2",
+      "title": "Calibrated models and holdout integrity",
+      "status": "blocked",
+      "requirements": [
+        {
+          "id": "baselines",
+          "verified": false,
+          "evidence": []
+        },
+        {
+          "id": "walkforward_no_leakage",
+          "verified": false,
+          "evidence": []
+        },
+        {
+          "id": "locked_holdout",
+          "verified": false,
+          "evidence": []
+        },
+        {
+          "id": "model_calibration_and_trial_ledger",
+          "verified": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "G3",
+      "title": "Executable economics simulation",
+      "status": "blocked",
+      "requirements": [
+        {
+          "id": "event_replay_bid_ask",
+          "verified": false,
+          "evidence": []
+        },
+        {
+          "id": "commission_swap_spread_latency",
+          "verified": false,
+          "evidence": []
+        },
+        {
+          "id": "unknown_fills_and_stress",
+          "verified": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "G4",
+      "title": "Security and risk execution isolation",
+      "status": "blocked",
+      "requirements": [
+        {
+          "id": "secrets_and_access_control",
+          "verified": false,
+          "evidence": []
+        },
+        {
+          "id": "broker_loss_margins_reservations",
+          "verified": false,
+          "evidence": []
+        },
+        {
+          "id": "no_llm_trade_permissions",
+          "verified": false,
+          "evidence": []
+        },
+        {
+          "id": "idempotency_reconciliation_kill_switch",
+          "verified": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "G5",
+      "title": "Demonstrated forward demo reliability",
+      "status": "blocked",
+      "requirements": [
+        {
+          "id": "mt5_demo_forward_testing",
+          "verified": false,
+          "evidence": []
+        },
+        {
+          "id": "regimes_and_broker_cost_records",
+          "verified": false,
+          "evidence": []
+        },
+        {
+          "id": "restore_recovery_drills",
+          "verified": false,
+          "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "G6",
+      "title": "Independent production decision",
+      "status": "blocked",
+      "requirements": [
+        {
+          "id": "independent_audit",
+          "verified": false,
+          "evidence": []
+        },
+        {
+          "id": "legal_and_broker_terms",
+          "verified": false,
+          "evidence": []
+        },
+        {
+          "id": "owner_explicit_authorization",
+          "verified": false,
+          "evidence": []
+        },
+        {
+          "id": "deployment_and_rollback_proof",
+          "verified": false,
+          "evidence": []
+        }
+      ]
+    }
+  ]
+}
