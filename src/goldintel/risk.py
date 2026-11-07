@@ -66,13 +66,28 @@ def assess_paper_proposal(
         return reject("nonpositive_or_nonfinite_inputs")
     if spec.stops_level_ticks < 0 or not spec.stops_level_ticks.is_finite():
         return reject("invalid_stop_level")
-    if spec.volume_min > spec.volume_max or not _positive(
-        policy.max_risk_fraction, policy.max_daily_loss_fraction,
-        policy.max_entry_drift_ticks, policy.max_spread_ticks,
+    if (
+        spec.volume_min > spec.volume_max
+        or not _positive(
+            policy.max_risk_fraction,
+            policy.max_daily_loss_fraction,
+            policy.max_entry_drift_ticks,
+            policy.max_spread_ticks,
+        )
+        or policy.max_risk_fraction > 1
+        or policy.max_daily_loss_fraction > 1
+        or policy.max_open_positions < 1
+        or policy.max_quote_age_seconds <= 0
+        or policy.max_signal_age_seconds <= 0
     ):
         return reject("invalid_risk_policy_or_volume_spec")
     if quote.ask < quote.bid:
         return reject("crossed_quote")
+    # A risk estimate based on invalid price increments is not broker-ready.
+    if any(price % spec.tick_size != 0 for price in (
+        quote.bid, quote.ask, proposal.entry_price, proposal.stop_loss, proposal.take_profit,
+    )):
+        return reject("price_off_tick_grid")
     for dt, bound, reason in (
         (quote.observed_at_utc, policy.max_quote_age_seconds, "stale_quote"),
         (proposal.signal_at_utc, policy.max_signal_age_seconds, "stale_signal"),
@@ -115,10 +130,13 @@ def assess_paper_proposal(
     raw_lots = risk_budget / loss_per_lot
     if raw_lots < spec.volume_min:
         return reject("min_lot_exceeds_risk_budget")
-    increments = ((raw_lots - spec.volume_min) / spec.volume_step).to_integral_value(
+    # Cap BEFORE flooring on the legal grid; clamping the floored result to
+    # volume_max can produce an illegal off-grid lot when max is not aligned.
+    capped_lots = min(raw_lots, spec.volume_max)
+    increments = ((capped_lots - spec.volume_min) / spec.volume_step).to_integral_value(
         rounding=ROUND_FLOOR
     )
-    lots = min(spec.volume_min + increments * spec.volume_step, spec.volume_max)
+    lots = spec.volume_min + increments * spec.volume_step
     if lots < spec.volume_min:
         return reject("invalid_broker_lot_grid")
     maximum_loss = lots * loss_per_lot
