@@ -8,7 +8,7 @@ permission for live trading.
 from __future__ import annotations
 
 from datetime import datetime, timezone
-from decimal import Decimal, ROUND_FLOOR
+from decimal import ROUND_FLOOR, Decimal
 
 from goldintel.domain import (
     AccountState,
