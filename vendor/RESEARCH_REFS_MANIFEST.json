@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "sealed": true,
+  "policy": "offline-reference-only-no-execution-no-upstream-sync",
+  "snapshots": [
+    {
+      "repository": "BorjaGomezSolorzano/Metatrader-Bridge",
+      "commit": "d4887a865538366d463ec77fffd6b056dbf9ddcc",
+      "license": "BSD-3-Clause",
+      "file_count": 8,
+      "total_bytes": 52992,
+      "digest_sha256": "45b1198ac1b9b023ddae2890dcc4a34c7983a0f10c3f977369d91a9b2848eafa",
+      "archive_only": true,
+      "runtime_approved": false,
+      "upstream_sync_allowed": false
+    },
+    {
+      "repository": "OutOfSampleLab/oos-lab",
+      "commit": "d09ba123d28fcc5145380303d872d36946d534fd",
+      "license": "MIT",
+      "file_count": 33,
+      "total_bytes": 57705,
+      "digest_sha256": "07c624bef81bb5b1cf46d532bfc7eceaa7ea2c59df9fbdc2d70c282ff9b6fb54",
+      "archive_only": true,
+      "runtime_approved": false,
+      "upstream_sync_allowed": false
+    }
+  ]
+}
