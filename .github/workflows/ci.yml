@@ -19,5 +19,7 @@ jobs:
         run: python -m ruff check src tests scripts
       - name: Tests
         run: python -m pytest -q
+      - name: Verify frozen vendor integrity
+        run: python scripts/verify_vendor_integrity.py
       - name: Check secret and live-trade defaults
         run: python scripts/check_repository_policy.py
