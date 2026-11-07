@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "audit_date_local": "2026-11-08",
+  "repository": "iitij/Gold-Intelligence-AI",
+  "as_of_main_sha": "96271cfc1014c232f2497d7225e0573687101e1a",
+  "basis": "GitHub repository tree, open issues, branch settings, files, and CI job logs at audit time; NOT a broker/hardware/market-data audit",
+  "observed": {
+    "repository_visibility": "private",
+    "repository_file_count": 723,
+    "vendor_file_count": 640,
+    "original_non_vendor_file_count": 83,
+    "vendor_file_share_percent": 88.5,
+    "vendor_bytes_share_percent": 97.97,
+    "frozen_full_source_files": 584,
+    "reviewed_reference_files": 41,
+    "curated_frozen_files": 11,
+    "original_source_registry_count": 11,
+    "new_candidate_registry_count": 10,
+    "total_source_records": 21,
+    "full_source_repositories": 3,
+    "reference_archive_repositories": 2,
+    "model_revision_locks": 3,
+    "actual_model_weights_checked_in": 0,
+    "trained_xauusd_models": 0,
+    "real_broker_datasets_audited": 0,
+    "homegrown_oos_trading_evaluations": 0,
+    "mt5_compiled_and_tested_on_owner_machine": false,
+    "paper_risk_module_present": true,
+    "mt5_demo_execution_connector_present": false,
+    "main_branch_protected": false,
+    "github_issue_count": 52,
+    "open_github_issues": 52,
+    "closed_github_issues": 0,
+    "issues_with_labels": 0,
+    "issues_with_milestones": 0,
+    "backlog_todo": 52,
+    "backlog_owner_unset": 52,
+    "backlog_estimate_tbd": 52,
+    "backlog_no_evidence": 52,
+    "python_tests_passing": 120,
+    "ci_run_id": 42415167898,
+    "ci_conclusion": "success",
+    "ci_code_coverage_percent": null,
+    "platform_broker_specs_verified": false,
+    "hardware_fingerprint_in_repo": false,
+    "production_gates_fully_satisfied": 0,
+    "production_gates_total": 7
+  },
+  "score_type": "Auditor-assigned evidence maturity points; subjective decision aid, NOT percent complete, predicted profit, or reliability probability",
+  "rubric": [
+    {
+      "id": "architecture",
+      "name_ar": "نطاق المشروع والمعمارية والتوثيق",
+      "maximum": 10,
+      "earned": 8,
+      "why": "نطاق واضح وعقود وADR وNO_TRADE لكن دون اختبار تكامل معماري"
+    },
+    {
+      "id": "governance",
+      "name_ar": "حوكمة GitHub وتحديث حالة العمل",
+      "maximum": 10,
+      "earned": 5,
+      "why": "مستودع خاص و52 Issue وCI؛ غير محمي و0 labels/milestones وbacklog كلّه todo"
+    },
+    {
+      "id": "provenance",
+      "name_ar": "سجل المصادر وتجميدها وحقوقها الأولية",
+      "maximum": 10,
+      "earned": 8,
+      "why": "21 سجل مصدر، نسخ مثبتة وتراخيص وبصمات؛ دون إقرار نهائي لكل اعتماد عابر"
+    },
+    {
+      "id": "supply_chain",
+      "name_ar": "أمان الاعتماديات وإعادة الإنتاج",
+      "maximum": 10,
+      "earned": 2,
+      "why": "CI ثابت وظيفيًا لكن pip ranges وActions tags، ولا SBOM أو CVE triage شامل"
+    },
+    {
+      "id": "market_data",
+      "name_ar": "بيانات وسيط الذهب والتوقيت وجودتها",
+      "maximum": 15,
+      "earned": 1,
+      "why": "CSV checker وMQL5 نصي بلا بيانات وسيط مختبرة ولا Tick/Bid/Ask أو UTC مثبت"
+    },
+    {
+      "id": "causal_research",
+      "name_ar": "البحث السببي والخصائص والتوسيم والتقسيم",
+      "maximum": 10,
+      "earned": 4,
+      "why": "تم تنفيذ أساس منضبط واختباره اصطناعيًا؛ لا بيانات حقيقية ولا Pipeline شامل"
+    },
+    {
+      "id": "trained_models",
+      "name_ar": "تدريب النماذج ومعايرتها",
+      "maximum": 15,
+      "earned": 0,
+      "why": "لا Trainer أو checkpoint مدرب أو تقرير Calibration/OOS"
+    },
+    {
+      "id": "backtest",
+      "name_ar": "محاكاة التنفيذ والميزة الاقتصادية",
+      "maximum": 10,
+      "earned": 1,
+      "why": "بروتوكول موثق وأرشيف Aurum، دون تطبيق/اختبار تجاري مستقل في نظامنا"
+    },
+    {
+      "id": "risk_demo",
+      "name_ar": "المخاطر والتنفيذ التجريبي",
+      "maximum": 5,
+      "earned": 2,
+      "why": "Paper-only risk sizing وقواعد رفض، لا Bridge أو دفتر أوامر متين أو استجابة من MT5"
+    },
+    {
+      "id": "operations",
+      "name_ar": "التشغيل والمراقبة والاسترجاع",
+      "maximum": 5,
+      "earned": 0,
+      "why": "سياسات مكتوبة؛ بلا اختبارات تشغيل طويل أو نسخ احتياطي واسترجاع أو تنبيهات"
+    }
+  ],
+  "action_policy": "Stop importing bots. Prioritize reliable market data, reproducible build, baseline quantitative training, and broker-cost validation. No live trading.",
+  "total_weight": 100,
+  "total_earned": 31
+}
