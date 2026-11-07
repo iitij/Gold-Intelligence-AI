@@ -63,6 +63,11 @@
       "id": "P10",
       "title": "الأمان والمراقبة والجاهزية",
       "en": "Security, observability and production gates"
+    },
+    {
+      "id": "P11",
+      "title": "الأبحاث المتقدمة والتحقق المستقل",
+      "en": "Advanced validated alpha research, execution evidence and model promotion"
     }
   ],
   "tasks": [
@@ -1252,6 +1257,116 @@
         "priority:p2",
         "area:research",
         "area:rl"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P11-01",
+      "phase": "P11",
+      "title": "مسابقة ألفا البحثية تحت بروتوكول مقفل",
+      "goal": "مقارنة استراتيجيات XAUUSD والنماذج الكمية والوكلاء في ظروف متطابقة، مع ميزانية تجارب تمنع تحيز الانتقاء.",
+      "acceptance": [
+        "سجل لجميع التجارب الفاشلة والناجحة قبل الاختبار",
+        "نفس بيانات Bid/Ask والتكاليف والمخاطرة والتوقيت لكل مرشح",
+        "Holdout مقفل وPurged Walk-Forward مع سجل وصول",
+        "مقاييس Net-Expectancy وCalibration وفواصل ثقة وتصحيح تعدد المحاولات",
+        "تقرير Ablation يبين الإضافة أو عدم الإضافة لكل مكون"
+      ],
+      "depends_on": [
+        "P05-04",
+        "P08-02"
+      ],
+      "labels": [
+        "phase:p11",
+        "priority:p1",
+        "area:research",
+        "area:evaluation"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P11-02",
+      "phase": "P11",
+      "title": "بحث بنية سوق الذهب والفروق بين CFD والآجلة",
+      "goal": "اختبار فائدة المصادر المرتبطة بالذهب من دون توسعة نطاق الأصول المتداولة.",
+      "acceptance": [
+        "تقرير فروق سعر XAUUSD الفعلي وSpot وGC Futures وتكاليف النقل",
+        "تراخيص وتوقيت نشر وتوافر كل مصدر موثقة",
+        "معالجة basis وfutures roll وsession/DST من دون look-ahead",
+        "عزل خصائص microstructure عن معلومات لا يمكن تنفيذها عند الوسيط",
+        "تقييم Ablation مستقل لبيانات السعر فقط مقابل السعر والخصائص الخارجية"
+      ],
+      "depends_on": [
+        "P03-04",
+        "P03-05",
+        "P04-01"
+      ],
+      "labels": [
+        "phase:p11",
+        "priority:p1",
+        "area:data",
+        "area:research"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P11-03",
+      "phase": "P11",
+      "title": "بوابة Champion/Challenger وتجارب Shadow",
+      "goal": "مقارنة نموذج عامل في بيئة ورقية بمرشح بديل دون تفعيل تداول مباشر أو ترقية تلقائية.",
+      "acceptance": [
+        "تعريف معايير قبول مسبقة ونموذج Champion ثابت",
+        "تشغيل Challenger وShadow على نفس تدفق البيانات وبصمات دقيقة",
+        "لا ترقية تلقائية بسبب مكاسب قصيرة أو نافذة Holdout مسرّبة",
+        "Rollback مجرب وApproval منفصل لكل تغيير كبير",
+        "إنذار Drift في التوزيع والمعايرة والتكاليف مع نتائج مقاسة"
+      ],
+      "depends_on": [
+        "P05-05",
+        "P09-03",
+        "P10-01"
+      ],
+      "labels": [
+        "phase:p11",
+        "priority:p1",
+        "area:mlops",
+        "area:monitoring"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P11-04",
+      "phase": "P11",
+      "title": "مرصد مستقل لتكاليف تنفيذ الذهب",
+      "goal": "قياس وتوثيق Spread وSlippage وجودة التنفيذ وفق الجلسة والأخبار والوسيط قبل تقييم جدوى كل استراتيجية.",
+      "acceptance": [
+        "أحداث Quote/Order/Fill في Demo مع طابع زمني ومفاتيح مطابقة",
+        "توزيع السبريد والانزلاق ورفض الأوامر حسب جلسة السوق والتقلب",
+        "مقارنة Backtest وPaper وMT5 Demo على سجل أحداث موحد",
+        "اختبار انقطاع بيانات أو ازدواج أوامر وتدقيق منبع التنفيذ",
+        "تقرير تكلفة لا يتضمن بيانات حساب حساسة أو غير مرخصة"
+      ],
+      "depends_on": [
+        "P03-04",
+        "P09-04"
+      ],
+      "labels": [
+        "phase:p11",
+        "priority:p1",
+        "area:execution",
+        "area:observability"
       ],
       "status": "todo",
       "owner": null,
