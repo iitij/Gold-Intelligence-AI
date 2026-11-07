@@ -1,0 +1,1155 @@
+{
+  "schema_version": 1,
+  "source_commit": "380595dfa379b3187c3b1cade7b425101bd01a2d",
+  "generated_at_utc": "2026-11-07T22:48:27.836981+00:00",
+  "scanners": {
+    "syft": "1.57.0; release tarball SHA256-pinned",
+    "grype": "0.121.2; release tarball SHA256-pinned",
+    "vulnerability_database": "online advisory snapshot at scan time; not pinned"
+  },
+  "scope": "GitHub runner Python 3.11 CI venv AND repository files incl archived vendor",
+  "manual_security_review_required": true,
+  "sbom_is_complete_for_all_runtime_dependencies": false,
+  "code_security_audit_complete": false,
+  "github_ruleset_enforced": false,
+  "g0_approved": false,
+  "scans": {
+    "ci_environment": {
+      "sbom": "ci_environment.cdx.json",
+      "sbom_sha256": "1c76e8636f0fff575e4445c31fe0d513c48c02d4709c41fa55f30d0b5b18c925",
+      "sbom_components": 118,
+      "vulnerability_report": "ci_environment.grype.json",
+      "findings": {
+        "total": 10,
+        "by_severity": {
+          "Critical": 0,
+          "High": 2,
+          "Medium": 6,
+          "Low": 2,
+          "Negligible": 0,
+          "Unknown": 0
+        },
+        "findings": [
+          {
+            "id": "GHSA-58pv-8j8x-9vj2",
+            "severity": "High",
+            "package": "jaraco-context",
+            "version": "5.3.0",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-8rrh-rw8j-w5fx",
+            "severity": "High",
+            "package": "wheel",
+            "version": "0.45.1",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-4xh5-x5gv-qwph",
+            "severity": "Medium",
+            "package": "pip",
+            "version": "24.0",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-58qw-9mgm-455v",
+            "severity": "Medium",
+            "package": "pip",
+            "version": "24.0",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-jp4c-xjxw-mgf9",
+            "severity": "Medium",
+            "package": "pip",
+            "version": "24.0",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-qwm4-qh6w-59xr",
+            "severity": "Medium",
+            "package": "pip",
+            "version": "24.0",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-wf93-45jw-7689",
+            "severity": "Medium",
+            "package": "pip",
+            "version": "24.0",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-h35f-9h28-mq5c",
+            "severity": "Medium",
+            "package": "setuptools",
+            "version": "79.0.1",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-6vgw-5pg2-w6jp",
+            "severity": "Low",
+            "package": "pip",
+            "version": "24.0",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-xmj3-9gf7-h52w",
+            "severity": "Low",
+            "package": "setuptools",
+            "version": "79.0.1",
+            "fix_state": "fixed"
+          }
+        ]
+      }
+    },
+    "repository_sources": {
+      "sbom": "repository_sources.cdx.json",
+      "sbom_sha256": "2a3dbaa5e458f9cd1fba5c857fd00f000df2a1230779fc3fffc6329ca47566da",
+      "sbom_components": 217,
+      "vulnerability_report": "repository_sources.grype.json",
+      "findings": {
+        "total": 146,
+        "by_severity": {
+          "Critical": 5,
+          "High": 56,
+          "Medium": 59,
+          "Low": 26,
+          "Negligible": 0,
+          "Unknown": 0
+        },
+        "findings": [
+          {
+            "id": "GHSA-82r6-8w77-94w6",
+            "severity": "Critical",
+            "package": "anyio",
+            "version": "4.9.0",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-6q48-6c7w-9gw2",
+            "severity": "Critical",
+            "package": "certifi",
+            "version": "2025.6.15",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-c39v-8hrw-h448",
+            "severity": "Critical",
+            "package": "chainlit",
+            "version": "2.5.5",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-w3fx-mc44-mf6j",
+            "severity": "Critical",
+            "package": "chainlit",
+            "version": "2.5.5",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-ffc3-869f-jxw9",
+            "severity": "Critical",
+            "package": "pyjwt",
+            "version": "2.10.1",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-2g87-pp6c-29x5",
+            "severity": "High",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-5wr8-gcqf-gqf3",
+            "severity": "High",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-6mq8-rvhq-8wgg",
+            "severity": "High",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-9xw5-w5jj-pvcg",
+            "severity": "High",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-cq5v-8q36-5273",
+            "severity": "High",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-2g59-m95p-pgfq",
+            "severity": "High",
+            "package": "chainlit",
+            "version": "2.5.5",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-hvfh-5mj3-5f3j",
+            "severity": "High",
+            "package": "chainlit",
+            "version": "2.5.5",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-qw2m-4pqf-rmpp",
+            "severity": "High",
+            "package": "curl-cffi",
+            "version": "0.11.3",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-27vj-qcqg-25rc",
+            "severity": "High",
+            "package": "fsspec",
+            "version": "2025.5.1",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-3644-q5cj-c5c7",
+            "severity": "High",
+            "package": "langchain",
+            "version": "0.3.25",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-pc6w-59fv-rh23",
+            "severity": "High",
+            "package": "langchain-community",
+            "version": "0.3.25",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-pjwx-r37v-7724",
+            "severity": "High",
+            "package": "langchain-core",
+            "version": "0.3.83",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-qh6h-p6c9-ff54",
+            "severity": "High",
+            "package": "langchain-core",
+            "version": "0.3.83",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-m42m-m8cr-8m58",
+            "severity": "High",
+            "package": "langchain-text-splitters",
+            "version": "0.3.8",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-wwqv-p2pp-99h5",
+            "severity": "High",
+            "package": "langgraph-checkpoint",
+            "version": "2.0.26",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-fvww-7h3r-vfhp",
+            "severity": "High",
+            "package": "langgraph-sdk",
+            "version": "0.1.70",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-3644-q5cj-c5c7",
+            "severity": "High",
+            "package": "langsmith",
+            "version": "0.3.45",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-f4xh-w4cj-qxq8",
+            "severity": "High",
+            "package": "langsmith",
+            "version": "0.3.45",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-vfmq-68hx-4jfw",
+            "severity": "High",
+            "package": "lxml",
+            "version": "5.4.0",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-9h52-p55h-vw2f",
+            "severity": "High",
+            "package": "mcp",
+            "version": "1.9.4",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-j975-95f5-7wqh",
+            "severity": "High",
+            "package": "mcp",
+            "version": "1.9.4",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-jpw9-pfvf-9f58",
+            "severity": "High",
+            "package": "mcp",
+            "version": "1.9.4",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-vj7q-gjh5-988w",
+            "severity": "High",
+            "package": "mcp",
+            "version": "1.9.4",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-hx9q-6w63-j58v",
+            "severity": "High",
+            "package": "orjson",
+            "version": "3.10.18",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-7gcm-g887-7qv7",
+            "severity": "High",
+            "package": "protobuf",
+            "version": "5.29.5",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-2qm8-x737-gmw5",
+            "severity": "High",
+            "package": "pyasn1",
+            "version": "0.6.1",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-63vm-454h-vhhq",
+            "severity": "High",
+            "package": "pyasn1",
+            "version": "0.6.1",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-8ppf-4f7h-5ppj",
+            "severity": "High",
+            "package": "pyasn1",
+            "version": "0.6.1",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-9m75-vc3g-4x39",
+            "severity": "High",
+            "package": "pyasn1",
+            "version": "0.6.1",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-fm9c-5rcf-2q5p",
+            "severity": "High",
+            "package": "pyasn1",
+            "version": "0.6.1",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-hm4w-wwcw-mr6r",
+            "severity": "High",
+            "package": "pyasn1",
+            "version": "0.6.1",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-jr27-m4p2-rc6r",
+            "severity": "High",
+            "package": "pyasn1",
+            "version": "0.6.1",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-m4p7-r5rc-7g4j",
+            "severity": "High",
+            "package": "pyasn1",
+            "version": "0.6.1",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-mm57-4v3p-rchx",
+            "severity": "High",
+            "package": "pyasn1",
+            "version": "0.6.1",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-752w-5fwx-jx9f",
+            "severity": "High",
+            "package": "pyjwt",
+            "version": "2.10.1",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-9v7f-9g4p-ffgj",
+            "severity": "High",
+            "package": "pyjwt",
+            "version": "2.10.1",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-p4g4-x82p-q773",
+            "severity": "High",
+            "package": "pyjwt",
+            "version": "2.10.1",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-pxh4-856f-4h89",
+            "severity": "High",
+            "package": "pyjwt",
+            "version": "2.10.1",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-xgmm-8j9v-c9wx",
+            "severity": "High",
+            "package": "pyjwt",
+            "version": "2.10.1",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-cgwc-pv48-fhj5",
+            "severity": "High",
+            "package": "python-engineio",
+            "version": "4.12.2",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-m9gh-vj53-gvh9",
+            "severity": "High",
+            "package": "python-engineio",
+            "version": "4.12.2",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-5rvq-cxj2-64vf",
+            "severity": "High",
+            "package": "python-multipart",
+            "version": "0.0.18",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-pp6c-gr5w-3c5g",
+            "severity": "High",
+            "package": "python-multipart",
+            "version": "0.0.18",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-wp53-j4wj-2cfg",
+            "severity": "High",
+            "package": "python-multipart",
+            "version": "0.0.18",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-5w7q-77mv-v69f",
+            "severity": "High",
+            "package": "python-socketio",
+            "version": "5.13.0",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-2wc2-fm75-p42x",
+            "severity": "High",
+            "package": "soupsieve",
+            "version": "2.7",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-836r-79rf-4m37",
+            "severity": "High",
+            "package": "soupsieve",
+            "version": "2.7",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-7f5h-v6xp-fcq8",
+            "severity": "High",
+            "package": "starlette",
+            "version": "0.41.3",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-82w8-qh3p-5jfq",
+            "severity": "High",
+            "package": "starlette",
+            "version": "0.41.3",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-wqp7-x3pw-xc5r",
+            "severity": "High",
+            "package": "starlette",
+            "version": "0.41.3",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-2xpw-w6gg-jr37",
+            "severity": "High",
+            "package": "urllib3",
+            "version": "2.4.0",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-38jv-5279-wg99",
+            "severity": "High",
+            "package": "urllib3",
+            "version": "2.4.0",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-8988-9cw3-xx77",
+            "severity": "High",
+            "package": "urllib3",
+            "version": "2.4.0",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-gm62-xv2j-4w53",
+            "severity": "High",
+            "package": "urllib3",
+            "version": "2.4.0",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-qccp-gfcp-xxvc",
+            "severity": "High",
+            "package": "urllib3",
+            "version": "2.4.0",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-vxq7-64xx-v4gw",
+            "severity": "High",
+            "package": "urllib3",
+            "version": "2.4.0",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-494j-54xm-rwp3",
+            "severity": "Medium",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-4fvr-rgm6-gqmc",
+            "severity": "Medium",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-63hw-fmq6-xxg2",
+            "severity": "Medium",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-6cjc-53gc-5rqm",
+            "severity": "Medium",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-6jhg-hg63-jvvf",
+            "severity": "Medium",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-c427-h43c-vf67",
+            "severity": "Medium",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-f9xw-jh8m-3mwq",
+            "severity": "Medium",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-g3cq-j2xw-wf74",
+            "severity": "Medium",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-g84x-mcqj-x9qq",
+            "severity": "Medium",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-hg6j-4rv6-33pg",
+            "severity": "Medium",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-hpj7-wq8m-9hgp",
+            "severity": "Medium",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-jg22-mg44-37j8",
+            "severity": "Medium",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-jj3x-wxrx-4x23",
+            "severity": "Medium",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-m5qp-6w8w-w647",
+            "severity": "Medium",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-mfx4-hv73-q22v",
+            "severity": "Medium",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-mq44-7p77-q5h7",
+            "severity": "Medium",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-p998-jp59-783m",
+            "severity": "Medium",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-pqxq-w44r-73xw",
+            "severity": "Medium",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-w2fm-2cpv-w7v5",
+            "severity": "Medium",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-xcgm-r5h9-7989",
+            "severity": "Medium",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-5p39-cfhj-2xmp",
+            "severity": "Medium",
+            "package": "anyio",
+            "version": "4.9.0",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-69hj-f68j-2879",
+            "severity": "Medium",
+            "package": "filelock",
+            "version": "3.18.0",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-8mx5-7m5m-r77g",
+            "severity": "Medium",
+            "package": "filelock",
+            "version": "3.18.0",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-qmgc-5h2g-mvrw",
+            "severity": "Medium",
+            "package": "filelock",
+            "version": "3.18.0",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-w853-jp5j-5j7f",
+            "severity": "Medium",
+            "package": "filelock",
+            "version": "3.18.0",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-65pc-fj4g-8rjx",
+            "severity": "Medium",
+            "package": "idna",
+            "version": "3.10",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-gr75-jv2w-4656",
+            "severity": "Medium",
+            "package": "langchain",
+            "version": "0.3.25",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-gr75-jv2w-4656",
+            "severity": "Medium",
+            "package": "langchain-anthropic",
+            "version": "0.3.15",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-fv5p-p927-qmxr",
+            "severity": "Medium",
+            "package": "langchain-text-splitters",
+            "version": "0.3.8",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-g48c-2wqr-h844",
+            "severity": "Medium",
+            "package": "langgraph",
+            "version": "0.4.8",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-fjqc-hq36-qh5p",
+            "severity": "Medium",
+            "package": "langgraph-checkpoint",
+            "version": "2.0.26",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-mhr3-j7m5-c7c9",
+            "severity": "Medium",
+            "package": "langgraph-checkpoint",
+            "version": "2.0.26",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-w39p-vh2g-g8g5",
+            "severity": "Medium",
+            "package": "langgraph-sdk",
+            "version": "0.1.70",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-rr7j-v2q5-chgv",
+            "severity": "Medium",
+            "package": "langsmith",
+            "version": "0.3.45",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-428g-f7cq-pgp5",
+            "severity": "Medium",
+            "package": "marshmallow",
+            "version": "3.26.1",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-5h93-6whr-6q8j",
+            "severity": "Medium",
+            "package": "mcp",
+            "version": "1.9.4",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-84m7-p3x7-pcfv",
+            "severity": "Medium",
+            "package": "mcp",
+            "version": "1.9.4",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-xcq7-p3pf-p88h",
+            "severity": "Medium",
+            "package": "opentelemetry-api",
+            "version": "1.31.1",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-2gx3-rcp4-g85q",
+            "severity": "Medium",
+            "package": "pyjwt",
+            "version": "2.10.1",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-42vr-xj54-vc7v",
+            "severity": "Medium",
+            "package": "pyjwt",
+            "version": "2.10.1",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-993g-76c3-p5m4",
+            "severity": "Medium",
+            "package": "pyjwt",
+            "version": "2.10.1",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-hxm8-2xgr-2p9m",
+            "severity": "Medium",
+            "package": "pyjwt",
+            "version": "2.10.1",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-jq35-7prp-9v3f",
+            "severity": "Medium",
+            "package": "pyjwt",
+            "version": "2.10.1",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-jwrc-g2q2-pq5p",
+            "severity": "Medium",
+            "package": "pyjwt",
+            "version": "2.10.1",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-w6j9-cwv2-h6wq",
+            "severity": "Medium",
+            "package": "pyjwt",
+            "version": "2.10.1",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-w7vc-732c-9m39",
+            "severity": "Medium",
+            "package": "pyjwt",
+            "version": "2.10.1",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-x33g-cr3x-6449",
+            "severity": "Medium",
+            "package": "pyjwt",
+            "version": "2.10.1",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-mf9w-mj56-hr94",
+            "severity": "Medium",
+            "package": "python-dotenv",
+            "version": "1.1.0",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-mj87-hwqh-73pj",
+            "severity": "Medium",
+            "package": "python-multipart",
+            "version": "0.0.18",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-g8c6-8fjj-2r4m",
+            "severity": "Medium",
+            "package": "python-socketio",
+            "version": "5.13.0",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-gc5v-m9x4-r6x2",
+            "severity": "Medium",
+            "package": "requests",
+            "version": "2.32.4",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-h35f-9h28-mq5c",
+            "severity": "Medium",
+            "package": "setuptools",
+            "version": "80.9.0",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-gjv8-xp57-g29c",
+            "severity": "Medium",
+            "package": "soupsieve",
+            "version": "2.7",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-j934-xhv5-fg8f",
+            "severity": "Medium",
+            "package": "soupsieve",
+            "version": "2.7",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-2c2j-9gv5-cj73",
+            "severity": "Medium",
+            "package": "starlette",
+            "version": "0.41.3",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-86qp-5c8j-p5mr",
+            "severity": "Medium",
+            "package": "starlette",
+            "version": "0.41.3",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-x746-7m8f-x49c",
+            "severity": "Medium",
+            "package": "starlette",
+            "version": "0.41.3",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-48p4-8xcf-vxj5",
+            "severity": "Medium",
+            "package": "urllib3",
+            "version": "2.4.0",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-pq67-6m6q-mj2v",
+            "severity": "Medium",
+            "package": "urllib3",
+            "version": "2.4.0",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-2fqr-mr3j-6wp8",
+            "severity": "Low",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-2vrm-gr82-f7m5",
+            "severity": "Low",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-3wq7-rqq7-wx6j",
+            "severity": "Low",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-4m7w-qmgq-4wj5",
+            "severity": "Low",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-54jq-c3m8-4m76",
+            "severity": "Low",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-63hf-3vf5-4wqf",
+            "severity": "Low",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-69f9-5gxw-wvc2",
+            "severity": "Low",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-9548-qrrj-x5pj",
+            "severity": "Low",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-966j-vmvw-g2g9",
+            "severity": "Low",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-9x8q-7h8h-wcw9",
+            "severity": "Low",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-fh55-r93g-j68g",
+            "severity": "Low",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-gx76-c99x-2c96",
+            "severity": "Low",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-hcc4-c3v8-rx92",
+            "severity": "Low",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-m6qw-4cw2-hm4m",
+            "severity": "Low",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-mqqc-3gqh-h2x8",
+            "severity": "Low",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-mwh4-6h8g-pg8w",
+            "severity": "Low",
+            "package": "aiohttp",
+            "version": "3.12.13",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-v492-6xx2-p57g",
+            "severity": "Low",
+            "package": "chainlit",
+            "version": "2.5.5",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-2g6r-c272-w58r",
+            "severity": "Low",
+            "package": "langchain-core",
+            "version": "0.3.83",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-r7w7-9xr2-qq2r",
+            "severity": "Low",
+            "package": "langchain-openai",
+            "version": "0.3.23",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-5239-wwwm-4pmq",
+            "severity": "Low",
+            "package": "pygments",
+            "version": "2.19.1",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-fhv5-28vv-h8m8",
+            "severity": "Low",
+            "package": "pyjwt",
+            "version": "2.10.1",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-6jv3-5f52-599m",
+            "severity": "Low",
+            "package": "python-multipart",
+            "version": "0.0.18",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-v9pg-7xvm-68hf",
+            "severity": "Low",
+            "package": "python-multipart",
+            "version": "0.0.18",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-vffw-93wf-4j4q",
+            "severity": "Low",
+            "package": "python-multipart",
+            "version": "0.0.18",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-xmj3-9gf7-h52w",
+            "severity": "Low",
+            "package": "setuptools",
+            "version": "80.9.0",
+            "fix_state": "fixed"
+          },
+          {
+            "id": "GHSA-jp82-jpqv-5vv3",
+            "severity": "Low",
+            "package": "starlette",
+            "version": "0.41.3",
+            "fix_state": "fixed"
+          }
+        ]
+      }
+    }
+  },
+  "limitations": [
+    "SBOM catalog may miss dependencies referenced only dynamically in vendored code.",
+    "No installed ML, Agents, GPU, Wine, MT5 or broker binary inventory.",
+    "Advisory matching is limited by public database coverage and CPE/purl precision.",
+    "No license legal opinion, code-execution safety claim, secret scan or penetration test.",
+    "No GitHub plan change or automatic third-party update."
+  ]
+}
