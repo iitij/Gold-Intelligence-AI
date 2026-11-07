@@ -61,3 +61,7 @@
 ## المراجعة الشاملة — 2026-11-08
 
 راجع [تدقيق النضج](23-COMPREHENSIVE-MATURITY-AUDIT.md) و[القياسات المفصلة](../planning/audits/2026-11-08-scorecard.json). المؤشرات الحالية: 723 ملفًا منها 640 مؤرشفة ضمن vendor، 52 مهمة مفتوحة بلا إغلاق أو مسؤول/تقدير/دليل، 120 اختبارًا ناجحًا، و0 نماذج مدربة على بيانات وسيطنا و0/7 بوابات إنتاج مكتملة. درجة الأدلة التقديرية 31/100 ليست نسبة تقدم ولا ربحية. حماية `main` لا تزال معطلة، ولا توجد بيانات MT5 موثقة.
+
+## قفل CI الجزئي
+
+جهزنا `requirements-ci.lock` بversions وSHA256 للـ6 اعتماديات dev/test باستخدام GitHub Actions لمرة واحدة، مع حذف Workflow التوليد. CI يتثبت من القائمة المقبولة بـ`pip --require-hashes`، ويستعمل Actions بالـ SHA. هذا **لا يكمل** Security SBOM/Vulnerability triage ولا Lock إضافات ML/Agents ولا Hardware gates. `scripts/verify_ci_lock.py` يوفر التحقق الهيكلي.

@@ -95,3 +95,7 @@ The [2026-11-08 open-source acceleration review](docs/21-OPEN-SOURCE-ACCELERATIO
 ## Pre-research readiness (default: BLOCKED)
 
 Run `python scripts/preflight.py status` and `python scripts/preflight.py check training`. The latter is expected to **block** until G0/G1 are independently evidenced and accepted. The readiness manifest is not an execution switch. For local workstation sizing, run `python scripts/local_inventory.py --output .local/hardware_inventory.json` on Ubuntu; `.local/` stays ignored by Git. [Runbook](docs/24-PREFLIGHT-RUNBOOK.md).
+
+## Deterministic test bootstrap (Python 3.11 CI only)
+
+CI uses [SHA256-pinned test requirements](requirements-ci.lock) and [immutable checkout/setup-python actions](.github/workflows/ci.yml), rather than floating extras. Run `python scripts/verify_ci_lock.py` to check the policy. This is **not a full ML/GPU runtime lock or a security audit**. [Supply-chain plan](docs/25-CI-REPRODUCIBILITY.md).

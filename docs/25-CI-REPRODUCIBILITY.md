@@ -17,3 +17,9 @@
 4. عدم استخدام Workflow التوليد بعد أول تشغيل، لأنها توفّر مسار تحديث غير مراقب.
 
 **التداول الحقيقي ممنوع؛ هذه خطوات سلسلة توريد برمجية فقط.**
+
+## تم التنفيذ — قفل بيئة CI
+
+تم توليد `requirements-ci.lock` مرة واحدة على GitHub Actions بنسخ محددة وبصمات SHA256 لكل wheel معتمدة لـPython 3.11 (pytest/ruff وملحقاتهما). بعد نقل القفل إلى `main` فإن `.github/workflows/ci.yml` يستخدم `pip install --require-hashes -r requirements-ci.lock` و`PYTHONPATH=src`، ولا يعيد حل النسخ من `pyproject.toml` في كل تشغيل. يحرس `scripts/verify_ci_lock.py` سياسة التثبيت، وتثبت GitHub Actions بالـCommit SHA.
+
+هذه خطوة **جزئية** من P02-02 وP01-05 فقط. لا نعد بوجود wheelhouse Offline، ولا قفل كامل لكل Extras، ولا SBOM أو CVE review مكتمل، ولا إعادة إنتاج OS/driver/GPU/MT5 حتى تكتمل أدلتها. يظل اعتماد أي تغيير على ملف القفل مراجعة بشرية منفصلة.
