@@ -7,3 +7,7 @@ Currently [`vendor/frozen_2026_11_07/`](../vendor/frozen_2026_11_07/) includes a
 ## Source migration status
 
 The one-time archive workflow is at `.github/workflows/freeze-sources-once.yml`. After review and merge, it can build a **separate GitHub branch** containing full fixed-commit copies of TradingAgents, Aurum and (optional approved) Midas. It never merges the result automatically. That branch requires license, secret and dependency review before merging to main; after that delete the workflow. Reference-only projects are listed by URL and SHA rather than copied. [Complete source hub](../docs/16-SOURCE-HUB.md).
+
+## Research candidates: new immutable evaluation set (2026-11-08)
+
+See [research_candidates_2026_11_08.lock.json](research_candidates_2026_11_08.lock.json), a 10-repo inventory with exact Git commit SHAs and a decision per candidate. Most are dependency or architecture references rather than code we should copy. Two tiny MIT/BSD-3-Clause sources are eligible **only** for an offline audit snapshot, not execution or direct production import. [Detailed research](../docs/21-OPEN-SOURCE-ACCELERATION-RESEARCH.md). No automatic upstream synchronization.
