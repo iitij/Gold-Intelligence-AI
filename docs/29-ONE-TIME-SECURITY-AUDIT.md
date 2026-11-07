@@ -23,3 +23,7 @@
 ## كيف نستخدم النتيجة
 
 اقرأ `planning/security/scans/one_time/triage_summary.json`، افحص قائمتَي `ci_environment` و`repository_sources`، ثم صنف كل finding: **يستخدم فعليًا / مصدر مؤرشف فقط / غير مؤكد**. تُفتح مهمة إصلاح مستقلة لكل تعرض حقيقي، ويُوثَّق سبب عدم التأثر في الحالات الأخرى. لا نتبع تغييرات المنبع آليًا؛ نصحح الكود المعتمد داخليًا.
+
+## نتائج التنفيذ المنجز
+
+نجح الإجراء لمرة واحدة على [GitHub Actions #42422206182](https://github.com/iitij/Gold-Intelligence-AI/actions/runs/42422206182)، ثم حُذفت Workflow الخاصة به. راجع [تقرير تصنيف المخاطر](31-SBOM-TRIAGE-2026-11-08.md) وأصل الأدلة تحت `planning/security/scans/one_time/`. توجد نتائج تستدعي التحقيق ولا توجد موافقة G0.

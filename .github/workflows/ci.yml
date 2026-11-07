@@ -31,6 +31,10 @@ jobs:
         run: python scripts/verify_full_snapshots.py
       - name: Verify frozen offline research references (if present)
         run: python scripts/verify_research_refs.py
+      - name: Verify archived SBOM and security provenance classifications
+        run: |
+          python scripts/verify_security_triage.py
+          python scripts/verify_component_inventory.py
       - name: Report fail-closed research readiness
         run: python scripts/preflight.py status
       - name: Reject direct broker-trade APIs in first-party core
