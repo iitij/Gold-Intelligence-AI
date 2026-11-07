@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gold-intelligence-ai"
+version = "0.1.0a0"
+description = "Research-only local XAUUSD AI infrastructure; no live trading"
+requires-python = ">=3.11"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "ruff>=0.7,<1"]
+ml = ["numpy>=1.26,<3", "pandas>=2.2,<3", "pyarrow>=16,<25", "duckdb>=1,<3", "scikit-learn>=1.5,<2", "lightgbm>=4,<5", "catboost>=1.2,<2", "optuna>=4,<6", "mlflow>=2.15,<4"]
+agents = ["langgraph>=0.2,<2", "pydantic>=2,<3"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100

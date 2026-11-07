@@ -1,29 +1,46 @@
-# Create repository and publish all project artifacts
+# GitHub publication and governance
 
-**The connected GitHub integration in this session cannot create a new repository.** It can write files/issues into an existing writable repository. No unrelated existing repository was modified. Use an empty new private GitHub repository (recommended name `gold-intelligence-ai`). Verify the target owner.
+Repository: https://github.com/iitij/Gold-Intelligence-AI
+Visibility: **private**. Default branch: **main**. The repository and its issues are already created.
 
-## Publishing without a GitHub create-repository API
+## Current state (2026-11-07)
 
-This connector can create issues and write files only after the new repository exists; permissions do not add a `create repository` action to the available toolset. The CLI script below creates a private repository and pushes the safe bootstrap. Never use another existing repository as a workaround.
+- All 48 planned tasks are GitHub Issues; stable identifiers P00-01 through P10-05.
+- README, architecture, source/model lockfiles, roadmap, unit-test scaffold and risk code are committed.
+- Curated frozen source modules are included for offline review from Aurum and TradingAgents. **These are not full upstream snapshots, production deployments or trained models.**
+- Live execution is not implemented; all operational controls are research or paper-only.
 
-## Via GitHub CLI on workstation (recommended)
+## Developer onboarding
 
 ```bash
-# prerequisite: install gh (GitHub CLI), then: gh auth login
-# unpack the archive and enter the project directory
-cd gold-intelligence-ai
-bash scripts/bootstrap_publish.sh iitij/gold-intelligence-ai
-# only after the repository exists:
-python scripts/publish_issues.py --repo iitij/gold-intelligence-ai --dry-run
-python scripts/publish_issues.py --repo iitij/gold-intelligence-ai --confirm
+git clone https://github.com/iitij/Gold-Intelligence-AI.git
+cd Gold-Intelligence-AI
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -e '.[dev]'
+python -m pytest -q
+python -m ruff check src tests scripts
+python scripts/check_repository_policy.py
+python -m goldintel health
 ```
 
-If GitHub repository was created already (empty), use `git remote add origin ...` and `git push -u origin main` rather than `gh repo create`. Do not include `vendor/snapshots` until their licenses and security have been reviewed; their initial import is a separate PR.
+Run source freezing once, only after dependency and license review:
 
-## GitHub settings recommended
+```bash
+python scripts/freeze_sources.py --dry-run
+# With vetted network access + disk capacity, on a separate reviewed PR:
+python scripts/freeze_sources.py --confirm
+```
 
-Private visibility, no forced pushes to main, branch protection with CI, private vulnerability reporting, least-privilege collaborators, signed release tags if supported, restricted Actions secrets, labels imported by issue script. No deployment to live account. Project board optional; Issues are the authoritative task database.
+## Task administration
 
-## Source and model artifact handling
+Issues are the collaborative task workflow; backlog.json is the committed plan and depends-on graph. The import utility does not recreate an existing issue with the same ID. To initialize or reconcile labels and 11 phase milestones on a workstation with authenticated GitHub CLI:
 
-Source lock contains commit hashes; vendor script imports a one-time revision and refuses overwrite. Large model weights/data are not GitHub blobs; store checksums and manifest with local/object-storage paths and access rights. No credential in repo.
+```bash
+python scripts/publish_issues.py --repo iitij/Gold-Intelligence-AI --dry-run
+python scripts/publish_issues.py --repo iitij/Gold-Intelligence-AI --confirm
+```
+
+Review repository settings manually: require CI on protected main, disallow force pushes, configure code review and private vulnerability reporting, minimize Actions permissions. GitHub App connector used here does not provide the admin actions necessary to enforce branch protection directly.
+
+Never commit credentials, API tokens, private trading statements, proprietary market-data snapshots or model weights to Git. No automatic upstream sync. No live-account rollout without governance decision and independent review.

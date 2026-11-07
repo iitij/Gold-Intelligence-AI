@@ -1,7 +1,3 @@
-# Model and checkpoint registry
+# Research model registry
 
-This directory intentionally contains **no pretrained model weights**. Our project stores model *recipes, hashes, training code and acceptance reports* here. Actual weights/checkpoints are placed in `models/weights/` on approved local storage and are gitignored.
-
-Workflow: verify exact model card/license -> choose revision SHA -> download to local storage -> record SHA256, tensor/quantization information, source revision, runtime compatibility -> freeze -> benchmark -> fine-tune adapter with dataset provenance -> require G2 approval before promotion. Never `pull latest` in production.
-
-Our **LightGBM and CatBoost** are trained from scratch with XAUUSD data. Chronos and Qwen are pretrained external weights: only their adapters and/or finetuned outputs are our new artifacts, subject to licenses. Neither GitHub commit lock nor PyPI versions substitutes for exact HuggingFace model snapshot lock.
+No trained model, broker data or downloadable weights are distributed here. See `model_catalog.json` for intended candidates and approval schema. Start with LightGBM and CatBoost trained on our XAUUSD data; compare Chronos zero-shot and NHITS; fine-tune a local Qwen model only after building independently reviewed examples. Every external weight requires exact revision, upstream/model-card license, SHA256, and a secure local artifact store; never assume the GitHub repository license covers model weights.

@@ -1,0 +1,117 @@
+{
+  "format_version": 1,
+  "reviewed_on_utc": "2026-11-07",
+  "policy": "Exactly pinned source revisions, one-time import, independent maintenance; no upstream sync",
+  "sources": [
+    {
+      "name": "TradingAgents",
+      "repository": "TauricResearch/TradingAgents",
+      "url": "https://github.com/TauricResearch/TradingAgents",
+      "commit": "9fa1196fffbcfd9de5146d2dd2869df84ab99838",
+      "license_status": "Apache-2.0",
+      "mode": "snapshot-approved",
+      "role": "local multi-agent orchestration; replace stock-only data tools",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "name": "Aurum",
+      "repository": "zero-was-here/tradingbot",
+      "url": "https://github.com/zero-was-here/tradingbot",
+      "commit": "39c33b49237e0f290f89bda18e27aa4e75021c03",
+      "license_status": "MIT",
+      "mode": "snapshot-approved",
+      "role": "gold data, labels, walk-forward and research; no proven trading edge",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "name": "Midas Agent",
+      "repository": "andyluu98/midas-agent",
+      "url": "https://github.com/andyluu98/midas-agent",
+      "commit": "289ac184bee091ce7e80fbb89aeaaf856b21f2cd",
+      "license_status": "Apache-2.0",
+      "mode": "snapshot-optional",
+      "role": "XAUUSD-agent design ideas requiring code/test screening",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "name": "Chronos",
+      "repository": "amazon-science/chronos-forecasting",
+      "url": "https://github.com/amazon-science/chronos-forecasting",
+      "commit": "1224fafa91e1ecd6674f5204066b159e40b5e4a1",
+      "license_status": "Apache-2.0",
+      "mode": "dependency-reference",
+      "role": "probabilistic forecasts; weights have independent license",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "name": "NeuralForecast",
+      "repository": "Nixtla/neuralforecast",
+      "url": "https://github.com/Nixtla/neuralforecast",
+      "commit": "27b953c51e93decebfa872a5f15ab4704b7829b4",
+      "license_status": "Apache-2.0",
+      "mode": "dependency-reference",
+      "role": "NHITS and NBEATSx candidate baselines",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "name": "LightGBM",
+      "repository": "lightgbm-org/LightGBM",
+      "url": "https://github.com/lightgbm-org/LightGBM",
+      "commit": "3ee03c26ba8c9e8ddc05fa8687717cae8a7d61d9",
+      "license_status": "MIT",
+      "mode": "dependency-reference",
+      "role": "train dedicated XAUUSD models",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "name": "CatBoost",
+      "repository": "catboost/catboost",
+      "url": "https://github.com/catboost/catboost",
+      "commit": "e2a715beaa2f13c1c798be9a9e8349fb434b1c44",
+      "license_status": "license-review-required",
+      "mode": "dependency-reference",
+      "role": "train dedicated XAUUSD models",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "name": "Qwen3",
+      "repository": "QwenLM/Qwen3",
+      "url": "https://github.com/QwenLM/Qwen3",
+      "commit": "7a2f61ffc7a20d47efcd2bf97f6f2bf52729042e",
+      "license_status": "weights-license-review-required",
+      "mode": "dependency-reference",
+      "role": "local agent fine-tuning; pin each actual weight artifact",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "name": "forex-gold",
+      "repository": "MooreSi/forex-gold",
+      "url": "https://github.com/MooreSi/forex-gold",
+      "commit": "99ba9cb7cfa156412eafe91ee1e1786cfa50d362",
+      "license_status": "AGPL-3.0",
+      "mode": "reference-only",
+      "role": "risk/execution concepts only, do not copy",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "name": "Nexus-Trading-System-MT5",
+      "repository": "MirandaCR/Nexus-Trading-System-MT5",
+      "url": "https://github.com/MirandaCR/Nexus-Trading-System-MT5",
+      "commit": "4c5e94975678c776f4e1fc7b3e2eaceeceb7fbe5",
+      "license_status": "AGPL-3.0",
+      "mode": "reference-only",
+      "role": "conceptual architecture only, do not copy",
+      "reviewed_on": "2026-11-07"
+    },
+    {
+      "name": "XAUUSD-AI-Agent",
+      "repository": "sensesVoid/XAUUSD-AI-Agent",
+      "url": "https://github.com/sensesVoid/XAUUSD-AI-Agent",
+      "commit": "a59875e30061267ea32f2a2c5ed0cf2e6b3be1b0",
+      "license_status": "license-not-located",
+      "mode": "reference-only",
+      "role": "manual-approval ideas only, do not copy",
+      "reviewed_on": "2026-11-07"
+    }
+  ]
+}

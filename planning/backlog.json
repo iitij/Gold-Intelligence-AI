@@ -1,0 +1,1262 @@
+{
+  "schema_version": 1,
+  "scope": "XAUUSD only",
+  "workflow": [
+    "todo",
+    "in_progress",
+    "blocked",
+    "review",
+    "done"
+  ],
+  "phases": [
+    {
+      "id": "P00",
+      "title": "الحوكمة والتأسيس",
+      "en": "Governance and repository bootstrap"
+    },
+    {
+      "id": "P01",
+      "title": "تجميد المصادر وتدقيق التراخيص",
+      "en": "Fixed source import and provenance"
+    },
+    {
+      "id": "P02",
+      "title": "بيئة التطوير والتشغيل",
+      "en": "Local development and infrastructure"
+    },
+    {
+      "id": "P03",
+      "title": "بيانات XAUUSD وإدارتها",
+      "en": "Market and macro data platform"
+    },
+    {
+      "id": "P04",
+      "title": "الخصائص والتوسيم",
+      "en": "Feature engineering and supervised labels"
+    },
+    {
+      "id": "P05",
+      "title": "التجارب الكمية الأساسية",
+      "en": "Quantitative baseline models"
+    },
+    {
+      "id": "P06",
+      "title": "التنبؤات الزمنية",
+      "en": "Time-series foundation models"
+    },
+    {
+      "id": "P07",
+      "title": "وكلاء LLM المحليون",
+      "en": "Local agent orchestration and model customization"
+    },
+    {
+      "id": "P08",
+      "title": "الاختبار والتقييم",
+      "en": "Backtesting and rigorous validation"
+    },
+    {
+      "id": "P09",
+      "title": "الربط والتنفيذ التجريبي",
+      "en": "MT5 integration, paper and demo execution"
+    },
+    {
+      "id": "P10",
+      "title": "الأمان والمراقبة والجاهزية",
+      "en": "Security, observability and production gates"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "P00-01",
+      "phase": "P00",
+      "title": "إقرار نطاق XAUUSD ومعايير النجاح",
+      "goal": "تثبيت الهدف البحثي وقواعد NO_TRADE وPaper Only.",
+      "acceptance": [
+        "مراجعة docs/00-CHARTER.md",
+        "معايير الإكمال والتوقف منشورة",
+        "عدم وجود مزاعم ربحية غير موثقة"
+      ],
+      "depends_on": [],
+      "labels": [
+        "phase:p00",
+        "priority:p0",
+        "area:governance"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P00-02",
+      "phase": "P00",
+      "title": "إنشاء المستودع الخاص وحماية الفرع",
+      "goal": "إنشاء GitHub private repo وربطه بالحزمة.",
+      "acceptance": [
+        "main محمي من force-push",
+        "CI مطلوب للدمج",
+        "الأسرار غير مدرجة",
+        "README يشير إلى السجل"
+      ],
+      "depends_on": [
+        "P00-01"
+      ],
+      "labels": [
+        "phase:p00",
+        "priority:p0",
+        "area:repo",
+        "area:security"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P00-03",
+      "phase": "P00",
+      "title": "استيراد المهام والقوالب",
+      "goal": "رفع backlog مع معرفات مستقرة وتبعيات.",
+      "acceptance": [
+        "القوالب تعمل",
+        "كل ID ممثل مرة واحدة",
+        "تعمل إعادة تشغيل الاستيراد بلا تكرار"
+      ],
+      "depends_on": [
+        "P00-02"
+      ],
+      "labels": [
+        "phase:p00",
+        "priority:p0",
+        "area:planning"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P00-04",
+      "phase": "P00",
+      "title": "سجل ADR وإدارة التغيير",
+      "goal": "توثيق القرارات التقنية وعدم تحديث المصادر التلقائي.",
+      "acceptance": [
+        "ADRs معتمدة",
+        "سياسة تغيير واضحة",
+        "مراجعتان لكل تغيير عالي المخاطر"
+      ],
+      "depends_on": [
+        "P00-01"
+      ],
+      "labels": [
+        "phase:p00",
+        "priority:p1",
+        "area:governance"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P01-01",
+      "phase": "P01",
+      "title": "مراجعة تراخيص المصادر وأوزان النماذج",
+      "goal": "إقرار مصدر وحالة ترخيص كل مكون ومورد.",
+      "acceptance": [
+        "جدول مصادر ثابت بالـ SHA",
+        "لا نسخ AGPL/غير المرخص",
+        "التمييز بين كود وأوزان وبيانات"
+      ],
+      "depends_on": [
+        "P00-01"
+      ],
+      "labels": [
+        "phase:p01",
+        "priority:p0",
+        "area:legal",
+        "area:supply-chain"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P01-02",
+      "phase": "P01",
+      "title": "استيراد Aurum المثبت",
+      "goal": "نسخة ذات SHA ثابت مع حفظ الترخيص وفحص الشيفرة.",
+      "acceptance": [
+        "SHA مطابق",
+        "ملف manifest وملخص hash",
+        "تعمل اختبارات المورد المعزولة",
+        "لا تحديث تلقائي"
+      ],
+      "depends_on": [
+        "P01-01"
+      ],
+      "labels": [
+        "phase:p01",
+        "priority:p0",
+        "area:vendor",
+        "area:quant"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P01-03",
+      "phase": "P01",
+      "title": "استيراد TradingAgents المثبت",
+      "goal": "نسخة ثابتة لوحدات LangGraph الضرورية فقط بعد المراجعة.",
+      "acceptance": [
+        "SHA مطابق",
+        "حقوق محفوظة",
+        "اختبارات توافق لوكلاء الذهب",
+        "لا اعتماد على خدمة منبع"
+      ],
+      "depends_on": [
+        "P01-01"
+      ],
+      "labels": [
+        "phase:p01",
+        "priority:p0",
+        "area:vendor",
+        "area:agents"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P01-04",
+      "phase": "P01",
+      "title": "تقييم استيراد مكونات Midas",
+      "goal": "مراجعة وظائف Midas المرتبطة بالذهب قبل أي نسخ.",
+      "acceptance": [
+        "قرار import / implement / reject لكل مكون",
+        "اختبارات جودة وسلامة",
+        "توثيق provenance"
+      ],
+      "depends_on": [
+        "P01-01"
+      ],
+      "labels": [
+        "phase:p01",
+        "priority:p1",
+        "area:vendor",
+        "area:agents"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P01-05",
+      "phase": "P01",
+      "title": "إعداد SBOM وفحص المكونات",
+      "goal": "جرد الاعتماديات والتراخيص والثغرات المعلنة بنسخ مثبتة.",
+      "acceptance": [
+        "SBOM محفوظ",
+        "فحص secrets",
+        "تثبيت hashes ونسخ",
+        "استثناءات مراجعة ومؤرخة"
+      ],
+      "depends_on": [
+        "P01-02",
+        "P01-03"
+      ],
+      "labels": [
+        "phase:p01",
+        "priority:p0",
+        "area:security",
+        "area:supply-chain"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P02-01",
+      "phase": "P02",
+      "title": "فحص عتاد Ubuntu وWine وMT5",
+      "goal": "تحديد VRAM/RAM/SSD والتوافق.",
+      "acceptance": [
+        "تقرير hardware دون أسرار",
+        "نسخ Python/CUDA/Wine موثقة",
+        "خطة اختيار النماذج متناسبة"
+      ],
+      "depends_on": [
+        "P00-01"
+      ],
+      "labels": [
+        "phase:p02",
+        "priority:p0",
+        "area:infrastructure"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P02-02",
+      "phase": "P02",
+      "title": "بيئة بناء وإعادة إنتاج",
+      "goal": "مستودع Python مع lockfile وCI واختبارات.",
+      "acceptance": [
+        "البيئة تعمل على Linux",
+        "pip hashes أو lock معتمد",
+        "اختبارات CI ناجحة",
+        "لا ترقية غير مقصودة"
+      ],
+      "depends_on": [
+        "P02-01"
+      ],
+      "labels": [
+        "phase:p02",
+        "priority:p0",
+        "area:devex",
+        "area:ci"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P02-03",
+      "phase": "P02",
+      "title": "اختيار التخزين وتنظيم المشاريع",
+      "goal": "إعداد DuckDB/Parquet وبيانات محلية خارج Git.",
+      "acceptance": [
+        "مخطط الملفات معتمد",
+        "نسخ احتياطية",
+        "سياسة retention",
+        "قيود صلاحية"
+      ],
+      "depends_on": [
+        "P02-02"
+      ],
+      "labels": [
+        "phase:p02",
+        "priority:p1",
+        "area:data",
+        "area:infrastructure"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P03-01",
+      "phase": "P03",
+      "title": "تعريف مواصفات رمز الذهب لدى الوسيط",
+      "goal": "توحيد XAUUSD مع suffixes وشروط العقد.",
+      "acceptance": [
+        "symbol mapping موثق",
+        "tick size/value/volume/stop_level مستخرجة",
+        "العملة وتوقيت الخادم معروفان"
+      ],
+      "depends_on": [
+        "P02-01"
+      ],
+      "labels": [
+        "phase:p03",
+        "priority:p0",
+        "area:broker",
+        "area:data"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P03-02",
+      "phase": "P03",
+      "title": "تصدير OHLC وTick من MT5 بأمان",
+      "goal": "قراءة فقط دون إرسال أوامر.",
+      "acceptance": [
+        "MQL5 exporter قابل للإعادة",
+        "توقيت الخادم موثق",
+        "البيانات الخام محفوظة مع metadata",
+        "منع كشف الحساب"
+      ],
+      "depends_on": [
+        "P03-01"
+      ],
+      "labels": [
+        "phase:p03",
+        "priority:p0",
+        "area:mt5",
+        "area:data"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P03-03",
+      "phase": "P03",
+      "title": "استيراد بيانات Dukascopy التاريخية",
+      "goal": "بناء مسار بيانات موسع مع احترام الترخيص.",
+      "acceptance": [
+        "تغطية البيانات وفجواتها مقيّمة",
+        "ملف manifest وhash",
+        "عدم إعادة نشر بيانات غير مسموحة"
+      ],
+      "depends_on": [
+        "P01-02",
+        "P03-01"
+      ],
+      "labels": [
+        "phase:p03",
+        "priority:p1",
+        "area:data"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P03-04",
+      "phase": "P03",
+      "title": "التحقق من OHLC/Quotes/Fills",
+      "goal": "تدقيق فجوات وتكرارات وspread وتغير الوسيط.",
+      "acceptance": [
+        "اختبارات قواعد الأسعار",
+        "سياسة DST/timezones",
+        "تقرير فجوات وعطلات",
+        "منع قيم مستقبلية"
+      ],
+      "depends_on": [
+        "P03-02",
+        "P03-03"
+      ],
+      "labels": [
+        "phase:p03",
+        "priority:p0",
+        "area:data",
+        "area:testing"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P03-05",
+      "phase": "P03",
+      "title": "انضمام البيانات الاقتصادية زمنيًا",
+      "goal": "FRED/ALFRED/CFTC وتقويم CPI/NFP/FOMC على وقت النشر.",
+      "acceptance": [
+        "available_at محفوظ",
+        "مراجعات البيانات لا تتسرب",
+        "تراخيص المصادر موثقة",
+        "سيناريو نقص البيانات آمن"
+      ],
+      "depends_on": [
+        "P03-04"
+      ],
+      "labels": [
+        "phase:p03",
+        "priority:p1",
+        "area:macro",
+        "area:data"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P03-06",
+      "phase": "P03",
+      "title": "واجهة MarketSnapshot ذات نسخ",
+      "goal": "توحيد bid/ask/timeframe/news/model-visible data.",
+      "acceptance": [
+        "schema version",
+        "اللقطة قابلة لإعادة الإنتاج",
+        "توقيت UTC معلوم",
+        "التحديثات الفاشلة fail closed"
+      ],
+      "depends_on": [
+        "P03-04",
+        "P03-05"
+      ],
+      "labels": [
+        "phase:p03",
+        "priority:p0",
+        "area:contracts",
+        "area:data"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P04-01",
+      "phase": "P04",
+      "title": "خصائص أسعار وزخم وتقلبات متزامنة",
+      "goal": "ميزات عوائد ATR/RSI/session/spread دون تسرب.",
+      "acceptance": [
+        "لا خصائص من مستقبل",
+        "H1/H4 فقط بعد إغلاق الشمعة",
+        "خصائص موثقة",
+        "اختبارات causal"
+      ],
+      "depends_on": [
+        "P03-04"
+      ],
+      "labels": [
+        "phase:p04",
+        "priority:p0",
+        "area:features",
+        "area:testing"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P04-02",
+      "phase": "P04",
+      "title": "Triple-Barrier وmeta-labeling",
+      "goal": "توسيم نتائج BUY/SELL بعد التكاليف وبقواعد حسم محافظ.",
+      "acceptance": [
+        "تحديد TP/SL/Horizon",
+        "حسم الغموض داخل الشمعة",
+        "توزيع labels موثق",
+        "تقرير overlap"
+      ],
+      "depends_on": [
+        "P04-01"
+      ],
+      "labels": [
+        "phase:p04",
+        "priority:p0",
+        "area:labels",
+        "area:quant"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P04-03",
+      "phase": "P04",
+      "title": "مخازن عينات ومجموعات زمنية",
+      "goal": "التعامل مع التداخل وpurging/embargo.",
+      "acceptance": [
+        "كل عينة لها sample_id ومصدر",
+        "splits قابلة للإعادة",
+        "holdout مقفل",
+        "اختبارات leakage"
+      ],
+      "depends_on": [
+        "P04-02"
+      ],
+      "labels": [
+        "phase:p04",
+        "priority:p0",
+        "area:data",
+        "area:testing"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P05-01",
+      "phase": "P05",
+      "title": "خطوط أساس بسيطة قبل ML",
+      "goal": "Random/no-trade/naive direction/volatility benchmark.",
+      "acceptance": [
+        "مقاييس واحتمالات أولية",
+        "تقييم بعد التكاليف",
+        "تسجيل شروط التنفيذ"
+      ],
+      "depends_on": [
+        "P04-03"
+      ],
+      "labels": [
+        "phase:p05",
+        "priority:p0",
+        "area:models",
+        "area:quant"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P05-02",
+      "phase": "P05",
+      "title": "تدريب LightGBM على XAUUSD",
+      "goal": "تقدير احتمال نتائج الحواجز ومقارنة baseline.",
+      "acceptance": [
+        "dataset hash",
+        "تدريب داخل folds",
+        "Brier/log loss",
+        "سجل تجارب reproducible"
+      ],
+      "depends_on": [
+        "P05-01"
+      ],
+      "labels": [
+        "phase:p05",
+        "priority:p0",
+        "area:models",
+        "area:quant"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P05-03",
+      "phase": "P05",
+      "title": "تدريب CatBoost على الذهب",
+      "goal": "تقييم متنافس وensemble اختياري.",
+      "acceptance": [
+        "نفس splits",
+        "تقرير overfit/calibration",
+        "عدم مزج نتائج holdout بالتوليف"
+      ],
+      "depends_on": [
+        "P05-02"
+      ],
+      "labels": [
+        "phase:p05",
+        "priority:p1",
+        "area:models",
+        "area:quant"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P05-04",
+      "phase": "P05",
+      "title": "معايرة وتحديد امتناع NO_TRADE",
+      "goal": "الاستناد إلى قيمة متوقعة بعد التكاليف ومخاطرة التنفيذ.",
+      "acceptance": [
+        "probability calibration",
+        "تحديد thresholds بالتدريب فقط",
+        "الامتناع مدعوم",
+        "اختبار تكاليف متعددة"
+      ],
+      "depends_on": [
+        "P05-03"
+      ],
+      "labels": [
+        "phase:p05",
+        "priority:p0",
+        "area:models",
+        "area:risk"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P05-05",
+      "phase": "P05",
+      "title": "سجل النماذج والتوقيع",
+      "goal": "تحكم بالبيانات والكود والنسخة والنتائج.",
+      "acceptance": [
+        "manifest hash",
+        "نسخ مرشحة لا ترفع للإنتاج مباشرة",
+        "تخزين أوزان آمن خارج Git"
+      ],
+      "depends_on": [
+        "P05-02"
+      ],
+      "labels": [
+        "phase:p05",
+        "priority:p1",
+        "area:mlops"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P06-01",
+      "phase": "P06",
+      "title": "مقارنة Chronos-2 Zero-shot",
+      "goal": "اختبار التوقع الاحتمالي دون fine-tune مقابل baseline.",
+      "acceptance": [
+        "نفس epochs وsplits",
+        "مقاييس quantile CRPS",
+        "قرار الاستمرار موثق"
+      ],
+      "depends_on": [
+        "P05-02"
+      ],
+      "labels": [
+        "phase:p06",
+        "priority:p1",
+        "area:models",
+        "area:forecast"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P06-02",
+      "phase": "P06",
+      "title": "تخصيص Chronos-2 فقط إن أضاف قيمة",
+      "goal": "Fine-tune مع كلفة تشغيل وحقوق الأوزان.",
+      "acceptance": [
+        "الترخيص موثق",
+        "مقارنة قبل/بعد",
+        "لا انحدار خارج العينة",
+        "artifact pinned"
+      ],
+      "depends_on": [
+        "P06-01"
+      ],
+      "labels": [
+        "phase:p06",
+        "priority:p1",
+        "area:models",
+        "area:forecast"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P06-03",
+      "phase": "P06",
+      "title": "مقارنة NHITS/NBEATSx",
+      "goal": "قياس قيمة بديل زمني أصغر.",
+      "acceptance": [
+        "تقرير مقارن",
+        "ميزانية VRAM وزمن inference",
+        "رفض النموذج بلا إضافة ثابتة"
+      ],
+      "depends_on": [
+        "P06-01"
+      ],
+      "labels": [
+        "phase:p06",
+        "priority:p1",
+        "area:models",
+        "area:forecast"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P07-01",
+      "phase": "P07",
+      "title": "تكامل TradingAgents مع Gold Tools",
+      "goal": "استبدال أدوات الأسهم بأدوات XAUUSD مقيدة.",
+      "acceptance": [
+        "لا get_stock_data في مسار الذهب",
+        "LLM لا ينفذ أوامر",
+        "حقن الوقت محفوظ",
+        "contract tests"
+      ],
+      "depends_on": [
+        "P01-03",
+        "P03-06"
+      ],
+      "labels": [
+        "phase:p07",
+        "priority:p0",
+        "area:agents",
+        "area:contracts"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P07-02",
+      "phase": "P07",
+      "title": "تشغيل Ollama المحلي وتقييم Qwen",
+      "goal": "اختيار وزن صغير وفق VRAM وترخيصه.",
+      "acceptance": [
+        "النموذج يعمل بلا API سحابي",
+        "فحص JSON schema",
+        "latency benchmark",
+        "تسجيل model digest"
+      ],
+      "depends_on": [
+        "P02-01",
+        "P07-01"
+      ],
+      "labels": [
+        "phase:p07",
+        "priority:p0",
+        "area:agents",
+        "area:models"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P07-03",
+      "phase": "P07",
+      "title": "مجلس وكلاء الذهب متعدد الأدوار",
+      "goal": "فني/ماكرو/أخبار/Bull/Bear/مراجع المخاطرة.",
+      "acceptance": [
+        "سجل أدوات ومصادر",
+        "لا أرقام مختلقة",
+        "NO_TRADE واضح",
+        "تعطيل أخبار دون source"
+      ],
+      "depends_on": [
+        "P07-02",
+        "P05-04"
+      ],
+      "labels": [
+        "phase:p07",
+        "priority:p1",
+        "area:agents"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P07-04",
+      "phase": "P07",
+      "title": "مجموعة SFT محكمة لـ Qwen",
+      "goal": "تكوين أمثلة مقيمة دون future outcomes في المدخلات.",
+      "acceptance": [
+        "datasheet وترخيص",
+        "سجلات annotation",
+        "سلوك Abstain",
+        "اختبارات contamination"
+      ],
+      "depends_on": [
+        "P07-03"
+      ],
+      "labels": [
+        "phase:p07",
+        "priority:p1",
+        "area:dataset",
+        "area:llm"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P07-05",
+      "phase": "P07",
+      "title": "LoRA/QLoRA وتقييم Qwen المخصص",
+      "goal": "تخصيص السلوك مع الحفاظ على الأوزان الأصلية.",
+      "acceptance": [
+        "base model revision+adapter hash",
+        "رفض الهلوسة",
+        "مقارنة قبل/بعد",
+        "فشل أدوات آمن"
+      ],
+      "depends_on": [
+        "P07-04"
+      ],
+      "labels": [
+        "phase:p07",
+        "priority:p1",
+        "area:training",
+        "area:llm"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P08-01",
+      "phase": "P08",
+      "title": "محاكاة تنفيذ ذهب واقعية",
+      "goal": "Bid/Ask وspread/slippage/commission/stops/filling.",
+      "acceptance": [
+        "استراتيجية متوقفة حال فشل quotes",
+        "لا forward look",
+        "نتائج تقارب دفتر التنفيذ التجريبي"
+      ],
+      "depends_on": [
+        "P03-06",
+        "P04-02"
+      ],
+      "labels": [
+        "phase:p08",
+        "priority:p0",
+        "area:backtest",
+        "area:execution"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P08-02",
+      "phase": "P08",
+      "title": "Walk-Forward + Purging + Holdout",
+      "goal": "قياس الأداء خارج العينة وتسجيل تعدد التجارب.",
+      "acceptance": [
+        "fold splits deterministic",
+        "holdout ledger",
+        "no leakage tests",
+        "نسب الفوز والعوائد بعد التكاليف"
+      ],
+      "depends_on": [
+        "P08-01",
+        "P05-04"
+      ],
+      "labels": [
+        "phase:p08",
+        "priority:p0",
+        "area:backtest",
+        "area:testing"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P08-03",
+      "phase": "P08",
+      "title": "اختبارات ضغط وتقلبات 2020–2026",
+      "goal": "اختبار السبريد والأخبار والقفزات والسوق العرضي.",
+      "acceptance": [
+        "cost multiplier tests",
+        "block bootstrap CI",
+        "negative-control",
+        "report limitations"
+      ],
+      "depends_on": [
+        "P08-02"
+      ],
+      "labels": [
+        "phase:p08",
+        "priority:p1",
+        "area:research",
+        "area:testing"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P08-04",
+      "phase": "P08",
+      "title": "بوابة قبول أفضلية إحصائية",
+      "goal": "الاختيار على أساس نتيجة مستقلة لا الضبط المتكرر.",
+      "acceptance": [
+        "profit factor/expectancy مع CIs",
+        "DRS/PBO حيث ينطبق",
+        "قرار Go/No-Go موثق"
+      ],
+      "depends_on": [
+        "P08-03"
+      ],
+      "labels": [
+        "phase:p08",
+        "priority:p0",
+        "area:research",
+        "area:governance"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P09-01",
+      "phase": "P09",
+      "title": "بناء جسر MQL5 لقراءة السوق",
+      "goal": "إشراف تشغيل دون رسائل تنفيذ أولًا.",
+      "acceptance": [
+        "بروتوكول محلي Auth",
+        "heartbeat",
+        "شهادة عدم إرسال أوامر",
+        "اختبارات فقد الاتصال"
+      ],
+      "depends_on": [
+        "P03-01",
+        "P02-02"
+      ],
+      "labels": [
+        "phase:p09",
+        "priority:p0",
+        "area:mt5",
+        "area:execution"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P09-02",
+      "phase": "P09",
+      "title": "بوابة المخاطر المستقلة",
+      "goal": "استكمال اختبارات الحجم وحدود الخسائر والسيولة.",
+      "acceptance": [
+        "لا تنفيذ بلا order_check",
+        "round-down volume",
+        "الأوامر المكررة ممنوعة",
+        "kill switch"
+      ],
+      "depends_on": [
+        "P09-01",
+        "P08-01"
+      ],
+      "labels": [
+        "phase:p09",
+        "priority:p0",
+        "area:risk",
+        "area:execution"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P09-03",
+      "phase": "P09",
+      "title": "تداول ورقي منفصل عن حساب MT5",
+      "goal": "تسجيل افتراضي للتداول دون صلاحية brokers.",
+      "acceptance": [
+        "الافتراضي paper",
+        "سجل أوامر immutable",
+        "مطابقة PnL",
+        "تحليل فروق التنفيذ"
+      ],
+      "depends_on": [
+        "P09-02",
+        "P08-04"
+      ],
+      "labels": [
+        "phase:p09",
+        "priority:p0",
+        "area:paper",
+        "area:execution"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P09-04",
+      "phase": "P09",
+      "title": "حساب تجريبي MT5 بموافقة بشرية",
+      "goal": "ربط أوامر demo فقط مع صلاحيات محدودة.",
+      "acceptance": [
+        "قفل demo verified",
+        "مصادقة وأوامر موقعة",
+        "human approve",
+        "حماية من duplicate/retry"
+      ],
+      "depends_on": [
+        "P09-03"
+      ],
+      "labels": [
+        "phase:p09",
+        "priority:p0",
+        "area:demo",
+        "area:execution"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P09-05",
+      "phase": "P09",
+      "title": "اختبار استقرار طويل وتشغيل 24/5",
+      "goal": "تجميع سجل تداول تجريبي عبر ظروف متعددة.",
+      "acceptance": [
+        "runbook",
+        "تسوية أوامر",
+        "مراقبة latency",
+        "اختبار استعادة وتعطل وbroker outage"
+      ],
+      "depends_on": [
+        "P09-04"
+      ],
+      "labels": [
+        "phase:p09",
+        "priority:p1",
+        "area:demo",
+        "area:operations"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P10-01",
+      "phase": "P10",
+      "title": "مراقبة النظام والإنذارات",
+      "goal": "قياس بيانات/نموذج/مخاطر ورفض الصفقات.",
+      "acceptance": [
+        "Prometheus/log metrics",
+        "تنبيه stale quote",
+        "model drift",
+        "audit trail"
+      ],
+      "depends_on": [
+        "P09-03"
+      ],
+      "labels": [
+        "phase:p10",
+        "priority:p1",
+        "area:monitoring",
+        "area:security"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P10-02",
+      "phase": "P10",
+      "title": "إدارة الأسرار والنسخ الاحتياطية",
+      "goal": "تشفير وإدارة وصول محدود واستعادة موثقة.",
+      "acceptance": [
+        "لا secrets في Git",
+        "تدوير بيانات الاعتماد",
+        "backup/restore drill",
+        "least privilege"
+      ],
+      "depends_on": [
+        "P02-02"
+      ],
+      "labels": [
+        "phase:p10",
+        "priority:p0",
+        "area:security",
+        "area:operations"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P10-03",
+      "phase": "P10",
+      "title": "سلسلة نشر قابلة للتراجع",
+      "goal": "CI/CD مع نموذج مرشح وrollback وmanual approval.",
+      "acceptance": [
+        "build reproducible",
+        "signed artifacts",
+        "rollback tested",
+        "live switch absent by default"
+      ],
+      "depends_on": [
+        "P09-05",
+        "P10-01",
+        "P10-02"
+      ],
+      "labels": [
+        "phase:p10",
+        "priority:p0",
+        "area:release",
+        "area:operations"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P10-04",
+      "phase": "P10",
+      "title": "تقييم الإنتاج النهائي دون تفعيل حي",
+      "goal": "قرار حوكمي، مع تقرير الأداء والمخاطر والتراخيص.",
+      "acceptance": [
+        "مراجعة مستقلة",
+        "نتائج demo بعد التكاليف",
+        "ترخيص واتفاقية بيانات",
+        "قرار عدم جاهزية مسموح"
+      ],
+      "depends_on": [
+        "P10-03",
+        "P08-04"
+      ],
+      "labels": [
+        "phase:p10",
+        "priority:p0",
+        "area:governance",
+        "area:release"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    },
+    {
+      "id": "P10-05",
+      "phase": "P10",
+      "title": "بحث RL فقط عند سلامة المحاكي",
+      "goal": "تجربة PPO/SAC منفصلة لا تغير حدود المخاطر.",
+      "acceptance": [
+        "قياس ضد policy بسيطة",
+        "محاكي معاير",
+        "no live permission",
+        "رفض إذا لم تظهر إضافة"
+      ],
+      "depends_on": [
+        "P08-04",
+        "P09-03"
+      ],
+      "labels": [
+        "phase:p10",
+        "priority:p2",
+        "area:research",
+        "area:rl"
+      ],
+      "status": "todo",
+      "owner": null,
+      "estimate": "TBD",
+      "evidence": []
+    }
+  ]
+}
