@@ -2,7 +2,7 @@
 
 **المصدر:** [التدقيق التقني](../docs/17-INDEPENDENT-TECHNICAL-AUDIT.md).
 
-هذا سجل تحسين شروط القبول للمهام الحالية، ولا يدعي أن الـIssues أُغلقت. لا ننشئ مهام مكررة قبل مراجعة مخرجات وتبعيات المهام الأصلية؛ **المرجع النهائي للمهام الحالية يبقى \`planning/backlog.json\`**.
+هذا سجل تحسين شروط القبول للمهام الحالية، ولا يدعي أن الـIssues أُغلقت. لا ننشئ مهام مكررة قبل مراجعة مخرجات وتبعيات المهام الأصلية؛ **المرجع النهائي للمهام الحالية يبقى `planning/backlog.json`**.
 
 | ID | مستوى | الفجوة / التحسين | Issue موجودة | دليل القبول المقترح | حالة |
 |---|---|---|---|---|---|
@@ -11,7 +11,7 @@
 | AUD-03 | P0 | Vendor interoperability وعزل مساحة الاسم والاعتماديات | #6 #7 #8 #30 | single gold event contract + isolated integration tests | pending |
 | AUD-04 | P0 | MQL5 Compile وMT5/Wine smoke + hardware evidence | #10 #14 #39 | compiler log + local demo connectivity | pending |
 | AUD-05 | P0 | Timezone/DST/market calendar وvalid Bid/Ask Tick coverage | #13 #14 #16 | tests cross DST rollover + broker/ref comparison | pending |
-| AUD-06 | P0 | Leakage-free macro \`available_at\`, COT Friday release | #17 | reproducible point-in-time join tests | pending |
+| AUD-06 | P0 | Leakage-free macro `available_at`, COT Friday release | #17 | reproducible point-in-time join tests | pending |
 | AUD-07 | P0 | Event-driven execution matched to broker with latency/fills | #35 #40 | partial/rejected/gap/spread stress fixtures | pending |
 | AUD-08 | P0 | Lot-grid/max bound bug، risk limits، order/margin reservations | #40 | property tests incl max not aligned with step; concurrency + broker P&L tests | pending |
 | AUD-09 | P0 | Train tiny baseline + independent holdout before ensembles | #22 #23 #24 #36 #38 | signed OOS evidence and experiment ledger | pending |
