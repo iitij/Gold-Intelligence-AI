@@ -7,7 +7,7 @@
 | --- | --- | --- |
 | البرامج والمشاريع (11 مصدرًا) | [sources.lock.json](../sources/sources.lock.json) | روابط ومراجعات ثابتة |
 | الملفات المجمدة الموجودة | [frozen_vendor.lock.json](../sources/frozen_vendor.lock.json) | [vendor/frozen_2026_11_07](../vendor/frozen_2026_11_07) |
-| المستودعات الثلاثة المعتمدة للاستيراد الكامل | [vendor/SNAPSHOT_MANIFEST.json](../vendor/SNAPSHOT_MANIFEST.json) عند نجاح الاستيراد | [vendor/snapshots](../vendor/snapshots) |
+| المستودعات الثلاثة المعتمدة للاستيراد الكامل | [vendor/SNAPSHOT_MANIFEST.json](../vendor/SNAPSHOT_MANIFEST.json) داخل المستودع بعد الدمج | [vendor/snapshots](../vendor/snapshots) |
 | نماذج اللغة والزمن المرشحة | [foundation_candidates.json](../models/foundation_candidates.json) | سجل وحالة وليس أوزانًا |
 | المراجعات المثبتة لأوزان النماذج | [foundation_weights.lock.json](../models/foundation_weights.lock.json) بعد التثبيت | تُنشأ مرة واحدة من Hugging Face |
 | النماذج التي سندربها | [model_catalog.json](../models/model_catalog.json) | لا يوجد checkpoint مدرب حتى الآن |
@@ -22,15 +22,24 @@
 **النماذج الجاهزة** Qwen3-4B وQwen3.5-2B وChronos-2 موجودة في السجل. تثبت المراجعات بأرقام SHA ثم تُنزَّل الأوزان محليًا عند اختيار النموذج. لا نرفع أوزانها التي قد تبلغ عدة جيجابايت إلى Git. تشغيل التدريب لاحقًا ينتج checkpoint جديدًا ببصمات ومصدر بيانات ونسخة تجربة.
 
 ## الاستيراد الكامل مرة واحدة
-ملف GitHub Actions باسم \`.github/workflows/freeze-sources-once.yml\` ينشئ في أول تشغيل **فرعًا جديدًا للمراجعة فقط**، وليس دمجًا آليًا في main. يستورد Aurum وTradingAgents وMidas من SHA المعتمد ويحفظ manifest لمحتوى المصدر، ثم يثبت أرقام مراجعات النماذج في ملف مستقل. يمكن عند نجاح التشغيل إنشاء Pull Request من الفرع ومراجعة النتائج. لا تشغَّل أي من شيفرات المنبع أثناء عملية النقل.
+ملف GitHub Actions باسم `.github/workflows/freeze-sources-once.yml` ينشئ في أول تشغيل **فرعًا جديدًا للمراجعة فقط**، وليس دمجًا آليًا في main. يستورد Aurum وTradingAgents وMidas من SHA المعتمد ويحفظ manifest لمحتوى المصدر، ثم يثبت أرقام مراجعات النماذج في ملف مستقل. يمكن عند نجاح التشغيل إنشاء Pull Request من الفرع ومراجعة النتائج. لا تشغَّل أي من شيفرات المنبع أثناء عملية النقل.
 
 بعد اعتماد الاستيراد، **أزل workflow الاستيراد**؛ إصلاحات الشيفرة وصيانتها تصبح محلية بالكامل، ولا نطلب تحديثات من المنبع. التثبيت داخل مستودعنا لا يجعلها تلقائيًا صالحة للتشغيل أو خالية من الثغرات؛ يلزم SBOM وفحص الاعتماديات واختبارات التكامل.
 
 ## تخزين الأوزان بطريقة صحيحة
-1. تثبت SHA كاملة للموديل في \`models/foundation_weights.lock.json\`.
-2. عند الحاجة الفعلية، حمّل إلى \`models/weights/<id>\` وفق المراجعة الثابتة.
+1. تثبت SHA كاملة للموديل في `models/foundation_weights.lock.json`.
+2. عند الحاجة الفعلية، حمّل إلى `models/weights/<id>` وفق المراجعة الثابتة.
 3. احسب SHA256 لكل ملف وأنشئ artifact_manifest.json إلى جانب الأوزان.
 4. احتفظ بنسخة احتياطية خارج Git ثم اختبر الاسترجاع **دون اتصال بالإنترنت**.
 5. لا يُحمّل النموذج تلقائيًا عند تشغيل البرنامج الإنتاجي، ولا تتغير المراجعة دون ADR مستقل.
 
 التراخيص وحقوق بيانات الوسيط والأخبار ليست امتدادًا تلقائيًا لترخيص شيفرة المشروع.
+
+## نتيجة النقل المجمد
+
+- Aurum: 250 ملفًا من commit `39c33b49237e0f290f89bda18e27aa4e75021c03`.
+- TradingAgents: 213 ملفًا من commit `9fa1196fffbcfd9de5146d2dd2869df84ab99838`.
+- Midas Agent: 121 ملفًا من commit `289ac184bee091ce7e80fbb89aeaaf856b21f2cd`.
+- نماذج Hugging Face مثبتة SHA: Qwen3-4B `1cfa9a7208912126459214e8b04321603b3df60c`، Qwen3.5-2B `15852e8c16360a2fea060d615a32b45270f8a8fc`، Chronos-2 `29ec3766d36d6f73f0696f85560a422f50e8498c`.
+- ملفات الأوزان غير مخزنة في Git ولا توجد نماذج مدربة على XAUUSD بعد.
+- نُفذ الاستيراد مرة واحدة ثم حُذفت Workflow التشغيل من المستودع؛ فقط نصلح داخليًا بعد ذلك.
