@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-11-08",
+  "classification": "PRELIMINARY_COMPONENT_INVENTORY_NOT_A_COMPLETE_SBOM",
+  "cve_scan_performed": false,
+  "licenses_transitive_reviewed": false,
+  "external_update_policy": "immutable_reviewed_sources_no_auto_refresh",
+  "ci_python_3_11_packages": [
+    {
+      "name": "iniconfig",
+      "version": "2.3.1",
+      "sha256_hash_count": 2
+    },
+    {
+      "name": "packaging",
+      "version": "26.3",
+      "sha256_hash_count": 2
+    },
+    {
+      "name": "pluggy",
+      "version": "1.7.0",
+      "sha256_hash_count": 2
+    },
+    {
+      "name": "pygments",
+      "version": "2.21.0",
+      "sha256_hash_count": 2
+    },
+    {
+      "name": "pytest",
+      "version": "9.2.0",
+      "sha256_hash_count": 2
+    },
+    {
+      "name": "ruff",
+      "version": "0.17.4",
+      "sha256_hash_count": 18
+    }
+  ],
+  "vendor_frozen_sources": [
+    {
+      "repository": "TauricResearch/TradingAgents",
+      "revision": "9fa1196fffbcfd9de5146d2dd2869df84ab99838",
+      "license": "Apache-2.0",
+      "files": 213,
+      "digest_sha256": "f11ccf19b261c645e82843a060a1e818ef9ed9b3c9b2dcf5a6efff6097232118"
+    },
+    {
+      "repository": "zero-was-here/tradingbot",
+      "revision": "39c33b49237e0f290f89bda18e27aa4e75021c03",
+      "license": "MIT",
+      "files": 250,
+      "digest_sha256": "b17e0c25de742bcfffed68b6d05a85ce56a59001481ba6cce2e8c7bb36c11817"
+    },
+    {
+      "repository": "andyluu98/midas-agent",
+      "revision": "289ac184bee091ce7e80fbb89aeaaf856b21f2cd",
+      "license": "Apache-2.0",
+      "files": 121,
+      "digest_sha256": "7888c1498509ee5edbc413eb87b40f8490eee85bd5a4934cf52db8dc0146e17d"
+    }
+  ],
+  "review_only_repositories": [
+    {
+      "repository": "BorjaGomezSolorzano/Metatrader-Bridge",
+      "revision": "d4887a865538366d463ec77fffd6b056dbf9ddcc",
+      "license": "BSD-3-Clause",
+      "files": 8,
+      "approved_for_runtime": false
+    },
+    {
+      "repository": "OutOfSampleLab/oos-lab",
+      "revision": "d09ba123d28fcc5145380303d872d36946d534fd",
+      "license": "MIT",
+      "files": 33,
+      "approved_for_runtime": false
+    }
+  ],
+  "foundation_weight_revisions": [
+    {
+      "id": "qwen3-4b",
+      "repository": "Qwen/Qwen3-4B",
+      "revision": "1cfa9a7208912126459214e8b04321603b3df60c",
+      "downloaded": false,
+      "approved_for_trading": false
+    },
+    {
+      "id": "qwen35-2b",
+      "repository": "Qwen/Qwen3.5-2B",
+      "revision": "15852e8c16360a2fea060d615a32b45270f8a8fc",
+      "downloaded": false,
+      "approved_for_trading": false
+    },
+    {
+      "id": "chronos-2",
+      "repository": "amazon/chronos-2",
+      "revision": "29ec3766d36d6f73f0696f85560a422f50e8498c",
+      "downloaded": false,
+      "approved_for_trading": false
+    }
+  ],
+  "not_yet_inventoried": [
+    "transitive dependencies declared by the 3 archived vendor repos",
+    "ML/agents optional Python dependency graphs and frozen wheels",
+    "Linux OS/Wine/MetaTrader5 binaries and NVIDIA driver/CUDA",
+    "licensed historical broker market data and storage artifacts",
+    "source scanners findings, CVEs, remediation and final legal review"
+  ]
+}
