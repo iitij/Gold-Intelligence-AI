@@ -1,0 +1,3 @@
+# Security policy
+
+No real brokerage credentials, API keys, account IDs, broker screenshots, or private position data may be committed. Report serious security findings privately to maintainers through repository private vulnerability reporting (enable in repository settings); do not publish exploitation details. This repository has no live trading implementation and must stay paper-only until explicitly approved through the production gates. Source snapshots are frozen: security issues in vendored code are remediated internally and documented; do not silently refresh upstream. Rotate any leaked credentials immediately.

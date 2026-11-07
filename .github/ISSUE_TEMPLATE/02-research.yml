@@ -1,0 +1,22 @@
+name: Research experiment
+description: فرضية وتقييم قابل لإعادة الإنتاج
+labels: ["type:research"]
+body:
+  - type: textarea
+    id: hypothesis
+    attributes:
+      label: Hypothesis / الفرضية
+    validations:
+      required: true
+  - type: textarea
+    id: point_in_time
+    attributes:
+      label: Data window, availability timestamps and locked holdout
+    validations:
+      required: true
+  - type: textarea
+    id: baseline
+    attributes:
+      label: Baseline, evaluation metric, costs, and falsification criterion
+    validations:
+      required: true

@@ -1,0 +1,22 @@
+name: Engineering task
+description: مهمة تنفيذية مع معايير قبول
+labels: ["type:task"]
+body:
+  - type: textarea
+    id: outcome
+    attributes:
+      label: Outcome / النتيجة المطلوبة
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria / معايير القبول
+    validations:
+      required: true
+  - type: textarea
+    id: tests
+    attributes:
+      label: Tests / الاختبارات
+    validations:
+      required: true
