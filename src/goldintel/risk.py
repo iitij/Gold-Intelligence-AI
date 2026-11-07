@@ -11,8 +11,13 @@ from datetime import datetime, timezone
 from decimal import Decimal, ROUND_FLOOR
 
 from goldintel.domain import (
-    AccountState, BrokerSymbolSpec, MarketQuote, RiskDecision,
-    RiskPolicy, Side, TradeProposal,
+    AccountState,
+    BrokerSymbolSpec,
+    MarketQuote,
+    RiskDecision,
+    RiskPolicy,
+    Side,
+    TradeProposal,
 )
 
 

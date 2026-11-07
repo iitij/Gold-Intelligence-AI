@@ -5,7 +5,12 @@ from decimal import Decimal as D
 
 from goldintel import __version__
 from goldintel.domain import (
-    AccountState, BrokerSymbolSpec, MarketQuote, RiskPolicy, Side, TradeProposal,
+    AccountState,
+    BrokerSymbolSpec,
+    MarketQuote,
+    RiskPolicy,
+    Side,
+    TradeProposal,
 )
 from goldintel.risk import assess_paper_proposal
 

@@ -1,5 +1,6 @@
 """One-time exact-commit source freeze. Never refresh, overwrite or auto-sync."""
 from __future__ import annotations
+
 import argparse
 import hashlib
 import json
