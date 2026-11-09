@@ -1,0 +1,37 @@
+name: ML baseline — reproducible smoke test
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  ml-baseline:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+
+      - name: Configure Python
+        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.11'
+
+      - name: Install hash-locked ML dependencies
+        env:
+          PIP_DISABLE_PIP_VERSION_CHECK: '1'
+        run: |
+          python -m pip install \
+            --require-hashes \
+            --only-binary=:all: \
+            -r requirements-ml-baseline.lock
+
+      - name: Verify dependency compatibility
+        run: python -m pip check
+
+      - name: Test synthetic model training
+        run: python scripts/check_ml_baseline.py
