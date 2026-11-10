@@ -1,12 +1,23 @@
-# Research model registry
+# Research model registry — XAUUSD only
 
-No trained model, broker data or downloadable weights are distributed here. See `model_catalog.json` for intended candidates and approval schema. Start with LightGBM and CatBoost trained on our XAUUSD data; compare Chronos zero-shot and NHITS; fine-tune a local Qwen model only after building independently reviewed examples. Every external weight requires exact revision, upstream/model-card license, SHA256, and a secure local artifact store; never assume the GitHub repository license covers model weights.
+**ابدأ من [مركز النماذج الموحد](MODEL-HUB.md)** للاطلاع على جميع المرشحين، والمراجعات الثابتة، وحالة الأوزان ومكان تخزينها. هذا هو مدخل المستخدم الواحد للمصادر؛ لكنه لا يعني وجود ملفات أوزان فعلية في Git.
 
-## Central frozen foundation model catalog
+## السجلات القابلة للقراءة آليًا
 
-- [foundation_candidates.json](foundation_candidates.json): Qwen3-4B, Qwen3.5-2B, Chronos-2 and all train-from-scratch XAUUSD models.
-- `foundation_weights.lock.json` is created **once** when source revisions are verified against Hugging Face. It is absent until that run completes.
-- `python scripts/model_assets.py list` lists models without network access.
-- `python scripts/model_assets.py download --model chronos-2 --confirm` explicitly downloads a pinned checkpoint to the ignored local model storage; requires `huggingface_hub` installed and adequate disk.
-- `python scripts/model_assets.py verify --model chronos-2` checks cached SHA256 without contacting upstream.
-- Every trained adapter or model must have a separate evaluation/provenance manifest and local backup. The upstream base license is independent of our training dataset license.
+- [foundation_candidates.json](foundation_candidates.json) — قائمة النماذج الجاهزة والمرشحين للتدريب، ومنها NBEATSx.
+- [foundation_weights.lock.json](foundation_weights.lock.json) — **موجود على `main`**؛ يثبت 3 مراجعات Hugging Face: Qwen3-4B وQwen3.5-2B وChronos-2. Metadata فقط، **دون أوزان**.
+- [model_catalog.json](model_catalog.json) — مراحل تدريب النماذج الأساسية وسجل التقييم المطلوب؛ جميع checkpoints غير موجودة حتى الآن.
+
+لا نرفع أوزان النماذج، أو بيانات الوسيط، أو نواتج التدريب إلى Git العادي. تحفظ محليًا في مسارات مستثناة من Git، مع manifest مستقل يشمل SHA256 والترخيص وسلسلة المصدر والنتائج ونسخة احتياطية قابلة للاسترجاع دون شبكة.
+
+## تنزيل متعمد وغير تلقائي
+
+```bash
+python scripts/model_assets.py list
+python scripts/model_assets.py download --model chronos-2 --confirm
+python scripts/model_assets.py verify --model chronos-2
+```
+
+تتطلب عملية التنزيل وجود `huggingface_hub` في البيئة، ومساحة مناسبة، ومراجعة ترخيص الأوزان. لا تُنفَّذ هذه الأوامر عند استنساخ المستودع أو تشغيل CI. نبدأ تجارب XAUUSD مع LightGBM وCatBoost من بيانات حقيقية مدققة، ونقيّم Chronos وNHITS ونظراءها، ولا نخصص Qwen إلا بعد إنتاج عينات مؤرخة ومراجعة. أوزان النموذج الأساسي لا تصبح ملكية جديدة لنا بمجرد إضافة LoRA.
+
+انظر [استراتيجية التدريب](../docs/03-TRAINING-STRATEGY.md)، و[مركز مصادر المشروع](../docs/16-SOURCE-HUB.md)، و[بوابات الجاهزية](../docs/09-PRODUCTION-GATES.md). **لا تداول حي ولا صلاحية لإرسال أوامر وسيط.**
