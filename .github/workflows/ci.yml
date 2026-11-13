@@ -18,7 +18,8 @@ jobs:
       - name: Install exact reviewed CI wheels by SHA256
         env:
           PIP_DISABLE_PIP_VERSION_CHECK: '1'
-        run: python -m pip install --require-hashes -r requirements-ci.lock --only-binary=:all:
+        run: |
+          python -m pip install --require-hashes -r requirements-ci.lock --only-binary=:all:
       - name: Reinstall reviewed CI wheels without an index
         run: python scripts/check_ci_offline_install.py
       - name: Verify pinned CI dependency graph
