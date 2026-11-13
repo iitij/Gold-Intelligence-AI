@@ -41,7 +41,7 @@ def main() -> None:
             raise ValueError("Inconsistent archived scan summary: " + profile)
         print(f"PASS: archived {profile} scan, {info['components']} components, "
               f"{info['matches']} matches; DB built {info['database']['built']}")
-    print("Historical evidence only; full license, OS and training gates remain blocked")
+    print("Historical evidence only; OS, owner-machine and training gates remain blocked")
 
 
 if __name__ == "__main__":

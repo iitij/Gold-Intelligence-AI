@@ -6,7 +6,7 @@
   "gates": [
     {
       "id": "G0",
-      "title": "Source, licenses and reproducible infrastructure",
+      "title": "Source provenance and reproducible infrastructure",
       "status": "blocked",
       "requirements": [
         {
@@ -33,7 +33,7 @@
     },
     {
       "id": "G1",
-      "title": "Licensed XAUUSD broker data and point-in-time correctness",
+      "title": "XAUUSD broker data provenance and point-in-time correctness",
       "status": "blocked",
       "requirements": [
         {
@@ -52,7 +52,7 @@
           "evidence": []
         },
         {
-          "id": "raw_data_rights_and_hashes",
+          "id": "raw_data_provenance_and_hashes",
           "verified": false,
           "evidence": []
         }
@@ -167,7 +167,7 @@
           "evidence": []
         },
         {
-          "id": "legal_and_broker_terms",
+          "id": "broker_operating_constraints",
           "verified": false,
           "evidence": []
         },
@@ -183,5 +183,6 @@
         }
       ]
     }
-  ]
+  ],
+  "work_scope_policy": "docs/36-ENGINEERING-PRIORITIES.md"
 }

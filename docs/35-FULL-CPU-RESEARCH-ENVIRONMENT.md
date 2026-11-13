@@ -1,5 +1,9 @@
 # Full CPU research environment — 2026-11-14
 
+Scope update: [owner engineering priorities](36-ENGINEERING-PRIORITIES.md)
+removes further license/rights review from active work and blockers. License
+review findings below are historical; technical data and runtime evidence remain required.
+
 This follow-up resolves the missing **declared Python ml/agents CPU profile** in
 audit 34. It does not resolve owner-machine, GPU/Wine/MT5, market-data or full
 redistribution acceptance. P02-02 stays in_progress and G0–G6 remain blocked.

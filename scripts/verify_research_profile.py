@@ -68,7 +68,7 @@ def validate_evidence(expected: dict[str, str]) -> None:
         raise ValueError("Inconsistent archived research scan summary")
     print(f"PASS: archived research scan: {summary['components']} components, "
           f"{summary['matches']} matches; {summary['license_documents']} license documents")
-    print("Historical package evidence only; complete redistribution/data acceptance not granted")
+    print("Historical package evidence only; owner-machine and data acceptance remain pending")
 
 
 if __name__ == "__main__":

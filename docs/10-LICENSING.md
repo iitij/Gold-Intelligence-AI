@@ -1,5 +1,9 @@
 # Source and model licensing decisions
 
+Current owner instruction: [engineering priorities](36-ENGINEERING-PRIORITIES.md).
+This file is a historical record; additional license review is not an active
+engineering task or development blocker.
+
 ## Confirmed license files at audited commits (2026-11-07)
 
 - TradingAgents: Apache-2.0 (`LICENSE`).

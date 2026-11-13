@@ -13,12 +13,10 @@ def test_locked_sources_exact_shas():
         assert source["url"].startswith("https://github.com/")
 
 
-def test_no_agpl_or_unknown_license_snapshots():
-    data = json.loads((ROOT / "sources/sources.lock.json").read_text())
-    for source in data["sources"]:
-        license_status = source["license_status"].lower()
-        if "agpl" in license_status or "unknown" in license_status or "not-located" in license_status:
-            assert source["mode"] == "reference-only"
+def test_source_provenance_is_unambiguous():
+    sources = json.loads((ROOT / "sources/sources.lock.json").read_text())["sources"]
+    assert len({source["repository"] for source in sources}) == len(sources)
+    assert all(source["name"] and source["mode"] and source["role"] for source in sources)
 
 
 def test_weight_artifacts_are_not_falsely_marked_ready():
