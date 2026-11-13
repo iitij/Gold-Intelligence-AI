@@ -21,6 +21,14 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Create isolated hash-locked bootstrap and build environment
+        env:
+          PIP_DISABLE_PIP_VERSION_CHECK: '1'
+        run: |
+          python -m venv --without-pip .venv
+          python -m pip --python .venv install --require-hashes --only-binary=:all: -r requirements-build.lock
+          echo "$PWD/.venv/bin" >> "$GITHUB_PATH"
+
       - name: Install hash-locked ML dependencies
         env:
           PIP_DISABLE_PIP_VERSION_CHECK: '1'

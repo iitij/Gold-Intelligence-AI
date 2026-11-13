@@ -15,6 +15,14 @@ jobs:
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # pinned v6 / Node24
         with:
           python-version: '3.11'
+      - name: Create isolated hash-locked bootstrap and build environment
+        env:
+          PIP_DISABLE_PIP_VERSION_CHECK: '1'
+        run: |
+          python -m venv --without-pip .venv
+          python -m pip --python .venv install --require-hashes --only-binary=:all: -r requirements-build.lock
+          echo "$PWD/.venv/bin" >> "$GITHUB_PATH"
+
       - name: Install exact reviewed CI wheels by SHA256
         env:
           PIP_DISABLE_PIP_VERSION_CHECK: '1'
@@ -22,6 +30,8 @@ jobs:
           python -m pip install --require-hashes -r requirements-ci.lock --only-binary=:all:
       - name: Reinstall reviewed CI wheels without an index
         run: python scripts/check_ci_offline_install.py
+      - name: Verify repeatable wheel builds and isolated installation
+        run: python scripts/check_package_build.py
       - name: Verify pinned CI dependency graph
         run: python scripts/verify_ci_lock.py
       - name: Static checks
@@ -37,6 +47,7 @@ jobs:
       - name: Verify archived SBOM and security provenance classifications
         run: |
           python scripts/verify_security_triage.py
+          python scripts/verify_bootstrap_evidence.py
           python scripts/verify_component_inventory.py
       - name: Report fail-closed research readiness
         run: python scripts/preflight.py status

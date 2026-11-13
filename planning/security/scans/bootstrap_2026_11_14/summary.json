@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "scan_date": "2026-11-14",
+  "scope": "installed Python package environments on Debian 13.6 / CPython 3.11.18; excludes OS/interpreter libraries and frozen vendor archives",
+  "resolver": "uv 0.13.6",
+  "tools": {
+    "syft": {
+      "version": "1.57.1",
+      "archive_sha256": "bf52519eb57f675d47c07d43213cb6dff6449f3d6d1147ff6701ed91f44eef0c"
+    },
+    "grype": {
+      "version": "0.121.3",
+      "archive_sha256": "e9da18cc1429e786722e32161288103600efffd8e483c90761f90485bd1bec85"
+    }
+  },
+  "profiles": {
+    "ci": {
+      "components": 109,
+      "components_without_license_metadata": 86,
+      "matches": 0,
+      "ignored_matches": 0,
+      "database": {
+        "schemaVersion": "v6.1.10",
+        "from": "https://grype.anchore.io/databases/v6/vulnerability-db_v6.1.10_2026-11-13T00:21:35Z_1794584434.tar.zst?checksum=sha256%3A45d983a9834f587403cb814a0f8f6078c905a7c85a84c3c52efb994f125bcf84",
+        "built": "2026-11-13T15:40:34Z",
+        "path": "/workspace/work/grype-db/6/vulnerability.db",
+        "valid": true
+      },
+      "artifacts": {
+        "ci.cdx.json": "0eace51724719e6cb08bde9b422096eba0b65fe7c3950045efcf540baf5ab1e7",
+        "ci.grype.json": "8cf0d2dc46333efc52e556e5c46656c90c76ff0a45294b0c85bb196ba90d375c",
+        "ci.installed.json": "d8ef6a2d3e37cb4adb1ebb33e5240e89c8dbba356b78315ab1f54b8a87063cf8"
+      }
+    },
+    "ml": {
+      "components": 170,
+      "components_without_license_metadata": 129,
+      "matches": 0,
+      "ignored_matches": 0,
+      "database": {
+        "schemaVersion": "v6.1.10",
+        "from": "https://grype.anchore.io/databases/v6/vulnerability-db_v6.1.10_2026-11-13T00:21:35Z_1794584434.tar.zst?checksum=sha256%3A45d983a9834f587403cb814a0f8f6078c905a7c85a84c3c52efb994f125bcf84",
+        "built": "2026-11-13T15:40:34Z",
+        "path": "/workspace/work/grype-db/6/vulnerability.db",
+        "valid": true
+      },
+      "artifacts": {
+        "ml.cdx.json": "3ab67b21c54184598d67de26c5c67698b2328c83fd3d030c23e46bb583deec32",
+        "ml.grype.json": "19c4fe8d0edbdd40794c7b63002806145cafad80555940bd25c457b62d7b71c1",
+        "ml.installed.json": "a9b69ea068286b450fda86951498c19fa46dde8d9484145d23d0e2d107410fd1"
+      }
+    }
+  },
+  "input_lock_sha256": {
+    "requirements-build.lock": "d43f228d88ba3c9febe2d75b791e07fbe02d61a487ac4f9355d12c44f9bd2313",
+    "requirements-ci.lock": "afd84b79e53653d75fda2fc0b6bbcf7cb258df97ce3fff43c9ded75080e968ce",
+    "requirements-ml-baseline.lock": "dedb1e30420540faecaa400fac2d56f4226ad4b6baf2eeb8213f0f6d1e4a7584"
+  }
+}

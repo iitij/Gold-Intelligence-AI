@@ -149,16 +149,17 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Inspect an XAUUSD MT5 M15 export, read-only")
     parser.add_argument("csv", type=Path)
     parser.add_argument("--broker-symbol", default="XAUUSD")
-    parser.add_argument("--report", type=Path, help="Optional local JSON report destination")
+    parser.add_argument("--report", type=Path, help="Create a new JSON report; never overwrite a file")
     args = parser.parse_args()
     try:
         report = validate_mt5_csv(args.csv, expected_symbol=args.broker_symbol)
-    except MarketDataError as exc:
+        content = json.dumps(asdict(report), indent=2, ensure_ascii=False) + "\n"
+        if args.report:
+            args.report.parent.mkdir(parents=True, exist_ok=True)
+            with args.report.open("x", encoding="utf-8") as stream:
+                stream.write(content)
+    except (MarketDataError, OSError, UnicodeError) as exc:
         parser.exit(2, f"INVALID MT5 DATA: {exc}\n")
-    content = json.dumps(asdict(report), indent=2, ensure_ascii=False) + "\n"
-    if args.report:
-        args.report.parent.mkdir(parents=True, exist_ok=True)
-        args.report.write_text(content, encoding="utf-8")
     print(content, end="")
 
 

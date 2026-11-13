@@ -1,5 +1,8 @@
 # Build and XAUUSD acceptance audit — 2026-11-14
 
+Follow-up: [audit 34](34-BOOTSTRAP-BUILD-AND-DATA-INTAKE.md) records the subsequent
+bootstrap pinning, new security scans and core build evidence.
+
 ## Scope and revisions
 
 Reviewed main `a0d1ac82f95e97dd495ea5a836d597d113facb0c` and PR #79

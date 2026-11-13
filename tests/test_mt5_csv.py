@@ -3,11 +3,12 @@
 from __future__ import annotations
 
 import csv
+import json
 from pathlib import Path
 
 import pytest
 
-from goldintel.data.mt5_csv import COLUMNS, MarketDataError, validate_mt5_csv
+from goldintel.data.mt5_csv import COLUMNS, MarketDataError, main, validate_mt5_csv
 
 GOOD = [
     ["XAUUSDm", "M15", "2026.01.05 09:00:00", "2000.00", "2001.40", "1999.20", "2000.40", "120", "15", "0"],
@@ -97,3 +98,37 @@ def test_accept_utf8_bom(tmp_path):
     path = write_csv(tmp_path / "bom.csv", GOOD)
     path.write_bytes(b"\xef\xbb\xbf" + path.read_bytes())
     assert validate_mt5_csv(path, expected_symbol="XAUUSDm").rows == 2
+
+
+@pytest.mark.parametrize("kind", ["source", "symlink", "hardlink", "existing_report"])
+def test_cli_report_cannot_overwrite_existing_files(tmp_path, monkeypatch, kind):
+    source = write_csv(tmp_path / "source.csv", GOOD)
+    original = source.read_bytes()
+    report = tmp_path / "report.json"
+    if kind == "source":
+        report = source
+    elif kind == "symlink":
+        report.symlink_to(source)
+    elif kind == "hardlink":
+        report.hardlink_to(source)
+    else:
+        report.write_text("prior audit evidence")
+    before = report.read_bytes()
+    monkeypatch.setattr("sys.argv", ["mt5_csv", str(source), "--broker-symbol", "XAUUSDm",
+                                    "--report", str(report)])
+    with pytest.raises(SystemExit) as exc:
+        main()
+    assert exc.value.code == 2
+    assert source.read_bytes() == original
+    assert report.read_bytes() == before
+
+
+def test_cli_creates_new_report_with_readiness_blocked(tmp_path, monkeypatch):
+    source = write_csv(tmp_path / "source.csv", GOOD)
+    report = tmp_path / "reports" / "audit.json"
+    monkeypatch.setattr("sys.argv", ["mt5_csv", str(source), "--broker-symbol", "XAUUSDm",
+                                    "--report", str(report)])
+    main()
+    data = json.loads(report.read_text())
+    assert data["rows"] == 2
+    assert not data["training_ready"]

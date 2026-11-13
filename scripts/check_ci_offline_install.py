@@ -1,6 +1,6 @@
 """Reinstall the reviewed CI wheels in a fresh venv without an index.
 
-This checks Python package reuse, not OS/Python/bootstrap reproducibility.
+This checks Python package reuse, not OS/interpreter reproducibility.
 The wheel download is online; only the subsequent installation is offline.
 """
 from __future__ import annotations
@@ -25,12 +25,12 @@ def main() -> None:
         wheels = root / "wheels"
         target = root / "venv"
         run(sys.executable, "-m", "pip", "download", "--require-hashes",
-            "--only-binary=:all:", "-r", "requirements-ci.lock", "-d", str(wheels))
+            "--only-binary=:all:", "-r", "requirements-ci.lock", "-r", "requirements-build.lock", "-d", str(wheels))
         venv.EnvBuilder(with_pip=False).create(target)
         python = str(target / "bin" / "python")
         run(sys.executable, "-m", "pip", "--python", python, "install", "--no-index",
             "--find-links", str(wheels), "--require-hashes", "--only-binary=:all:",
-            "-r", "requirements-ci.lock")
+            "-r", "requirements-ci.lock", "-r", "requirements-build.lock")
         run(sys.executable, "-m", "pip", "--python", python, "check")
         inventory = subprocess.check_output(
             [sys.executable, "-m", "pip", "--python", python, "list", "--format=json"],
