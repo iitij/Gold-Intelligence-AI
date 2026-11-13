@@ -15,11 +15,15 @@ def sha256(path: Path) -> str:
     return digest.hexdigest()
 
 
-def validate(path: Path) -> None:
+def validate(path: Path, *, expected_revision: str | None = None) -> None:
     manifest = json.loads((path / "WHEELHOUSE.json").read_text())
     files = manifest["files"]
     if manifest.get("schema_version") != 1 or not files:
         raise ValueError("Invalid wheelhouse manifest")
+    if expected_revision is not None and (
+            manifest.get("source_revision") != expected_revision or
+            manifest.get("source_tree_dirty") is not False):
+        raise ValueError("Wheelhouse source revision differs or source tree was dirty")
     if any(name in {".", "..", "WHEELHOUSE.json"} or Path(name).name != name for name in files):
         raise ValueError("Manifest filenames must be plain local names")
     if {p.name for p in path.iterdir()} != set(files) | {"WHEELHOUSE.json"}:
@@ -34,4 +38,6 @@ def validate(path: Path) -> None:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("path", type=Path)
-    validate(parser.parse_args().path)
+    parser.add_argument("--revision", help="Require this exact clean source revision")
+    args = parser.parse_args()
+    validate(args.path, expected_revision=args.revision)

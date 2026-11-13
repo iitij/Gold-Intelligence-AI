@@ -37,3 +37,21 @@ def test_stale_extra_wheel_is_rejected(wheelhouse):
     (wheelhouse / "stale.whl").write_bytes(b"old dependency")
     with pytest.raises(ValueError, match="unexpected"):
         validate(wheelhouse)
+
+
+@pytest.mark.parametrize("revision,dirty", [("b" * 40, False), ("a" * 40, True)])
+def test_artifact_from_wrong_or_modified_checkout_is_rejected(wheelhouse, revision, dirty):
+    path = wheelhouse / "WHEELHOUSE.json"
+    manifest = json.loads(path.read_text())
+    manifest.update(source_revision=revision, source_tree_dirty=dirty)
+    path.write_text(json.dumps(manifest))
+    with pytest.raises(ValueError, match="source revision"):
+        validate(wheelhouse, expected_revision="a" * 40)
+
+
+def test_matching_clean_source_revision_is_verified(wheelhouse):
+    path = wheelhouse / "WHEELHOUSE.json"
+    manifest = json.loads(path.read_text())
+    manifest.update(source_revision="a" * 40, source_tree_dirty=False)
+    path.write_text(json.dumps(manifest))
+    validate(wheelhouse, expected_revision="a" * 40)

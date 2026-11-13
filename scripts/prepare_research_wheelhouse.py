@@ -40,7 +40,7 @@ def main(output: Path) -> None:
             f"Source revision: {revision}\n"
             "Authenticate the downloaded artifact via its GitHub Actions digest.\n"
             "From that checkout, verify with:\n"
-            "python scripts/verify_wheelhouse.py /path/to/unpacked-wheelhouse\n"
+            f"python scripts/verify_wheelhouse.py /path/to/unpacked-wheelhouse --revision {revision}\n"
             "Use Linux x86_64 and the Python ABI recorded in WHEELHOUSE.json.\n"
             "Create a seedless target venv outside this directory, then use an\n"
             "existing trusted pip (supports --python) to install into it:\n"

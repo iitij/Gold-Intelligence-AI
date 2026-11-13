@@ -32,8 +32,9 @@ re-runs dependency resolution or updates versions automatically.
   seeded Optuna trials, SQLite MLflow parameters/metrics/artifact storage, a
   local LangGraph state transition and a Pydantic NO_TRADE-only smoke contract.
 - Existing synthetic LightGBM/CatBoost checks passed (accuracy 0.9300/0.9400).
-- 192 repository tests and Ruff passed. Four artifact-integrity tests reject
-  corrupted, missing or stale additional wheel files and verify a complete fixture.
+- 195 repository tests and Ruff passed. Seven artifact-integrity tests reject
+  corrupted/missing/stale files and wrong/dirty source revisions, and accept
+  complete fixtures with a matching clean revision.
 
 The smoke contract is a library integration check, not a deployed agent adapter
 or trading capability. No vendor snapshots, market datasets, remote LLMs, model
@@ -105,10 +106,16 @@ The artifact includes the two locks, license metadata/document inventory/review,
 the two supplemental license texts and offline instructions. It contains no raw
 market data, credentials, experiment records or trained weights. Retention is
 30 days, subject to GitHub repository limits; it is not permanent storage. The
-artifact name includes the exact source SHA. Remote success and download links
+artifact name includes the exact source SHA. The workflow then downloads that retained artifact using commit-pinned
+download-artifact v8.0.2 (9000827ccba6bdab643e8b6fd33ac0654aef8333), fails on an
+archive-digest mismatch, and rechecks every manifest entry plus the exact clean
+source revision. Remote success and download links
 must be verified at the current PR head, not inferred from earlier runs.
 
 `verify_wheelhouse.py` rejects missing/extra files, symlinks and mismatched hashes.
+A direct Cloud download of the first retained artifact returned HTTP 403 from
+the storage endpoint; no claim of a successful Cloud download was made. The
+runner round trip provides separate CI evidence, not owner-device evidence.
 This verifies integrity against a manifest; authenticate the artifact separately
 using the GitHub artifact digest and source revision. Downloading wheels and the
 initial runner pip remain online trust prerequisites. The artifact does not
@@ -124,7 +131,8 @@ machine, unpack the artifact outside the checkout and use its absolute path:
 ```bash
 GOLD_RESEARCH_WHEELHOUSE=/absolute/path/to/unpacked-artifact
 python3.11 scripts/local_inventory.py --output .local/research_cpu_inventory.json
-python3.11 scripts/verify_wheelhouse.py "$GOLD_RESEARCH_WHEELHOUSE"
+python3.11 scripts/verify_wheelhouse.py "$GOLD_RESEARCH_WHEELHOUSE" \
+  --revision "$(git rev-parse HEAD)"
 python3.11 -m venv --without-pip .local/research-cpu
 python3.11 -m pip --python .local/research-cpu install --no-index \
   --find-links "$GOLD_RESEARCH_WHEELHOUSE" --require-hashes --only-binary=:all: \
