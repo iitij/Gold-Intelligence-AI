@@ -2,14 +2,13 @@
 from __future__ import annotations
 
 import argparse
-import csv
 import json
 from dataclasses import asdict
 from datetime import datetime, timedelta
 from decimal import Decimal
 from pathlib import Path
 
-from goldintel.data.mt5_csv import TIME_FORMAT, MarketDataError, validate_mt5_csv
+from goldintel.data.mt5_csv import TIME_FORMAT, MarketDataError, load_validated_mt5_csv
 
 
 def compare_feeds(left: Path, right: Path, *, left_symbol: str, right_symbol: str,
@@ -24,15 +23,11 @@ def compare_feeds(left: Path, right: Path, *, left_symbol: str, right_symbol: st
     reports = []
     feeds = []
     for path, symbol in ((left, left_symbol), (right, right_symbol)):
-        report = validate_mt5_csv(path, expected_symbol=symbol)
+        report, records = load_validated_mt5_csv(path, expected_symbol=symbol)
         reports.append(asdict(report))
-        with Path(path).open(encoding="utf-8-sig", newline="") as stream:
-            feeds.append({datetime.strptime(r["server_time"], TIME_FORMAT):
-                          {k: Decimal(r[k]) for k in ("open", "high", "low", "close")}
-                          for r in csv.DictReader(stream)})
-        # Detect files changing between validation and analysis.
-        if validate_mt5_csv(path, expected_symbol=symbol) != report:
-            raise MarketDataError("source changed during comparison")
+        feeds.append({datetime.strptime(r["server_time"], TIME_FORMAT):
+                      {k: Decimal(r[k]) for k in ("open", "high", "low", "close")}
+                      for r in records})
     a, b = feeds
     common = sorted(a.keys() & b.keys())
     if not common:

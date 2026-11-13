@@ -1,9 +1,11 @@
 """Synthetic fixtures; never interpreted as market evidence."""
 import csv
+import hashlib
 import tempfile
 import unittest
 from decimal import Decimal
 from pathlib import Path
+from unittest.mock import patch
 
 from goldintel.data.compare_feeds import compare_feeds
 from goldintel.data.mt5_csv import COLUMNS, MarketDataError
@@ -69,6 +71,25 @@ class CompareFeedsTests(unittest.TestCase):
             with self.assertRaises(MarketDataError):
                 self.compare(self.root / "missing", self.root / "missing2",
                              threshold=Decimal(value))
+
+    def test_report_hash_and_prices_use_same_snapshot(self):
+        a = self.write("a.csv", [("03:00:00", 2006)])
+        b = self.write("b.csv", [("03:00:00", 2000)])
+        original = a.read_bytes()
+        read_bytes = Path.read_bytes
+
+        def read_then_replace(path):
+            data = read_bytes(path)
+            if path == a:
+                self.write("a.csv", [("03:00:00", 3000)])
+            return data
+
+        with patch.object(Path, "read_bytes", read_then_replace):
+            report = self.compare(a, b)
+        self.assertEqual(report["sources"][0]["source_sha256"],
+                         hashlib.sha256(original).hexdigest())
+        self.assertEqual(report["outliers"][0]["signed_close_difference"], "6")
+        self.assertNotEqual(a.read_bytes(), original)
 
 
 if __name__ == "__main__":

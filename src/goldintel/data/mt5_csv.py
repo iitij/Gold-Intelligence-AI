@@ -9,6 +9,7 @@ from __future__ import annotations
 import argparse
 import csv
 import hashlib
+import io
 import json
 from dataclasses import asdict, dataclass
 from datetime import datetime
@@ -61,16 +62,16 @@ def _integer(value: str | None, column: str, row: int) -> int:
     return int(number)
 
 
-def _sha256_file(path: Path) -> str:
-    digest = hashlib.sha256()
-    with path.open("rb") as source:
-        for chunk in iter(lambda: source.read(1024 * 1024), b""):
-            digest.update(chunk)
-    return digest.hexdigest()
-
-
 def validate_mt5_csv(path: Path, *, expected_symbol: str) -> ValidationReport:
-    """Fail closed on malformed bars; report nonfatal weekend/session gaps.
+    return load_validated_mt5_csv(path, expected_symbol=expected_symbol)[0]
+
+
+def load_validated_mt5_csv(
+    path: Path, *, expected_symbol: str,
+) -> tuple[ValidationReport, list[dict[str, str]]]:
+    """Validate and return records from the exact bytes identified by the hash.
+
+    Fail closed on malformed bars; report nonfatal weekend/session gaps.
 
     expected_symbol is an explicit broker-side XAUUSD symbol, e.g. XAUUSDm.
     A broker alias not beginning with XAUUSD requires a reviewed mapping.
@@ -81,12 +82,14 @@ def validate_mt5_csv(path: Path, *, expected_symbol: str) -> ValidationReport:
     if not expected_symbol.upper().startswith("XAUUSD"):
         raise MarketDataError("Only broker symbols mapped to XAUUSD are accepted")
 
+    snapshot = path.read_bytes()
+    records = []
     rows = 0
     gaps = 0
     max_gap = 0
     first = None
     previous = None
-    with path.open("r", encoding="utf-8-sig", newline="") as stream:
+    with io.StringIO(snapshot.decode("utf-8-sig"), newline="") as stream:
         reader = csv.DictReader(stream, delimiter=",")
         if reader.fieldnames != list(COLUMNS):
             raise MarketDataError("Unexpected schema: expected " + ",".join(COLUMNS))
@@ -121,12 +124,13 @@ def validate_mt5_csv(path: Path, *, expected_symbol: str) -> ValidationReport:
                 _integer(record[field], field, row_num)
             first = first or bar_time
             previous = bar_time
+            records.append(record)
             rows += 1
     if rows == 0:
         raise MarketDataError("CSV contains no closed bars")
     return ValidationReport(
         format_version=1,
-        source_sha256=_sha256_file(path),
+        source_sha256=hashlib.sha256(snapshot).hexdigest(),
         broker_symbol=expected_symbol,
         timeframe="M15",
         rows=rows,
@@ -138,7 +142,7 @@ def validate_mt5_csv(path: Path, *, expected_symbol: str) -> ValidationReport:
         utc_verified=False,
         training_ready=False,
         execution_ready=False,
-    )
+    ), records
 
 
 def main() -> None:
