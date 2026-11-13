@@ -23,3 +23,22 @@
 تم توليد `requirements-ci.lock` مرة واحدة على GitHub Actions بنسخ محددة وبصمات SHA256 لكل wheel معتمدة لـPython 3.11 (pytest/ruff وملحقاتهما). بعد نقل القفل إلى `main` فإن `.github/workflows/ci.yml` يستخدم `pip install --require-hashes -r requirements-ci.lock` و`PYTHONPATH=src`، ولا يعيد حل النسخ من `pyproject.toml` في كل تشغيل. يحرس `scripts/verify_ci_lock.py` سياسة التثبيت، وتثبت GitHub Actions بالـCommit SHA.
 
 هذه خطوة **جزئية** من P02-02 وP01-05 فقط. لا نعد بوجود wheelhouse Offline، ولا قفل كامل لكل Extras، ولا SBOM أو CVE review مكتمل، ولا إعادة إنتاج OS/driver/GPU/MT5 حتى تكتمل أدلتها. يظل اعتماد أي تغيير على ملف القفل مراجعة بشرية منفصلة.
+
+
+## متابعة 14 نوفمبر 2026
+
+أضيف قفل مستقل `requirements-build.lock` لبيئة bootstrap/build، وتثبيت مطابق
+لـsetuptools/wheel داخل pyproject.toml. ينشئ CI وML بيئة دون ensurepip ثم
+يثبتان القفل بالبصمات. أضيف اختبار بناء wheel مرتين وتثبيتها معزولة،
+وتوسع اختبار إعادة تثبيت العجلات دون فهرس ليشمل أدوات البناء.
+الأدلة وحدودها في [التدقيق 34](34-BOOTSTRAP-BUILD-AND-DATA-INTAKE.md).
+تبقى المهمة مفتوحة؛ لم يثبت نظام تشغيل كامل أو بيئة Agents/GPU أو تراخيص كاملة.
+
+
+## بيئة البحث CPU الكاملة
+
+أضيف `requirements-research-cpu.lock` لكل Extras الخاصة بـml/agents، مقيدًا
+بأقفال البناء وML السابقة دون تغيير إصداراتها. يتضمن CI جديد تثبيت العجلات
+دون فهرس واختبارات تكامل محلية وحفظ Wheelhouse لمدة 30 يومًا.
+راجع [التدقيق 35](35-FULL-CPU-RESEARCH-ENVIRONMENT.md) للأدلة وحدود
+التراخيص وبيئة المالك وبيانات التدريب التي لا تزال غير معتمدة.

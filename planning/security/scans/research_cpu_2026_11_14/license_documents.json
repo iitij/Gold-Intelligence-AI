@@ -1,0 +1,2484 @@
+[
+  {
+    "name": "aiohappyeyeballs",
+    "version": "2.7.1",
+    "documents": [
+      {
+        "path": "aiohappyeyeballs-2.7.1.dist-info/licenses/LICENSE",
+        "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf",
+        "bytes": 13936
+      }
+    ]
+  },
+  {
+    "name": "aiohttp",
+    "version": "3.14.5",
+    "documents": [
+      {
+        "path": "aiohttp-3.14.5.dist-info/licenses/LICENSE.txt",
+        "sha256": "2e4be5fc6c4c72a466fcb665d726e049a6891981fe536c4f04b6366749461d23",
+        "bytes": 11313
+      },
+      {
+        "path": "aiohttp-3.14.5.dist-info/licenses/vendor/llhttp/LICENSE",
+        "sha256": "628168d68bb5a8a17e0bbefb3bd74e326e1edc20583d76f52f457c82c921867d",
+        "bytes": 1069
+      }
+    ]
+  },
+  {
+    "name": "aiosignal",
+    "version": "1.4.0",
+    "documents": [
+      {
+        "path": "aiosignal-1.4.0.dist-info/licenses/LICENSE",
+        "sha256": "6fd5243e92dd7f98ec69c7ac377728e74905709ff527a5bf98d6d0263c04f5b6",
+        "bytes": 11332
+      }
+    ]
+  },
+  {
+    "name": "alembic",
+    "version": "1.20.1",
+    "documents": [
+      {
+        "path": "alembic-1.20.1.dist-info/licenses/LICENSE",
+        "sha256": "6e68d94a03a0e3e327ddf3e86d1ebedc14eece3922022618fc246a36296fd0cc",
+        "bytes": 1059
+      }
+    ]
+  },
+  {
+    "name": "annotated-doc",
+    "version": "0.0.6",
+    "documents": [
+      {
+        "path": "annotated_doc-0.0.6.dist-info/licenses/LICENSE",
+        "sha256": "fff170779a6acbf65abdb405c087f1cee1786691e4a96a4034517e4a504a0cdf",
+        "bytes": 1086
+      }
+    ]
+  },
+  {
+    "name": "annotated-types",
+    "version": "0.8.0",
+    "documents": [
+      {
+        "path": "annotated_types-0.8.0.dist-info/licenses/LICENSE",
+        "sha256": "fe1049884b1a0d9342901e88e07f32925d24b3121d9972b6a6805fb9824b095d",
+        "bytes": 1083
+      }
+    ]
+  },
+  {
+    "name": "anyio",
+    "version": "4.16.0",
+    "documents": [
+      {
+        "path": "anyio-4.16.0.dist-info/licenses/LICENSE",
+        "sha256": "5361ac9dc58f2ef5fd2e9b09c68297c17f04950909bbc8023bdb82eacf22c2b0",
+        "bytes": 1081
+      }
+    ]
+  },
+  {
+    "name": "attrs",
+    "version": "26.1.0",
+    "documents": [
+      {
+        "path": "attrs-26.1.0.dist-info/licenses/LICENSE",
+        "sha256": "882115c95dfc2af1eeb6714f8ec6d5cbcabf667caff8729f42420da63f714e9f",
+        "bytes": 1109
+      }
+    ]
+  },
+  {
+    "name": "blinker",
+    "version": "1.9.0",
+    "documents": [
+      {
+        "path": "blinker-1.9.0.dist-info/LICENSE.txt",
+        "sha256": "9eb73a1f38597a4aa17025d2ae1be3839624c795e985d4f0e9769ce29faca467",
+        "bytes": 1054
+      }
+    ]
+  },
+  {
+    "name": "build",
+    "version": "1.6.1",
+    "documents": [
+      {
+        "path": "build-1.6.1.dist-info/licenses/LICENSE",
+        "sha256": "aaf9a29ca5907971ccf07de025375db34539a8d5eeebce20b46099805722106f",
+        "bytes": 1113
+      }
+    ]
+  },
+  {
+    "name": "cachetools",
+    "version": "7.3.1",
+    "documents": [
+      {
+        "path": "cachetools-7.3.1.dist-info/licenses/LICENSE",
+        "sha256": "28c000b52b0ee27138a68ef778227e4057046e86b65f62f1cacb99b0cc49e0d2",
+        "bytes": 1085
+      }
+    ]
+  },
+  {
+    "name": "catboost",
+    "version": "1.2.10",
+    "documents": [
+      {
+        "path": "../../../share/jupyter/labextensions/catboost-widget/static/543.e8dd5ef129981f7df1b4.js.LICENSE.txt",
+        "sha256": "d33efbdf4d309bfa4448199551371ff81d5f57661b781faf79d256554e038595",
+        "bytes": 336
+      },
+      {
+        "path": "../../../share/jupyter/labextensions/catboost-widget/static/692.400b4d789438c01ed84d.js.LICENSE.txt",
+        "sha256": "90df5fb90a66efeeba4a18886bb6c62bdc1389f8ea14d8e1531acd42f160d344",
+        "bytes": 475
+      },
+      {
+        "path": "../../../share/jupyter/labextensions/catboost-widget/static/708.97a415b7d9904d46a391.js.LICENSE.txt",
+        "sha256": "99b8afca26f4f995419fd5646383cda95b92d0d5198974937e64935b0abb6c5b",
+        "bytes": 1282
+      }
+    ]
+  },
+  {
+    "name": "certifi",
+    "version": "2026.10.23",
+    "documents": [
+      {
+        "path": "certifi-2026.10.23.dist-info/licenses/LICENSE",
+        "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7",
+        "bytes": 989
+      }
+    ]
+  },
+  {
+    "name": "cffi",
+    "version": "2.1.1",
+    "documents": [
+      {
+        "path": "cffi-2.1.1.dist-info/licenses/LICENSE",
+        "sha256": "5ba24ddc57067f9249add644c3afc41a5d6dc37e23433ef759d95df370b0af63",
+        "bytes": 1123
+      }
+    ]
+  },
+  {
+    "name": "charset-normalizer",
+    "version": "3.5.2",
+    "documents": [
+      {
+        "path": "charset_normalizer-3.5.2.dist-info/licenses/LICENSE",
+        "sha256": "6d0d41bfe170ac6c7dc248c9a63e254d0fb45a60d50a8257d0af92c6e249b887",
+        "bytes": 1071
+      }
+    ]
+  },
+  {
+    "name": "click",
+    "version": "8.5.1",
+    "documents": [
+      {
+        "path": "click-8.5.1.dist-info/licenses/LICENSE.txt",
+        "sha256": "9a8ad106a394e853bfe21f42f4e72d592819a22805d991b5f3275029292b658d",
+        "bytes": 1475
+      }
+    ]
+  },
+  {
+    "name": "cloudpickle",
+    "version": "3.1.2",
+    "documents": [
+      {
+        "path": "cloudpickle-3.1.2.dist-info/licenses/LICENSE",
+        "sha256": "3029ea34173e9fdc233ad315dc6b100bd1ea71f529b1c1af97664a272fdc55f5",
+        "bytes": 1754
+      }
+    ]
+  },
+  {
+    "name": "colorlog",
+    "version": "6.12.0",
+    "documents": [
+      {
+        "path": "colorlog-6.12.0.dist-info/licenses/LICENSE",
+        "sha256": "b1d9082bc483623fd59fc7279b457f0e40d942a76426cde257239e04dfe4125a",
+        "bytes": 1107
+      }
+    ]
+  },
+  {
+    "name": "contourpy",
+    "version": "1.3.3",
+    "documents": [
+      {
+        "path": "contourpy-1.3.3.dist-info/LICENSE",
+        "sha256": "34170979fc64f4f5e6dfa66ef27dec314ffffc5852000c60f4836ec1dfbf156e",
+        "bytes": 1534
+      }
+    ]
+  },
+  {
+    "name": "cryptography",
+    "version": "50.0.2",
+    "documents": [
+      {
+        "path": "cryptography-50.0.2.dist-info/licenses/LICENSE",
+        "sha256": "3e0c7c091a948b82533ba98fd7cbb40432d6f1a9acbf85f5922d2f99a93ae6bb",
+        "bytes": 197
+      },
+      {
+        "path": "cryptography-50.0.2.dist-info/licenses/LICENSE.APACHE",
+        "sha256": "aac73b3148f6d1d7111dbca32099f68d26c644c6813ae1e4f05f6579aa2663fe",
+        "bytes": 11360
+      },
+      {
+        "path": "cryptography-50.0.2.dist-info/licenses/LICENSE.BSD",
+        "sha256": "602c4c7482de6479dd2e9793cda275e5e63d773dacd1eca689232ab7008fb4fb",
+        "bytes": 1532
+      }
+    ]
+  },
+  {
+    "name": "cycler",
+    "version": "0.12.1",
+    "documents": [
+      {
+        "path": "cycler-0.12.1.dist-info/LICENSE",
+        "sha256": "f1218143d766da3fea66f13396b7f15df46a83303f29bf96ba6e98eb4d42f408",
+        "bytes": 1497
+      }
+    ]
+  },
+  {
+    "name": "databricks-sdk",
+    "version": "0.166.0",
+    "documents": [
+      {
+        "path": "databricks_sdk-0.166.0.dist-info/licenses/LICENSE",
+        "sha256": "69f0604d9a3e26c62a8f854e8e77a305eb4cb8729c151df46286c376954592a6",
+        "bytes": 11411
+      },
+      {
+        "path": "databricks_sdk-0.166.0.dist-info/licenses/NOTICE",
+        "sha256": "b6445c41803593af300cb7273966e0db1243b14389c3c1bc0c60616fc767237c",
+        "bytes": 1588
+      }
+    ]
+  },
+  {
+    "name": "distro",
+    "version": "1.9.0",
+    "documents": [
+      {
+        "path": "distro-1.9.0.dist-info/LICENSE",
+        "sha256": "cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14",
+        "bytes": 11325
+      }
+    ]
+  },
+  {
+    "name": "docker",
+    "version": "7.2.0",
+    "documents": [
+      {
+        "path": "docker-7.2.0.dist-info/licenses/LICENSE",
+        "sha256": "f2f0b07fa5e492c11d27aa0d2f3f1a0e64b9d17f32d8aa489ae2af9609af33b2",
+        "bytes": 10758
+      }
+    ]
+  },
+  {
+    "name": "duckdb",
+    "version": "2.0.0",
+    "documents": [
+      {
+        "path": "duckdb-2.0.0.dist-info/licenses/LICENSE",
+        "sha256": "075c33400ffcb0c586dd106a029d3e733e9da3693f8fcb9cebfc651c8a2f14e3",
+        "bytes": 1072
+      },
+      {
+        "path": "duckdb/experimental/spark/LICENSE",
+        "sha256": "ff5aa49c52e9830627582e9854fa76827d19c3b040b856162d172d72a9e95067",
+        "bytes": 13387
+      }
+    ]
+  },
+  {
+    "name": "fastapi",
+    "version": "0.162.7",
+    "documents": [
+      {
+        "path": "fastapi-0.162.7.dist-info/licenses/LICENSE",
+        "sha256": "4ec89ffc81485b97fec584b2d4a961032eeffe834453894fd9c1274906cc744e",
+        "bytes": 1086
+      }
+    ]
+  },
+  {
+    "name": "Flask",
+    "version": "3.1.3",
+    "documents": [
+      {
+        "path": "flask-3.1.3.dist-info/licenses/LICENSE.txt",
+        "sha256": "489a8e1108509ed98a37bb983e11e0f7e1d31f0bd8f99a79c8448e7ff37d07ea",
+        "bytes": 1475
+      }
+    ]
+  },
+  {
+    "name": "flask-cors",
+    "version": "6.0.5",
+    "documents": []
+  },
+  {
+    "name": "fonttools",
+    "version": "4.68.0",
+    "documents": [
+      {
+        "path": "fonttools-4.68.0.dist-info/licenses/LICENSE",
+        "sha256": "6787208f83f659ccbc2223b2fde952ffa6f7e8aca62f1a8a2bf5bc51bb1b2383",
+        "bytes": 1072
+      },
+      {
+        "path": "fonttools-4.68.0.dist-info/licenses/LICENSE.external",
+        "sha256": "94a83aaee0729a0f302d34acc4acecbd9d58366f262429075fe557e4a54b2e69",
+        "bytes": 20022
+      }
+    ]
+  },
+  {
+    "name": "frozenlist",
+    "version": "1.8.0",
+    "documents": [
+      {
+        "path": "frozenlist-1.8.0.dist-info/licenses/LICENSE",
+        "sha256": "6fd5243e92dd7f98ec69c7ac377728e74905709ff527a5bf98d6d0263c04f5b6",
+        "bytes": 11332
+      }
+    ]
+  },
+  {
+    "name": "gitdb",
+    "version": "4.0.12",
+    "documents": [
+      {
+        "path": "gitdb-4.0.12.dist-info/LICENSE",
+        "sha256": "efd29f596a08e8857e68e7694a50bcda72839792da7c3f041bcbff5f18009239",
+        "bytes": 1984
+      }
+    ]
+  },
+  {
+    "name": "GitPython",
+    "version": "3.2.1",
+    "documents": [
+      {
+        "path": "gitpython-3.2.1.dist-info/licenses/AUTHORS",
+        "sha256": "22e731fc21f7c3bff8d3ce328cce82e41bca7cb03c7157d81d65b6a559a9c529",
+        "bytes": 2410
+      },
+      {
+        "path": "gitpython-3.2.1.dist-info/licenses/LICENSE",
+        "sha256": "86fc94c321a9afbc11514713511bafded225f25100dcc0f7350e82bc231b8beb",
+        "bytes": 1503
+      }
+    ]
+  },
+  {
+    "name": "google-auth",
+    "version": "2.62.2",
+    "documents": [
+      {
+        "path": "google_auth-2.62.2.dist-info/licenses/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "bytes": 11357
+      }
+    ]
+  },
+  {
+    "name": "graphene",
+    "version": "3.4",
+    "documents": [
+      {
+        "path": "graphene-3.4.dist-info/LICENSE",
+        "sha256": "db86a40528cfa3b991c41fd7ab7f1ce33dad25e328329cf93d375b6ad187d14d",
+        "bytes": 1087
+      }
+    ]
+  },
+  {
+    "name": "graphql-core",
+    "version": "3.2.14",
+    "documents": [
+      {
+        "path": "graphql_core-3.2.14.dist-info/licenses/LICENSE",
+        "sha256": "c8d669d56efbd9b9229555c35ad619f6bea49742591442d2e36c79088115cd74",
+        "bytes": 1180
+      }
+    ]
+  },
+  {
+    "name": "graphql-relay",
+    "version": "3.2.0",
+    "documents": [
+      {
+        "path": "graphql_relay-3.2.0.dist-info/LICENSE",
+        "sha256": "7a94166e5bafb78e6a723117837bc3d6e330052fb77b7ecd854d7c2273ac5b28",
+        "bytes": 1079
+      }
+    ]
+  },
+  {
+    "name": "graphviz",
+    "version": "0.21",
+    "documents": [
+      {
+        "path": "graphviz-0.21.dist-info/licenses/LICENSE.txt",
+        "sha256": "0cf7b80986633eb6eef661617c2a36eba56ec679b2193d28767706aeac33ed6d",
+        "bytes": 1107
+      }
+    ]
+  },
+  {
+    "name": "gunicorn",
+    "version": "26.2.0",
+    "documents": [
+      {
+        "path": "gunicorn-26.2.0.dist-info/licenses/LICENSE",
+        "sha256": "1457e30a8f71334f34f241b9f267e7f5556544937bc2c1751bc58b52250c0543",
+        "bytes": 1136
+      }
+    ]
+  },
+  {
+    "name": "h11",
+    "version": "0.16.0",
+    "documents": [
+      {
+        "path": "h11-0.16.0.dist-info/licenses/LICENSE.txt",
+        "sha256": "37db5bb85926db28a427a25867f10b1232003aea1be69ccb851138adb8e6f361",
+        "bytes": 1124
+      }
+    ]
+  },
+  {
+    "name": "httpcore",
+    "version": "1.0.9",
+    "documents": [
+      {
+        "path": "httpcore-1.0.9.dist-info/licenses/LICENSE.md",
+        "sha256": "fdcb59154c74cbaba16a11242f7740bea9f23d6feb5547917d8c5f94a80392a5",
+        "bytes": 1518
+      }
+    ]
+  },
+  {
+    "name": "httpcore2",
+    "version": "2.16.0",
+    "documents": [
+      {
+        "path": "httpcore2-2.16.0.dist-info/licenses/LICENSE.md",
+        "sha256": "c4df125c807b0613501e943a5c92496dd11d2c16604ce396097a8dde396304d9",
+        "bytes": 1599
+      }
+    ]
+  },
+  {
+    "name": "httpx",
+    "version": "0.28.1",
+    "documents": [
+      {
+        "path": "httpx-0.28.1.dist-info/licenses/LICENSE.md",
+        "sha256": "4ec59d544f12b5f539a3a716fd321ac58ccd8030b465221f2c880200cdf28d8d",
+        "bytes": 1508
+      }
+    ]
+  },
+  {
+    "name": "httpx2",
+    "version": "2.16.0",
+    "documents": [
+      {
+        "path": "httpx2-2.16.0.dist-info/licenses/LICENSE.md",
+        "sha256": "7e7d6dbaf7fe160d39fd6e84fd02c33cab96bcbea34d36998d545bceb4a19c30",
+        "bytes": 1589
+      }
+    ]
+  },
+  {
+    "name": "huey",
+    "version": "3.5.4",
+    "documents": [
+      {
+        "path": "huey-3.5.4.dist-info/licenses/LICENSE",
+        "sha256": "a4b2c19135a1e6a43b661f5d817e28dc3f28b621ff969d870e47eb98adcd3250",
+        "bytes": 1058
+      }
+    ]
+  },
+  {
+    "name": "idna",
+    "version": "3.20",
+    "documents": [
+      {
+        "path": "idna-3.20.dist-info/licenses/LICENSE.md",
+        "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04",
+        "bytes": 1541
+      }
+    ]
+  },
+  {
+    "name": "importlib_metadata",
+    "version": "10.2.0",
+    "documents": [
+      {
+        "path": "importlib_metadata-10.2.0.dist-info/licenses/LICENSE",
+        "sha256": "e2f7bb0557e7a381499f15baa7c1d776d83d6616599179d71d3109b8e39f7b25",
+        "bytes": 10278
+      }
+    ]
+  },
+  {
+    "name": "itsdangerous",
+    "version": "2.2.0",
+    "documents": [
+      {
+        "path": "itsdangerous-2.2.0.dist-info/LICENSE.txt",
+        "sha256": "63af09891b6be8ad1a4252ed43af0f4efba7fc948e228367bed7f3c5ae0b09d7",
+        "bytes": 1475
+      }
+    ]
+  },
+  {
+    "name": "Jinja2",
+    "version": "3.1.6",
+    "documents": [
+      {
+        "path": "jinja2-3.1.6.dist-info/licenses/LICENSE.txt",
+        "sha256": "3b49dcee4105eb37bac10faf1be260408fe85d252b8e9df2e0979fc1e094437b",
+        "bytes": 1475
+      }
+    ]
+  },
+  {
+    "name": "joblib",
+    "version": "1.6.0",
+    "documents": [
+      {
+        "path": "joblib-1.6.0.dist-info/licenses/LICENSE.txt",
+        "sha256": "42612911c1872c5e4b43f6ae0e8ee59467cd350332241cf72ce90640264fae6a",
+        "bytes": 1527
+      }
+    ]
+  },
+  {
+    "name": "jsonpatch",
+    "version": "1.47",
+    "documents": [
+      {
+        "path": "jsonpatch-1.47.dist-info/licenses/LICENSE",
+        "sha256": "4393eb6733fa1e367f41769b382f4f1be7bf0daeb1e243ed92b3f5d8bafd236f",
+        "bytes": 1481
+      }
+    ]
+  },
+  {
+    "name": "jsonpointer",
+    "version": "3.12",
+    "documents": [
+      {
+        "path": "jsonpointer-3.12.dist-info/licenses/AUTHORS",
+        "sha256": "4d58319d0f59c87bef5b07b3fe4db0f19c2d7d5545b034c6bf7b57c89bbef57f",
+        "bytes": 113
+      },
+      {
+        "path": "jsonpointer-3.12.dist-info/licenses/LICENSE.txt",
+        "sha256": "d8b24f15d472885f788a2d6e985850f264627b86012a17bb242c83f310d907e5",
+        "bytes": 1413
+      }
+    ]
+  },
+  {
+    "name": "kiwisolver",
+    "version": "1.5.1",
+    "documents": [
+      {
+        "path": "kiwisolver-1.5.1.dist-info/licenses/LICENSE",
+        "sha256": "529c40e5f67f2f88904657a9f7879ae2f8dc76bc9bfef9cb10d988b48804ed61",
+        "bytes": 3289
+      }
+    ]
+  },
+  {
+    "name": "langchain-core",
+    "version": "1.8.0",
+    "documents": [
+      {
+        "path": "langchain_core-1.8.0.dist-info/licenses/LICENSE",
+        "sha256": "4ec67e4ca6e6721dba849b2ca82261597c86a61ee214bbf21416006b7b2d0478",
+        "bytes": 1067
+      }
+    ]
+  },
+  {
+    "name": "langchain-protocol",
+    "version": "0.0.21",
+    "documents": [
+      {
+        "path": "langchain_protocol-0.0.21.dist-info/licenses/LICENSE",
+        "sha256": "893e6e30275896912c21c77f9f7c112aba85fd985d05b26a29424cf7e511d177",
+        "bytes": 1072
+      }
+    ]
+  },
+  {
+    "name": "langgraph",
+    "version": "1.2.21",
+    "documents": [
+      {
+        "path": "langgraph-1.2.21.dist-info/licenses/LICENSE",
+        "sha256": "d9bb52f2e3540d60ff50d8f0f5b6ba649b7fd346948c4c3d086c8afb120763c7",
+        "bytes": 1072
+      }
+    ]
+  },
+  {
+    "name": "langgraph-checkpoint",
+    "version": "4.3.1",
+    "documents": [
+      {
+        "path": "langgraph_checkpoint-4.3.1.dist-info/licenses/LICENSE",
+        "sha256": "d9bb52f2e3540d60ff50d8f0f5b6ba649b7fd346948c4c3d086c8afb120763c7",
+        "bytes": 1072
+      }
+    ]
+  },
+  {
+    "name": "langgraph-prebuilt",
+    "version": "1.1.1",
+    "documents": [
+      {
+        "path": "langgraph_prebuilt-1.1.1.dist-info/licenses/LICENSE",
+        "sha256": "d9bb52f2e3540d60ff50d8f0f5b6ba649b7fd346948c4c3d086c8afb120763c7",
+        "bytes": 1072
+      }
+    ]
+  },
+  {
+    "name": "langgraph-sdk",
+    "version": "0.4.14",
+    "documents": [
+      {
+        "path": "langgraph_sdk-0.4.14.dist-info/licenses/LICENSE",
+        "sha256": "d9bb52f2e3540d60ff50d8f0f5b6ba649b7fd346948c4c3d086c8afb120763c7",
+        "bytes": 1072
+      }
+    ]
+  },
+  {
+    "name": "langsmith",
+    "version": "0.14.17",
+    "documents": [
+      {
+        "path": "langsmith-0.14.17.dist-info/licenses/LICENSE",
+        "sha256": "b309deba813e5bef2c128236a105d0eb74197aaf4ede3861730bdc0e5c5edfbb",
+        "bytes": 1049
+      }
+    ]
+  },
+  {
+    "name": "lazy-importer",
+    "version": "0.1.0",
+    "documents": [
+      {
+        "path": "lazy_importer-0.1.0.dist-info/licenses/LICENSE",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "bytes": 11358
+      }
+    ]
+  },
+  {
+    "name": "lightgbm",
+    "version": "4.7.0",
+    "documents": [
+      {
+        "path": "lightgbm-4.7.0.dist-info/licenses/LICENSE",
+        "sha256": "ca70f15d841f7e76c8bbd284d25300cd4ae2ef1035e7e5252b13b73449464305",
+        "bytes": 1121
+      }
+    ]
+  },
+  {
+    "name": "Mako",
+    "version": "1.4.3",
+    "documents": [
+      {
+        "path": "mako-1.4.3.dist-info/licenses/LICENSE",
+        "sha256": "8c1d171bc5d341ad9cd33d5e2c39b96a82c7bd49b3ae89a470c37e5822232054",
+        "bytes": 1098
+      }
+    ]
+  },
+  {
+    "name": "MarkupSafe",
+    "version": "3.0.4",
+    "documents": [
+      {
+        "path": "markupsafe-3.0.4.dist-info/licenses/LICENSE.txt",
+        "sha256": "489a8e1108509ed98a37bb983e11e0f7e1d31f0bd8f99a79c8448e7ff37d07ea",
+        "bytes": 1475
+      }
+    ]
+  },
+  {
+    "name": "matplotlib",
+    "version": "3.11.2",
+    "documents": [
+      {
+        "path": "matplotlib-3.11.2.dist-info/LICENSE",
+        "sha256": "822e8e528147569a41975592aee19c11992ab667ba50451cd929031d5fc74491",
+        "bytes": 63442
+      },
+      {
+        "path": "matplotlib/mpl-data/fonts/ttf/LICENSE_DEJAVU",
+        "sha256": "d75938dec098f06f0ac3c00853065d94f020be1c3c62ef1dc2975ba15b4d9b0e",
+        "bytes": 4816
+      },
+      {
+        "path": "matplotlib/mpl-data/fonts/ttf/LICENSE_STIX",
+        "sha256": "bab3d31dfef07f483624f2f65f2711e76065b8e7273278b1c071ede1041c9959",
+        "bytes": 5476
+      }
+    ]
+  },
+  {
+    "name": "mlflow",
+    "version": "3.18.0",
+    "documents": [
+      {
+        "path": "mlflow-3.18.0.dist-info/licenses/LICENSE.txt",
+        "sha256": "6395355de6f391afff35996a30fb41b189b4991a4cb54993ace35ab69a0bfa28",
+        "bytes": 11382
+      },
+      {
+        "path": "mlflow/assistant/skills/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "bytes": 11357
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/1126.8bfe0c8c.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/113.5a56a33b.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/1647.3a1bb310.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/1731.db7ca9bc.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/1933.4c09baa9.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/2233.98453d1d.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/2473.8d99606e.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/2544.0a00d45b.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/2685.2f8f1b38.chunk.js.LICENSE.txt",
+        "sha256": "a7e162ee7944332c3406af6cbdf5865ee8d82b4eb5c37ef9462a5378f5e35caa",
+        "bytes": 719
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/2711.31deda38.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/2800.d4817db0.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/281.f1da793c.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/3045.bf08c492.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/309.a33bfcba.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/3203.dbf93652.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/323.989d59b6.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/3273.0b97853e.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/3287.5d54b799.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/329.a442e2ac.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/3487.335a0be3.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/3502.d5f3c2e8.chunk.js.LICENSE.txt",
+        "sha256": "613b5b5e527ca8cced2c55d5cb33d43d9314a9ca4fb5d417dafc0dbbcac7f167",
+        "bytes": 1458
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/353.df7e2039.chunk.js.LICENSE.txt",
+        "sha256": "ed03d49691cde43dd2b567033fb017d5bb547c515fdff18939ba9c55a312cd43",
+        "bytes": 258
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/3561.cf8d7014.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/3621.56b1d847.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/369.91813068.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/3723.b64f9476.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/3869.d62ac6b9.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/3945.58e266a5.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/4089.704963d8.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/4201.8811e404.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/4219.2c48e930.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/4329.da89eb02.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/4377.1df0b37f.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/4807.64ae6ca3.chunk.js.LICENSE.txt",
+        "sha256": "7a3efa64f47d17a6610493246c805ffb09b52471b4aa0b2ac0f6371ab1095086",
+        "bytes": 81
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/4845.90a03b2c.chunk.js.LICENSE.txt",
+        "sha256": "5c5d0d7b1139031315efb628039dbab05461d0abdb25e913e3431567ce5b9fb2",
+        "bytes": 106
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/4899.ad66a41a.chunk.js.LICENSE.txt",
+        "sha256": "f1d9063a347a40a4b8e63a75c01b313c1a0782b055b8f85044e69a7a3d10bda8",
+        "bytes": 351
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/5075.e552bf60.chunk.js.LICENSE.txt",
+        "sha256": "347db768870b0188509c60c34385f8b61caa81266e82ccb60926449643a01585",
+        "bytes": 3197
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/5181.397aa651.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/5257.01a8145f.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/5465.f4e9a212.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/5493.f1d11a87.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/5745.a4d23bf5.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/5897.af80bc38.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/6049.fe565abc.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/6121.71bb5c7f.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/6221.7abe1a84.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/6291.258ef7e2.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/6383.38059a16.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/6507.352ad2e0.chunk.js.LICENSE.txt",
+        "sha256": "5c103a73e6dea27766366ce5f6e650d2bacf2180cff49ab4013347d3842cc21b",
+        "bytes": 37
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/6537.b171bf4a.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/6549.54c4bfc6.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/6553.ee0c1822.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/6741.04a4b50e.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/6857.ddd45fce.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/6897.05ffc5e9.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/6953.7f6b9ba7.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/7007.98e57798.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/7019.4e2d1d2e.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/7049.90031b66.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/7097.aa762b7a.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/7273.7249eb69.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/7299.5a34e486.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/7301.95319e5c.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/7421.e4a09073.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/7465.71d48894.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/7519.8a561d30.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/7561.2ddefcff.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/7720.0a2ff1e6.chunk.js.LICENSE.txt",
+        "sha256": "56c62de4aefe010e491e4eb0b2ab6c3452aeff50927d10255ae2bba78b02e534",
+        "bytes": 405
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/7753.669f3a94.chunk.js.LICENSE.txt",
+        "sha256": "974d8774f028b2532c8ecb717058eb4a6042f4a9c82945d643fdb2b2bb64f848",
+        "bytes": 2577
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/7817.3b9004f6.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/7854.f15da9b1.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/8087.fee8f492.chunk.js.LICENSE.txt",
+        "sha256": "ea790f3be4982c33c90750c0596263856a361f65ff6369653718f93c29a6520c",
+        "bytes": 153
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/8093.a64d22b0.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/8115.863690fa.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/8116.aa43eef9.chunk.js.LICENSE.txt",
+        "sha256": "2f7230e5730dd3e4feba5b294c08c82b4fc346e019ec0f8e6fc1b5db326315d8",
+        "bytes": 576
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/8353.fbe16804.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/8409.b79fd12a.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/8461.781ae3e5.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/8505.c00a65b2.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/8553.13b7e0d3.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/8621.6a8de31e.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/8723.3c1f75bf.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/8745.5b18c042.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/8889.4f5527ff.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/889.c18310d6.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/8937.1724e3df.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/8953.8846ac3e.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/8969.80fbfdac.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/9001.7433a1f4.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/9288.2ca2efc9.chunk.js.LICENSE.txt",
+        "sha256": "11adbe52e395f779a3bb359b3c33a1095161a9ca9fe0d811e27cbac412c7f0e5",
+        "bytes": 305
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/9297.4baf9710.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/9393.30800d52.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/9433.d7695a5b.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/9537.5d1b592c.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/9609.1814a188.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/9861.2d6b3bae.chunk.js.LICENSE.txt",
+        "sha256": "d49fb5cb77f2f622f79fbfee49eec4d3dab51570ad119d054242acd0535b98d7",
+        "bytes": 160
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/9981.0433038f.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/9995.41842524.chunk.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/main.00d66947.js.LICENSE.txt",
+        "sha256": "5deb4d24b7d5ea4f7f3dc344578ff6f65fc6560762b107d65266a5b2b24c2124",
+        "bytes": 7423
+      },
+      {
+        "path": "mlflow/server/js/build/static/js/monaco-json.worker.b4f4ced3.js.LICENSE.txt",
+        "sha256": "4fc0e3fd8b69e6cd8bd761961a4bd4ec8ce936901f63d6ed8af84a3d7d79f668",
+        "bytes": 387
+      },
+      {
+        "path": "mlflow/server/js/build/static/media/pdf.worker.min.16b289c2599c81a29db9.mjs.LICENSE.txt",
+        "sha256": "b5e8c493d516d9b156045ec3b83cc3e26785363af56db22bd52382942b394242",
+        "bytes": 795
+      }
+    ]
+  },
+  {
+    "name": "mlflow-skinny",
+    "version": "3.18.0",
+    "documents": [
+      {
+        "path": "mlflow/assistant/skills/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "bytes": 11357
+      },
+      {
+        "path": "mlflow_skinny-3.18.0.dist-info/licenses/LICENSE.txt",
+        "sha256": "6395355de6f391afff35996a30fb41b189b4991a4cb54993ace35ab69a0bfa28",
+        "bytes": 11382
+      }
+    ]
+  },
+  {
+    "name": "mlflow-tracing",
+    "version": "3.18.0",
+    "documents": [
+      {
+        "path": "mlflow_tracing-3.18.0.dist-info/licenses/LICENSE.txt",
+        "sha256": "6395355de6f391afff35996a30fb41b189b4991a4cb54993ace35ab69a0bfa28",
+        "bytes": 11382
+      }
+    ]
+  },
+  {
+    "name": "multidict",
+    "version": "7.2.1",
+    "documents": [
+      {
+        "path": "multidict-7.2.1.dist-info/licenses/LICENSE",
+        "sha256": "2e4be5fc6c4c72a466fcb665d726e049a6891981fe536c4f04b6366749461d23",
+        "bytes": 11313
+      }
+    ]
+  },
+  {
+    "name": "narwhals",
+    "version": "2.28.0",
+    "documents": [
+      {
+        "path": "narwhals-2.28.0.dist-info/licenses/LICENSE.md",
+        "sha256": "811445f30147b8f0c9d444c9025fd528f9532c54b7b83f6e2368473dc91cfdf0",
+        "bytes": 1082
+      }
+    ]
+  },
+  {
+    "name": "numpy",
+    "version": "2.4.6",
+    "documents": [
+      {
+        "path": "numpy-2.4.6.dist-info/licenses/LICENSE.txt",
+        "sha256": "4860083caa0de2ac3292ca98bd074bd8f45d8b32624e37b1e70a240bff61e488",
+        "bytes": 46794
+      },
+      {
+        "path": "numpy-2.4.6.dist-info/licenses/numpy/_core/include/numpy/libdivide/LICENSE.txt",
+        "sha256": "fbc539f47d0cf83bc61378080fb873d5c14630126cacbfe754035c3926daa5ec",
+        "bytes": 1018
+      },
+      {
+        "path": "numpy-2.4.6.dist-info/licenses/numpy/_core/src/common/pythoncapi-compat/COPYING",
+        "sha256": "3f2c1ffa76383a55ae0aac01c9737cd70050dff63e1f026694fbe9d662573c98",
+        "bytes": 690
+      },
+      {
+        "path": "numpy-2.4.6.dist-info/licenses/numpy/_core/src/highway/LICENSE",
+        "sha256": "e340270d4f64384569a91d546acb5b094d69ce47f0c015db77abb74dc6f815af",
+        "bytes": 20785
+      },
+      {
+        "path": "numpy-2.4.6.dist-info/licenses/numpy/_core/src/multiarray/dragon4_LICENSE.txt",
+        "sha256": "f7b14309e5f54e5022b26448eefd419988ada2aec01d3c1162d84a0ea8f21f2c",
+        "bytes": 1414
+      },
+      {
+        "path": "numpy-2.4.6.dist-info/licenses/numpy/_core/src/npysort/x86-simd-sort/LICENSE.md",
+        "sha256": "211e7d737d6179a08f791ebb0a99897ce7cd2457410c542876d125576edfe910",
+        "bytes": 1514
+      },
+      {
+        "path": "numpy-2.4.6.dist-info/licenses/numpy/_core/src/umath/svml/LICENSE",
+        "sha256": "c17011467b4fe6e20fbfbeda4df09e58c2bca5480a063e55735a4000a379aad9",
+        "bytes": 1543
+      },
+      {
+        "path": "numpy-2.4.6.dist-info/licenses/numpy/fft/pocketfft/LICENSE.md",
+        "sha256": "a85ca13fdf90160b64a0698215868c13b74d835ad0a4e2ba44713b8c5058a056",
+        "bytes": 1498
+      },
+      {
+        "path": "numpy-2.4.6.dist-info/licenses/numpy/linalg/lapack_lite/LICENSE.txt",
+        "sha256": "a14cc25e10d40a3aa705b7de2fb764a6535d8ee9b2db4e1724900585457dfd55",
+        "bytes": 2266
+      },
+      {
+        "path": "numpy-2.4.6.dist-info/licenses/numpy/ma/LICENSE",
+        "sha256": "05f3b88351988ecfad10abe92c0c50e5875c6452d5009a0084cc291551ffcca6",
+        "bytes": 1593
+      },
+      {
+        "path": "numpy-2.4.6.dist-info/licenses/numpy/random/LICENSE.md",
+        "sha256": "103166b62b80443afb9eb3488e052ea06be0cff566b908f199e561fde49af19f",
+        "bytes": 3511
+      },
+      {
+        "path": "numpy-2.4.6.dist-info/licenses/numpy/random/src/distributions/LICENSE.md",
+        "sha256": "469778be8f33d54e1bcaab28c281cc472916d2d273f835e55bc487d30503face",
+        "bytes": 2745
+      },
+      {
+        "path": "numpy-2.4.6.dist-info/licenses/numpy/random/src/mt19937/LICENSE.md",
+        "sha256": "0e111337b25494a773106695f0e799f642b8567aaacca4f116a74a8177179156",
+        "bytes": 2926
+      },
+      {
+        "path": "numpy-2.4.6.dist-info/licenses/numpy/random/src/pcg64/LICENSE.md",
+        "sha256": "e7d4f4fb20358f314210a892ae17351e04993813646f697ec387385ca2a36918",
+        "bytes": 1154
+      },
+      {
+        "path": "numpy-2.4.6.dist-info/licenses/numpy/random/src/philox/LICENSE.md",
+        "sha256": "6f5828a57223d4cc7f8ea505a2623e7b978b242752c1515e355f46ba2cec1800",
+        "bytes": 1509
+      },
+      {
+        "path": "numpy-2.4.6.dist-info/licenses/numpy/random/src/sfc64/LICENSE.md",
+        "sha256": "9d4098846018319cd68e228ee6220361787f73bccbf00237a85e4fc9621b998f",
+        "bytes": 1226
+      },
+      {
+        "path": "numpy-2.4.6.dist-info/licenses/numpy/random/src/splitmix64/LICENSE.md",
+        "sha256": "268b0ca06759d31ea3ca68dd35f20e877916e927b1c2a835e4592a3c4354b1f9",
+        "bytes": 332
+      },
+      {
+        "path": "numpy/_core/include/numpy/random/LICENSE.txt",
+        "sha256": "fbc539f47d0cf83bc61378080fb873d5c14630126cacbfe754035c3926daa5ec",
+        "bytes": 1018
+      },
+      {
+        "path": "numpy/ma/LICENSE",
+        "sha256": "05f3b88351988ecfad10abe92c0c50e5875c6452d5009a0084cc291551ffcca6",
+        "bytes": 1593
+      },
+      {
+        "path": "numpy/random/LICENSE.md",
+        "sha256": "103166b62b80443afb9eb3488e052ea06be0cff566b908f199e561fde49af19f",
+        "bytes": 3511
+      }
+    ]
+  },
+  {
+    "name": "opentelemetry-api",
+    "version": "1.45.2",
+    "documents": [
+      {
+        "path": "opentelemetry_api-1.45.2.dist-info/licenses/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "bytes": 11357
+      }
+    ]
+  },
+  {
+    "name": "opentelemetry-proto",
+    "version": "1.45.2",
+    "documents": [
+      {
+        "path": "opentelemetry_proto-1.45.2.dist-info/licenses/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "bytes": 11357
+      }
+    ]
+  },
+  {
+    "name": "opentelemetry-sdk",
+    "version": "1.45.2",
+    "documents": [
+      {
+        "path": "opentelemetry_sdk-1.45.2.dist-info/licenses/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "bytes": 11357
+      }
+    ]
+  },
+  {
+    "name": "opentelemetry-semantic-conventions",
+    "version": "0.66b2",
+    "documents": [
+      {
+        "path": "opentelemetry_semantic_conventions-0.66b2.dist-info/licenses/LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "bytes": 11357
+      }
+    ]
+  },
+  {
+    "name": "optuna",
+    "version": "5.0.0",
+    "documents": [
+      {
+        "path": "optuna-5.0.0.dist-info/licenses/LICENSE",
+        "sha256": "c3df8e8523cf46be4b366ee7dd11578454b10ea5ec5159e57df849513aafe059",
+        "bytes": 1081
+      },
+      {
+        "path": "optuna-5.0.0.dist-info/licenses/LICENSE_THIRD_PARTY",
+        "sha256": "dbff6df3cb59b7fb11de7e234630e139318ee8cada55e2f14a24d184c48954a8",
+        "bytes": 1929
+      }
+    ]
+  },
+  {
+    "name": "orjson",
+    "version": "3.13.0",
+    "documents": [
+      {
+        "path": "orjson-3.13.0.dist-info/licenses/LICENSE-APACHE",
+        "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+        "bytes": 10847
+      },
+      {
+        "path": "orjson-3.13.0.dist-info/licenses/LICENSE-MIT",
+        "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+        "bytes": 1023
+      },
+      {
+        "path": "orjson-3.13.0.dist-info/licenses/LICENSE-MPL-2.0",
+        "sha256": "66a3107d5ad6a058aab753eaac2047ccb2ed0e39465dd0fe5844da3e300d5172",
+        "bytes": 16727
+      }
+    ]
+  },
+  {
+    "name": "ormsgpack",
+    "version": "1.13.1",
+    "documents": [
+      {
+        "path": "ormsgpack-1.13.1.dist-info/licenses/LICENSE-APACHE",
+        "sha256": "a60eea817514531668d7e00765731449fe14d059d3249e0bc93b36de45f759f2",
+        "bytes": 10847
+      },
+      {
+        "path": "ormsgpack-1.13.1.dist-info/licenses/LICENSE-MIT",
+        "sha256": "23f18e03dc49df91622fe2a76176497404e46ced8a715d9d2b67a7446571cca3",
+        "bytes": 1023
+      }
+    ]
+  },
+  {
+    "name": "packaging",
+    "version": "26.3",
+    "documents": [
+      {
+        "path": "packaging-26.3.dist-info/licenses/LICENSE",
+        "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+        "bytes": 197
+      },
+      {
+        "path": "packaging-26.3.dist-info/licenses/LICENSE.APACHE",
+        "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+        "bytes": 10174
+      },
+      {
+        "path": "packaging-26.3.dist-info/licenses/LICENSE.BSD",
+        "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+        "bytes": 1344
+      }
+    ]
+  },
+  {
+    "name": "pandas",
+    "version": "2.3.3",
+    "documents": [
+      {
+        "path": "pandas-2.3.3.dist-info/LICENSE",
+        "sha256": "1dea2e80ed1cbd0233f84cee4486b29689f133babaccf4d295e51c43051f3216",
+        "bytes": 62399
+      }
+    ]
+  },
+  {
+    "name": "pillow",
+    "version": "13.0.0",
+    "documents": [
+      {
+        "path": "pillow-13.0.0.dist-info/licenses/LICENSE",
+        "sha256": "dda12a98c1979cf3d94df1cff45d27a4cb3f04a60c76f76902ac54cac03ec0ce",
+        "bytes": 70307
+      }
+    ]
+  },
+  {
+    "name": "pip",
+    "version": "26.3",
+    "documents": [
+      {
+        "path": "pip-26.3.dist-info/licenses/AUTHORS.txt",
+        "sha256": "f8998e1ed3151771c2fbc899ccf0e18b0817d425dff4983eb0fede4e48db47e4",
+        "bytes": 12239
+      },
+      {
+        "path": "pip-26.3.dist-info/licenses/LICENSE.txt",
+        "sha256": "634300a669d49aeae65b12c6c48c924c51a4cdf3d1ff086dc3456dc8bcaa2104",
+        "bytes": 1093
+      },
+      {
+        "path": "pip-26.3.dist-info/licenses/src/pip/_vendor/cachecontrol/LICENSE.txt",
+        "sha256": "86eeee87be2a43f3ff1f56496f451f69243926f025fedbb033666c304c4c161b",
+        "bytes": 558
+      },
+      {
+        "path": "pip-26.3.dist-info/licenses/src/pip/_vendor/certifi/LICENSE",
+        "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7",
+        "bytes": 989
+      },
+      {
+        "path": "pip-26.3.dist-info/licenses/src/pip/_vendor/distlib/LICENSE.txt",
+        "sha256": "808e10c8a6ab8deb149ff9b3fb19f447a808094606d712a9ca57fead3552599d",
+        "bytes": 14531
+      },
+      {
+        "path": "pip-26.3.dist-info/licenses/src/pip/_vendor/distro/LICENSE",
+        "sha256": "cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14",
+        "bytes": 11325
+      },
+      {
+        "path": "pip-26.3.dist-info/licenses/src/pip/_vendor/idna/LICENSE.md",
+        "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04",
+        "bytes": 1541
+      },
+      {
+        "path": "pip-26.3.dist-info/licenses/src/pip/_vendor/msgpack/COPYING",
+        "sha256": "492dedba85da5872f78e6091bcd1fea474d660d35acb4dee964b8aab3f007427",
+        "bytes": 614
+      },
+      {
+        "path": "pip-26.3.dist-info/licenses/src/pip/_vendor/packaging/LICENSE",
+        "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+        "bytes": 197
+      },
+      {
+        "path": "pip-26.3.dist-info/licenses/src/pip/_vendor/packaging/LICENSE.APACHE",
+        "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+        "bytes": 10174
+      },
+      {
+        "path": "pip-26.3.dist-info/licenses/src/pip/_vendor/packaging/LICENSE.BSD",
+        "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+        "bytes": 1344
+      },
+      {
+        "path": "pip-26.3.dist-info/licenses/src/pip/_vendor/pkg_resources/LICENSE",
+        "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+        "bytes": 1023
+      },
+      {
+        "path": "pip-26.3.dist-info/licenses/src/pip/_vendor/platformdirs/LICENSE",
+        "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6",
+        "bytes": 1089
+      },
+      {
+        "path": "pip-26.3.dist-info/licenses/src/pip/_vendor/pygments/LICENSE",
+        "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17",
+        "bytes": 1331
+      },
+      {
+        "path": "pip-26.3.dist-info/licenses/src/pip/_vendor/pyproject_hooks/LICENSE",
+        "sha256": "1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154",
+        "bytes": 1081
+      },
+      {
+        "path": "pip-26.3.dist-info/licenses/src/pip/_vendor/requests/LICENSE",
+        "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+        "bytes": 10142
+      },
+      {
+        "path": "pip-26.3.dist-info/licenses/src/pip/_vendor/resolvelib/LICENSE",
+        "sha256": "f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d",
+        "bytes": 751
+      },
+      {
+        "path": "pip-26.3.dist-info/licenses/src/pip/_vendor/rich/LICENSE",
+        "sha256": "deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15",
+        "bytes": 1056
+      },
+      {
+        "path": "pip-26.3.dist-info/licenses/src/pip/_vendor/tomli/LICENSE",
+        "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+        "bytes": 1072
+      },
+      {
+        "path": "pip-26.3.dist-info/licenses/src/pip/_vendor/tomli_w/LICENSE",
+        "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+        "bytes": 1072
+      },
+      {
+        "path": "pip-26.3.dist-info/licenses/src/pip/_vendor/truststore/LICENSE",
+        "sha256": "33be7b7e8fa4fd19b1760e1a8ed8a668bdab852c91b692dd41424bcb725a9fca",
+        "bytes": 1086
+      },
+      {
+        "path": "pip-26.3.dist-info/licenses/src/pip/_vendor/urllib3/LICENSE.txt",
+        "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686",
+        "bytes": 1093
+      },
+      {
+        "path": "pip/_vendor/cachecontrol/LICENSE.txt",
+        "sha256": "86eeee87be2a43f3ff1f56496f451f69243926f025fedbb033666c304c4c161b",
+        "bytes": 558
+      },
+      {
+        "path": "pip/_vendor/certifi/LICENSE",
+        "sha256": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7",
+        "bytes": 989
+      },
+      {
+        "path": "pip/_vendor/distlib/LICENSE.txt",
+        "sha256": "808e10c8a6ab8deb149ff9b3fb19f447a808094606d712a9ca57fead3552599d",
+        "bytes": 14531
+      },
+      {
+        "path": "pip/_vendor/distro/LICENSE",
+        "sha256": "cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14",
+        "bytes": 11325
+      },
+      {
+        "path": "pip/_vendor/idna/LICENSE.md",
+        "sha256": "1a9a4f0e3d479a27240ddd59a9137a66ab4a0f9dfdc8ca6188cc0bfd85187f04",
+        "bytes": 1541
+      },
+      {
+        "path": "pip/_vendor/msgpack/COPYING",
+        "sha256": "492dedba85da5872f78e6091bcd1fea474d660d35acb4dee964b8aab3f007427",
+        "bytes": 614
+      },
+      {
+        "path": "pip/_vendor/packaging/LICENSE",
+        "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+        "bytes": 197
+      },
+      {
+        "path": "pip/_vendor/packaging/LICENSE.APACHE",
+        "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+        "bytes": 10174
+      },
+      {
+        "path": "pip/_vendor/packaging/LICENSE.BSD",
+        "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+        "bytes": 1344
+      },
+      {
+        "path": "pip/_vendor/pkg_resources/LICENSE",
+        "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+        "bytes": 1023
+      },
+      {
+        "path": "pip/_vendor/platformdirs/LICENSE",
+        "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6",
+        "bytes": 1089
+      },
+      {
+        "path": "pip/_vendor/pygments/LICENSE",
+        "sha256": "a9d66f1d526df02e29dce73436d34e56e8632f46c275bbdffc70569e882f9f17",
+        "bytes": 1331
+      },
+      {
+        "path": "pip/_vendor/pyproject_hooks/LICENSE",
+        "sha256": "1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154",
+        "bytes": 1081
+      },
+      {
+        "path": "pip/_vendor/requests/LICENSE",
+        "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+        "bytes": 10142
+      },
+      {
+        "path": "pip/_vendor/resolvelib/LICENSE",
+        "sha256": "f388fd38cad13112c1dc0f669bbe80e7f84541edbafb72f3030d2ca7642c3c9d",
+        "bytes": 751
+      },
+      {
+        "path": "pip/_vendor/rich/LICENSE",
+        "sha256": "deed7c17a4318158190a3ea239cc879a5a50271cebb98ae7025f48fbe58dca15",
+        "bytes": 1056
+      },
+      {
+        "path": "pip/_vendor/tomli/LICENSE",
+        "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+        "bytes": 1072
+      },
+      {
+        "path": "pip/_vendor/tomli_w/LICENSE",
+        "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+        "bytes": 1072
+      },
+      {
+        "path": "pip/_vendor/truststore/LICENSE",
+        "sha256": "33be7b7e8fa4fd19b1760e1a8ed8a668bdab852c91b692dd41424bcb725a9fca",
+        "bytes": 1086
+      },
+      {
+        "path": "pip/_vendor/urllib3/LICENSE.txt",
+        "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686",
+        "bytes": 1093
+      }
+    ]
+  },
+  {
+    "name": "plotly",
+    "version": "7.1.0",
+    "documents": [
+      {
+        "path": "../../../share/jupyter/labextensions/jupyterlab-plotly/static/third-party-licenses.json",
+        "sha256": "e202018f172ddcc66fccef9cbf0c2a2dde2d6be02ef19bb3b9cddf692313447d",
+        "bytes": 1264
+      },
+      {
+        "path": "plotly-7.1.0.dist-info/licenses/LICENSE.txt",
+        "sha256": "ba712274f8336a5f0828c8e2bf639ab8a632c623800a35f96c8b0a67b5f2ab40",
+        "bytes": 1086
+      },
+      {
+        "path": "plotly/labextension/static/third-party-licenses.json",
+        "sha256": "e202018f172ddcc66fccef9cbf0c2a2dde2d6be02ef19bb3b9cddf692313447d",
+        "bytes": 1264
+      }
+    ]
+  },
+  {
+    "name": "prettytable",
+    "version": "3.18.0",
+    "documents": [
+      {
+        "path": "prettytable-3.18.0.dist-info/licenses/LICENSE",
+        "sha256": "0c8adcc204c8af6cdfdf7887dfd1f99c29901f6c1d505a78bba96efa4fb2cb05",
+        "bytes": 1612
+      }
+    ]
+  },
+  {
+    "name": "propcache",
+    "version": "0.5.4",
+    "documents": [
+      {
+        "path": "propcache-0.5.4.dist-info/licenses/LICENSE",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "bytes": 11358
+      },
+      {
+        "path": "propcache-0.5.4.dist-info/licenses/NOTICE",
+        "sha256": "56d6ac6c8105c0a51304c21db060e361af9a8ea0af9a75c239c28b5d13693838",
+        "bytes": 609
+      }
+    ]
+  },
+  {
+    "name": "protobuf",
+    "version": "7.36.2",
+    "documents": [
+      {
+        "path": "protobuf-7.36.2.dist-info/LICENSE",
+        "sha256": "6e5e117324afd944dcf67f36cf329843bc1a92229a8cd9bb573d7a83130fea7d",
+        "bytes": 1732
+      }
+    ]
+  },
+  {
+    "name": "pyarrow",
+    "version": "24.0.0",
+    "documents": [
+      {
+        "path": "pyarrow-24.0.0.dist-info/licenses/LICENSE.txt",
+        "sha256": "d1c981370f1ffd4edcdd2fb3565c8939cc40c75e24e1f92d581d04e54f0dff81",
+        "bytes": 112295
+      },
+      {
+        "path": "pyarrow-24.0.0.dist-info/licenses/NOTICE.txt",
+        "sha256": "afd895d61a00101f6d5a41cf518c83865d815e8109e956f512a0ce4ea9738c06",
+        "bytes": 2916
+      }
+    ]
+  },
+  {
+    "name": "pyasn1",
+    "version": "0.6.5",
+    "documents": [
+      {
+        "path": "pyasn1-0.6.5.dist-info/licenses/LICENSE.rst",
+        "sha256": "2aad5fc00f705c4a1addb83eed10a6a75d286a3779f0cf8519d87e62bc4735fd",
+        "bytes": 1334
+      }
+    ]
+  },
+  {
+    "name": "pyasn1_modules",
+    "version": "0.4.2",
+    "documents": [
+      {
+        "path": "pyasn1_modules-0.4.2.dist-info/licenses/LICENSE.txt",
+        "sha256": "2aad5fc00f705c4a1addb83eed10a6a75d286a3779f0cf8519d87e62bc4735fd",
+        "bytes": 1334
+      }
+    ]
+  },
+  {
+    "name": "pycparser",
+    "version": "3.12",
+    "documents": [
+      {
+        "path": "pycparser-3.12.dist-info/licenses/LICENSE",
+        "sha256": "0a9e78156ae8b96caf1b4f11ac2df424b83de29736f9e757630548a6272fdf90",
+        "bytes": 1543
+      }
+    ]
+  },
+  {
+    "name": "pydantic",
+    "version": "2.14.3",
+    "documents": [
+      {
+        "path": "pydantic-2.14.3.dist-info/licenses/LICENSE",
+        "sha256": "a9e186f3ca16b5eef84318e7a701721351a00cb7b8ae3a4394b67b49e3529ef3",
+        "bytes": 1129
+      }
+    ]
+  },
+  {
+    "name": "pydantic_core",
+    "version": "2.50.4",
+    "documents": [
+      {
+        "path": "pydantic_core-2.50.4.dist-info/licenses/LICENSE",
+        "sha256": "2afdd30d54b4d62b6f488a6bcc1546e84ec5061f13f4209c03d012348783795a",
+        "bytes": 1080
+      }
+    ]
+  },
+  {
+    "name": "pyparsing",
+    "version": "3.3.3",
+    "documents": [
+      {
+        "path": "pyparsing-3.3.3.dist-info/licenses/LICENSE",
+        "sha256": "a5425f9dc14ac74d4c5f0b679e941f2442e32cca7452a4418d5b1a49893ebe4e",
+        "bytes": 1062
+      }
+    ]
+  },
+  {
+    "name": "pyproject_hooks",
+    "version": "1.3.3",
+    "documents": [
+      {
+        "path": "pyproject_hooks-1.3.3.dist-info/licenses/LICENSE",
+        "sha256": "1b22b049b5267d6dfc23a67bf4a84d8ec04b9fdfb1a51d360e42b4342c8b4154",
+        "bytes": 1081
+      }
+    ]
+  },
+  {
+    "name": "python-dateutil",
+    "version": "4.0.0",
+    "documents": [
+      {
+        "path": "python_dateutil-4.0.0.dist-info/licenses/AUTHORS.md",
+        "sha256": "56004c45a95e9ee5582ea60f9a7ee42179c8594c7b9c245bbfb4a3445b4af640",
+        "bytes": 7031
+      },
+      {
+        "path": "python_dateutil-4.0.0.dist-info/licenses/LICENSE",
+        "sha256": "ba00f51a0d92823b5a1cde27d8b5b9d2321e67ed8da9bc163eff96d5e17e577e",
+        "bytes": 2889
+      }
+    ]
+  },
+  {
+    "name": "python-dotenv",
+    "version": "1.2.4",
+    "documents": [
+      {
+        "path": "python_dotenv-1.2.4.dist-info/licenses/LICENSE",
+        "sha256": "80619b7049f08c81683ad0e01f08f257a840652dd71ee83146d36658c7d2c2b9",
+        "bytes": 1556
+      }
+    ]
+  },
+  {
+    "name": "python-multipart",
+    "version": "0.0.33",
+    "documents": [
+      {
+        "path": "python_multipart-0.0.33.dist-info/licenses/LICENSE.txt",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "bytes": 11358
+      }
+    ]
+  },
+  {
+    "name": "pytz",
+    "version": "2026.6",
+    "documents": [
+      {
+        "path": "pytz-2026.6.dist-info/LICENSE.txt",
+        "sha256": "be8b1a37ebe26c592a90f6c0eb33103a7f383ce2f4d7498c0af9a526990a07b8",
+        "bytes": 1088
+      }
+    ]
+  },
+  {
+    "name": "PyYAML",
+    "version": "6.0.3",
+    "documents": [
+      {
+        "path": "pyyaml-6.0.3.dist-info/licenses/LICENSE",
+        "sha256": "8d3928f9dc4490fd635707cb88eb26bd764102a7282954307d3e5167a577e8a4",
+        "bytes": 1101
+      }
+    ]
+  },
+  {
+    "name": "requests",
+    "version": "2.34.2",
+    "documents": [
+      {
+        "path": "requests-2.34.2.dist-info/licenses/LICENSE",
+        "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+        "bytes": 10142
+      },
+      {
+        "path": "requests-2.34.2.dist-info/licenses/NOTICE",
+        "sha256": "f5110972dedad2b4e9d314518daf3b7d72d6e02e499acd802181de6f74571dcc",
+        "bytes": 38
+      }
+    ]
+  },
+  {
+    "name": "requests-toolbelt",
+    "version": "1.0.0",
+    "documents": [
+      {
+        "path": "requests_toolbelt-1.0.0.dist-info/LICENSE",
+        "sha256": "1f8cf8bdacd98ed6d36d0fec0c07f7765acebd6e81205962ab5146023b3c858d",
+        "bytes": 596
+      }
+    ]
+  },
+  {
+    "name": "scikit-learn",
+    "version": "1.9.1",
+    "documents": [
+      {
+        "path": "scikit_learn-1.9.1.dist-info/licenses/COPYING",
+        "sha256": "8752dfe82d4a768e76ee309b202e7b33906d1ea9004d68cc61564391cc6b1a96",
+        "bytes": 5078
+      },
+      {
+        "path": "sklearn/externals/array_api_compat/LICENSE",
+        "sha256": "4ffd978e3fa18d058d98c66771cfea7ed634aaf7023cf9612b8b55eee9a8f0fe",
+        "bytes": 1097
+      },
+      {
+        "path": "sklearn/externals/array_api_extra/LICENSE",
+        "sha256": "58494398fe147fdce76a68b2decd4c08ce3a1ea237b6d6785001c15f822c6ed6",
+        "bytes": 1097
+      }
+    ]
+  },
+  {
+    "name": "scipy",
+    "version": "1.17.1",
+    "documents": [
+      {
+        "path": "scipy-1.17.1.dist-info/LICENSE.txt",
+        "sha256": "4daf14e37432e7026165979ecb7a39930707a3e89bef4876cfaf9dad36ed364a",
+        "bytes": 46838
+      },
+      {
+        "path": "scipy/_lib/_uarray/LICENSE",
+        "sha256": "c80c39b5fce06ba4897e14e0b0a88b54458334d951eb1361402ffad2cfb863b4",
+        "bytes": 1514
+      },
+      {
+        "path": "scipy/fft/_pocketfft/LICENSE.md",
+        "sha256": "c254b2b5fd30ae3c89d36ba061730563b9760fca04f1b746a1b2c3157da2c789",
+        "bytes": 1498
+      },
+      {
+        "path": "scipy/integrate/LICENSE_DOP",
+        "sha256": "ed9bf58c6d74d3fad9d92d1d67d9bff8141d8ab60de784516b0711364fd43357",
+        "bytes": 3572
+      },
+      {
+        "path": "scipy/spatial/qhull_src/COPYING_QHULL.txt",
+        "sha256": "106d55c931fd6a84822e5345d900273d059f1c27310d02567ccb313c5d18c55d",
+        "bytes": 1720
+      }
+    ]
+  },
+  {
+    "name": "setuptools",
+    "version": "84.2.1",
+    "documents": [
+      {
+        "path": "setuptools-84.2.1.dist-info/licenses/LICENSE",
+        "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+        "bytes": 1023
+      },
+      {
+        "path": "setuptools/_vendor/autocommand-2.2.2.dist-info/LICENSE",
+        "sha256": "ade78d04982d69972d444a8e14a94f87a2334dd3855cc80348ea8e240aa0df2d",
+        "bytes": 7634
+      },
+      {
+        "path": "setuptools/_vendor/backports.tarfile-1.2.0.dist-info/LICENSE",
+        "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+        "bytes": 1023
+      },
+      {
+        "path": "setuptools/_vendor/importlib_metadata-8.7.1.dist-info/licenses/LICENSE",
+        "sha256": "458502e12d97bbf64438606a20044aa85eb05fb0a8a807bb35dbec253fd1fc04",
+        "bytes": 10278
+      },
+      {
+        "path": "setuptools/_vendor/jaraco.text-4.0.0.dist-info/LICENSE",
+        "sha256": "86da0f01aeae46348a3c3d465195dc1ceccde79f79e87769a64b8da04b2a4741",
+        "bytes": 1023
+      },
+      {
+        "path": "setuptools/_vendor/jaraco_context-6.1.0.dist-info/licenses/LICENSE",
+        "sha256": "9755a18519666e5f0f4cae3daad3d7012bcae48a600b31237d75e9fe134e6683",
+        "bytes": 1076
+      },
+      {
+        "path": "setuptools/_vendor/jaraco_functools-4.4.0.dist-info/licenses/LICENSE",
+        "sha256": "5a57cb4db85e2a2dd88c290628908add57e3451449e0a9a71fdfb38776fd759d",
+        "bytes": 1076
+      },
+      {
+        "path": "setuptools/_vendor/more_itertools-10.8.0.dist-info/licenses/LICENSE",
+        "sha256": "09f1c8c9e941af3e584d59641ea9b87d83c0cb0fd007eb5ef391a7e2643c1a46",
+        "bytes": 1053
+      },
+      {
+        "path": "setuptools/_vendor/packaging-26.3.dist-info/licenses/LICENSE",
+        "sha256": "cad1ef5bd340d73e074ba614d26f7deaca5c7940c3d8c34852e65c4909686c48",
+        "bytes": 197
+      },
+      {
+        "path": "setuptools/_vendor/packaging-26.3.dist-info/licenses/LICENSE.APACHE",
+        "sha256": "0d542e0c8804e39aa7f37eb00da5a762149dc682d7829451287e11b938e94594",
+        "bytes": 10174
+      },
+      {
+        "path": "setuptools/_vendor/packaging-26.3.dist-info/licenses/LICENSE.BSD",
+        "sha256": "b70e7e9b742f1cc6f948b34c16aa39ffece94196364bc88ff0d2180f0028fac5",
+        "bytes": 1344
+      },
+      {
+        "path": "setuptools/_vendor/platformdirs-4.4.0.dist-info/licenses/LICENSE",
+        "sha256": "29e0fd62e929850e86eb28c3fdccf0cefdf4fa94879011cffb3d0d4bed6d4db6",
+        "bytes": 1089
+      },
+      {
+        "path": "setuptools/_vendor/tomli-2.4.0.dist-info/licenses/LICENSE",
+        "sha256": "b80816b0d530b8accb4c2211783790984a6e3b61922c2b5ee92f3372ab2742fe",
+        "bytes": 1072
+      },
+      {
+        "path": "setuptools/_vendor/wheel-0.46.3.dist-info/licenses/LICENSE.txt",
+        "sha256": "30c23618679108f3e8ea1d2a658c7ca417bdfc891c98ef1a89fa4ff0c9828654",
+        "bytes": 1107
+      },
+      {
+        "path": "setuptools/_vendor/zipp-3.23.0.dist-info/licenses/LICENSE",
+        "sha256": "5a57cb4db85e2a2dd88c290628908add57e3451449e0a9a71fdfb38776fd759d",
+        "bytes": 1076
+      },
+      {
+        "path": "setuptools/config/NOTICE",
+        "sha256": "2dddf08818297a3b89d43d95ff659d8da85741108c9136dfa3a4d856c0623bd8",
+        "bytes": 493
+      },
+      {
+        "path": "setuptools/config/_validate_pyproject/NOTICE",
+        "sha256": "09c9bcea95ca086f8bc5bed174e40bc835b297d40fb5f86bbbb570fe0a5581a7",
+        "bytes": 18737
+      }
+    ]
+  },
+  {
+    "name": "six",
+    "version": "1.17.0",
+    "documents": [
+      {
+        "path": "six-1.17.0.dist-info/LICENSE",
+        "sha256": "4375ba20e2b9c6c4e7cad2940a628fd90e95cc3d50ee92aae755715d8ba1fbd0",
+        "bytes": 1066
+      }
+    ]
+  },
+  {
+    "name": "skops",
+    "version": "0.16.0",
+    "documents": [
+      {
+        "path": "skops-0.16.0.dist-info/licenses/LICENSE",
+        "sha256": "dc6e9951e4c7948f0ef73d5febe90f6cf72561094557c9ae5404ea3cd2ba45dd",
+        "bytes": 1080
+      }
+    ]
+  },
+  {
+    "name": "smmap",
+    "version": "5.0.3",
+    "documents": [
+      {
+        "path": "smmap-5.0.3.dist-info/licenses/LICENSE",
+        "sha256": "88e9d93f708d110b328a834302dd1d5c6afbda530e7721d15d80b3511d86f235",
+        "bytes": 1519
+      }
+    ]
+  },
+  {
+    "name": "sniffio",
+    "version": "1.3.1",
+    "documents": [
+      {
+        "path": "sniffio-1.3.1.dist-info/LICENSE",
+        "sha256": "652c878488d1456361e08c3f8607fd7ba59892a14103d15cce4ff93c85b5cc8b",
+        "bytes": 185
+      },
+      {
+        "path": "sniffio-1.3.1.dist-info/LICENSE.APACHE2",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "bytes": 11358
+      },
+      {
+        "path": "sniffio-1.3.1.dist-info/LICENSE.MIT",
+        "sha256": "3e6dae555eb92787fc82d1d48355677f454c7f65aeb38d3f9e72bf9a3daf034b",
+        "bytes": 1046
+      }
+    ]
+  },
+  {
+    "name": "SQLAlchemy",
+    "version": "2.1.8",
+    "documents": [
+      {
+        "path": "sqlalchemy-2.1.8.dist-info/licenses/AUTHORS",
+        "sha256": "dc1db0b5d17455adc37b693ff8e409c9a80f603e441695825518c36f786c963e",
+        "bytes": 492
+      },
+      {
+        "path": "sqlalchemy-2.1.8.dist-info/licenses/LICENSE",
+        "sha256": "e862bb5b904fb5513c3e14288d7a25a12eb0ecc7847a0a965d310e9a955e7cb9",
+        "bytes": 1100
+      }
+    ]
+  },
+  {
+    "name": "sqlparse",
+    "version": "0.6.1",
+    "documents": [
+      {
+        "path": "sqlparse-0.6.1.dist-info/licenses/AUTHORS",
+        "sha256": "fee330a5b516ad49a8453b0ea6813c89cb8ec4e0f34007946f6efabd0271e399",
+        "bytes": 3648
+      },
+      {
+        "path": "sqlparse-0.6.1.dist-info/licenses/LICENSE",
+        "sha256": "c1938235b80d39e93138eae89edc3af67e18ecbc40d266529fa57b2dce426310",
+        "bytes": 1537
+      }
+    ]
+  },
+  {
+    "name": "starlette",
+    "version": "1.10.0",
+    "documents": [
+      {
+        "path": "starlette-1.10.0.dist-info/licenses/LICENSE.md",
+        "sha256": "dcb95677a02240243187e964f941847d19b17821cf99e5afae684fab328c19bf",
+        "bytes": 1518
+      }
+    ]
+  },
+  {
+    "name": "tenacity",
+    "version": "9.2.1",
+    "documents": [
+      {
+        "path": "tenacity-9.2.1.dist-info/licenses/LICENSE",
+        "sha256": "58d1e17ffe5109a7ae296caafcadfdbe6a7d176f0bc4ab01e12a689b0499d8bd",
+        "bytes": 11357
+      }
+    ]
+  },
+  {
+    "name": "threadpoolctl",
+    "version": "3.8.0",
+    "documents": [
+      {
+        "path": "threadpoolctl-3.8.0.dist-info/licenses/LICENSE",
+        "sha256": "ecd5f3320c3064582c4ebd53e413d8cd3ee5bb85f039e4137a3e9d3497a43cd4",
+        "bytes": 1508
+      }
+    ]
+  },
+  {
+    "name": "tqdm",
+    "version": "4.70.1",
+    "documents": [
+      {
+        "path": "tqdm-4.70.1.dist-info/licenses/LICENCE",
+        "sha256": "fcff87c3a47ce8028a8512aa182d4fcf0ad1c90544ee75cf9b343684cac194de",
+        "bytes": 1985
+      }
+    ]
+  },
+  {
+    "name": "truststore",
+    "version": "0.10.5",
+    "documents": [
+      {
+        "path": "truststore-0.10.5.dist-info/licenses/LICENSE",
+        "sha256": "33be7b7e8fa4fd19b1760e1a8ed8a668bdab852c91b692dd41424bcb725a9fca",
+        "bytes": 1086
+      }
+    ]
+  },
+  {
+    "name": "typing-inspection",
+    "version": "0.4.5",
+    "documents": [
+      {
+        "path": "typing_inspection-0.4.5.dist-info/licenses/LICENSE",
+        "sha256": "804b59b25f2c31bd278f9202a19ae49a3945aa2664387e2d0a128c7cacc61ec3",
+        "bytes": 1090
+      }
+    ]
+  },
+  {
+    "name": "typing_extensions",
+    "version": "4.16.0",
+    "documents": [
+      {
+        "path": "typing_extensions-4.16.0.dist-info/licenses/LICENSE",
+        "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf",
+        "bytes": 13936
+      }
+    ]
+  },
+  {
+    "name": "tzdata",
+    "version": "2026.6",
+    "documents": [
+      {
+        "path": "tzdata-2026.6.dist-info/licenses/LICENSE",
+        "sha256": "df58f69ea88683035d720b5375bcef0cf5aeaa98a1d098d572e0992c378deb46",
+        "bytes": 625
+      },
+      {
+        "path": "tzdata-2026.6.dist-info/licenses/licenses/LICENSE_APACHE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+        "bytes": 11357
+      }
+    ]
+  },
+  {
+    "name": "urllib3",
+    "version": "2.8.0",
+    "documents": [
+      {
+        "path": "urllib3-2.8.0.dist-info/licenses/LICENSE.txt",
+        "sha256": "130e3a64d5fdd5d096a752694634a7d9df284469de86e5732100268041e3d686",
+        "bytes": 1093
+      }
+    ]
+  },
+  {
+    "name": "uuid_utils",
+    "version": "0.19.0",
+    "documents": [
+      {
+        "path": "uuid_utils-0.19.0.dist-info/licenses/LICENSE.md",
+        "sha256": "0c47f52b4c484bd04c78e7c969542eea31afe644f587f3b8a8ccce86352c6046",
+        "bytes": 1487
+      }
+    ]
+  },
+  {
+    "name": "uvicorn",
+    "version": "0.54.0",
+    "documents": [
+      {
+        "path": "uvicorn-0.54.0.dist-info/licenses/LICENSE.md",
+        "sha256": "efe1acf3e62fb99c288b0ec73e5a773b7268ef4320fe757ea994214e4b63c371",
+        "bytes": 1526
+      }
+    ]
+  },
+  {
+    "name": "wcwidth",
+    "version": "0.9.4",
+    "documents": [
+      {
+        "path": "wcwidth-0.9.4.dist-info/licenses/LICENSE",
+        "sha256": "70b98a95a2144eb70af8017fa8c6d95ce247e40867436e8bc649e137fe13d21a",
+        "bytes": 1322
+      }
+    ]
+  },
+  {
+    "name": "websockets",
+    "version": "17.4",
+    "documents": [
+      {
+        "path": "websockets-17.4.dist-info/licenses/LICENSE",
+        "sha256": "3d6a0c050d8bec52fabad502e45fb25bd02bcadbd70dea34d447b6a0ff4e6da8",
+        "bytes": 1514
+      }
+    ]
+  },
+  {
+    "name": "Werkzeug",
+    "version": "3.1.9",
+    "documents": [
+      {
+        "path": "werkzeug-3.1.9.dist-info/licenses/LICENSE.txt",
+        "sha256": "3b49dcee4105eb37bac10faf1be260408fe85d252b8e9df2e0979fc1e094437b",
+        "bytes": 1475
+      },
+      {
+        "path": "werkzeug/debug/shared/ICON_LICENSE.md",
+        "sha256": "0e103a6358149792707e0d0d14df518f8556213b7cb54c7422f7467f4bb1f7eb",
+        "bytes": 222
+      }
+    ]
+  },
+  {
+    "name": "wheel",
+    "version": "0.48.0",
+    "documents": [
+      {
+        "path": "wheel-0.48.0.dist-info/licenses/LICENSE.txt",
+        "sha256": "30c23618679108f3e8ea1d2a658c7ca417bdfc891c98ef1a89fa4ff0c9828654",
+        "bytes": 1107
+      }
+    ]
+  },
+  {
+    "name": "xxhash",
+    "version": "4.1.0",
+    "documents": [
+      {
+        "path": "xxhash-4.1.0.dist-info/licenses/LICENSE",
+        "sha256": "b76e99529f3e47372029e11914a8f4b95d6313463ed5a1a5c9afe96c3e015114",
+        "bytes": 1313
+      }
+    ]
+  },
+  {
+    "name": "yarl",
+    "version": "1.25.1",
+    "documents": [
+      {
+        "path": "yarl-1.25.1.dist-info/licenses/LICENSE",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+        "bytes": 11358
+      },
+      {
+        "path": "yarl-1.25.1.dist-info/licenses/NOTICE",
+        "sha256": "56d6ac6c8105c0a51304c21db060e361af9a8ea0af9a75c239c28b5d13693838",
+        "bytes": 609
+      }
+    ]
+  },
+  {
+    "name": "zipp",
+    "version": "4.1.2",
+    "documents": [
+      {
+        "path": "zipp-4.1.2.dist-info/licenses/LICENSE",
+        "sha256": "9755a18519666e5f0f4cae3daad3d7012bcae48a600b31237d75e9fe134e6683",
+        "bytes": 1076
+      }
+    ]
+  },
+  {
+    "name": "zstandard",
+    "version": "0.25.0",
+    "documents": [
+      {
+        "path": "zstandard-0.25.0.dist-info/licenses/LICENSE",
+        "sha256": "788fe85e53724a40b299051c4abc9cf74d42b27e7968325b80891c25f79adb4b",
+        "bytes": 1484
+      }
+    ]
+  }
+]

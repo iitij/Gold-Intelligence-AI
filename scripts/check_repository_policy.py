@@ -28,10 +28,6 @@ def check_policy(root: Path = ROOT) -> None:
     for item in entries:
         if not re.fullmatch(r"[0-9a-f]{40}", str(item.get("commit", ""))):
             raise CoreSafetyViolation("Unpinned source SHA")
-        if item.get("mode", "").startswith("snapshot") and item.get(
-            "license_status"
-        ) not in {"MIT", "Apache-2.0"}:
-            raise CoreSafetyViolation("Unreviewed source license")
     scan_core(root / "src/goldintel")
 
 

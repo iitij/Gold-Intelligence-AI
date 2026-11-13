@@ -1,0 +1,5 @@
+# Deliberate bootstrap/build update reviewed in PR #79; no runtime lock changes.
+pip==26.3
+setuptools==84.2.1
+wheel==0.48.0
+build==1.6.1

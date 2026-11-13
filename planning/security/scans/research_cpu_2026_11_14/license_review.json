@@ -1,0 +1,44 @@
+{
+  "status": "TECHNICAL_REVIEW_NOT_FULL_DISTRIBUTION_ACCEPTANCE",
+  "direct_package_primary_terms": {
+    "numpy": "BSD-3-Clause; wheel also includes bundled library terms and GCC runtime exceptions",
+    "pandas": "BSD-3-Clause; bundled component notices apply",
+    "pyarrow": "Apache-2.0; bundled component notices apply",
+    "duckdb": "MIT",
+    "scikit-learn": "BSD-3-Clause; wheel includes GCC runtime exception text",
+    "lightgbm": "MIT",
+    "catboost": "Apache-2.0; matching upstream release license supplement",
+    "optuna": "MIT",
+    "mlflow": "Apache-2.0; bundled JavaScript notices require preservation",
+    "langgraph": "MIT",
+    "pydantic": "MIT"
+  },
+  "metadata_gaps_resolved_by_text": {
+    "huey": "MIT text in installed huey-3.5.4.dist-info/licenses/LICENSE",
+    "skops": "MIT text in installed skops-0.16.0.dist-info/licenses/LICENSE"
+  },
+  "source_supplements": {
+    "catboost": {
+      "version": "1.2.10",
+      "tag_object": "89061789840cf67d911dae098487da78ba909ade",
+      "commit": "b1bd2a6d77219e82a1acfcedfccb8e6f6c1ee084",
+      "url": "https://github.com/catboost/catboost/blob/b1bd2a6d77219e82a1acfcedfccb8e6f6c1ee084/LICENSE",
+      "file": "catboost-upstream-LICENSE.txt",
+      "note": "No primary license text in installed dist-info; wheel has widget notices. Matching-release source supplement does not independently attest wheel build provenance."
+    },
+    "flask-cors": {
+      "version": "6.0.5",
+      "commit": "91ebc49c25aaf76b0e53e925feef1e3f19617c87",
+      "url": "https://github.com/corydolphin/flask-cors/blob/91ebc49c25aaf76b0e53e925feef1e3f19617c87/LICENSE",
+      "file": "flask-cors-upstream-LICENSE.txt",
+      "note": "MIT primary license supplement; no installed license document found."
+    }
+  },
+  "obligations_for_further_review": [
+    "Retain copyright, license and NOTICE texts for redistributed wheels/components.",
+    "Review MPL-2.0 covered-file source obligations for certifi, orjson and tqdm if modifying/distributing covered code.",
+    "Preserve and evaluate bundled native-library terms and GCC runtime library exceptions in NumPy/SciPy/scikit-learn wheels.",
+    "Review bundled JavaScript/native libraries separately; top-level Python package metadata is not the full redistribution decision."
+  ],
+  "acceptance_granted": false
+}

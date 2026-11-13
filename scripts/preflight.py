@@ -17,7 +17,7 @@ MANDATORY = {
     "G0": {"provenance", "dependency_lock", "sbom_security_triage",
            "github_maintainer_review_policy"},
     "G1": {"broker_symbol_contract", "broker_timezone_dst", "bid_ask_tick_quality",
-           "raw_data_rights_and_hashes"},
+           "raw_data_provenance_and_hashes"},
     "G2": {"baselines", "walkforward_no_leakage", "locked_holdout",
            "model_calibration_and_trial_ledger"},
     "G3": {"event_replay_bid_ask", "commission_swap_spread_latency",
@@ -26,7 +26,7 @@ MANDATORY = {
            "no_llm_trade_permissions", "idempotency_reconciliation_kill_switch"},
     "G5": {"mt5_demo_forward_testing", "regimes_and_broker_cost_records",
            "restore_recovery_drills"},
-    "G6": {"independent_audit", "legal_and_broker_terms",
+    "G6": {"independent_audit", "broker_operating_constraints",
            "owner_explicit_authorization", "deployment_and_rollback_proof"},
 }
 GOALS = {

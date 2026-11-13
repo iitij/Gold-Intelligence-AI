@@ -5,6 +5,7 @@ This checks structure only, not CVEs, licensing, or wheel authenticity.
 from __future__ import annotations
 
 import re
+import tomllib
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -14,8 +15,8 @@ HASH = re.compile(r"--hash=sha256:[a-f0-9]{64}\b")
 PACKAGE = re.compile(r"^([A-Za-z0-9_.-]+)==([^\s\\]+)")
 
 
-def validate_lock() -> tuple[int, int]:
-    lines = LOCK.read_text(encoding="utf-8").splitlines()
+def read_pins(path: Path) -> tuple[dict[str, str], int]:
+    lines = path.read_text(encoding="utf-8").splitlines()
     entries = []
     current = []
     for line in lines:
@@ -44,6 +45,27 @@ def validate_lock() -> tuple[int, int]:
             raise ValueError("No SHA256 wheel hash for " + name)
         pkgs[name] = head.group(2)
         hashes += len(found)
+    return pkgs, hashes
+
+
+def validate_build_lock(root: Path = ROOT) -> None:
+    pins, _ = read_pins(root / "requirements-build.lock")
+    if not {"pip", "setuptools", "wheel", "build", "packaging", "pyproject-hooks"} <= pins.keys():
+        raise ValueError("Missing locked bootstrap/build dependencies")
+    project = tomllib.loads((root / "pyproject.toml").read_text())
+    expected = {f"setuptools=={pins['setuptools']}", f"wheel=={pins['wheel']}"}
+    if set(project["build-system"]["requires"]) != expected:
+        raise ValueError("Build requirements differ from bootstrap lock")
+    for name in ("ci.yml", "ml-baseline.yml"):
+        workflow = (root / ".github/workflows" / name).read_text()
+        if ("python -m venv --without-pip .venv" not in workflow or
+                "--require-hashes --only-binary=:all: -r requirements-build.lock" not in workflow):
+            raise ValueError("Workflow lacks isolated locked bootstrap: " + name)
+
+
+def validate_lock() -> tuple[int, int]:
+    pkgs, hashes = read_pins(LOCK)
+    validate_build_lock()
     if not {"pytest", "ruff"}.issubset(pkgs):
         raise ValueError("Missing core test/lint dependency")
     if len(pkgs) < 2 or hashes < len(pkgs):
