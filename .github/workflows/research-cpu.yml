@@ -1,0 +1,48 @@
+name: Research CPU — offline synthetic integrations
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  research-cpu:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1
+        with:
+          python-version: '3.11'
+      - name: Create isolated hash-locked bootstrap environment
+        env:
+          PIP_DISABLE_PIP_VERSION_CHECK: '1'
+        run: |
+          python -m venv --without-pip .venv
+          python -m pip --python .venv install --require-hashes --only-binary=:all: -r requirements-build.lock
+          echo "$PWD/.venv/bin" >> "$GITHUB_PATH"
+      - name: Download hash-locked CPU wheels and record their manifest
+        run: python scripts/prepare_research_wheelhouse.py
+      - name: Install full CPU profile into a fresh venv without an index
+        env:
+          PIP_DISABLE_PIP_VERSION_CHECK: '1'
+        run: |
+          python -m venv --without-pip artifacts/research-runtime
+          python -m pip --python artifacts/research-runtime install --no-index --find-links artifacts/research-cpu-wheelhouse --require-hashes --only-binary=:all: -r requirements-build.lock -r requirements-research-cpu.lock
+          echo "$PWD/artifacts/research-runtime/bin" >> "$GITHUB_PATH"
+      - name: Verify exact installed profile and compatibility
+        run: |
+          python -m pip check
+          python scripts/verify_research_profile.py --installed --evidence
+      - name: Exercise local integrations with network connections blocked
+        run: python scripts/check_research_cpu.py
+      - name: Retain authenticated wheelhouse for owner-machine reproduction
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2 / Node24
+        with:
+          name: research-cpu-cp311-linux-x86_64-${{ github.sha }}
+          path: artifacts/research-cpu-wheelhouse/
+          if-no-files-found: error
+          retention-days: 30
+          compression-level: 0

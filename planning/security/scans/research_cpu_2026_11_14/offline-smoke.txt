@@ -1,0 +1,7 @@
+2026/11/14 01:59:47 INFO mlflow.store.db.utils: Creating initial MLflow database tables...
+2026/11/14 01:59:47 INFO mlflow.store.db.utils: Updating database tables
+LightGBM: PASS — accuracy=0.9300
+CatBoost: PASS — accuracy=0.9400
+PASS: ML baseline training smoke test
+PASS: synthetic Parquet/DuckDB, Optuna, local MLflow, LangGraph and Pydantic
+PASS: offline CPU integration smoke; no market data, external model or trading

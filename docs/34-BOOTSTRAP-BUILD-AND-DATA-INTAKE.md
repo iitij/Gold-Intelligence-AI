@@ -1,5 +1,8 @@
 # Bootstrap, core build and XAUUSD intake — 2026-11-14
 
+Later follow-up: [audit 35](35-FULL-CPU-RESEARCH-ENVIRONMENT.md) records the full
+declared ML/Agents CPU lock, integration checks and retained wheelhouse workflow.
+
 This follow-up supersedes the bootstrap/build availability statements in audit
 33; that earlier report remains a historical record. P02-02 stays in_progress,
 PR #79 stays draft, and G0–G6 stay blocked. No raw-data acceptance or live trading.

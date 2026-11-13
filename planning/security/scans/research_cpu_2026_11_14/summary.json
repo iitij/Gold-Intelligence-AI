@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "profile": "research-cpu",
+  "scan_date": "2026-11-14",
+  "scope": "installed full ml/agents CPU dependencies plus bootstrap on Debian 13.6, CPython 3.11.18; no market data/model weights/OS/interpreter scan",
+  "resolver": "uv 0.13.6",
+  "tools": {
+    "syft": {
+      "version": "1.57.1",
+      "archive_sha256": "bf52519eb57f675d47c07d43213cb6dff6449f3d6d1147ff6701ed91f44eef0c"
+    },
+    "grype": {
+      "version": "0.121.3",
+      "archive_sha256": "e9da18cc1429e786722e32161288103600efffd8e483c90761f90485bd1bec85"
+    }
+  },
+  "input_lock_sha256": {
+    "requirements-build.lock": "d43f228d88ba3c9febe2d75b791e07fbe02d61a487ac4f9355d12c44f9bd2313",
+    "requirements-ml-baseline.lock": "dedb1e30420540faecaa400fac2d56f4226ad4b6baf2eeb8213f0f6d1e4a7584",
+    "requirements-research-cpu.lock": "11d46312f37cb79ba1b9f480238fd7ca4016a025f81ebe32611b62c98a44a6c8"
+  },
+  "pyproject_sha256_at_resolution": "a66eec3cb064afdaf1336fa18eeaeedd867b22b2b73c2c846cdf98a37eedc43a",
+  "distributions": 128,
+  "research_lock_pins": 123,
+  "components": 517,
+  "components_without_license_metadata": 385,
+  "matches": 0,
+  "ignored_matches": 0,
+  "database": {
+    "schemaVersion": "v6.1.10",
+    "from": "https://grype.anchore.io/databases/v6/vulnerability-db_v6.1.10_2026-11-13T00:21:35Z_1794584434.tar.zst?checksum=sha256%3A45d983a9834f587403cb814a0f8f6078c905a7c85a84c3c52efb994f125bcf84",
+    "built": "2026-11-13T15:40:34Z",
+    "path": "/workspace/work/grype-db/6/vulnerability.db",
+    "valid": true
+  },
+  "license_documents": 343,
+  "artifact_sha256": {
+    "catboost-upstream-LICENSE.txt": "a2574dd20dd0af8e0bd25b34b38c1bb11912ff319ee4f41436395df0b1d19309",
+    "flask-cors-upstream-LICENSE.txt": "134a20d852c0cf9e0f3c228767921b76f4bfc4af4a2fc7c4cc90f6b4fd407b5c",
+    "license_documents.json": "14ff5ca53f28169e6f824a5f1874778d0d110d4e6173d6570701f015efc0b5ce",
+    "license_review.json": "a4e82e7dfc2318cc259be9d9406832efba031aa9a96efa42718f75ac1ae3f01a",
+    "licenses.metadata.json": "a024893795e8998cb318a1d24afe013118267cd6f2a2fd19d9f1395834c89823",
+    "research.cdx.json": "78227d1b944462c0abc2c14a34bb16f510ab62142f67409c6710f77a93e03d83",
+    "research.grype.json": "8284cc745f40da0792614f5efdb4b58da3a7e096a71ac94c2510db7866b6c343",
+    "research.installed.json": "0072ef3a3371a8c9ca05f4e997356470c88f438384faffecca2c129bf67e7b40",
+    "research-smoke.txt": "7cf0aff513013752ba1b75d9a8ff959baa5d640d269d85632e10655a5e8838ad",
+    "offline-smoke.txt": "7a9751e88336456608bf95b518ef5f3115c6c28a21db03eb6ffe11dfd8008071"
+  },
+  "smoke_checks": {
+    "synthetic_only": true,
+    "python_network_connect_attempts_on_final_run": 0,
+    "initial_telemetry_attempt_blocked": true,
+    "telemetry_disabled_for_final_runs": true,
+    "local_profiles": [
+      "initial hash-verified install",
+      "fresh no-index wheelhouse install"
+    ],
+    "source_sha256": "7b013aa299663569c3b4ea8cc808d7afea9927acf7b59d009359562f68fe628c"
+  }
+}
