@@ -115,3 +115,45 @@ PYTHONPATH=src python scripts/build_headway_market_snapshot.py \
 إعادة تجميع التحديثات في `m15-tick-corroboration.json` داخل المجلد نفسه.
 تخص دلالة UTC جلسة الرصد الحالية. ما زال تقويم الأحداث ومحاذاة
 خصائص النماذج المدربة ضمن العمل المتبقي.
+
+## إعادة تنبؤ النماذج من اللقطة
+
+خيار `--model-context` في جامع مدخلات السوق يقرأ آخر 300 صف M15
+قبل جمع الأطر القصيرة والسعر. تُفحص أوقات الطلبات وإتاحة الشموع عند
+قراءة اللقطة. يستبعد المسار الشمعة المفتوحة، ويطابق كل الحقول
+المستخدمة في الصفوف المتقاطعة مع طلب M15 المستقل. يلزم أن يطابق
+آخر إغلاق في السياق أحدث شمعة M15 في اللقطة. تُبنى خصائص اليوم السابق
+بساعة الوسيط الأصلية وبالقواعد المجمدة للتدريب.
+
+يعيد `scripts/attach_headway_snapshot_forecasts.py` بناء اللقطة من
+أدلة الالتقاط قبل استخدام السياق، ويطابق معرّفها. يتحقق من قفل الحزم
+وبصمات النموذج والمعايرة والكود، ويبني الخصائص الإحدى عشرة بالترتيب
+نفسه الذي استُخدم للتدريب. التقرير مرفق بحثي مستقل يربطه معرّف
+البصمة بلقطة السوق، ويعرض حالتها عند الرصد وعند إعادة البناء.
+يرفض الحارس نافذة التقييم المجمدة قبل الإفراج.
+
+```bash
+PYTHONPATH=src .local/repro-baseline-20261118/bin/python \
+  scripts/attach_headway_snapshot_forecasts.py \
+  --capture artifacts/headway-model-snapshot-20261118/capture.json \
+  --clock-evidence artifacts/headway-batch-audit-dryrun-20261118/receipt.json \
+  --host-clock-evidence artifacts/headway-model-snapshot-20261118/host-clock.json \
+  --snapshot artifacts/headway-model-snapshot-20261118/verified/snapshot.json \
+  --snapshot-id 0ce76dfa04b06b6ab60d6511f6726ffdfa3526f2a3413d7c640ecc251da6d810 \
+  --frozen-root artifacts/prospective-holdout-20261118/frozen \
+  --output artifacts/headway-model-snapshot-rebuilt
+```
+
+في تجربة 18 نوفمبر 2026 عند 21:04:18 UTC، تأهل 299 صفًا مغلقًا.
+تطابق 39 صفًا مع طلب M15 الثاني، و265 صفًا مع الملف السابق.
+تطابق حساب الاحتمالات الستة لآفاق 1 و4 و16 شمعة مع أداة النموذج
+المحفوظ دون فرق، قبل المعايرة وبعدها. آخر شمعة مستخدمة أغلقت عند
+21:00 UTC. تحفظ النتائج في
+`artifacts/headway-model-snapshot-20261118/model-probabilities-verified/report.json`
+وتحقق التطابق في
+`artifacts/headway-model-snapshot-20261118/model-adapter-audit.json`.
+
+فُحص تغيّر الشمعة غير المكتملة دون تغير سياق النموذج، ورفض الأداة
+تضارب حجم صف مستخدم أو إتاحة السياق بعد التقاط السوق. اللقطة في
+التجربة انتهت صلاحيتها، وما زالت تغطية التقويم غير مثبتة. لا يقدم
+المرفق تقييم أداء على هذه اللقطة أو حالة جاهزية تشغيل.

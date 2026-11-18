@@ -599,9 +599,12 @@
         "scripts/build_headway_market_snapshot.py",
         "tests/test_headway_market_inputs.py",
         "artifacts/headway-market-inputs-20261118/snapshot-audit.json",
-        "artifacts/headway-market-inputs-20261118/m15-tick-corroboration.json"
+        "artifacts/headway-market-inputs-20261118/m15-tick-corroboration.json",
+        "scripts/attach_headway_snapshot_forecasts.py",
+        "artifacts/headway-model-snapshot-20261118/model-probabilities-verified/report.json",
+        "artifacts/headway-model-snapshot-20261118/model-adapter-audit.json"
       ],
-      "blocked_reason": "Real bid/ask and completed M15/H1/H4 snapshots reproduced with observed-time availability, same-session clock and cross-resolution OHLC evidence. Macro calendar coverage, trained-model feature adapter, and acceptance review remain pending."
+      "blocked_reason": "Observed bid/ask and completed M15/H1/H4 packet reproduced. Native causal model adapter reproduced all six frozen LightGBM/CatBoost probabilities for a captured packet. Calendar coverage, freshness at use time, consumer integration, and acceptance review remain required."
     },
     {
       "id": "P04-01",

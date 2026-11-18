@@ -81,3 +81,43 @@ def test_wrong_session_offset_or_late_read_rejected(market_inputs):
     raw["frames"]["H4"]["host_utc_after"] = (now + timedelta(milliseconds=1)).isoformat()
     with pytest.raises(ValueError, match="out-of-envelope"):
         build()
+
+
+def add_model_history(raw):
+    recent = raw["frames"]["M15"]
+    before = datetime.fromisoformat(recent["host_utc_before"]) - timedelta(milliseconds=10)
+    older = [{**recent["bars"][0],
+              "native_open_seconds": recent["bars"][0]["native_open_seconds"] - 900 * lag}
+             for lag in reversed(range(1, 261))]
+    for row in [*older, *recent["bars"]]:
+        row.update({"tick_volume": 500, "spread": 20, "real_volume": 0})
+    raw["model_history"] = {"host_utc_before": before.isoformat(),
+                            "host_utc_after": recent["host_utc_before"],
+                            "bars": [*older, *(row.copy() for row in recent["bars"])]}
+
+
+def test_model_history_ignores_forming_bar_but_checks_used_volume(market_inputs):
+    adapter = importlib.import_module("attach_headway_snapshot_forecasts")
+    raw, anchor, ntp, _, build = market_inputs
+    add_model_history(raw)
+    snapshot, _ = build()
+    context, details = adapter.native_history(raw, ntp, anchor["native_minus_utc_seconds"], snapshot)
+    assert details["rows_used"] == 299
+    assert details["matching_recent_bars"] == 39
+    raw["model_history"]["bars"][-1]["close"] = "9999"
+    raw["model_history"]["bars"][-1]["tick_volume"] = 300000
+    repeated, _ = adapter.native_history(raw, ntp, anchor["native_minus_utc_seconds"], snapshot)
+    assert repeated == context
+    raw["model_history"]["bars"][-2]["tick_volume"] += 1
+    with pytest.raises(ValueError, match="history read differs"):
+        adapter.native_history(raw, ntp, anchor["native_minus_utc_seconds"], snapshot)
+
+
+def test_context_observed_after_market_capture_cannot_be_attached(market_inputs):
+    adapter = importlib.import_module("attach_headway_snapshot_forecasts")
+    raw, anchor, ntp, _, build = market_inputs
+    add_model_history(raw)
+    snapshot, _ = build()
+    raw["model_history"]["host_utc_after"] = raw["quote"]["host_utc_after"]
+    with pytest.raises(ValueError, match="out-of-envelope"):
+        adapter.native_history(raw, ntp, anchor["native_minus_utc_seconds"], snapshot)
