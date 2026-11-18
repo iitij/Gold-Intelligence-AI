@@ -559,10 +559,18 @@
         "area:macro",
         "area:data"
       ],
-      "status": "todo",
+      "status": "in_progress",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "src/goldintel/research/news_blackout.py",
+        "src/goldintel/research/calendar_coverage.py",
+        "scripts/inspect_fed_calendar_snapshot.py",
+        "tests/test_calendar_coverage.py",
+        "docs/44-OFFICIAL-CALENDAR-COVERAGE.md",
+        "artifacts/official-macro-calendar-20261118/audit.json"
+      ],
+      "blocked_reason": "Scoped official FOMC calendar and dated release reproduced for a real broker snapshot. BLS original calendar acquisition, historical schedule revisions and latency, and numeric FRED/ALFRED/CFTC point-in-time joins remain incomplete."
     },
     {
       "id": "P03-06",
