@@ -690,9 +690,13 @@
         "artifacts/packaged-classifier-refit-20261118/report.json",
         "docs/37-PROSPECTIVE-HOLDOUT.md",
         "planning/prospective_holdout_20261118.json",
-        "tests/test_prospective_holdout.py"
+        "tests/test_prospective_holdout.py",
+        "scripts/score_registered_classifiers.py",
+        "tests/test_registered_classifiers.py",
+        "artifacts/registered-classifier-historical-dryrun-20261118/report.json",
+        "artifacts/registered-classifier-cli-integration-20261118.json"
       ],
-      "blocked_reason": "Persisted samples and future-window registration verified; completed untouched holdout, historical UTC and executable-cost evidence remain outstanding"
+      "blocked_reason": "The frozen secondary classifier runner reproduces all six historical Brier scores and rejects early release before opening inputs. Prospective acquisition, full clock coverage, and post-window scoring remain pending."
     },
     {
       "id": "P05-01",
