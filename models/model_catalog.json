@@ -8,32 +8,46 @@
       "family": "LightGBM",
       "train": "from-scratch",
       "role": "calibrated classification / meta-label / no-trade",
-      "status": "planned",
-      "checkpoint": null
+      "status": "trained-exploratory",
+      "checkpoint": "artifacts/historical-strategies-2026-11-17-regime",
+      "evaluation_report": "artifacts/historical-strategies-2026-11-17-regime/report.json",
+      "approved_for_trading": false,
+      "sample_package_manifest": "data/features/native-training-set-v1-20261118/manifest.json",
+      "sample_package_manifest_sha256": "bded84e4a99b7392457f50a4080142c8b38a5db529036dd256f98433f8d2341f",
+      "selected_classifier_refit_report": "artifacts/packaged-classifier-refit-20261118/report.json"
     },
     {
       "id": "catboost-xauusd",
       "family": "CatBoost",
       "train": "from-scratch",
       "role": "independent baseline / regime classification",
-      "status": "planned",
-      "checkpoint": null
+      "status": "trained-exploratory",
+      "checkpoint": "artifacts/historical-strategies-2026-11-17-regime",
+      "evaluation_report": "artifacts/historical-strategies-2026-11-17-regime/report.json",
+      "approved_for_trading": false,
+      "sample_package_manifest": "data/features/native-training-set-v1-20261118/manifest.json",
+      "sample_package_manifest_sha256": "bded84e4a99b7392457f50a4080142c8b38a5db529036dd256f98433f8d2341f",
+      "selected_classifier_refit_report": "artifacts/packaged-classifier-refit-20261118/report.json"
     },
     {
       "id": "chronos-xauusd",
       "family": "Chronos-2",
       "train": "zero-shot then fine-tune if OOS value",
       "role": "probabilistic forecasts",
-      "status": "planned",
-      "checkpoint": null
+      "status": "evaluated-zero-shot-exploratory",
+      "checkpoint": ".local/chronos-2",
+      "evaluation_report": "artifacts/chronos-20261118/report.json",
+      "approved_for_trading": false
     },
     {
       "id": "nhits-xauusd",
       "family": "NHITS",
       "train": "from-scratch",
       "role": "multi-horizon benchmark",
-      "status": "planned",
-      "checkpoint": null
+      "status": "trained-exploratory",
+      "checkpoint": "artifacts/nhits-20261117",
+      "evaluation_report": "artifacts/nhits-selection-20261118.json",
+      "approved_for_trading": false
     },
     {
       "id": "qwen-local",

@@ -17,7 +17,13 @@
         {
           "id": "dependency_lock",
           "verified": false,
-          "evidence": []
+          "evidence": [
+            "requirements-ci.lock",
+            "requirements-ml-baseline.lock",
+            "docs/35-BASELINE-RUNTIME-REPRODUCTION.md",
+            "artifacts/baseline-runtime-reproduction-20261118.json",
+            "artifacts/baseline-rebuild-checks-20261118.json"
+          ]
         },
         {
           "id": "sbom_security_triage",
@@ -39,17 +45,33 @@
         {
           "id": "broker_symbol_contract",
           "verified": false,
-          "evidence": []
+          "evidence": [
+            "artifacts/headway-contract-current-20261118.json"
+          ]
         },
         {
           "id": "broker_timezone_dst",
           "verified": false,
-          "evidence": []
+          "evidence": [
+            "artifacts/headway-session-utc-evidence-20261118.json",
+            "artifacts/headway-historical-timezone-sources-20261118.json",
+            "planning/headway_partial_time_mapping.json",
+            "docs/38-HISTORICAL-CLOCK-CONFLICT.md",
+            "artifacts/headway-historical-clock-audit-20261118.json",
+            "artifacts/reference-clock-all-march-20261118.json",
+            "artifacts/headway-march-reexport-comparison-20261118.json",
+            "artifacts/dukascopy-reference-clock-validated-20261118.json",
+            "data/raw/reference/histdata/HISTDATA_COM_ASCII_XAUUSD_M1_202603.timing-review.json",
+            "scripts/compare_duka_reference_clocks.py",
+            "tests/test_dukascopy.py"
+          ]
         },
         {
           "id": "bid_ask_tick_quality",
           "verified": false,
-          "evidence": []
+          "evidence": [
+            "artifacts/headway-session-expanded-normalization-20261118.json"
+          ]
         },
         {
           "id": "raw_data_rights_and_hashes",
@@ -66,22 +88,47 @@
         {
           "id": "baselines",
           "verified": false,
-          "evidence": []
+          "evidence": [
+            "docs/34-HISTORICAL-TRAINING.md",
+            "artifacts/forecast-comparison-20261118.json",
+            "artifacts/historical-strategies-2026-11-17-regime/report.json",
+            "artifacts/classifiers-no-trade-comparison-20261118.json"
+          ]
         },
         {
           "id": "walkforward_no_leakage",
           "verified": false,
-          "evidence": []
+          "evidence": [
+            "tests/test_historical_strategy_features.py",
+            "artifacts/historical-strategies-earlier-fold-20261118/report.json",
+            "tests/test_quote_exit_training.py",
+            "tests/test_historical_training_set.py",
+            "docs/36-PERSISTED-TRAINING-SET.md",
+            "artifacts/training-set-audit-20261118.json",
+            "artifacts/packaged-classifier-refit-20261118/report.json"
+          ]
         },
         {
           "id": "locked_holdout",
           "verified": false,
-          "evidence": []
+          "evidence": [
+            "planning/prospective_holdout_20261118.json",
+            "planning/prospective_holdout_20261118.sha256",
+            "planning/holdout_registry.json",
+            "src/goldintel/research/holdout.py",
+            "tests/test_prospective_holdout.py",
+            "docs/37-PROSPECTIVE-HOLDOUT.md",
+            "artifacts/prospective-holdout-20261118/registration-checks.json"
+          ]
         },
         {
           "id": "model_calibration_and_trial_ledger",
           "verified": false,
-          "evidence": []
+          "evidence": [
+            "artifacts/historical-strategies-2026-11-17-regime/report.json",
+            "artifacts/calibration-vs-validation-prior-20261118.json",
+            "planning/research_run_index.json"
+          ]
         }
       ]
     },
@@ -93,12 +140,19 @@
         {
           "id": "event_replay_bid_ask",
           "verified": false,
-          "evidence": []
+          "evidence": [
+            "src/goldintel/research/exits.py",
+            "tests/test_quote_exits.py",
+            "artifacts/quote-exit-policy-verified-20261118/report.json"
+          ]
         },
         {
           "id": "commission_swap_spread_latency",
           "verified": false,
-          "evidence": []
+          "evidence": [
+            "artifacts/headway-standard-cost-evidence-20261118.json",
+            "artifacts/headway-current-session-two-trades-20261118.json"
+          ]
         },
         {
           "id": "unknown_fills_and_stress",

@@ -36,3 +36,9 @@ vendor/.staging/
 
 # Local hardware inventory; never publish paths or account context
 .local/
+
+# Isolated forecasting research environments
+.venv-forecast/
+.venv-forecast311/
+
+catboost_info/

@@ -371,9 +371,14 @@
       "estimate": "TBD",
       "evidence": [
         ".github/workflows/ci.yml",
-        "https://github.com/iitij/Gold-Intelligence-AI/actions/runs/42416073810"
+        "https://github.com/iitij/Gold-Intelligence-AI/actions/runs/42416073810",
+        "requirements-ci.lock",
+        "requirements-ml-baseline.lock",
+        "scripts/reproduce_baseline_runtime.py",
+        "docs/35-BASELINE-RUNTIME-REPRODUCTION.md",
+        "artifacts/baseline-rebuild-checks-20261118.json"
       ],
-      "blocked_reason": "Python dependency lock still pending"
+      "blocked_reason": "CPU baseline hash-locked clean rebuild and 215 local tests passed; remote CI for current worktree and separate forecast/GPU/MT5 environment reproduction remain unverified"
     },
     {
       "id": "P02-03",
@@ -472,10 +477,16 @@
         "priority:p1",
         "area:data"
       ],
-      "status": "todo",
+      "status": "in_progress",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "src/goldintel/data/dukascopy.py",
+        "tests/test_dukascopy.py",
+        "artifacts/dukascopy-reference-clock-validated-20261118.json",
+        "docs/38-HISTORICAL-CLOCK-CONFLICT.md"
+      ],
+      "blocked_reason": "One daily BID reference received and decoded with provenance; broader coverage and timestamp/independence reconciliation remain incomplete"
     },
     {
       "id": "P03-04",
@@ -498,10 +509,17 @@
         "area:data",
         "area:testing"
       ],
-      "status": "todo",
+      "status": "in_progress",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "docs/32-INDEPENDENT-FEED-VALIDATION.md",
+        "docs/38-HISTORICAL-CLOCK-CONFLICT.md",
+        "artifacts/headway-historical-clock-audit-20261118.json",
+        "artifacts/dukascopy-reference-clock-validated-20261118.json",
+        "tests/test_partial_time_mapping.py"
+      ],
+      "blocked_reason": "Historical source audits and exact reexport comparison completed; timezone/reference-clock reconciliation and executable fill evidence remain incomplete"
     },
     {
       "id": "P03-05",
@@ -549,10 +567,18 @@
         "area:contracts",
         "area:data"
       ],
-      "status": "todo",
+      "status": "in_progress",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "src/goldintel/data/snapshot.py",
+        "tests/test_market_snapshot.py",
+        "scripts/capture_headway_quote.py",
+        "scripts/build_quote_snapshot.py",
+        "docs/39-MARKET-SNAPSHOT.md",
+        "artifacts/market-snapshot-audit-20261118.json"
+      ],
+      "blocked_reason": "Versioned causal snapshot, real quote capture and expiry verified; UTC-qualified completed bars, complete macro calendar and trained-model feature adapter remain incomplete"
     },
     {
       "id": "P04-01",
@@ -637,9 +663,18 @@
       "estimate": "TBD",
       "evidence": [
         "https://github.com/iitij/Gold-Intelligence-AI/pull/62",
-        "src/goldintel/research/splits.py"
+        "src/goldintel/research/splits.py",
+        "scripts/prepare_historical_training_set.py",
+        "scripts/reproduce_packaged_training.py",
+        "tests/test_historical_training_set.py",
+        "docs/36-PERSISTED-TRAINING-SET.md",
+        "artifacts/training-set-audit-20261118.json",
+        "artifacts/packaged-classifier-refit-20261118/report.json",
+        "docs/37-PROSPECTIVE-HOLDOUT.md",
+        "planning/prospective_holdout_20261118.json",
+        "tests/test_prospective_holdout.py"
       ],
-      "blocked_reason": "Anchored split module only; no dataset/sample store"
+      "blocked_reason": "Persisted samples and future-window registration verified; completed untouched holdout, historical UTC and executable-cost evidence remain outstanding"
     },
     {
       "id": "P05-01",
@@ -1011,7 +1046,11 @@
       "status": "todo",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "docs/37-PROSPECTIVE-HOLDOUT.md",
+        "planning/prospective_holdout_20261118.json",
+        "tests/test_prospective_holdout.py"
+      ]
     },
     {
       "id": "P08-03",

@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "broker": "Headway",
+  "symbol": "XAUUSD",
+  "source_sha256": "d94b745de10af0f2aea25126da9f8cc0ff7e0fcb8e13cc1b70c1ae1eeb0e496c",
+  "status": "research_inference_from_official_notices_and_archived_session_bounds",
+  "historical_demo_applicability_verified": false,
+  "sources": {
+    "winter2024": {
+      "url": "https://hw.online/company-news/changes-due-to-wintertime-shift-2024/",
+      "published_date": "2024-10-24",
+      "claim": "MetaTrader changes from GMT+3 to GMT+2 on 2024-10-27. Metals move from 00:00-22:59 to 01:00-23:59 on 2024-11-03."
+    },
+    "summer2025": {
+      "url": "https://hw.online/company-news/trading-hours-change-from-march-9/",
+      "published_date": "2025-03-06",
+      "claim": "After 2025-03-30 MetaTrader time changes to GMT+3; the US/EU transition interval changes trading hours separately."
+    },
+    "winter2025": {
+      "url": "https://hw.online/company-news/metatrader-server-time-changes-due-to-the-wintertime-shift/",
+      "published_date": "2025-10-24",
+      "claim": "MetaTrader shifts GMT+3 to GMT+2 on 2025-10-26; metals trade 00:01-22:58 from October 27 and 01:01-23:59 from November 3."
+    },
+    "hours2026": {
+      "url": "https://hw.online/company-news/trading-hours-revised-daylight-saving-time/",
+      "published_date": "2026-03-06",
+      "claim": "Metals trading hours after the US change on March 8 are 00:05-22:58 MT time. This notice does not state a server UTC offset."
+    }
+  },
+  "intervals": [
+    {
+      "id": "winter2024-2025",
+      "native_start": "2024-10-28T00:00:00",
+      "native_end_exclusive": "2025-03-29T00:00:00",
+      "offset_seconds": 7200,
+      "sources": ["winter2024", "summer2025"],
+      "assumption": "Continuity between official winter and summer notices; transition weekends excluded."
+    },
+    {
+      "id": "summer2025",
+      "native_start": "2025-03-31T00:00:00",
+      "native_end_exclusive": "2025-10-25T00:00:00",
+      "offset_seconds": 10800,
+      "sources": ["summer2025", "winter2025"],
+      "assumption": "Continuity between official summer and winter notices; transition weekends excluded."
+    }
+  ],
+  "unresolved": [
+    "Independent confirmation that the archived Headway-Demo feed follows each historical company policy",
+    "Exact intraday transition instants and any special historical server exceptions",
+    "Offsets outside the explicitly bounded intervals, especially spring and autumn 2026",
+    "Timezone policy of the other original feed"
+  ]
+}
