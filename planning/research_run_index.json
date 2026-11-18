@@ -9,7 +9,7 @@
     "Reported confidence intervals are not corrected for these repeated comparisons",
     "No indexed report establishes a locked untouched holdout or trading approval"
   ],
-  "report_count": 15,
+  "report_count": 17,
   "reported_tuning_candidate_count": 180,
   "runs": [
     {
@@ -1341,6 +1341,13 @@
       "approved_for_trading": false
     },
     {
+      "report": "artifacts/nbeatsx-200-20261118/report.json",
+      "report_sha256": "7059548ee1a20879095090e0cc8f59c03768b5fdf5782c030c17d239ece972ef",
+      "reported_tuning_candidate_count": 0,
+      "reported_tuning_candidates": [],
+      "approved_for_trading": false
+    },
+    {
       "report": "artifacts/nhits-20261117/report.json",
       "report_sha256": "e99b42c22c0d530f525c4a1d43b2a1b1c38ad536aff8b6b0b8f6bf3e0cbccc8d",
       "reported_tuning_candidate_count": 0,
@@ -1357,6 +1364,13 @@
     {
       "report": "artifacts/packaged-classifier-refit-20261118/report.json",
       "report_sha256": "598c389c22304f853f5e422f42c46e52e2d04a938e91abbd30e1d0c71b2f0584",
+      "reported_tuning_candidate_count": 0,
+      "reported_tuning_candidates": [],
+      "approved_for_trading": false
+    },
+    {
+      "report": "artifacts/point-forecast-benchmark-final-20261118/report.json",
+      "report_sha256": "785ba4a940d6923cf53dab340ff406fdec36461619048576c79951e0bef34eab",
       "reported_tuning_candidate_count": 0,
       "reported_tuning_candidates": [],
       "approved_for_trading": false

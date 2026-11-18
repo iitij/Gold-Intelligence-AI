@@ -889,9 +889,15 @@
         "docs/34-HISTORICAL-TRAINING.md",
         "docs/40-FORECAST-RUNTIME-REPRODUCTION.md",
         "artifacts/forecast-comparison-20261118.json",
-        "artifacts/forecast-runtime-reproduction-20261118/report.json"
+        "artifacts/forecast-runtime-reproduction-20261118/report.json",
+        "scripts/train_nbeatsx_historical.py",
+        "scripts/benchmark_point_forecasters.py",
+        "docs/42-POINT-FORECAST-BENCHMARK.md",
+        "artifacts/nbeatsx-200-20261118/report.json",
+        "artifacts/point-forecast-benchmark-final-20261118/report.json",
+        "artifacts/point-forecast-benchmark-audit-20261118.json"
       ],
-      "blocked_reason": "NHITS CPU 200/500-step historical comparison and saved-inference reproduction completed; persistence selected by validation MAE. NBEATSx, broader resource benchmarking, prerequisite acceptance and unseen confirmation remain unverified."
+      "blocked_reason": "Matched fixed CPU NBEATSx/NHITS comparison and isolated CPU batch timing/RAM completed. Persistence selected on validation and best on inspected test for both feeds. CUDA memory, unseen confirmation, and prerequisite acceptance remain outstanding."
     },
     {
       "id": "P07-01",
