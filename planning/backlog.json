@@ -461,9 +461,16 @@
       "estimate": "TBD",
       "evidence": [
         "mt5/ExportXAUUSD_M15.mq5",
-        "tests/test_mt5_csv.py"
+        "tests/test_mt5_csv.py",
+        "mt5/ExportXAUUSD_Ticks.mq5",
+        "mt5/ExportXAUUSD_SymbolSpec.mq5",
+        "scripts/audit_headway_tick_batches.py",
+        "docs/43-HEADWAY-BATCH-ACQUISITION-AUDIT.md",
+        "artifacts/headway-expanded-batch-audit-20261118.json",
+        "artifacts/headway-batch-audit-dryrun-20261118/receipt.json",
+        "artifacts/metaeditor-compile-20261118/report.json"
       ],
-      "blocked_reason": "MetaEditor compile and broker data import not yet run on owner machine"
+      "blocked_reason": "All three MQL5 scripts compiled with no warnings or errors on owner machine. Real read-only Python tick and M15 export evidence is available. Compiled script execution for each exporter, full historical clock/DST, prospective acquisition and acceptance review remain outstanding."
     },
     {
       "id": "P03-03",
