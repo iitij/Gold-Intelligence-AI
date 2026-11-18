@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "created_at_utc": "2026-11-18T20:50:03.815221+00:00",
+  "scope": "Exploratory clock corroboration with selected primary BLS announcements before and after seasonal transitions",
+  "release_time_zone": "America/New_York",
+  "candidate_native_offsets_minutes": [
+    60,
+    120,
+    180,
+    240
+  ],
+  "primary_measure": "M15 high-low / open in bps in the bar starting at the candidate event time, divided by the median on common weekday controls",
+  "control_day_offsets": [
+    -21,
+    -14,
+    -7,
+    7,
+    14,
+    21
+  ],
+  "minimum_common_control_days": 3,
+  "source_sha256": {
+    "gold_xauusd_m15.csv": "9989bd4035e6fde869d6fdd42be348676056bdadc35bae357bb91b1b189be82e",
+    "headway_xauusd_m15_20261110.csv": "d94b745de10af0f2aea25126da9f8cc0ff7e0fcb8e13cc1b70c1ae1eeb0e496c"
+  },
+  "events": [
+    {
+      "release_local": "2026-03-06T08:30:00",
+      "series": "empsit",
+      "season_group": "winter_before_us_dst",
+      "primary_source_url": "https://www.bls.gov/news.release/archives/empsit_03062026.htm",
+      "document_id": "USDL-26-0367"
+    },
+    {
+      "release_local": "2026-03-11T08:30:00",
+      "series": "cpi",
+      "season_group": "us_dst_before_europe",
+      "primary_source_url": "https://www.bls.gov/news.release/archives/cpi_03112026.htm",
+      "document_id": "USDL-26-0437"
+    },
+    {
+      "release_local": "2026-04-03T08:30:00",
+      "series": "empsit",
+      "season_group": "spring_after_both_dst",
+      "primary_source_url": "https://www.bls.gov/news.release/archives/empsit_04032026.htm",
+      "document_id": "USDL-26-0580"
+    },
+    {
+      "release_local": "2026-04-10T08:30:00",
+      "series": "cpi",
+      "season_group": "spring_after_both_dst",
+      "primary_source_url": "https://www.bls.gov/news.release/archives/cpi_04102026.htm",
+      "document_id": "USDL-26-0599"
+    },
+    {
+      "release_local": "2026-07-02T08:30:00",
+      "series": "empsit",
+      "season_group": "summer",
+      "primary_source_url": "https://www.bls.gov/news.release/archives/empsit_07022026.htm",
+      "document_id": "USDL-26-1125"
+    },
+    {
+      "release_local": "2026-07-14T08:30:00",
+      "series": "cpi",
+      "season_group": "summer",
+      "primary_source_url": "https://www.bls.gov/news.release/archives/cpi_07142026.htm",
+      "document_id": "USDL-26-1191"
+    },
+    {
+      "release_local": "2026-10-02T08:30:00",
+      "series": "empsit",
+      "season_group": "fall_before_europe_switch",
+      "primary_source_url": "https://www.bls.gov/news.release/archives/empsit_10022026.htm",
+      "document_id": "USDL-26-1549"
+    },
+    {
+      "release_local": "2026-10-14T08:30:00",
+      "series": "cpi",
+      "season_group": "fall_before_europe_switch",
+      "primary_source_url": "https://www.bls.gov/news.release/cpi.nr0.htm?d=20261014",
+      "document_id": "USDL-26-1574"
+    },
+    {
+      "release_local": "2026-11-06T08:30:00",
+      "series": "empsit",
+      "season_group": "winter_after_both_switches",
+      "primary_source_url": "https://www.bls.gov/news.release/archives/empsit_11062026.htm",
+      "document_id": "USDL-26-1632"
+    }
+  ]
+}

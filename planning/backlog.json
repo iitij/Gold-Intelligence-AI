@@ -531,9 +531,13 @@
         "docs/38-HISTORICAL-CLOCK-CONFLICT.md",
         "artifacts/headway-historical-clock-audit-20261118.json",
         "artifacts/dukascopy-reference-clock-validated-20261118.json",
-        "tests/test_partial_time_mapping.py"
+        "tests/test_partial_time_mapping.py",
+        "planning/bls_clock_diagnostic_20261118.json",
+        "scripts/compare_bls_clock_anchors.py",
+        "artifacts/bls-embargo-clock-diagnostic-20261118.json",
+        "artifacts/dukascopy-cross-season-attempts-20261118.json"
       ],
-      "blocked_reason": "Historical source audits and exact reexport comparison completed; timezone/reference-clock reconciliation and executable fill evidence remain incomplete"
+      "blocked_reason": "One separately timestamped Dukascopy day and exploratory official release-time diagnostics corroborate several seasonal offsets. Exact historical Demo transition bounds, discrepant dates, and full independent coverage remain unverified."
     },
     {
       "id": "P03-05",
