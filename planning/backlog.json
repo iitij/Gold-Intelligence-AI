@@ -568,9 +568,13 @@
         "scripts/inspect_fed_calendar_snapshot.py",
         "tests/test_calendar_coverage.py",
         "docs/44-OFFICIAL-CALENDAR-COVERAGE.md",
-        "artifacts/official-macro-calendar-20261118/audit.json"
+        "artifacts/official-macro-calendar-20261118/audit.json",
+        "docs/45-MACRO-OBSERVATION-SNAPSHOT.md",
+        "scripts/build_macro_observation_snapshot.py",
+        "tests/test_macro_observation_snapshot.py",
+        "artifacts/macroeconomic-inputs-20261118/audit.json"
       ],
-      "blocked_reason": "Scoped official FOMC calendar and dated release reproduced for a real broker snapshot. BLS original calendar acquisition, historical schedule revisions and latency, and numeric FRED/ALFRED/CFTC point-in-time joins remain incomplete."
+      "blocked_reason": "Observed FRED yield/dollar and CFTC gold positioning joined before a real Headway snapshot. Separate ALFRED payroll vintages demonstrate two revisions. Full historical availability timestamps, BLS calendar coverage, and complete historical joins remain outstanding."
     },
     {
       "id": "P03-06",
