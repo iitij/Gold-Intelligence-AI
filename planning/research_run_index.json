@@ -9,12 +9,19 @@
     "Reported confidence intervals are not corrected for these repeated comparisons",
     "No indexed report establishes a locked untouched holdout or trading approval"
   ],
-  "report_count": 14,
+  "report_count": 15,
   "reported_tuning_candidate_count": 180,
   "runs": [
     {
       "report": "artifacts/chronos-20261118/report.json",
       "report_sha256": "21078803a5fe58199059c0c875cdbcb7381e9546d5d7d2d2de305d86e7f4f6fd",
+      "reported_tuning_candidate_count": 0,
+      "reported_tuning_candidates": [],
+      "approved_for_trading": false
+    },
+    {
+      "report": "artifacts/forecast-distributions-final-20261118/report.json",
+      "report_sha256": "0f55a1541774338ee288fb67034c3799d1daf743238448a2e4e9d66d4df8e7c0",
       "reported_tuning_candidate_count": 0,
       "reported_tuning_candidates": [],
       "approved_for_trading": false

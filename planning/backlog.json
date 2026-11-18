@@ -385,7 +385,7 @@
         "artifacts/review-publication-20261118.json",
         "https://github.com/iitij/Gold-Intelligence-AI/pull/80"
       ],
-      "blocked_reason": "Linux CPU baseline and forecast environments rebuilt from exact hash-locked packages; 244 local tests and 8 saved-forecast comparisons passed. Four remote checks passed at 377432a; latest additions await remote checks and acceptance review. Separate GPU and Windows MT5 runtime reproduction remains unverified."
+      "blocked_reason": "Linux CPU baseline and forecast environments rebuilt from exact hash-locked packages; saved inference reproduced. Remote CI passed at d84a96d. Acceptance review and separate GPU/Windows MT5 runtime reproduction remain unverified."
     },
     {
       "id": "P02-03",
@@ -823,10 +823,18 @@
         "area:models",
         "area:forecast"
       ],
-      "status": "todo",
+      "status": "in_progress",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "scripts/evaluate_chronos_historical.py",
+        "scripts/evaluate_forecast_distributions.py",
+        "scripts/forecast_distribution_metrics.py",
+        "docs/41-FORECAST-DISTRIBUTION-EVALUATION.md",
+        "artifacts/forecast-distributions-final-20261118/report.json",
+        "artifacts/forecast-distribution-audit-20261118.json"
+      ],
+      "blocked_reason": "Exploratory zero-shot, 21-quantile WIS and bounded-reconstruction CRPS comparison completed; empirical training-return baseline selected. Prerequisite P05-02 acceptance, unseen confirmation, pretraining-overlap review and full distribution identification remain unresolved."
     },
     {
       "id": "P06-02",
@@ -872,10 +880,18 @@
         "area:models",
         "area:forecast"
       ],
-      "status": "todo",
+      "status": "in_progress",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "scripts/train_nhits_historical.py",
+        "scripts/compare_forecast_benchmarks.py",
+        "docs/34-HISTORICAL-TRAINING.md",
+        "docs/40-FORECAST-RUNTIME-REPRODUCTION.md",
+        "artifacts/forecast-comparison-20261118.json",
+        "artifacts/forecast-runtime-reproduction-20261118/report.json"
+      ],
+      "blocked_reason": "NHITS CPU 200/500-step historical comparison and saved-inference reproduction completed; persistence selected by validation MAE. NBEATSx, broader resource benchmarking, prerequisite acceptance and unseen confirmation remain unverified."
     },
     {
       "id": "P07-01",

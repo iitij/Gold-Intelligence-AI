@@ -164,3 +164,12 @@ All twelve validation-selected direction classifiers were refitted from
 these files and reproduced reference probabilities on all three splits
 within 1e-12. See `docs/36-PERSISTED-TRAINING-SET.md` for verification,
 counts, exclusions and the unchanged exploratory/native-clock limitations.
+
+A matched 21-quantile Chronos comparison now scores WIS and the CRPS of an
+explicitly bounded linear quantile reconstruction against training-only
+empirical return distributions and point persistence. The empirical
+distribution is selected by validation WIS for both feeds and has lower
+later test WIS, while its 80% intervals under-cover. Chronos intervals
+have closer 80% coverage and substantially greater width. See
+`docs/41-FORECAST-DISTRIBUTION-EVALUATION.md`; this additional metric
+analysis remains exploratory and does not alter the prospective holdout.
