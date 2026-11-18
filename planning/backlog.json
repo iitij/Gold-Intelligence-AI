@@ -614,9 +614,10 @@
         "artifacts/headway-market-inputs-20261118/m15-tick-corroboration.json",
         "scripts/attach_headway_snapshot_forecasts.py",
         "artifacts/headway-model-snapshot-20261118/model-probabilities-verified/report.json",
-        "artifacts/headway-model-snapshot-20261118/model-adapter-audit.json"
+        "artifacts/headway-model-snapshot-20261118/model-adapter-audit.json",
+        "artifacts/gold-tool-contract-20261118/audit.json"
       ],
-      "blocked_reason": "Observed bid/ask and completed M15/H1/H4 packet reproduced. Native causal model adapter reproduced all six frozen LightGBM/CatBoost probabilities for a captured packet. Calendar coverage, freshness at use time, consumer integration, and acceptance review remain required."
+      "blocked_reason": "Reproduced actual quote/bar, frozen-model and partial macro attachments. Local tool consumer verified fresh and expired data behavior. Complete calendar coverage, full graph integration, and acceptance review remain pending."
     },
     {
       "id": "P04-01",
@@ -955,10 +956,17 @@
         "area:agents",
         "area:contracts"
       ],
-      "status": "todo",
+      "status": "in_progress",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "src/goldintel/agents/tools.py",
+        "scripts/replay_gold_tool_contract.py",
+        "tests/test_gold_agent_tools.py",
+        "docs/46-READ-ONLY-GOLD-TOOLS.md",
+        "artifacts/gold-tool-contract-20261118/audit.json"
+      ],
+      "blocked_reason": "Five first-party read-only XAUUSD tools verified against a live capture and real expiry, with host-bound UTC and strict arguments. Local Ollama/TradingAgents graph integration and prerequisite acceptance remain pending."
     },
     {
       "id": "P07-02",
