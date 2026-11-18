@@ -376,9 +376,16 @@
         "requirements-ml-baseline.lock",
         "scripts/reproduce_baseline_runtime.py",
         "docs/35-BASELINE-RUNTIME-REPRODUCTION.md",
-        "artifacts/baseline-rebuild-checks-20261118.json"
+        "artifacts/baseline-rebuild-checks-20261118.json",
+        "requirements-forecast-cpu-linux-py311.lock",
+        "scripts/reproduce_forecast_runtime.py",
+        "docs/40-FORECAST-RUNTIME-REPRODUCTION.md",
+        "artifacts/forecast-runtime-reproduction-20261118/report.json",
+        "artifacts/forecast-runtime-negative-controls-20261118.json",
+        "artifacts/review-publication-20261118.json",
+        "https://github.com/iitij/Gold-Intelligence-AI/pull/80"
       ],
-      "blocked_reason": "CPU baseline hash-locked clean rebuild and 215 local tests passed; remote CI for current worktree and separate forecast/GPU/MT5 environment reproduction remain unverified"
+      "blocked_reason": "Linux CPU baseline and forecast environments rebuilt from exact hash-locked packages; 244 local tests and 8 saved-forecast comparisons passed. Four remote checks passed at 377432a; latest additions await remote checks and acceptance review. Separate GPU and Windows MT5 runtime reproduction remains unverified."
     },
     {
       "id": "P02-03",
