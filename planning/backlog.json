@@ -471,7 +471,7 @@
         "artifacts/headway-batch-audit-dryrun-20261118/receipt.json",
         "artifacts/metaeditor-compile-20261118/report.json"
       ],
-      "blocked_reason": "All three MQL5 scripts compiled with no warnings or errors on owner machine. Real read-only Python tick and M15 export evidence is available. Compiled script execution for each exporter, full historical clock/DST, prospective acquisition and acceptance review remain outstanding."
+      "blocked_reason": "All three MQL5 scripts compiled with no warnings or errors on owner machine. Real read-only Python tick and M15 export evidence is available. A full-day tick backfill rehearsal failed while a separate live quote check succeeded; prospective collection must corroborate each requested interval. Compiled script execution for each exporter, full historical clock/DST, prospective acquisition and acceptance review remain outstanding."
     },
     {
       "id": "P03-03",
