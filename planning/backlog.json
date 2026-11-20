@@ -989,10 +989,13 @@
         "area:agents",
         "area:models"
       ],
-      "status": "todo",
+      "status": "in_progress",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "docs/47-LOCAL-QWEN-REPLAY.md"
+      ],
+      "blocked_reason": "Pinned Ollama and Qwen downloads in progress. The local replay contract passed simulated server tests. Real Qwen tool use, schema results and latency are pending."
     },
     {
       "id": "P07-03",

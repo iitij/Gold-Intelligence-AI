@@ -31,8 +31,7 @@ def read_registry():
     return hashlib.sha256(raw).hexdigest(), tuple(entries)
 
 
-def main():
-    parser = argparse.ArgumentParser(description=__doc__)
+def add_evidence_arguments(parser):
     parser.add_argument("--snapshot", type=Path, required=True)
     parser.add_argument("--snapshot-id", required=True)
     parser.add_argument("--as-of", type=utc, required=True)
@@ -42,16 +41,25 @@ def main():
         parser.add_argument(f"--{record}", type=Path)
         parser.add_argument(f"--{record}-sha256")
         parser.add_argument(f"--{record}-observed-at", type=utc)
-    parser.add_argument("--output", type=Path, required=True)
-    args = parser.parse_args()
+
+
+def load_tools(args):
     snapshot = load_market_snapshot(args.snapshot, args.snapshot_id)
     if bool(args.macro_snapshot) != bool(args.macro_snapshot_id):
-        parser.error("Supply both macro snapshot and trusted content ID")
+        raise ValueError("Supply both macro snapshot and trusted content ID")
     macro = load_market_snapshot(args.macro_snapshot, args.macro_snapshot_id) if args.macro_snapshot else None
     sha, registry = read_registry()
-    tools = GoldTools(snapshot, args.as_of, sha, registry,
-                      read_attachment(args.forecast, args.forecast_sha256, args.forecast_observed_at),
-                      read_attachment(args.calendar, args.calendar_sha256, args.calendar_observed_at), macro)
+    forecast = read_attachment(args.forecast, args.forecast_sha256, args.forecast_observed_at)
+    calendar = read_attachment(args.calendar, args.calendar_sha256, args.calendar_observed_at)
+    return GoldTools(snapshot, args.as_of, sha, registry, forecast, calendar, macro)
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    add_evidence_arguments(parser)
+    parser.add_argument("--output", type=Path, required=True)
+    args = parser.parse_args()
+    tools = load_tools(args)
     responses = {}
     declarations = tools.declarations()
     for declaration in declarations:

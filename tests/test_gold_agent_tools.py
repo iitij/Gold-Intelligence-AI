@@ -4,9 +4,12 @@ import json
 from dataclasses import replace
 from datetime import datetime, timedelta, timezone
 from decimal import Decimal
+from http.server import BaseHTTPRequestHandler, HTTPServer
+from threading import Thread
 
 import pytest
 
+from goldintel.agents import ollama
 from goldintel.agents.tools import MODEL_CASES, STRATEGIES, GoldTools, ToolEvidence
 from goldintel.data.snapshot import SnapshotEvidence, build_market_snapshot
 from goldintel.domain import MarketQuote
@@ -72,3 +75,68 @@ def test_misbound_forecast_cannot_make_risk_status_tradable(gold):
     assert status["advisory"] == "NO_TRADE"
     assert "forecast_evidence_invalid" in status["blockers"]
     assert not status["execution_ready"]
+
+
+def test_ollama_replay_checks_real_tool_results_and_rejects_invalid_outputs(gold):
+    target = "get_gold_forecasts"
+    response = {"asset_id": "XAUUSD", "advisory": "NO_TRADE",
+                "evidence_tool": target, "evidence_status": "research_only"}
+    timings = dict.fromkeys(ollama.TIMINGS, 42)
+    settings = {"scenario": "good", "posts": []}
+
+    class MockOllama(BaseHTTPRequestHandler):
+        def reply(self, payload):
+            wire = json.dumps(payload).encode()
+            self.send_response(200)
+            self.send_header("Content-Length", str(len(wire)))
+            self.end_headers()
+            self.wfile.write(wire)
+
+        def do_GET(self):
+            assert self.path == "/api/tags"
+            digest = "0" * 64 if settings["scenario"] == "digest" else ollama.MODEL_DIGEST
+            self.reply({"models": [{"model": ollama.MODEL, "digest": digest}]})
+
+        def do_POST(self):
+            assert self.path == "/api/chat"
+            payload = json.loads(self.rfile.read(int(self.headers["Content-Length"])))
+            settings["posts"].append(payload)
+            if "tools" in payload:
+                arguments = {**ARGS, "path": "/tmp/evidence"} if settings["scenario"] == "arguments" else ARGS
+                content = {"tool_calls": [
+                    {"function": {"name": target, "arguments": arguments}},
+                    {"function": {"name": "get_risk_status", "arguments": ARGS}},
+                ]}
+            else:
+                result = json.dumps(response)
+                if settings["scenario"] == "status":
+                    result = json.dumps({**response, "evidence_status": "unavailable"})
+                elif settings["scenario"] == "duplicate":
+                    result = result[:-1] + ', "advisory": "NO_TRADE"}'
+                content = {"content": result}
+            self.reply({"model": ollama.MODEL, "message": {"role": "assistant", **content},
+                        "done": True, "done_reason": "stop", **timings})
+
+    with HTTPServer(("127.0.0.1", 0), MockOllama) as server:
+        thread = Thread(target=server.serve_forever, daemon=True)
+        thread.start()
+        try:
+            port = server.server_port
+            report = ollama.replay(port, gold, target)
+            assert report["status"] == "verified_replay"
+            assert report["model_output"] == response and report["model_digest_verified"]
+            assert report["timing"]["structured"]["eval_count"] == 42
+            first, second = settings["posts"]
+            assert first["tools"] == gold.declarations()
+            assert second["format"]["additionalProperties"] is False
+            assert "calibrated_up_probability" in second["messages"][1]["content"]
+            for scenario, expected_posts in [("digest", 0), ("arguments", 1), ("status", 2), ("duplicate", 2)]:
+                settings.update(scenario=scenario, posts=[])
+                report = ollama.replay(port, gold, target)
+                assert report["status"] == "fallback"
+                assert report["advisory"] == "NO_TRADE" and not report["execution_ready"]
+                assert "model_output" not in report
+                assert len(settings["posts"]) == expected_posts
+        finally:
+            server.shutdown()
+            thread.join(timeout=2)
