@@ -535,7 +535,9 @@
         "planning/bls_clock_diagnostic_20261118.json",
         "scripts/compare_bls_clock_anchors.py",
         "artifacts/bls-embargo-clock-diagnostic-20261118.json",
-        "artifacts/dukascopy-cross-season-attempts-20261118.json"
+        "artifacts/dukascopy-cross-season-attempts-20261118.json",
+        "docs/48-HEADWAY-SESSION-REHEARSAL.md",
+        "scripts/build_headway_clock_receipt.py"
       ],
       "blocked_reason": "One separately timestamped Dukascopy day and exploratory official release-time diagnostics corroborate several seasonal offsets. Exact historical Demo transition bounds, discrepant dates, and full independent coverage remain unverified."
     },
@@ -615,7 +617,8 @@
         "scripts/attach_headway_snapshot_forecasts.py",
         "artifacts/headway-model-snapshot-20261118/model-probabilities-verified/report.json",
         "artifacts/headway-model-snapshot-20261118/model-adapter-audit.json",
-        "artifacts/gold-tool-contract-20261118/audit.json"
+        "artifacts/gold-tool-contract-20261118/audit.json",
+        "docs/48-HEADWAY-SESSION-REHEARSAL.md"
       ],
       "blocked_reason": "Reproduced actual quote/bar, frozen-model and partial macro attachments. Local tool consumer verified fresh and expired data behavior. Complete calendar coverage, full graph integration, and acceptance review remain pending."
     },
