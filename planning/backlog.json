@@ -466,6 +466,7 @@
         "mt5/ExportXAUUSD_SymbolSpec.mq5",
         "scripts/audit_headway_tick_batches.py",
         "docs/43-HEADWAY-BATCH-ACQUISITION-AUDIT.md",
+        "scripts/reconcile_headway_attempts.py",
         "artifacts/headway-expanded-batch-audit-20261118.json",
         "artifacts/headway-batch-audit-dryrun-20261118/receipt.json",
         "artifacts/metaeditor-compile-20261118/report.json"

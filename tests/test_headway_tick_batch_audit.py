@@ -95,3 +95,42 @@ def test_reject_file_with_overlapping_window_even_if_quotes_look_valid(tmp_path)
     log = log_for(tmp_path, end, [])
     with pytest.raises(ValueError, match="overlapping"):
         audit_batches(tmp_path, log, START, end)
+
+
+@pytest.mark.parametrize("first_result,second_result,contradictory", [
+    ("Saved 1 rows", "Saved 1 rows", False),
+    ("Saved 1 rows", "Empty quote window", True),
+    ("Saved 2 rows", "Saved 1 rows", True),
+])
+def test_reconcile_retry_requires_consistent_receipts(
+    tmp_path, first_result, second_result, contradictory,
+):
+    middle = START + STEP
+    end = middle + STEP
+    initial, repeat = tmp_path / "initial", tmp_path / "repeat"
+    for directory in initial, repeat:
+        (directory / "batches").mkdir(parents=True)
+    if first_result == "Saved 1 rows":
+        file_for(initial / "batches", START, middle, [(ms(START), 3800, 3801)])
+    log_for(initial, end, [(START, middle, first_result), (middle, end, None)])
+    if second_result == "Saved 1 rows":
+        file_for(repeat / "batches", START, middle, [(ms(START), 3800, 3801)])
+    file_for(repeat / "batches", middle, end, [(ms(middle), 3801, 3802)])
+    log_for(repeat, end, [(START, middle, second_result), (middle, end, "Saved 1 rows")])
+    output = tmp_path / "combined.json"
+    proc = subprocess.run([
+        sys.executable, str(ROOT / "scripts/reconcile_headway_attempts.py"), str(output),
+        "--start", START.isoformat(), "--end", end.isoformat(),
+        "--attempt", str(initial), START.isoformat(), end.isoformat(),
+        "--attempt", str(repeat), START.isoformat(), end.isoformat(),
+    ], capture_output=True, text=True, check=False)
+    assert proc.returncode == (2 if contradictory else 0), proc.stderr
+    report = json.loads(output.read_text())
+    assert report["all_requests_reconciled"] is (not contradictory)
+    assert report["holdout_data_complete"] is False
+    assert report["windows"][0]["status"] == (
+        "conflicting_observations" if contradictory else "saved_verified"
+    )
+    assert [row["status"] for row in report["windows"][1]["observations"]] == [
+        "unaccounted", "saved_verified",
+    ]
