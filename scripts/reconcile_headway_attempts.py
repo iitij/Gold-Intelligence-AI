@@ -8,11 +8,13 @@ from datetime import timedelta
 from pathlib import Path
 
 from audit_headway_tick_batches import audit_batches, native_bound
+from collect_closed_headway_batches import verify_closed_request
 
 STEP = timedelta(minutes=2)
 
 
-def reconcile(start, end, attempts):
+def reconcile(start, end, attempts, *, guarded=None):
+    guarded = guarded or {}
     if not start < end or end - start > timedelta(days=60):
         raise ValueError("Use an increasing native interval of at most 60 days")
     windows = {}
@@ -27,10 +29,16 @@ def reconcile(start, end, attempts):
         if root.resolve() in seen:
             raise ValueError("Attempt directories must be distinct")
         seen.add(root.resolve())
-        report = audit_batches(root / "batches", root / "export.log", lower, upper)
+        if str(root) in guarded:
+            digest, report = guarded[str(root)]
+        else:
+            digest = None
+            report = audit_batches(root / "batches", root / "export.log", lower, upper)
         source_id = len(sources)
         sources.append({"attempt": str(root), "export_log_sha256": report["export_log_sha256"],
                         "request_status_counts": report["window_status_counts"]})
+        if digest is not None:
+            sources[-1]["closed_request_sha256"] = digest
         for row in report["windows"]:
             key = tuple(native_bound(row[k]) for k in (
                 "requested_native_start", "requested_native_end_exclusive",
@@ -76,12 +84,22 @@ def main():
     parser.add_argument("output", type=Path)
     parser.add_argument("--start", type=native_bound, required=True)
     parser.add_argument("--end", type=native_bound, required=True)
-    parser.add_argument("--attempt", action="append", nargs=3, required=True,
+    parser.add_argument("--attempt", action="append", nargs=3, default=[],
                         metavar=("DIRECTORY", "NATIVE_START", "NATIVE_END"))
+    parser.add_argument("--guarded-attempt", action="append", nargs=2, default=[],
+                        metavar=("DIRECTORY", "CLOCK_RECEIPT"))
     args = parser.parse_args()
+    if not (args.attempt or args.guarded_attempt):
+        parser.error("Supply at least one attempt")
     attempts = [(Path(root), native_bound(lower), native_bound(upper))
                 for root, lower, upper in args.attempt]
-    report = reconcile(args.start, args.end, attempts)
+    guarded = {}
+    for directory, anchor in args.guarded_attempt:
+        root = Path(directory)
+        start, end, digest, audit = verify_closed_request(root, Path(anchor))
+        attempts.append((root, start, end))
+        guarded[str(root)] = (digest, audit)
+    report = reconcile(args.start, args.end, attempts, guarded=guarded)
     raw = (json.dumps(report, indent=2, allow_nan=False) + "\n").encode()
     with args.output.open("xb") as stream:
         stream.write(raw)

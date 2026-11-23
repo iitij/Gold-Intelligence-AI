@@ -31,6 +31,30 @@ def validate_bounds(anchor, start, end, now):
     return boundary
 
 
+def verify_closed_request(attempt, receipt):
+    raw = (attempt / "closed-request.json").read_bytes()
+    report = json.loads(raw)
+    anchor = receipt.read_bytes()
+    if hashlib.sha256(anchor).hexdigest() != report["session_receipt_sha256"]:
+        raise ValueError("Clock receipt fingerprint has changed")
+    start, end = (native_bound(report[k]) for k in (
+        "requested_native_start", "requested_native_end_exclusive",
+    ))
+    begun, finished = (utc(report[k]) for k in (
+        "request_not_before_utc", "request_finished_utc",
+    ))
+    boundary = validate_bounds(json.loads(anchor), start, end, begun)
+    if (finished < begun or boundary != utc(report["end_utc_under_session_offset"])
+            or report["host_clock_synchronized_after"] is not True
+            or type(report["export_exit_code"]) is not int or report["export_exit_code"] != 0
+            or report["closed_request_receipt_accepted"] is not True):
+        raise ValueError("Closed request receipt was not accepted")
+    actual = audit_batches(attempt / "batches", attempt / "export.log", start, end)
+    if not actual["all_request_windows_accounted_for"] or actual != report["audit"]:
+        raise ValueError("Re-audit differs from the closed request receipt")
+    return start, end, hashlib.sha256(raw).hexdigest(), actual
+
+
 def synchronized():
     return subprocess.check_output(
         ["timedatectl", "show", "-p", "NTPSynchronized"], timeout=10,
