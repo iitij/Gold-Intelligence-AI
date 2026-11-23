@@ -997,9 +997,10 @@
       "owner": null,
       "estimate": "TBD",
       "evidence": [
-        "docs/47-LOCAL-QWEN-REPLAY.md"
+        "docs/47-LOCAL-QWEN-REPLAY.md",
+        "artifacts/local-gold-qwen-20261123-verified/benchmark.json"
       ],
-      "blocked_reason": "Pinned Ollama and Qwen downloads in progress. The local replay contract passed simulated server tests. Real Qwen tool use, schema results and latency are pending."
+      "blocked_reason": "Ollama 0.40.16 with verified Qwen3 4B completed 11 local replays; JSON outputs and measured latency recorded. Formal prerequisite acceptance and integrated agent use remain pending."
     },
     {
       "id": "P07-03",
