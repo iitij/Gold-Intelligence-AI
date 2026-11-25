@@ -98,3 +98,8 @@ python scripts/stage_headway_windows_python.py \
 [CI](https://github.com/iitij/Gold-Intelligence-AI/actions/runs/45638443846)
 و[ML smoke](https://github.com/iitij/Gold-Intelligence-AI/actions/runs/45638444188)
 انتهيا بالفشل دون خطوات معروضة. يبقى سبب الفشل غير مؤكد.
+
+في النسخة `07a2a14` تكرر فشل [CI](https://github.com/iitij/Gold-Intelligence-AI/actions/runs/45640321729)
+و[ML smoke](https://github.com/iitij/Gold-Intelligence-AI/actions/runs/45640321620).
+أعاد تنزيل السجلين `BlobNotFound`؛ لا يوجد من هذين التشغيلين ما
+يحدد سبب الفشل.

@@ -396,3 +396,8 @@ python scripts/advance_headway_collection.py PREVIOUS.json SHA256 ATTEMPT NEW.js
 حتى 17:00: **1,992,489 تحديثًا في 1,824 دفعة محفوظة** و66 نافذة بلا
 صفوف. بصمة `reconciled-checkpoint-after-1658.json`:
 `3fe77a5f35251128b1d17c8f059b0845a8a7aebc98d4f23d933f241e14c486b7`.
+
+بعد تشغيل نقطة التحقق التالية، امتدت المطابقة إلى 17:02 من 25 نوفمبر
+على ساعة المنصة: **1,994,137 تحديثًا في 1,825 دفعة محفوظة** و66 نافذة
+بلا صفوف. بصمة `reconciled-checkpoint-after-1700.json`:
+`65a442d5210a2dc0d4441dcadc5c3889f666582c922d377c264343e95dd0263c`.
