@@ -14,8 +14,11 @@ from goldintel.data.mt5_csv import TIME_FORMAT, validate_mt5_csv
 
 
 def compare(dukascopy, histdata, feeds, expected_days=None):
-    reference, _ = read_m15(histdata)
-    hashes = {str(histdata): hashlib.sha256(histdata.read_bytes()).hexdigest()}
+    reference = None
+    hashes = {}
+    if histdata is not None:
+        reference, _ = read_m15(histdata)
+        hashes[str(histdata)] = hashlib.sha256(histdata.read_bytes()).hexdigest()
     broker_data = {}
     for path in feeds:
         audit = validate_mt5_csv(path, expected_symbol="XAUUSD")
@@ -53,20 +56,21 @@ def compare(dukascopy, histdata, feeds, expected_days=None):
                 results.append({"feed": feed, "native_minus_duka_UTC_hypothesis_hours": hours,
                                 "common_bars": len(errors),
                                 "median_abs_close_difference": str(median(errors)) if errors else None})
-        cohort = [t for t in bars if all(t + timedelta(hours=h) in reference for h in (-1, 0, 1))]
-        for hours in (-1, 0, 1):
-            errors = [abs(bars[t]["close"] - reference[t + timedelta(hours=hours)]["close"]) for t in cohort]
-            results.append({"feed": "HistData_vs_Dukascopy",
-                            "histdata_nominal_UTC_time_minus_duka_UTC_hours": hours,
-                            "common_bars": len(errors),
-                            "median_abs_close_difference": str(median(errors)) if errors else None,
-                            "exact_close_matches": sum(error == 0 for error in errors)})
+        if reference is not None:
+            cohort = [t for t in bars if all(t + timedelta(hours=h) in reference for h in (-1, 0, 1))]
+            for hours in (-1, 0, 1):
+                errors = [abs(bars[t]["close"] - reference[t + timedelta(hours=hours)]["close"]) for t in cohort]
+                results.append({"feed": "HistData_vs_Dukascopy",
+                                "histdata_nominal_UTC_time_minus_duka_UTC_hours": hours,
+                                "common_bars": len(errors),
+                                "median_abs_close_difference": str(median(errors)) if errors else None,
+                                "exact_close_matches": sum(error == 0 for error in errors)})
         days.append({"date": str(day), "dukascopy_quality": quality, "comparisons": results})
     if not days:
         raise ValueError("No daily Dukascopy files")
     if expected_days is not None and {date.fromisoformat(day["date"]) for day in days} != set(expected_days):
         raise ValueError("Some requested daily reference files are missing")
-    return {"source_sha256": hashes, "days": days,
+    return {"source_sha256": hashes, "days": days, "histdata_comparison_included": reference is not None,
             "script_sha256": hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
             "limitations": ["Candidate price-alignment diagnostics; not a complete historical UTC policy",
                             "Shared upstream data can make the two reference providers dependent",
@@ -77,7 +81,7 @@ def compare(dukascopy, histdata, feeds, expected_days=None):
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--dukascopy", required=True, type=Path)
-    parser.add_argument("--histdata", required=True, type=Path)
+    parser.add_argument("--histdata", type=Path, help="Optional nominal-UTC HistData cross-check")
     parser.add_argument("--feeds", required=True, nargs="+", type=Path)
     parser.add_argument("--output", required=True, type=Path)
     parser.add_argument("--dates", nargs="+", type=date.fromisoformat)
