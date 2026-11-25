@@ -549,3 +549,30 @@ python scripts/capture_headway_clock_anchor.py NEW_RECEIPT_DIR \
 تحديثًا في 1,836 دفعة محفوظة** و66 نافذة بلا صفوف. بصمة
 `reconciled-checkpoint-after-1722.json`:
 `46fdbd1129f106ada784895c967cdcce55f978c35c006d2163cfa84576d8cfed`.
+
+أعاد `m15-attempt-2/headway_m15.csv` تصدير 341 شمعة مغلقة، حتى
+الشمعة ذات وقت الفتح 17:00 من 25 نوفمبر. تحققت الأداة من احتفاظ
+التصدير بكل الحقول في الشموع الـ338 السابقة، ومن أن الشموع الثلاث
+الجديدة جاءت بعد آخر فتح سابق. تأكد اختبار منفصل من كشف تعديل السبريد
+وحذف شمعة قديمة. يمكن إعادة فحص تمديد السجل بالأمر:
+
+```bash
+PYTHONPATH=src python scripts/compare_headway_m15_exports.py PRIOR.csv CURRENT.csv AUDIT.json
+```
+
+طابقت الشموع الـ241 ذات الدفعات المغلقة المؤهلة تجميع Bid على ساعة
+المنصة. بصمة ملف CSV الجديد
+`3698de41ba624f2ce2731169ba45f021804961b6bd6ba68011a1d2d87a0a330c`،
+وبصمتا `history-comparison.json` و`tick-corroboration-through-1724.json`
+هما `f4ad1baced864eb816a48a7125cf3ea072444cdea06edc7f122b806a9288dbee`
+و`a03fcf0c1c06040643e3ae4c0106188e2c37890c1f76091a48ef958bf9208d73`.
+
+امتدت مطابقة الأسعار إلى 17:26 يوم 25 نوفمبر على ساعة المنصة:
+**2,015,300 تحديث في 1,837 دفعة محفوظة**، و66 نافذة بلا صفوف.
+تطابقت القراءتان المتبقيتان من إيصال الساعة الرابع بعد إغلاق
+النافذة، ليصبح إجمالي المطابقات المباشرة 649 طابعًا في ثماني نوافذ.
+بصمتا `reconciled-checkpoint-after-1724.json` و
+`clock-direct-evidence-through-1726.json` هما
+`23e24c5f530bea802ef09e22faba3ac33e41dd3b9000d31a0b11c1dd61e1a605`
+و`10fbf09c68297fe9f29e98be3e7cb0a94087a45210aa11a1c07b8665f991aed5`.
+لا تدعم هذه الأرقام أي استنتاج عن أداء النافذة.
