@@ -3,7 +3,7 @@
 import argparse
 import hashlib
 import json
-from collections import Counter
+from collections import Counter, defaultdict
 from datetime import timedelta
 from pathlib import Path
 
@@ -79,6 +79,33 @@ def reconcile(start, end, attempts, *, guarded=None):
     }
 
 
+def previous_attempts(previous, anchors):
+    """Recover the exact attempt order, requiring old guard evidence by digest."""
+    windows = defaultdict(list)
+    for window in previous["windows"]:
+        for row in window["observations"]:
+            windows[row["attempt_index"]].append(row)
+    receipts = {hashlib.sha256(p.read_bytes()).hexdigest(): p for p in anchors}
+    attempts, guarded = [], {}
+    for i, source in enumerate(previous["attempts"]):
+        root = Path(source["attempt"])
+        rows = windows[i]
+        if not rows:
+            raise ValueError("Previous attempt has no requests")
+        start = min(native_bound(row["requested_native_start"]) for row in rows)
+        end = max(native_bound(row["requested_native_end_exclusive"]) for row in rows)
+        if "closed_request_sha256" in source:
+            digest = json.loads((root / "closed-request.json").read_bytes())["session_receipt_sha256"]
+            if digest not in receipts:
+                raise ValueError("Supply the original clock receipt for every previous guarded attempt")
+            lo, hi, closed_hash, audit = verify_closed_request(root, receipts[digest])
+            if (lo, hi, closed_hash) != (start, end, source["closed_request_sha256"]):
+                raise ValueError("Previous guarded attempt receipts or bounds changed")
+            guarded[str(root)] = (closed_hash, audit)
+        attempts.append((root, start, end))
+    return attempts, guarded
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("output", type=Path)
@@ -88,18 +115,45 @@ def main():
                         metavar=("DIRECTORY", "NATIVE_START", "NATIVE_END"))
     parser.add_argument("--guarded-attempt", action="append", nargs=2, default=[],
                         metavar=("DIRECTORY", "CLOCK_RECEIPT"))
+    parser.add_argument("--previous", nargs=2, metavar=("REPORT", "SHA256"))
+    parser.add_argument("--previous-clock-receipt", type=Path, action="append", default=[])
     args = parser.parse_args()
     if not (args.attempt or args.guarded_attempt):
         parser.error("Supply at least one attempt")
-    attempts = [(Path(root), native_bound(lower), native_bound(upper))
-                for root, lower, upper in args.attempt]
-    guarded = {}
+    attempts, guarded = [], {}
+    previous = None
+    if args.previous:
+        raw = Path(args.previous[0]).read_bytes()
+        if hashlib.sha256(raw).hexdigest() != args.previous[1]:
+            parser.error("Previous report fingerprint differs")
+        previous = json.loads(raw)
+        if ((previous["schema_version"], previous["server"], previous["symbol"]) != (1, "Headway-Demo", "XAUUSD")
+                or previous["all_requests_reconciled"] is not True):
+            parser.error("Only a fully accounted Headway-Demo XAUUSD report can be extended")
+        old_start = native_bound(previous["windows"][0]["native_start"])
+        old_end = native_bound(previous["windows"][-1]["native_end_exclusive"])
+        if args.start != old_start or args.end <= old_end:
+            parser.error("Keep the original start and provide a later end")
+        if args.attempt:
+            parser.error("Extend existing reports with guarded attempts only")
+        attempts, guarded = previous_attempts(previous, args.previous_clock_receipt)
+    elif args.previous_clock_receipt:
+        parser.error("Previous clock receipts require --previous")
+    attempts.extend((Path(root), native_bound(lower), native_bound(upper))
+                    for root, lower, upper in args.attempt)
     for directory, anchor in args.guarded_attempt:
         root = Path(directory)
         start, end, digest, audit = verify_closed_request(root, Path(anchor))
+        if previous is not None and start < old_end:
+            parser.error("New attempt overlaps the previous report")
         attempts.append((root, start, end))
         guarded[str(root)] = (digest, audit)
     report = reconcile(args.start, args.end, attempts, guarded=guarded)
+    if previous is not None:
+        for field in ("attempts", "windows"):
+            if report[field][:len(previous[field])] != previous[field]:
+                raise ValueError(f"Previous {field} changed on re-audit")
+        report["previous_report_sha256"] = args.previous[1]
     raw = (json.dumps(report, indent=2, allow_nan=False) + "\n").encode()
     with args.output.open("xb") as stream:
         stream.write(raw)

@@ -134,3 +134,52 @@ def test_reconcile_retry_requires_consistent_receipts(
     assert [row["status"] for row in report["windows"][1]["observations"]] == [
         "unaccounted", "saved_verified",
     ]
+
+
+def test_extension_refuses_rewritten_previous_quote_file(tmp_path):
+    from hashlib import sha256
+
+    mid, end = START + STEP, START + 2 * STEP
+    old, new = tmp_path / "old", tmp_path / "new"
+    for root in (old, new):
+        (root / "batches").mkdir(parents=True)
+    old_tick = file_for(old / "batches", START, mid, [(ms(START), 3800, 3801)])
+    file_for(new / "batches", mid, end, [(ms(mid), 3801, 3802)])
+    log_for(old, mid, [(START, mid, "Saved 1 rows")])
+    log_for(new, end, [(mid, end, "Saved 1 rows")]).write_text(
+        f"Connecting to MT5\nHeadway-Demo verified; requesting XAUUSD from {mid} to {end}\n"
+        f"Request {mid.isoformat()} through {end.isoformat()} exclusive\nSaved 1 rows\n"
+    )
+    anchor = tmp_path / "anchor.json"
+    observed = START.replace(hour=11, minute=5)
+    begun = observed + timedelta(minutes=1)
+    anchor.write_text(json.dumps({
+        "status": "matching_current_headway_demo_quote_clock_and_export", "server": "Headway-Demo",
+        "symbol": "XAUUSD", "ntp_before_after": True, "changed_quotes_matched": 10,
+        "native_minus_utc_seconds": 7200, "last_host_observation_utc": observed.isoformat(),
+    }))
+    (new / "closed-request.json").write_text(json.dumps({
+        "session_receipt_sha256": sha256(anchor.read_bytes()).hexdigest(),
+        "requested_native_start": mid.isoformat(), "requested_native_end_exclusive": end.isoformat(),
+        "request_not_before_utc": begun.isoformat(), "request_finished_utc": begun.isoformat(),
+        "end_utc_under_session_offset": (end - timedelta(hours=2)).isoformat(),
+        "host_clock_synchronized_after": True, "export_exit_code": 0, "closed_request_receipt_accepted": True,
+        "audit": audit_batches(new / "batches", new / "export.log", mid, end),
+    }))
+    previous = tmp_path / "previous.json"
+    cmd = [sys.executable, str(ROOT / "scripts/reconcile_headway_attempts.py")]
+    subprocess.run([*cmd, str(previous), "--start", START.isoformat(), "--end", mid.isoformat(),
+                    "--attempt", str(old), START.isoformat(), mid.isoformat()], check=True)
+    previous_sha = sha256(previous.read_bytes()).hexdigest()
+    extension = ["--start", START.isoformat(), "--end", end.isoformat(),
+                 "--previous", str(previous), previous_sha, "--guarded-attempt", str(new), str(anchor)]
+    output = tmp_path / "extended.json"
+    subprocess.run([*cmd, str(output), *extension], check=True)
+    report = json.loads(output.read_text())
+    assert report["previous_report_sha256"] == previous_sha
+    assert report["window_status_counts"] == {"saved_verified": 2}
+    old_tick.write_text(old_tick.read_text().replace("3800,3801", "3799,3801"))
+    rejected = tmp_path / "rejected.json"
+    result = subprocess.run([*cmd, str(rejected), *extension], capture_output=True, text=True, check=False)
+    assert result.returncode != 0 and "Previous windows changed" in result.stderr
+    assert not rejected.exists()

@@ -93,3 +93,8 @@ python scripts/stage_headway_windows_python.py \
 `aa015c5ba8b4b7c04b8a8f8d76179aea0db72afcb8cab00fadee139c07d7bb5b`.
 تثبت التجربة إعادة بناء عميل Windows على Linux واستخدام منصة موجودة.
 تثبيت MT5 أو Wine مستقل والتحقق على جهاز Windows أصلي يظلان غير مثبتين.
+
+أظهر فحص النسخة التالية `70ed4cf` الحالة نفسها في GitHub:
+[CI](https://github.com/iitij/Gold-Intelligence-AI/actions/runs/45638443846)
+و[ML smoke](https://github.com/iitij/Gold-Intelligence-AI/actions/runs/45638444188)
+انتهيا بالفشل دون خطوات معروضة. يبقى سبب الفشل غير مؤكد.
