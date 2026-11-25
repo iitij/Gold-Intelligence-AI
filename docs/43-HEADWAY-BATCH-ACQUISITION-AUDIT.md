@@ -423,3 +423,9 @@ python scripts/assemble_reconciled_headway_native.py RECONCILIATION.json SHA256 
 `996d88d03c51c3218e24d8b5efda8e41fcfc1758668165d04d7da132d89514cb`.
 بصمة البيان:
 `214556f44c064b795fcf2e029fd95c41244c034e11ffc10a80751a4b97fa9e27`.
+
+أضافت نقطتا 17:06 و17:08 يوم 25 نوفمبر **3,471 تحديثًا**.
+يغطي تقرير `reconciled-checkpoint-after-1706.json` حتى 17:08
+على ساعة المنصة: **1,999,287 تحديثًا في 1,828 دفعة محفوظة**،
+مع 66 نافذة بلا صفوف. بصمته
+`abd1ef90e56de050f841fbd8d8be0ab7ef2fb72aaf6c24e183ef8939a9606626`.
