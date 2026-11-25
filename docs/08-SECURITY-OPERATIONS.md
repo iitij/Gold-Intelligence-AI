@@ -28,3 +28,13 @@ Back up manifests, immutable market data (subject to licensing), model/checkpoin
 ## Deployment architecture
 
 Separate research and inference processes. One active trader enforced at execution gateway; no concurrent independent agents issuing orders. Reproducible container/venv and isolated MT5 bridge. Demo environment only before production gates pass.
+
+### P10-02 local restore exercise
+
+The Headway 11–13 November 2026 archive was extracted into a fresh directory.
+All 2,061 raw batch fingerprints matched the diagnostic manifest. Using the
+existing locked CPU environment, training CSV and replay interval metadata,
+the restored batches produced a byte-identical model comparison report.
+Local evidence is in `artifacts/headway-restore-check.rYhODT/report.json`.
+Encryption, off-device recovery and restoring the other inputs are still
+outstanding for the full P10-02 exercise.

@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "policy": "Do not evaluate interim performance for any overlapping sealed window",
+  "registrations": [
+    {
+      "protocol": "planning/prospective_holdout_20261118.json",
+      "sha256": "578e5631410a2f6d3a5c81c23ab5b3dbac7c4eb148ceda136545b799a1ff1162",
+      "snapshot": "artifacts/prospective-holdout-20261118/frozen"
+    }
+  ]
+}

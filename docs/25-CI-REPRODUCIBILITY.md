@@ -23,3 +23,11 @@
 تم توليد `requirements-ci.lock` مرة واحدة على GitHub Actions بنسخ محددة وبصمات SHA256 لكل wheel معتمدة لـPython 3.11 (pytest/ruff وملحقاتهما). بعد نقل القفل إلى `main` فإن `.github/workflows/ci.yml` يستخدم `pip install --require-hashes -r requirements-ci.lock` و`PYTHONPATH=src`، ولا يعيد حل النسخ من `pyproject.toml` في كل تشغيل. يحرس `scripts/verify_ci_lock.py` سياسة التثبيت، وتثبت GitHub Actions بالـCommit SHA.
 
 هذه خطوة **جزئية** من P02-02 وP01-05 فقط. لا نعد بوجود wheelhouse Offline، ولا قفل كامل لكل Extras، ولا SBOM أو CVE review مكتمل، ولا إعادة إنتاج OS/driver/GPU/MT5 حتى تكتمل أدلتها. يظل اعتماد أي تغيير على ملف القفل مراجعة بشرية منفصلة.
+
+## إعادة إنتاج CPU محليًا — 2026-11-18
+
+أُعيد تثبيت اتحاد قفل CI وقفل ML الأساسي في بيئة نظيفة باستخدام hashes:
+29 حزمة، و215 اختبارًا ناجحًا، وستة تنبؤات محفوظة متطابقة، وإعادة تدريب
+سياسة الخروج بسجلات ونتائج مطابقة. هذا يثبت نطاق CPU الأساسي على الجهاز
+الحالي، مع استمرار فصل بيئات التنبؤ العصبي وGPU وMT5. الأوامر والأدلة
+وحدود التحقق في [تقرير إعادة الإنتاج](35-BASELINE-RUNTIME-REPRODUCTION.md).

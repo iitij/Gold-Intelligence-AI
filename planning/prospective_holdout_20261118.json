@@ -1,0 +1,134 @@
+{
+  "schema_version": 1,
+  "kind": "prospective_research_registration",
+  "id": "prospective_holdout_20261118",
+  "registered_at_utc": "2026-11-18T15:38:27.120484+00:00",
+  "start_utc": "2026-11-23T00:00:00+00:00",
+  "end_exclusive_utc": "2027-01-18T00:00:00+00:00",
+  "ntp_at_registration": "NTPSynchronized=yes",
+  "server": "Headway-Demo",
+  "symbol": "XAUUSD",
+  "frozen_files": {
+    "artifacts/headway-standard-cost-evidence-20261118.json": "bf58741c0ec6e074523471df240683073b4324b9d8eed432240fb1cab8e54d93",
+    "artifacts/historical-strategies-2026-11-17-regime/headway_xauusd_m15_20261110/1-catboost.cbm": "a0b95860998bcb512d1fce1c612e8a8fd163357ba892e70965034016f0872d15",
+    "artifacts/historical-strategies-2026-11-17-regime/headway_xauusd_m15_20261110/1-lightgbm.txt": "883c1701594473c3ccc8b03c559eb9e66a2c1f5695e6d51a3be2c531a35aaff2",
+    "artifacts/historical-strategies-2026-11-17-regime/headway_xauusd_m15_20261110/16-catboost.cbm": "d6690d30fd602bb68d61e06db64f5a1240ee3d40235dfa1f3bf22cf9ac9540c2",
+    "artifacts/historical-strategies-2026-11-17-regime/headway_xauusd_m15_20261110/16-lightgbm.txt": "1771cff4e017a5b642ec5e13ec9d2b289e4198b82a01ac98c96f2184ca95f2a4",
+    "artifacts/historical-strategies-2026-11-17-regime/headway_xauusd_m15_20261110/4-catboost.cbm": "578a85be8b9adc6631c89329e6cd8badf1303711a5821a8fba3a0a12a1eb0aea",
+    "artifacts/historical-strategies-2026-11-17-regime/headway_xauusd_m15_20261110/4-lightgbm.txt": "9b40b336ab530668a49f7607eb456b6c5b2ea241449484aee0a2def2c465e413",
+    "artifacts/historical-strategies-2026-11-17-regime/report.json": "bc61919beab4067708c4791dd1df4ac371c2a4f6f441b5a7596694fc9850b7f4",
+    "data/features/native-training-set-v1-20261118/headway_xauusd_m15_20261110/1/validation/labels.csv": "33cf240c25cd5fb76d053b26490984abd982aa2a939dd13b8a37980c551e2aa6",
+    "data/features/native-training-set-v1-20261118/headway_xauusd_m15_20261110/16/validation/labels.csv": "0b1aa6ecab34a42aa54bee7c918894214fa3b39d8060e256b045fbe6cb24878d",
+    "data/features/native-training-set-v1-20261118/headway_xauusd_m15_20261110/4/validation/labels.csv": "7ddf8f5be2a98a739b4f273d6008ed43d911758d7f0d3bf033d58dc8f8f53b4a",
+    "data/raw/mt5/headway_xauusd_m15_20261110.csv": "d94b745de10af0f2aea25126da9f8cc0ff7e0fcb8e13cc1b70c1ae1eeb0e496c",
+    "docs/33-REVERSAL-REPLAY.md": "ea4abd773c2d2667925d0ba1ea758cc2febce8aa080d910a856b606d002dd2ca",
+    "planning/research_run_index.json": "05be54f98f9524438034c0045d69f330fef0f8a90d612a223ce2c8d009196203",
+    "requirements-ci.lock": "afd84b79e53653d75fda2fc0b6bbcf7cb258df97ce3fff43c9ded75080e968ce",
+    "requirements-ml-baseline.lock": "dedb1e30420540faecaa400fac2d56f4226ad4b6baf2eeb8213f0f6d1e4a7584",
+    "scripts/export_headway_bars.py": "89fa329c29cb49474da2eabf55c8c3573f77504b7bb1e13a1fbfd12bbd809bb9",
+    "scripts/export_headway_contract.py": "9bea8a7e82c20e8ae69bcc1f11411c5aebfbff41e1bffdbd117b608e7c1fe824",
+    "scripts/export_headway_ticks.py": "b189b1b07dd6aea3ac7a87095aaefee17f21e7f4d241503f6967a40f2e9536f6",
+    "scripts/normalize_headway_ticks.py": "a981cf3a5efacac4856914632731347dec44e88381c353c5f3eaada0e9674c4f",
+    "scripts/observe_headway_clock.py": "8760636653b6907f11810e016375aeeca568fb2dfdc5219206cc5717ec8792fc",
+    "scripts/predict_historical_model.py": "fe6c288a8b3c079915ed5321991107b0983a9c0c703b7cd5d8d81239eb68faf5",
+    "scripts/register_prospective_holdout.py": "1f96555ea2516aed2247518457bcaa4f39f6a88222f3e63609fe4bf43c6efac1",
+    "scripts/replay_m15_reversal.py": "6c404f4555e2084af1e6700bd4d13cab99733dacda5894acd6f1a7d4ae2ed333",
+    "scripts/replay_saved_classifiers.py": "121a3a3ad10de44fe8e5588f8969ac4d02126317ff303e736da0f1c83146c0ba",
+    "scripts/research_m15_direction.py": "caa2595452a302b512025b4bc65ef0e244503630ef28fcb4ef17e2710e385fbd",
+    "scripts/summarize_headway_clock.py": "0689dafef51ad0e10dda53e8cd3c0d7db191d9e5477ff3d29d30d6ed3477aaa2",
+    "scripts/train_historical_strategies.py": "9b3d6ac71f12cadd19720dc330deda29c2d03d78040cd1483cfbb00d65ce603f",
+    "src/goldintel/__init__.py": "7335c0742f67cfa7bd9c25d9b0d90ce459ebf79bcb6ac069ff06acf8dd03cb2a",
+    "src/goldintel/__main__.py": "0123eebabf2b9fd4b8937a63c1c8841966c1494e6fb5c86c863a9e766322c371",
+    "src/goldintel/data/__init__.py": "2198770a432b54abc90d99eb6da79ecb6019324e23f8d2ea52b611b387436919",
+    "src/goldintel/data/broker_specs.py": "a037c3851c1da7e6fd7e5c1adb970e43febad208a3c42a4a8778cda293cc926b",
+    "src/goldintel/data/compare_feeds.py": "6e56afe95196aeec9ca6849675871ef16e170049047cf86934ebebffa8b777c5",
+    "src/goldintel/data/contract_check.py": "1e8c0398954efd2d69554410eac393f2d8d2fdf0589a9930c39418389419d789",
+    "src/goldintel/data/histdata.py": "9fb91db10971435d6ead79e403ac9c54b6fe2e5c8c9249c68ba431a450a137ff",
+    "src/goldintel/data/mt5_csv.py": "e6b59d33d599098c3ed86818e7a26c168123958d368a3b6cf907fc28bc9adc94",
+    "src/goldintel/data/tick_quality.py": "ec4a365c569ad03cc224324689508f7677f3897625b6fd755b327f1e4bc454c4",
+    "src/goldintel/domain.py": "ff14bdc712995cb8b321e9635115e50a663ef7b207cd17c25453ecc9d80a55c1",
+    "src/goldintel/research/__init__.py": "9ee75a25001f646d5119c9fdbe68e2dfa107ab6df36d70b9b1a6ec555a38d61e",
+    "src/goldintel/research/exits.py": "beae8297cc45932ed256ec7de93f60b735e62f0d56c430526a612930f7976f25",
+    "src/goldintel/research/holdout.py": "7e4178eb19285335071ada1804a092f83ae779144aefaf4f4916e7faaa24217f",
+    "src/goldintel/research/labeling.py": "794dd0b093a2372735e27e6d710eed49bc906dd1ee62370579f819378e571466",
+    "src/goldintel/research/news_blackout.py": "037d61b8d3c85bf232ffa512d2d8147c96220d54381b3a2ca6ab17cd0b55b376",
+    "src/goldintel/research/point_in_time.py": "31a92fc148f6e751f0a692db155efaba33e3cdbb3308757ea0e0c35368f00e28",
+    "src/goldintel/research/splits.py": "90430ce99aee1107d4761c61846335363b72af9bf720e6ce2b86d47164b5663b",
+    "src/goldintel/risk.py": "785ef62b13a19b4fd9facff09d2e3878f5ec4c3485cdc7e0b9f248e68623601a"
+  },
+  "primary": {
+    "strategy": "previous_M15_Bid_close_reversal_including_ties_long",
+    "benchmark": "no_trade_zero_return",
+    "position_unit": "one_independent_ounce",
+    "metric": "mean_net_USD_per_ounce",
+    "delay_seconds": 0,
+    "additional_slippage_per_side_USD_per_ounce": "0",
+    "commission": "documented actual account terms for each observed interval; no silent zero default",
+    "screen": "positive lower endpoint of paired UTC-week bootstrap 95 percent interval",
+    "bootstrap_draws": 2000,
+    "bootstrap_seed": 42,
+    "minimum_populated_weeks": 8,
+    "scope": "screening result only; not statistical or production gate acceptance"
+  },
+  "sensitivity": {
+    "delays_seconds": [
+      0,
+      1,
+      5
+    ],
+    "additional_slippage_USD_per_side_per_ounce": [
+      "0",
+      "0.05",
+      "0.10",
+      "0.25"
+    ]
+  },
+  "secondary": {
+    "models": [
+      "LightGBM",
+      "CatBoost"
+    ],
+    "horizons_M15": [
+      1,
+      4,
+      16
+    ],
+    "metric": "Brier on each frozen calibrated probability versus frozen validation prior",
+    "frozen_validation_priors": {
+      "1": {
+        "up_probability": 0.5206295193534666,
+        "validation_labels_sha256": "33cf240c25cd5fb76d053b26490984abd982aa2a939dd13b8a37980c551e2aa6",
+        "rows": 4702
+      },
+      "4": {
+        "up_probability": 0.515843119875914,
+        "validation_labels_sha256": "7ddf8f5be2a98a739b4f273d6008ed43d911758d7f0d3bf033d58dc8f8f53b4a",
+        "rows": 4513
+      },
+      "16": {
+        "up_probability": 0.5192973116848549,
+        "validation_labels_sha256": "0b1aa6ecab34a42aa54bee7c918894214fa3b39d8060e256b045fbe6cb24878d",
+        "rows": 3757
+      }
+    },
+    "status": "descriptive six-case comparison; no winner promotion or confirmatory claim"
+  },
+  "data_conditions": [
+    "UTC quote mapping must be evidenced throughout the window, not inferred from one session",
+    "Require two warm-up M15 bars and quotes bracketing the end boundary",
+    "Preserve raw batch hashes, observed quotes, account terms and cost changes",
+    "Report missing quotes and unobservable outcomes; do not silently delete bad periods",
+    "Broker session evidence must separate scheduled closures from unobservable tradable quotes",
+    "Unresolved eligible-market fills block a positive screening claim",
+    "No interim performance evaluation or tuning using any part of this window",
+    "Primary executable-cost claim requires documented commission; unresolved costs block acceptance"
+  ],
+  "limitations": [
+    "Local registration and SHA256 snapshots are not independent timestamps or OS access controls",
+    "Registry overlap guards protect the repository replay; raw files and other programs remain readable",
+    "No future quotes have been collected or evaluated by this registration",
+    "Secondary classifier quote execution and publication-delay validation remain separate work"
+  ],
+  "complete_holdout_evidence": false,
+  "approved_for_trading": false
+}

@@ -80,3 +80,18 @@ def test_no_account_or_trade_commands_in_mql5_source():
                       "PositionSelect(", "HistoryDealGet"):
         assert forbidden not in code
     assert "FileOpen(" in code and "SymbolInfoDouble(" in code
+
+
+@pytest.mark.parametrize("value,review", [("1.0", False), ("0.1", True)])
+def test_contract_diagnostic_keeps_currency_and_readiness_unverified(tmp_path, value, review):
+    from goldintel.data.contract_check import check_contract
+
+    values = dict(EXAMPLE, tick_value_profit=value, tick_value_loss=value)
+    source = save_spec(tmp_path, values)
+    original = source.read_bytes()
+    result = check_contract(source, symbol="XAUUSDm")
+    assert result["requires_tick_value_review"] is review
+    assert not result["same_currency_assumption_verified"]
+    assert not result["training_ready"]
+    assert not result["execution_ready"]
+    assert source.read_bytes() == original

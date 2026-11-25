@@ -371,9 +371,24 @@
       "estimate": "TBD",
       "evidence": [
         ".github/workflows/ci.yml",
-        "https://github.com/iitij/Gold-Intelligence-AI/actions/runs/42416073810"
+        "https://github.com/iitij/Gold-Intelligence-AI/actions/runs/42416073810",
+        "requirements-ci.lock",
+        "requirements-ml-baseline.lock",
+        "scripts/reproduce_baseline_runtime.py",
+        "docs/35-BASELINE-RUNTIME-REPRODUCTION.md",
+        "artifacts/baseline-rebuild-checks-20261118.json",
+        "requirements-forecast-cpu-linux-py311.lock",
+        "scripts/reproduce_forecast_runtime.py",
+        "docs/40-FORECAST-RUNTIME-REPRODUCTION.md",
+        "artifacts/forecast-runtime-reproduction-20261118/report.json",
+        "artifacts/forecast-runtime-negative-controls-20261118.json",
+        "artifacts/review-publication-20261118.json",
+        "https://github.com/iitij/Gold-Intelligence-AI/pull/80",
+        "scripts/stage_headway_windows_python.py",
+        "https://github.com/iitij/Gold-Intelligence-AI/actions/runs/45637783830",
+        "https://github.com/iitij/Gold-Intelligence-AI/actions/runs/45637783771"
       ],
-      "blocked_reason": "Python dependency lock still pending"
+      "blocked_reason": "Linux CPU environments and the embedded Windows MT5 client under Wine rebuilt from pinned inputs; read-only MT5 quote collection verified. Remote CI passed at d84a96d but the checked 1bbcfb9 CI and ML runs failed with no available steps or logs. Acceptance review and independent Wine/MT5 installation, native Windows and full GPU runtime reproduction remain unverified."
     },
     {
       "id": "P02-03",
@@ -449,9 +464,17 @@
       "estimate": "TBD",
       "evidence": [
         "mt5/ExportXAUUSD_M15.mq5",
-        "tests/test_mt5_csv.py"
+        "tests/test_mt5_csv.py",
+        "mt5/ExportXAUUSD_Ticks.mq5",
+        "mt5/ExportXAUUSD_SymbolSpec.mq5",
+        "scripts/audit_headway_tick_batches.py",
+        "docs/43-HEADWAY-BATCH-ACQUISITION-AUDIT.md",
+        "scripts/reconcile_headway_attempts.py",
+        "artifacts/headway-expanded-batch-audit-20261118.json",
+        "artifacts/headway-batch-audit-dryrun-20261118/receipt.json",
+        "artifacts/metaeditor-compile-20261118/report.json"
       ],
-      "blocked_reason": "MetaEditor compile and broker data import not yet run on owner machine"
+      "blocked_reason": "All three MQL5 scripts compiled with no warnings or errors on owner machine. Real read-only Python tick and M15 export evidence is available. A full-day tick backfill rehearsal failed while a separate live quote check succeeded; prospective collection must corroborate each requested interval. Compiled script execution for each exporter, full historical clock/DST, prospective acquisition and acceptance review remain outstanding."
     },
     {
       "id": "P03-03",
@@ -472,10 +495,16 @@
         "priority:p1",
         "area:data"
       ],
-      "status": "todo",
+      "status": "in_progress",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "src/goldintel/data/dukascopy.py",
+        "tests/test_dukascopy.py",
+        "artifacts/dukascopy-reference-clock-validated-20261118.json",
+        "docs/38-HISTORICAL-CLOCK-CONFLICT.md"
+      ],
+      "blocked_reason": "One daily BID reference received and decoded with provenance; broader coverage and timestamp/independence reconciliation remain incomplete"
     },
     {
       "id": "P03-04",
@@ -498,10 +527,23 @@
         "area:data",
         "area:testing"
       ],
-      "status": "todo",
+      "status": "in_progress",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "docs/32-INDEPENDENT-FEED-VALIDATION.md",
+        "docs/38-HISTORICAL-CLOCK-CONFLICT.md",
+        "artifacts/headway-historical-clock-audit-20261118.json",
+        "artifacts/dukascopy-reference-clock-validated-20261118.json",
+        "tests/test_partial_time_mapping.py",
+        "planning/bls_clock_diagnostic_20261118.json",
+        "scripts/compare_bls_clock_anchors.py",
+        "artifacts/bls-embargo-clock-diagnostic-20261118.json",
+        "artifacts/dukascopy-cross-season-attempts-20261118.json",
+        "docs/48-HEADWAY-SESSION-REHEARSAL.md",
+        "scripts/build_headway_clock_receipt.py"
+      ],
+      "blocked_reason": "One separately timestamped Dukascopy day and exploratory official release-time diagnostics corroborate several seasonal offsets. Exact historical Demo transition bounds, discrepant dates, and full independent coverage remain unverified."
     },
     {
       "id": "P03-05",
@@ -523,10 +565,22 @@
         "area:macro",
         "area:data"
       ],
-      "status": "todo",
+      "status": "in_progress",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "src/goldintel/research/news_blackout.py",
+        "src/goldintel/research/calendar_coverage.py",
+        "scripts/inspect_fed_calendar_snapshot.py",
+        "tests/test_calendar_coverage.py",
+        "docs/44-OFFICIAL-CALENDAR-COVERAGE.md",
+        "artifacts/official-macro-calendar-20261118/audit.json",
+        "docs/45-MACRO-OBSERVATION-SNAPSHOT.md",
+        "scripts/build_macro_observation_snapshot.py",
+        "tests/test_macro_observation_snapshot.py",
+        "artifacts/macroeconomic-inputs-20261118/audit.json"
+      ],
+      "blocked_reason": "Observed FRED yield/dollar and CFTC gold positioning joined before a real Headway snapshot. Separate ALFRED payroll vintages demonstrate two revisions. Full historical availability timestamps, BLS calendar coverage, and complete historical joins remain outstanding."
     },
     {
       "id": "P03-06",
@@ -549,10 +603,28 @@
         "area:contracts",
         "area:data"
       ],
-      "status": "todo",
+      "status": "in_progress",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "src/goldintel/data/snapshot.py",
+        "tests/test_market_snapshot.py",
+        "scripts/capture_headway_quote.py",
+        "scripts/build_quote_snapshot.py",
+        "docs/39-MARKET-SNAPSHOT.md",
+        "artifacts/market-snapshot-audit-20261118.json",
+        "scripts/capture_headway_market_inputs.py",
+        "scripts/build_headway_market_snapshot.py",
+        "tests/test_headway_market_inputs.py",
+        "artifacts/headway-market-inputs-20261118/snapshot-audit.json",
+        "artifacts/headway-market-inputs-20261118/m15-tick-corroboration.json",
+        "scripts/attach_headway_snapshot_forecasts.py",
+        "artifacts/headway-model-snapshot-20261118/model-probabilities-verified/report.json",
+        "artifacts/headway-model-snapshot-20261118/model-adapter-audit.json",
+        "artifacts/gold-tool-contract-20261118/audit.json",
+        "docs/48-HEADWAY-SESSION-REHEARSAL.md"
+      ],
+      "blocked_reason": "Reproduced actual quote/bar, frozen-model and partial macro attachments. Local tool consumer verified fresh and expired data behavior. Complete calendar coverage, full graph integration, and acceptance review remain pending."
     },
     {
       "id": "P04-01",
@@ -637,9 +709,22 @@
       "estimate": "TBD",
       "evidence": [
         "https://github.com/iitij/Gold-Intelligence-AI/pull/62",
-        "src/goldintel/research/splits.py"
+        "src/goldintel/research/splits.py",
+        "scripts/prepare_historical_training_set.py",
+        "scripts/reproduce_packaged_training.py",
+        "tests/test_historical_training_set.py",
+        "docs/36-PERSISTED-TRAINING-SET.md",
+        "artifacts/training-set-audit-20261118.json",
+        "artifacts/packaged-classifier-refit-20261118/report.json",
+        "docs/37-PROSPECTIVE-HOLDOUT.md",
+        "planning/prospective_holdout_20261118.json",
+        "tests/test_prospective_holdout.py",
+        "scripts/score_registered_classifiers.py",
+        "tests/test_registered_classifiers.py",
+        "artifacts/registered-classifier-historical-dryrun-20261118/report.json",
+        "artifacts/registered-classifier-cli-integration-20261118.json"
       ],
-      "blocked_reason": "Anchored split module only; no dataset/sample store"
+      "blocked_reason": "The frozen secondary classifier runner reproduces all six historical Brier scores and rejects early release before opening inputs. Prospective acquisition, full clock coverage, and post-window scoring remain pending."
     },
     {
       "id": "P05-01",
@@ -781,10 +866,18 @@
         "area:models",
         "area:forecast"
       ],
-      "status": "todo",
+      "status": "in_progress",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "scripts/evaluate_chronos_historical.py",
+        "scripts/evaluate_forecast_distributions.py",
+        "scripts/forecast_distribution_metrics.py",
+        "docs/41-FORECAST-DISTRIBUTION-EVALUATION.md",
+        "artifacts/forecast-distributions-final-20261118/report.json",
+        "artifacts/forecast-distribution-audit-20261118.json"
+      ],
+      "blocked_reason": "Exploratory zero-shot, 21-quantile WIS and bounded-reconstruction CRPS comparison completed; empirical training-return baseline selected. Prerequisite P05-02 acceptance, unseen confirmation, pretraining-overlap review and full distribution identification remain unresolved."
     },
     {
       "id": "P06-02",
@@ -830,10 +923,24 @@
         "area:models",
         "area:forecast"
       ],
-      "status": "todo",
+      "status": "in_progress",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "scripts/train_nhits_historical.py",
+        "scripts/compare_forecast_benchmarks.py",
+        "docs/34-HISTORICAL-TRAINING.md",
+        "docs/40-FORECAST-RUNTIME-REPRODUCTION.md",
+        "artifacts/forecast-comparison-20261118.json",
+        "artifacts/forecast-runtime-reproduction-20261118/report.json",
+        "scripts/train_nbeatsx_historical.py",
+        "scripts/benchmark_point_forecasters.py",
+        "docs/42-POINT-FORECAST-BENCHMARK.md",
+        "artifacts/nbeatsx-200-20261118/report.json",
+        "artifacts/point-forecast-benchmark-final-20261118/report.json",
+        "artifacts/point-forecast-benchmark-audit-20261118.json"
+      ],
+      "blocked_reason": "Matched fixed CPU NBEATSx/NHITS comparison and isolated CPU batch timing/RAM completed. Persistence selected on validation and best on inspected test for both feeds. CUDA memory, unseen confirmation, and prerequisite acceptance remain outstanding."
     },
     {
       "id": "P07-01",
@@ -856,10 +963,17 @@
         "area:agents",
         "area:contracts"
       ],
-      "status": "todo",
+      "status": "in_progress",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "src/goldintel/agents/tools.py",
+        "scripts/replay_gold_tool_contract.py",
+        "tests/test_gold_agent_tools.py",
+        "docs/46-READ-ONLY-GOLD-TOOLS.md",
+        "artifacts/gold-tool-contract-20261118/audit.json"
+      ],
+      "blocked_reason": "Five first-party read-only XAUUSD tools verified against a live capture and real expiry, with host-bound UTC and strict arguments. Local Ollama/TradingAgents graph integration and prerequisite acceptance remain pending."
     },
     {
       "id": "P07-02",
@@ -882,10 +996,14 @@
         "area:agents",
         "area:models"
       ],
-      "status": "todo",
+      "status": "in_progress",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "docs/47-LOCAL-QWEN-REPLAY.md",
+        "artifacts/local-gold-qwen-20261123-verified/benchmark.json"
+      ],
+      "blocked_reason": "Ollama 0.40.16 with verified Qwen3 4B completed 11 local replays; JSON outputs and measured latency recorded. Formal prerequisite acceptance and integrated agent use remain pending."
     },
     {
       "id": "P07-03",
@@ -1011,7 +1129,11 @@
       "status": "todo",
       "owner": null,
       "estimate": "TBD",
-      "evidence": []
+      "evidence": [
+        "docs/37-PROSPECTIVE-HOLDOUT.md",
+        "planning/prospective_holdout_20261118.json",
+        "tests/test_prospective_holdout.py"
+      ]
     },
     {
       "id": "P08-03",

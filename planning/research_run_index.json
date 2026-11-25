@@ -1,0 +1,1400 @@
+{
+  "schema_version": 1,
+  "scope": "Explicitly indexed available training and forecast evaluation reports",
+  "limitations": [
+    "A retrospective inventory, not a preregistered trial ledger",
+    "Incomplete: additional diagnostic replays, overwritten attempts and manual choices may exist",
+    "Repeated fits and inspected evaluation periods remain separate research attempts",
+    "Candidate counts cover only explicitly recorded candidates arrays; not all fits or hypotheses",
+    "Reported confidence intervals are not corrected for these repeated comparisons",
+    "No indexed report establishes a locked untouched holdout or trading approval"
+  ],
+  "report_count": 17,
+  "reported_tuning_candidate_count": 180,
+  "runs": [
+    {
+      "report": "artifacts/chronos-20261118/report.json",
+      "report_sha256": "21078803a5fe58199059c0c875cdbcb7381e9546d5d7d2d2de305d86e7f4f6fd",
+      "reported_tuning_candidate_count": 0,
+      "reported_tuning_candidates": [],
+      "approved_for_trading": false
+    },
+    {
+      "report": "artifacts/forecast-distributions-final-20261118/report.json",
+      "report_sha256": "0f55a1541774338ee288fb67034c3799d1daf743238448a2e4e9d66d4df8e7c0",
+      "reported_tuning_candidate_count": 0,
+      "reported_tuning_candidates": [],
+      "approved_for_trading": false
+    },
+    {
+      "report": "artifacts/historical-strategies-2026-11-17/report.json",
+      "report_sha256": "dd45ab7291c746ffaf699c91861f9f50b2422ce8c9f784e8bf2ff231539a9f49",
+      "reported_tuning_candidate_count": 0,
+      "reported_tuning_candidates": [],
+      "approved_for_trading": false
+    },
+    {
+      "report": "artifacts/historical-strategies-2026-11-17-calibrated/report.json",
+      "report_sha256": "dbb09a195a9eb48a0f8fce30610f4b5d0e6b16f2838a7f8ad83d49904ed30773",
+      "reported_tuning_candidate_count": 36,
+      "reported_tuning_candidates": [
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/1/tuning/LightGBM/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.252616182084545
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/1/tuning/LightGBM/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.258913965708816
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/1/tuning/LightGBM/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.26269048504922604
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/1/tuning/CatBoost/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2531857235503057
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/1/tuning/CatBoost/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.254605035009585
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/1/tuning/CatBoost/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.2590754166286292
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/4/tuning/LightGBM/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2573953699276051
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/4/tuning/LightGBM/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.26480281752679186
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/4/tuning/LightGBM/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.2692654748267359
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/4/tuning/CatBoost/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2589839483062076
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/4/tuning/CatBoost/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.263572087423223
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/4/tuning/CatBoost/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.267650753794219
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/16/tuning/LightGBM/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2684718648308829
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/16/tuning/LightGBM/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.267093281912481
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/16/tuning/LightGBM/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.28011817624182583
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/16/tuning/CatBoost/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.26297053800381537
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/16/tuning/CatBoost/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.2663458350961602
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/16/tuning/CatBoost/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.2857302341091818
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/1/tuning/LightGBM/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.25240898416268487
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/1/tuning/LightGBM/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.2554859261090211
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/1/tuning/LightGBM/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.2602361014259027
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/1/tuning/CatBoost/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2519036403849105
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/1/tuning/CatBoost/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.25276716275659106
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/1/tuning/CatBoost/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.25664281053832333
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/4/tuning/LightGBM/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2556217330289405
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/4/tuning/LightGBM/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.26086570873698584
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/4/tuning/LightGBM/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.2698213119020961
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/4/tuning/CatBoost/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2562657329785692
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/4/tuning/CatBoost/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.2605255674834797
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/4/tuning/CatBoost/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.26470639718031513
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/16/tuning/LightGBM/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2673285014592299
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/16/tuning/LightGBM/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.27583204578775594
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/16/tuning/LightGBM/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.28842760681441304
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/16/tuning/CatBoost/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2658724909943897
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/16/tuning/CatBoost/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.2675058639810441
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/16/tuning/CatBoost/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.27352063594754533
+          }
+        }
+      ],
+      "approved_for_trading": false
+    },
+    {
+      "report": "artifacts/historical-strategies-2026-11-17-meta/report.json",
+      "report_sha256": "d34ef8cf2a9a7f6f524fd9b89efc69cbc92de447b16914a3333a0c027f5e3d7d",
+      "reported_tuning_candidate_count": 36,
+      "reported_tuning_candidates": [
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/1/tuning/LightGBM/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.252616182084545
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/1/tuning/LightGBM/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.258913965708816
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/1/tuning/LightGBM/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.26269048504922604
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/1/tuning/CatBoost/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2531857235503057
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/1/tuning/CatBoost/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.254605035009585
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/1/tuning/CatBoost/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.2590754166286292
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/4/tuning/LightGBM/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2573953699276051
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/4/tuning/LightGBM/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.26480281752679186
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/4/tuning/LightGBM/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.2692654748267359
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/4/tuning/CatBoost/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2589839483062076
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/4/tuning/CatBoost/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.263572087423223
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/4/tuning/CatBoost/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.267650753794219
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/16/tuning/LightGBM/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2684718648308829
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/16/tuning/LightGBM/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.267093281912481
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/16/tuning/LightGBM/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.28011817624182583
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/16/tuning/CatBoost/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.26297053800381537
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/16/tuning/CatBoost/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.2663458350961602
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/16/tuning/CatBoost/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.2857302341091818
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/1/tuning/LightGBM/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.25240898416268487
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/1/tuning/LightGBM/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.2554859261090211
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/1/tuning/LightGBM/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.2602361014259027
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/1/tuning/CatBoost/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2519036403849105
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/1/tuning/CatBoost/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.25276716275659106
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/1/tuning/CatBoost/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.25664281053832333
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/4/tuning/LightGBM/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2556217330289405
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/4/tuning/LightGBM/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.26086570873698584
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/4/tuning/LightGBM/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.2698213119020961
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/4/tuning/CatBoost/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2562657329785692
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/4/tuning/CatBoost/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.2605255674834797
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/4/tuning/CatBoost/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.26470639718031513
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/16/tuning/LightGBM/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2673285014592299
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/16/tuning/LightGBM/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.27583204578775594
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/16/tuning/LightGBM/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.28842760681441304
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/16/tuning/CatBoost/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2658724909943897
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/16/tuning/CatBoost/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.2675058639810441
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/16/tuning/CatBoost/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.27352063594754533
+          }
+        }
+      ],
+      "approved_for_trading": false
+    },
+    {
+      "report": "artifacts/historical-strategies-2026-11-17-regime/report.json",
+      "report_sha256": "bc61919beab4067708c4791dd1df4ac371c2a4f6f441b5a7596694fc9850b7f4",
+      "reported_tuning_candidate_count": 36,
+      "reported_tuning_candidates": [
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/1/tuning/LightGBM/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.252616182084545
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/1/tuning/LightGBM/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.258913965708816
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/1/tuning/LightGBM/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.26269048504922604
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/1/tuning/CatBoost/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2531857235503057
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/1/tuning/CatBoost/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.254605035009585
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/1/tuning/CatBoost/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.2590754166286292
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/4/tuning/LightGBM/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2573953699276051
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/4/tuning/LightGBM/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.26480281752679186
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/4/tuning/LightGBM/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.2692654748267359
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/4/tuning/CatBoost/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2589839483062076
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/4/tuning/CatBoost/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.263572087423223
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/4/tuning/CatBoost/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.267650753794219
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/16/tuning/LightGBM/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2684718648308829
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/16/tuning/LightGBM/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.267093281912481
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/16/tuning/LightGBM/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.28011817624182583
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/16/tuning/CatBoost/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.26297053800381537
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/16/tuning/CatBoost/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.2663458350961602
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/16/tuning/CatBoost/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.2857302341091818
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/1/tuning/LightGBM/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.25240898416268487
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/1/tuning/LightGBM/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.2554859261090211
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/1/tuning/LightGBM/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.2602361014259027
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/1/tuning/CatBoost/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2519036403849105
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/1/tuning/CatBoost/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.25276716275659106
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/1/tuning/CatBoost/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.25664281053832333
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/4/tuning/LightGBM/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2556217330289405
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/4/tuning/LightGBM/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.26086570873698584
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/4/tuning/LightGBM/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.2698213119020961
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/4/tuning/CatBoost/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2562657329785692
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/4/tuning/CatBoost/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.2605255674834797
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/4/tuning/CatBoost/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.26470639718031513
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/16/tuning/LightGBM/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2673285014592299
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/16/tuning/LightGBM/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.27583204578775594
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/16/tuning/LightGBM/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.28842760681441304
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/16/tuning/CatBoost/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2658724909943897
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/16/tuning/CatBoost/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.2675058639810441
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/16/tuning/CatBoost/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.27352063594754533
+          }
+        }
+      ],
+      "approved_for_trading": false
+    },
+    {
+      "report": "artifacts/historical-strategies-2026-11-17-tuned/report.json",
+      "report_sha256": "89fffa110b9745195dd43e5ed41216c6f352e613a47945b64397292795eff4a3",
+      "reported_tuning_candidate_count": 36,
+      "reported_tuning_candidates": [
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/1/tuning/LightGBM/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.252616182084545
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/1/tuning/LightGBM/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.258913965708816
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/1/tuning/LightGBM/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.26269048504922604
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/1/tuning/CatBoost/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2531857235503057
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/1/tuning/CatBoost/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.254605035009585
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/1/tuning/CatBoost/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.2590754166286292
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/4/tuning/LightGBM/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2573953699276051
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/4/tuning/LightGBM/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.26480281752679186
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/4/tuning/LightGBM/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.2692654748267359
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/4/tuning/CatBoost/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2589839483062076
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/4/tuning/CatBoost/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.263572087423223
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/4/tuning/CatBoost/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.267650753794219
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/16/tuning/LightGBM/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2684718648308829
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/16/tuning/LightGBM/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.267093281912481
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/16/tuning/LightGBM/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.28011817624182583
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/16/tuning/CatBoost/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.26297053800381537
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/16/tuning/CatBoost/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.2663458350961602
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/16/tuning/CatBoost/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.2857302341091818
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/1/tuning/LightGBM/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.25240898416268487
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/1/tuning/LightGBM/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.2554859261090211
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/1/tuning/LightGBM/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.2602361014259027
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/1/tuning/CatBoost/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2519036403849105
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/1/tuning/CatBoost/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.25276716275659106
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/1/tuning/CatBoost/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.25664281053832333
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/4/tuning/LightGBM/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2556217330289405
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/4/tuning/LightGBM/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.26086570873698584
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/4/tuning/LightGBM/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.2698213119020961
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/4/tuning/CatBoost/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2562657329785692
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/4/tuning/CatBoost/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.2605255674834797
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/4/tuning/CatBoost/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.26470639718031513
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/16/tuning/LightGBM/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2673285014592299
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/16/tuning/LightGBM/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.27583204578775594
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/16/tuning/LightGBM/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.28842760681441304
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/16/tuning/CatBoost/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2658724909943897
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/16/tuning/CatBoost/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.2675058639810441
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/16/tuning/CatBoost/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.27352063594754533
+          }
+        }
+      ],
+      "approved_for_trading": false
+    },
+    {
+      "report": "artifacts/historical-strategies-2026-11-17-verified/report.json",
+      "report_sha256": "36d17423de60fa5b58e44cad42d1497247648a9df98edfbd0bcf1113de96fc26",
+      "reported_tuning_candidate_count": 0,
+      "reported_tuning_candidates": [],
+      "approved_for_trading": false
+    },
+    {
+      "report": "artifacts/historical-strategies-earlier-fold-20261118/report.json",
+      "report_sha256": "85b69b7a83a5abb2a725bf3da73c67ca122852235c4464fa0239f238381121ce",
+      "reported_tuning_candidate_count": 36,
+      "reported_tuning_candidates": [
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/1/tuning/LightGBM/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2513445131972102
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/1/tuning/LightGBM/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.2561439119149695
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/1/tuning/LightGBM/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.26229933158138263
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/1/tuning/CatBoost/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.25097394518499766
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/1/tuning/CatBoost/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.25390445238061743
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/1/tuning/CatBoost/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.25791080429429797
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/4/tuning/LightGBM/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.25193769909713143
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/4/tuning/LightGBM/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.2589025342652876
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/4/tuning/LightGBM/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.26612895902891043
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/4/tuning/CatBoost/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.25191126362544236
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/4/tuning/CatBoost/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.25747569520745717
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/4/tuning/CatBoost/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.26271334835456056
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/16/tuning/LightGBM/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.26223030524653285
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/16/tuning/LightGBM/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.27143563614483035
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/16/tuning/LightGBM/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.2830716273324106
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/16/tuning/CatBoost/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2594250116400214
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/16/tuning/CatBoost/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.2658873693696187
+          }
+        },
+        {
+          "location": "/feeds/gold_xauusd_m15.csv/horizons/16/tuning/CatBoost/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.27274851383301346
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/1/tuning/LightGBM/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2513982010174769
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/1/tuning/LightGBM/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.25578177770192456
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/1/tuning/LightGBM/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.261991301826873
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/1/tuning/CatBoost/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2505417716566543
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/1/tuning/CatBoost/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.25442620446764763
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/1/tuning/CatBoost/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.2552502692152469
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/4/tuning/LightGBM/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.25288814017652306
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/4/tuning/LightGBM/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.26035926117939684
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/4/tuning/LightGBM/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.2673515001642396
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/4/tuning/CatBoost/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2525964975683575
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/4/tuning/CatBoost/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.2580447861274874
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/4/tuning/CatBoost/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.26491314752826234
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/16/tuning/LightGBM/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.2560103441171971
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/16/tuning/LightGBM/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.26496738167272194
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/16/tuning/LightGBM/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.2772484052253113
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/16/tuning/CatBoost/candidates/0",
+          "reported_candidate": {
+            "depth": 3,
+            "validation_brier": 0.25685297742254953
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/16/tuning/CatBoost/candidates/1",
+          "reported_candidate": {
+            "depth": 5,
+            "validation_brier": 0.26495398122512204
+          }
+        },
+        {
+          "location": "/feeds/headway_xauusd_m15_20261110.csv/horizons/16/tuning/CatBoost/candidates/2",
+          "reported_candidate": {
+            "depth": 7,
+            "validation_brier": 0.2692460177400834
+          }
+        }
+      ],
+      "approved_for_trading": false
+    },
+    {
+      "report": "artifacts/nbeatsx-200-20261118/report.json",
+      "report_sha256": "7059548ee1a20879095090e0cc8f59c03768b5fdf5782c030c17d239ece972ef",
+      "reported_tuning_candidate_count": 0,
+      "reported_tuning_candidates": [],
+      "approved_for_trading": false
+    },
+    {
+      "report": "artifacts/nhits-20261117/report.json",
+      "report_sha256": "e99b42c22c0d530f525c4a1d43b2a1b1c38ad536aff8b6b0b8f6bf3e0cbccc8d",
+      "reported_tuning_candidate_count": 0,
+      "reported_tuning_candidates": [],
+      "approved_for_trading": false
+    },
+    {
+      "report": "artifacts/nhits-20261118-500/report.json",
+      "report_sha256": "6bb5b4abe6aa91403b8543ce645bc7aaa36af4f01bf8745dc83b6bd0f88d10e1",
+      "reported_tuning_candidate_count": 0,
+      "reported_tuning_candidates": [],
+      "approved_for_trading": false
+    },
+    {
+      "report": "artifacts/packaged-classifier-refit-20261118/report.json",
+      "report_sha256": "598c389c22304f853f5e422f42c46e52e2d04a938e91abbd30e1d0c71b2f0584",
+      "reported_tuning_candidate_count": 0,
+      "reported_tuning_candidates": [],
+      "approved_for_trading": false
+    },
+    {
+      "report": "artifacts/point-forecast-benchmark-final-20261118/report.json",
+      "report_sha256": "785ba4a940d6923cf53dab340ff406fdec36461619048576c79951e0bef34eab",
+      "reported_tuning_candidate_count": 0,
+      "reported_tuning_candidates": [],
+      "approved_for_trading": false
+    },
+    {
+      "report": "artifacts/quote-exit-policy-20261118/report.json",
+      "report_sha256": "0ffebe11c6c81b1d286c4f04fd3fa486e061e4bb232d9b46dde2ca1ae1e83fb9",
+      "reported_tuning_candidate_count": 0,
+      "reported_tuning_candidates": [],
+      "approved_for_trading": false
+    },
+    {
+      "report": "artifacts/quote-exit-policy-clean-runtime-20261118/report.json",
+      "report_sha256": "e342a6b99cbab5b0131a5bc8e2558c1dda1139361398ed896634673cd621aaec",
+      "reported_tuning_candidate_count": 0,
+      "reported_tuning_candidates": [],
+      "approved_for_trading": false
+    },
+    {
+      "report": "artifacts/quote-exit-policy-verified-20261118/report.json",
+      "report_sha256": "42e19c75ed568f706c21f7a616d6a207219656d77c5bb97629939d9ffd01b984",
+      "reported_tuning_candidate_count": 0,
+      "reported_tuning_candidates": [],
+      "approved_for_trading": false
+    }
+  ]
+}
