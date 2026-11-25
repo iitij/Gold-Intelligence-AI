@@ -498,3 +498,29 @@ python scripts/audit_headway_clock_corroboration.py RECONCILIATION.json SHA256 C
 **2,009,988 تحديثًا في 1,834 دفعة محفوظة**، و66 نافذة بلا صفوف.
 بصمة `reconciled-checkpoint-after-1718.json`:
 `9b40bbef56c74119b96d5b1b3741c5133bcc808be5794751fb3bb6f702059ce1`.
+
+`scripts/audit_headway_quote_sessions.py` يصنف نوافذ الطلب على ساعة
+المنصة مقابل بيان مستقل لجلسة **التسعير**. يتطلب البيان
+`schema_version: 1` و`server: Headway-Demo` و`symbol: XAUUSD`
+و`kind: quote_session_evidence`. يضم `intervals` بحدود
+`native_start` و`native_end_exclusive`، وحالة `quote_open` أو
+`quote_closed`، ودليلًا `evidence: {path, sha256}` لكل فترة.
+
+```bash
+python scripts/audit_headway_quote_sessions.py RECONCILIATION.json SHA256 QUOTE_SESSIONS.json AUDIT.json
+```
+
+يفصل التقرير النافذة الفارغة ذات دليل إغلاق يغطيها بالكامل عن نافذة
+تتداخل مع جلسة مفتوحة أو لا يكفي دليل إغلاقها. يظل الطلب غير المحسوم
+ظاهرًا، ويعد وجود أسعار في نافذة يصفها الدليل بأنها مغلقة بالكامل
+تعارضًا يحتاج مراجعة. لا يصلح جدول التداول وحده كبيان جلسة التسعير.
+تحتاج ملاءمة الدليل للتاريخ والحساب إلى مراجعة حتى بعد تحقق بصمته.
+
+في 25 نوفمبر لم يتوفر بعد بيان مستقل لجلسة التسعير؛ أبقى التدقيق
+كل النوافذ الـ66 التي عادت بلا صفوف في حالة
+`empty_without_full_closed_evidence`. بصمة
+`quote-session-audit-through-1722.json`:
+`bd81c0f67dcc80f92e494184a9f9a27ce250870b0db05ca4393acb184b15e01c`.
+بلغت المطابقة حتى 17:22 على ساعة المنصة **2,011,810 تحديثًا
+في 1,835 دفعة محفوظة**. بصمة `reconciled-checkpoint-after-1720.json`:
+`47cee6c5ce2c2415391f9834db83d580fc8680f544b91231f0f4fb32a3e27eb9`.
