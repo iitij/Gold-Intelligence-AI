@@ -524,3 +524,28 @@ python scripts/audit_headway_quote_sessions.py RECONCILIATION.json SHA256 QUOTE_
 بلغت المطابقة حتى 17:22 على ساعة المنصة **2,011,810 تحديثًا
 في 1,835 دفعة محفوظة**. بصمة `reconciled-checkpoint-after-1720.json`:
 `47cee6c5ce2c2415391f9834db83d580fc8680f544b91231f0f4fb32a3e27eb9`.
+
+يمكن أخذ إيصال الساعة بأمر واحد من جلسة Headway-Demo المتصلة:
+
+```bash
+python scripts/capture_headway_clock_anchor.py NEW_RECEIPT_DIR \
+  --offset-seconds PROPOSED_OFFSET --wine WINE --win-python WINDOWS_PYTHON --terminal WINDOWS_MT5_PATH
+```
+
+يفحص الأمر NTP قبل الرصد وبعده، ثم يطلب نافذة أو نافذتين حول
+التحديثات المباشرة الحديثة. لا يستخدم القراءة الأولية من الذاكرة أو
+القراءات المتأخرة لتوسيع الطلب. لا يتحول إيصال العينة إلى دفعة مغلقة؛
+اجمعها مجددًا بأمر نقطة التحقق بعد الإغلاق. يجب تمرير فرضية الفرق
+صراحة؛ لا يقبلها الأمر إلا إذا طابقت الرصد وملفات العينة.
+
+في 25 نوفمبر توافق إيصال `session-anchor-4/receipt.json` مع **131
+قراءة مباشرة** وفرق +02:00 في لحظات الرصد. بصمته
+`af400624de807cb77c5a2372e00ac1eb1763029eda2f18cfefd2acd8d50f032c`.
+طابقت 129 قراءة من العينة تقرير 17:24، وبقيت قراءتان بعد حده.
+بلغ مجموع المطابقات المباشرة 647 عبر سبع نوافذ. بصمة
+`clock-direct-evidence-through-1724.json`:
+`66923fccdb8db365c60a600b76a113bbb3be0f34a40871dd442667b6547f90ca`.
+بلغ التقرير حتى 17:24 يوم 25 نوفمبر على ساعة المنصة **2,013,597
+تحديثًا في 1,836 دفعة محفوظة** و66 نافذة بلا صفوف. بصمة
+`reconciled-checkpoint-after-1722.json`:
+`46fdbd1129f106ada784895c967cdcce55f978c35c006d2163cfa84576d8cfed`.
