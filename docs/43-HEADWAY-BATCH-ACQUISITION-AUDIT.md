@@ -493,3 +493,8 @@ python scripts/audit_headway_clock_corroboration.py RECONCILIATION.json SHA256 C
 **2,008,142 تحديثًا في 1,833 دفعة محفوظة** و66 نافذة بلا صفوف.
 بصمة `reconciled-checkpoint-after-1716.json`:
 `eea5f1aee46f999efe4b999bf1422270c4fdff228e2dadc5601f2f1760c04192`.
+
+امتدت المطابقة إلى 17:20 من 25 نوفمبر على ساعة المنصة:
+**2,009,988 تحديثًا في 1,834 دفعة محفوظة**، و66 نافذة بلا صفوف.
+بصمة `reconciled-checkpoint-after-1718.json`:
+`9b40bbef56c74119b96d5b1b3741c5133bcc808be5794751fb3bb6f702059ce1`.

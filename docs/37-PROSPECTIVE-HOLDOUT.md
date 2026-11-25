@@ -152,3 +152,27 @@ PYTHONPATH=src .local/repro-baseline-20261125/bin/python \
 `runtime-cli-sealed-controls-20261125.json`:
 `8089a57be2dd58dc670e7bd38a7ba61cedfbe684299e7a5bd6b770e302d542bf`.
 تظل مطابقة التوقيت والتغطية والتكاليف على امتداد الفترة شروطًا مستقلة.
+
+## تدقيق تغطية عمولة التقييم الأساسي
+
+`scripts/audit_registered_headway_commission.py COSTS.json COVERAGE.json`
+يفحص نطاق البروتوكول وبصمات الأدلة دون فتح الأسعار. يبدأ البيان بـ
+`schema_version: 1` و`server: Headway-Demo` و`symbol: XAUUSD`
+و`currency: USD`. لكل عنصر في `intervals` حدان صريحان بتوقيت UTC
+(`start_utc`، `end_exclusive_utc`)، ونوع الحساب `account_tier`،
+وقيمتان عشريتان نصيتان `commission_usd_per_side_per_lot` و
+`contract_ounces_per_lot`. اربط دليل شروط الحساب ودليل حجم العقد
+بـ`account_terms_evidence` و`contract_size_evidence`، كل منهما
+`{path, sha256}` بمسار نسبي إلى البيان. يمكن تسجيل عينة لحظية في
+`point_observations` عبر `observed_at_utc` و`evidence`.
+
+يسجل الأمر الفجوات ويرفض فترات متداخلة أو مستقبلية أو أدلة تختلف
+بصماتها. لا يطرح معدلًا مرشحًا إلا إذا غطت الفترات النطاق المسجّل
+كله واتحد المعدل بعد تحويله إلى دولار للأونصة لكل طرف. إذا لم يتحقق
+ذلك في بيان صالح، يكتب التقرير ويخرج بالحالة 2. فحص البصمة يثبت
+هوية الملف، وتبقى مراجعة مضمونه وسريانه على حساب الوسيط شرطًا مستقلاً.
+
+أعاد تدقيق 25 نوفمبر التحقق من بصمتي رصد العقد وسجل التنفيذات. لم
+يُسند أي رصد لحظي إلى فترة كاملة ولم ينتج معدل عمولة مرشحًا. بصمة
+`acquisition/20261125/registered-cost-coverage.json` في مجلد النافذة:
+`3944a38902ef6607c0f6e2147901802e07c82f06a803d239cd23535e20d387a4`.
