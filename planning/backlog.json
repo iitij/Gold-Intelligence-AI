@@ -383,9 +383,12 @@
         "artifacts/forecast-runtime-reproduction-20261118/report.json",
         "artifacts/forecast-runtime-negative-controls-20261118.json",
         "artifacts/review-publication-20261118.json",
-        "https://github.com/iitij/Gold-Intelligence-AI/pull/80"
+        "https://github.com/iitij/Gold-Intelligence-AI/pull/80",
+        "scripts/stage_headway_windows_python.py",
+        "https://github.com/iitij/Gold-Intelligence-AI/actions/runs/45637783830",
+        "https://github.com/iitij/Gold-Intelligence-AI/actions/runs/45637783771"
       ],
-      "blocked_reason": "Linux CPU baseline and forecast environments rebuilt from exact hash-locked packages; saved inference reproduced. Remote CI passed at d84a96d. Acceptance review and separate GPU/Windows MT5 runtime reproduction remain unverified."
+      "blocked_reason": "Linux CPU environments and the embedded Windows MT5 client under Wine rebuilt from pinned inputs; read-only MT5 quote collection verified. Remote CI passed at d84a96d but the checked 1bbcfb9 CI and ML runs failed with no available steps or logs. Acceptance review and independent Wine/MT5 installation, native Windows and full GPU runtime reproduction remain unverified."
     },
     {
       "id": "P02-03",

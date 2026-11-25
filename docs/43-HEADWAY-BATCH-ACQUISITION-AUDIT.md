@@ -287,3 +287,10 @@ python scripts/probe_headway_native_boundary.py RECONCILIATION.json \
 `reconciled-through-native-1644.json` **1,978,687 تحديثًا**،
 و1,816 دفعة محفوظة و66 طلبًا بلا صفوف، دون طلبات معلّقة في النطاق.
 بصمته `3d297d377b348250e589e9c78e8af2c63fff0869f528db9ef86c33ae47edde53`.
+
+امتدت المطابقة إلى 16:48 من 25 نوفمبر بتوقيت المنصة؛
+**1,982,259 تحديثًا في 1,818 دفعة محفوظة** و66 نافذة بلا صفوف.
+بصمة `reconciled-through-native-1648.json` هي
+`d36c106b4b5b02dc9e1856e8c7a5a69b6289db0cb966205fec60a763b593545e`.
+جُمعت آخر دفعة بعميل Windows معاد البناء؛ راجع
+[أدلة إعادة بناء البيئة](35-BASELINE-RUNTIME-REPRODUCTION.md).
