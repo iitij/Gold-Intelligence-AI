@@ -576,3 +576,8 @@ PYTHONPATH=src python scripts/compare_headway_m15_exports.py PRIOR.csv CURRENT.c
 `23e24c5f530bea802ef09e22faba3ac33e41dd3b9000d31a0b11c1dd61e1a605`
 و`10fbf09c68297fe9f29e98be3e7cb0a94087a45210aa11a1c07b8665f991aed5`.
 لا تدعم هذه الأرقام أي استنتاج عن أداء النافذة.
+
+امتدت المطابقة إلى 17:28 من 25 نوفمبر على ساعة المنصة:
+**2,016,923 تحديثًا في 1,838 دفعة محفوظة**، و66 نافذة بلا صفوف.
+بصمة `reconciled-checkpoint-after-1726.json`:
+`37ccb161908a31fdff29501db8fffcc9a44751d7db1ffc3ea0b12accda51e343`.
