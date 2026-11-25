@@ -20,12 +20,17 @@ ROLES = (
 )
 
 
-def council(port, gold):
+def require_historical_decision(decision):
     now = datetime.now(timezone.utc)
-    decision = gold.decision_time_utc
     if decision > now:
         raise ValueError("Council rehearsal requires an elapsed evidence time")
+    if not REGISTRY.is_file():
+        raise ValueError("Registered holdout registry is unavailable")
     assert_no_sealed_overlap(REGISTRY, now=now, start=decision, end=decision + timedelta(microseconds=1))
+
+
+def council(port, gold):
+    require_historical_decision(gold.decision_time_utc)
     arguments = {"symbol": "XAUUSD"}
     risk = gold.call("get_risk_status", arguments)
     roles = {}
@@ -51,6 +56,7 @@ def main():
     parser.add_argument("--port", type=int, default=11435)
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
+    require_historical_decision(args.as_of)
     result = council(args.port, load_tools(args))
     result["input_evidence"] = {"market_snapshot_id": args.snapshot_id, "macro_snapshot_id": args.macro_snapshot_id,
                                 "forecast_file_sha256": args.forecast_sha256,

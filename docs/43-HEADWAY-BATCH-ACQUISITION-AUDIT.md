@@ -429,3 +429,8 @@ python scripts/assemble_reconciled_headway_native.py RECONCILIATION.json SHA256 
 على ساعة المنصة: **1,999,287 تحديثًا في 1,828 دفعة محفوظة**،
 مع 66 نافذة بلا صفوف. بصمته
 `abd1ef90e56de050f841fbd8d8be0ab7ef2fb72aaf6c24e183ef8939a9606626`.
+
+امتدت المطابقة إلى 17:10 من 25 نوفمبر على ساعة المنصة:
+**2,001,040 تحديثًا في 1,829 دفعة محفوظة**، و66 نافذة بلا صفوف.
+بصمة `reconciled-checkpoint-after-1708.json`:
+`665efbdb216a9ecde810c9fd50b4f4f8e194874054404fa64fe43600b68d6df7`.
