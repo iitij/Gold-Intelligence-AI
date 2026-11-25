@@ -434,3 +434,27 @@ python scripts/assemble_reconciled_headway_native.py RECONCILIATION.json SHA256 
 **2,001,040 تحديثًا في 1,829 دفعة محفوظة**، و66 نافذة بلا صفوف.
 بصمة `reconciled-checkpoint-after-1708.json`:
 `665efbdb216a9ecde810c9fd50b4f4f8e194874054404fa64fe43600b68d6df7`.
+
+`scripts/audit_headway_clock_corroboration.py` يعيد بناء كل إيصال
+ساعة من الرصد وفحوص NTP وملفات العينة، ويبحث عن الطوابع المرصودة ذاتها
+داخل الدفعات المطابقة بعد التحقق من بصماتها. يسجل عدد الطوابع الفريدة
+في كل نافذة ويرفض إعادة احتساب الإيصال نفسه.
+
+```bash
+python scripts/audit_headway_clock_corroboration.py RECONCILIATION.json SHA256 COVERAGE.json \
+  --clock-receipt FIRST.json --clock-receipt SECOND.json
+```
+
+في نطاق المطابقة حتى 17:12 يوم 25 نوفمبر على ساعة المنصة، تطابق
+**381 طابعًا زمنيًا فريدًا** موزعة على **4 من 1,896 نافذة طلب**
+(132 قراءة من 23 نوفمبر و249 من 25 نوفمبر). أيّدت القراءات فرق
++02:00 في أوقات الرصد الفعلية. بقيت 1,892 نافذة دون تطابق مباشر
+في هذه العينة؛ غياب التطابق المباشر لا يعني غياب الأسعار.
+ولا تُعد النافذة ذات التطابق مثبتة التوقيت كاملة لمجرد وجود عينة
+بداخلها. بصمة `clock-direct-evidence-through-1712.json`:
+`42da060952e2d9ca5651ed872ebd494e53a97826d871c33622b44b8a01914cde`.
+
+بلغ التقرير حتى ذلك الحد **2,002,766 تحديثًا في 1,830 دفعة
+محفوظة** و66 نافذة بلا صفوف. بصمة
+`reconciled-checkpoint-after-1710.json`:
+`8093b5c7e05d5aceed6b4fb783663e87659ec600d14ce093022f363c2c26c858`.

@@ -20,7 +20,7 @@ def utc(value):
     return stamp
 
 
-def build(clock, before, after, batches, log, start, end, offset):
+def build(clock, before, after, batches, log, start, end, offset, *, capture_matches=False):
     if type(offset) is not int or abs(offset) > 14 * 3600 or offset % 900:
         raise ValueError("Expected a reviewed offset on a 15-minute boundary")
     ntp_bytes = {path: path.read_bytes() for path in (before, after)}
@@ -48,6 +48,7 @@ def build(clock, before, after, batches, log, start, end, offset):
     if type(previous_tick) is not int or utc(observations[0]["host_utc_before"]) > previous_host:
         raise ValueError("Invalid initial cache observation")
     matched = []
+    native_matches = []
     unmatched = delayed = 0
     for row in observations[1:]:
         observed_before, observed_after = (utc(row[key]) for key in ("host_utc_before", "host_utc_after"))
@@ -64,6 +65,8 @@ def build(clock, before, after, batches, log, start, end, offset):
             delayed += 1
         else:
             matched.append((observed_after, residual, rpc))
+            if capture_matches:
+                native_matches.append(stamp)
 
     if len(matched) < 3 or (matched[-1][0] - matched[0][0]).total_seconds() < 2:
         raise ValueError("Insufficient distinct observations corroborate the session offset")
@@ -84,6 +87,7 @@ def build(clock, before, after, batches, log, start, end, offset):
         "rpc_max_seconds": max(row[2] for row in matched), "raw_native_time_only": True,
         "historical_or_holdout_clock_verified": False, "file_sha256": fingerprints,
         "export_audit": audit,
+        **({"matched_native_ms": native_matches} if capture_matches else {}),
     }
 
 
